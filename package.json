@@ -1,0 +1,17 @@
+{
+  "name": "checkout-pix-antivicio",
+  "version": "1.0.0",
+  "description": "Checkout PIX para produto anti-vicio em apostas, com camada de pagamento plugavel.",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

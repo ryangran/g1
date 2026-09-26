@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Programa Livre de Apostas</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">Livre de Apostas</div>
+      <a class="topbar-help" href="#ajuda">Precisa de ajuda?</a>
+    </header>
+
+    <main class="wrap">
+      <section class="product">
+        <span class="tag">Programa de autocontrole</span>
+        <h1>Recupere o controle sobre as apostas</h1>
+        <p class="lead">
+          Um programa prático e passo a passo para reduzir e parar de apostar,
+          com exercícios, plano de 30 dias e ferramentas de bloqueio. Material
+          honesto: nada de promessa de dinheiro de volta.
+        </p>
+        <ul class="benefits">
+          <li>Plano diário de 30 dias para quebrar o hábito</li>
+          <li>Técnicas para lidar com a vontade e os gatilhos</li>
+          <li>Guia de autoexclusão e bloqueio de plataformas</li>
+          <li>Planilha de controle financeiro para reorganizar as contas</li>
+        </ul>
+
+        <aside class="support" id="ajuda">
+          <strong>Está em sofrimento por causa do jogo?</strong>
+          Você não está sozinho. Ligue <b>188 (CVV)</b>, 24h, gratuito, ou
+          procure os Jogadores Anônimos. Buscar ajuda é um passo de coragem.
+        </aside>
+      </section>
+
+      <section class="checkout" aria-live="polite">
+        <!-- ETAPA 1: dados + valor -->
+        <div id="step-form">
+          <div class="price">
+            <span class="price-label" id="product-name">Carregando…</span>
+            <span class="price-value" id="product-price">—</span>
+          </div>
+
+          <form id="checkout-form" novalidate>
+            <label>
+              Nome completo
+              <input id="name" name="name" type="text" autocomplete="name" required />
+            </label>
+            <label>
+              E-mail (onde você vai receber o acesso)
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </label>
+            <label>
+              CPF (exigido para a cobrança PIX)
+              <input id="cpf" name="cpf" type="text" inputmode="numeric" maxlength="14" placeholder="000.000.000-00" required />
+            </label>
+
+            <p class="privacy">
+              Usamos seus dados apenas para emitir a cobrança e liberar seu
+              acesso. Não consultamos nada em seu nome nem compartilhamos com
+              terceiros.
+            </p>
+
+            <button type="submit" id="pay-btn">Gerar PIX e pagar</button>
+            <p class="form-error" id="form-error" hidden></p>
+          </form>
+        </div>
+
+        <!-- ETAPA 2: QR Code PIX -->
+        <div id="step-pix" hidden>
+          <h2>Pague com PIX para liberar o acesso</h2>
+          <div id="qrcode" class="qrcode"></div>
+          <p class="pix-amount" id="pix-amount"></p>
+
+          <label class="copy-label">
+            PIX copia e cola
+            <div class="copy-row">
+              <input id="pix-code" type="text" readonly />
+              <button type="button" id="copy-btn">Copiar</button>
+            </div>
+          </label>
+
+          <p class="status" id="pix-status">
+            <span class="spinner" aria-hidden="true"></span>
+            Aguardando o pagamento…
+          </p>
+        </div>
+
+        <!-- ETAPA 3: confirmado -->
+        <div id="step-done" hidden>
+          <div class="check">✓</div>
+          <h2>Pagamento confirmado!</h2>
+          <p>
+            Enviamos o acesso ao programa para o seu e-mail. Se não chegar em
+            alguns minutos, confira o spam ou fale com o suporte.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Livre de Apostas · programa de autoajuda</span>
+      <span>Jogo é para maiores de 18 anos. Este material não substitui acompanhamento profissional.</span>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
