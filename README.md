@@ -36,6 +36,32 @@ O adaptador do NOMAPAY já está pronto em `src/pix/nomapayProvider.js`. Para at
 O adaptador mapeia os status do gateway (`WAITING_PAYMENT` → `pending`,
 `PAID` → `paid`, etc.) e converte reais ↔ centavos automaticamente.
 
+## Testar a integração NOMAPAY (do seu ambiente)
+
+Rode isto onde as chaves live legitimamente vivem (sua máquina ou o deploy),
+nunca cole a Secret Key em chats ou ferramentas de terceiros:
+
+```bash
+# .env com PIX_PROVIDER=nomapay e as chaves
+npm start
+# em outro terminal:
+curl -s -X POST localhost:3000/api/charges \
+  -H 'Content-Type: application/json' \
+  -d '{"name":"Cliente Teste","email":"teste@example.com","cpf":"52998224725"}'
+```
+
+### Se voltar HTTP 403 em POST /transactions
+O 403 vem do gateway (não do código). Causas mais comuns, em ordem:
+1. **IP não autorizado** — muitos gateways exigem allowlist de IP para chaves
+   `live`. Rode do IP do seu servidor/deploy e cadastre-o no painel.
+2. **Chave inativa/regenerada** — confirme no painel que a chave em uso está
+   ativa (se você regenerou depois de expor, atualize o `.env`).
+3. **Conta ainda não habilitada** para transações live.
+4. **Esquema de auth** — a doc aceita `Basic base64(PK:SK)` (o que usamos) ou
+   `Bearer {SK}`. Se o suporte do NOMAPAY indicar Bearer, dá pra alternar.
+
+Com o corpo do erro em mãos (`res.text()` do 403), o motivo exato aparece.
+
 ## Plugar outro provedor
 
 Crie `src/pix/<nome>Provider.js` implementando a interface de
