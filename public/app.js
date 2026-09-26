@@ -37,16 +37,24 @@ function showStep(step) {
   el('step-done').hidden = step !== 'done';
 }
 
-function renderQrCode(payload) {
+function renderQrCode(payload, imageUrl) {
   const box = el('qrcode');
   box.innerHTML = '';
-  // qrcodejs (global QRCode) desenha o BR Code "copia e cola" como imagem.
-  new QRCode(box, {
-    text: payload,
-    width: 220,
-    height: 220,
-    correctLevel: QRCode.CorrectLevel.M,
-  });
+  if (imageUrl) {
+    // Quando o gateway ja devolve a imagem do QR, usamos ela direto.
+    const img = document.createElement('img');
+    img.src = imageUrl;
+    img.alt = 'QR Code PIX';
+    img.width = 220;
+    img.height = 220;
+    box.appendChild(img);
+  } else {
+    // Senao, geramos o QR localmente a partir do "copia e cola" (sem CDN).
+    const qr = qrcode(0, 'M');
+    qr.addData(payload);
+    qr.make();
+    box.innerHTML = qr.createSvgTag({ cellSize: 5, margin: 0 });
+  }
   el('pix-code').value = payload;
 }
 
@@ -94,7 +102,7 @@ el('checkout-form').addEventListener('submit', async (e) => {
     if (!res.ok) throw new Error(data.error || 'Erro ao gerar a cobrança.');
 
     state.chargeId = data.id;
-    renderQrCode(data.qrCode);
+    renderQrCode(data.qrCode, data.qrCodeImage);
     el('pix-amount').textContent = formatBRL(data.amountCents);
     showStep('pix');
     startPolling();
