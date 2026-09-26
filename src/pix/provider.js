@@ -38,6 +38,7 @@
  */
 
 import { MockPixProvider } from './mockProvider.js';
+import { NomapayPixProvider } from './nomapayProvider.js';
 
 /**
  * Fabrica de provedor. Escolhe a implementacao pela env PIX_PROVIDER.
@@ -50,15 +51,14 @@ export function createProvider() {
     case 'mock':
       return new MockPixProvider();
 
-    // Quando voce me mandar a documentacao da sua API, crie
-    // src/pix/meuProvider.js exportando uma classe que implemente a
-    // interface acima e adicione o case aqui:
-    //
-    // case 'meu':
-    //   return new MeuPixProvider({
-    //     baseUrl: process.env.PIX_API_URL,
-    //     apiKey: process.env.PIX_API_KEY,
-    //   });
+    case 'nomapay':
+      return new NomapayPixProvider({
+        publicKey: process.env.NOMAPAY_PUBLIC_KEY,
+        secretKey: process.env.NOMAPAY_SECRET_KEY,
+        baseUrl: process.env.NOMAPAY_BASE_URL,
+        webhookSecret: process.env.NOMAPAY_WEBHOOK_SECRET,
+        postbackUrl: process.env.NOMAPAY_POSTBACK_URL,
+      });
 
     default:
       throw new Error(`PIX_PROVIDER desconhecido: "${name}"`);
