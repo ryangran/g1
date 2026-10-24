@@ -2,3 +2,5 @@ renders/
 *.mp4
 !assets/**/*.mp4
 .hyperframes/
+build/
+__pycache__/

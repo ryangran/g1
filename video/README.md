@@ -42,3 +42,18 @@ já com o vídeo importado e legendas transcritas automaticamente.
 - Rode `npm run check` depois de cada alteração.
 
 Mais detalhes para agentes de IA em `CLAUDE.md` / `AGENTS.md`.
+
+## Áudio (narração + trilha)
+
+`assets/audio/narracao.mp3` (voz `pm_alex`, Kokoro, pt-BR) e `assets/audio/trilha.mp3`
+(trilha de suspense sintetizada, sem direitos autorais) são gerados pelos scripts em `tools/`:
+
+```bash
+pip install kokoro-onnx soundfile numpy      # uma vez
+python3 tools/narracao.py                    # gera a voz por cena (edite as frases no topo)
+python3 tools/trilha.py                      # gera a trilha com impactos sincronizados às frases
+./tools/mixar.sh                             # masteriza, faz ducking e grava em assets/audio/
+```
+
+Se mudar o texto, os tempos mudam: confira `build/audio/timing.json` e ajuste
+`data-start`/`data-duration` e os tempos da timeline no `index.html`.
