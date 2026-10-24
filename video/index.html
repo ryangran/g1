@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      :root {
+        --ground: #111114;
+        --ink: #ffffff;
+        --accent: #e63946;
+        --font-display: "Helvetica Neue", Arial, sans-serif;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: var(--ground);
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        font-family: var(--font-display);
+      }
+      .clip {
+        position: absolute;
+        inset: 0;
+      }
+      .layer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #title {
+        margin-top: -100px;
+        color: var(--ink);
+        font-size: 120px;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+      }
+      #bar {
+        inset: auto;
+        left: 840px;
+        top: 575px;
+        width: 240px;
+        height: 10px;
+        background: var(--accent);
+        transform-origin: left center;
+      }
+      #subtitle {
+        margin-top: 200px;
+        color: var(--ink);
+        opacity: 0.8;
+        font-size: 44px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="6"
+      data-width="1920"
+      data-height="1080"
+    >
+      <!--
+        Para usar um vídeo seu: coloque o arquivo em assets/ e adicione, por exemplo:
+        <video class="clip" src="assets/meu-video.mp4" data-start="6" data-duration="10"
+               data-track-index="3" data-has-audio="true"></video>
+        (e aumente o data-duration do #root acima)
+      -->
+      <h1 id="title" class="clip layer" data-start="0" data-duration="6" data-track-index="0">Seu Título Aqui</h1>
+      <div id="bar" class="clip" data-start="0" data-duration="6" data-track-index="1"></div>
+      <p id="subtitle" class="clip layer" data-start="0" data-duration="6" data-track-index="2">Edite este texto no index.html</p>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#title", { scale: 0.96 }, { scale: 1, duration: 1.2, ease: "power3.out" }, 0);
+      tl.fromTo("#bar", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power2.inOut" }, 0.7);
+      tl.fromTo("#subtitle", { opacity: 0 }, { opacity: 0.8, duration: 0.6 }, 1.1);
+      tl.to(["#title", "#bar", "#subtitle"], { opacity: 0, duration: 0.5 }, 5.5);
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

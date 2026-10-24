@@ -85,3 +85,8 @@ public/                frontend do checkout
 - A página é honesta sobre o que vende e inclui o canal de ajuda (CVV 188).
 - Configure o webhook do seu provedor para `POST /api/webhook` e libere o
   acesso ao produto quando o status for `paid`.
+
+## Edição de vídeo (HyperFrames)
+
+A pasta [`video/`](video/) é um espaço para editar vídeos com HyperFrames.
+Veja [`video/README.md`](video/README.md) — começa com `cd video && npm run dev`.
