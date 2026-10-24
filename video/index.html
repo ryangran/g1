@@ -6,10 +6,13 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
     <style>
       :root {
-        --ground: #111114;
+        --ground: #0f1115;
         --ink: #ffffff;
-        --accent: #e63946;
-        --font-display: "Helvetica Neue", Arial, sans-serif;
+        --muted: #c9ccd3;
+        --yes: #2ec4b6;
+        --no: #ef476f;
+        --gold: #ffd166;
+        --font-display: "Inter", "Helvetica Neue", Arial, sans-serif;
       }
       * {
         margin: 0;
@@ -29,37 +32,74 @@
         width: 100%;
         height: 100%;
         font-family: var(--font-display);
+        color: var(--ink);
       }
       .clip {
         position: absolute;
         inset: 0;
       }
-      .layer {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      .t {
+        inset: auto 0 auto 0;
+        padding: 0 220px;
+        text-align: center;
       }
-      #title {
-        margin-top: -100px;
-        color: var(--ink);
-        font-size: 120px;
+      .kicker {
+        font-size: 34px;
         font-weight: 700;
+        letter-spacing: 0.2em;
+        color: var(--gold);
+      }
+      .h1 {
+        font-size: 128px;
+        font-weight: 800;
+        line-height: 1.05;
         letter-spacing: -0.03em;
       }
-      #bar {
-        inset: auto;
-        left: 840px;
-        top: 575px;
-        width: 240px;
-        height: 10px;
-        background: var(--accent);
-        transform-origin: left center;
+      .h2 {
+        font-size: 92px;
+        font-weight: 800;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
       }
-      #subtitle {
-        margin-top: 200px;
+      .h2 em {
+        font-style: normal;
+      }
+      .big {
+        font-size: 150px;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+      }
+      .yes {
+        color: var(--yes);
+      }
+      .no {
+        color: var(--no);
+      }
+      .body {
+        font-size: 48px;
+        line-height: 1.3;
+        color: var(--muted);
+      }
+      .lg {
+        font-size: 64px;
         color: var(--ink);
-        opacity: 0.8;
-        font-size: 44px;
+      }
+      .quote {
+        font-size: 72px;
+        font-weight: 600;
+        font-style: italic;
+        color: var(--yes);
+      }
+      .small {
+        padding: 0 80px;
+        font-size: 28px;
+        color: var(--muted);
+      }
+      #bar {
+        inset: auto 0 0 0;
+        height: 10px;
+        background: var(--gold);
+        transform-origin: left center;
       }
     </style>
   </head>
@@ -68,27 +108,62 @@
       id="root"
       data-composition-id="main"
       data-start="0"
-      data-duration="6"
+      data-duration="36"
       data-width="1920"
       data-height="1080"
     >
-      <!--
-        Para usar um vídeo seu: coloque o arquivo em assets/ e adicione, por exemplo:
-        <video class="clip" src="assets/meu-video.mp4" data-start="6" data-duration="10"
-               data-track-index="3" data-has-audio="true"></video>
-        (e aumente o data-duration do #root acima)
-      -->
-      <h1 id="title" class="clip layer" data-start="0" data-duration="6" data-track-index="0">Seu Título Aqui</h1>
-      <div id="bar" class="clip" data-start="0" data-duration="6" data-track-index="1"></div>
-      <p id="subtitle" class="clip layer" data-start="0" data-duration="6" data-track-index="2">Edite este texto no index.html</p>
+      <div id="s1-kicker" class="clip t kicker" style="top: 330px" data-start="0" data-duration="4.5" data-track-index="0">ELEIÇÕES 2026 · CHECAGEM</div>
+      <div id="s1-title" class="clip t h1" style="top: 420px" data-start="0" data-duration="4.5" data-track-index="1">Lula votou contra<br>o SUS em 1988?</div>
+      <div id="s2-date" class="clip t kicker" style="top: 200px" data-start="4.5" data-duration="6.5" data-track-index="0">22 DE SETEMBRO DE 1988</div>
+      <div id="s2-desc" class="clip t body" style="top: 270px" data-start="4.5" data-duration="6.5" data-track-index="1">A Assembleia Nacional Constituinte vota o texto final da Constituição</div>
+      <div id="s2-yes" class="clip t big yes" style="top: 420px" data-start="4.5" data-duration="6.5" data-track-index="2">474 SIM</div>
+      <div id="s2-no" class="clip t big no" style="top: 600px" data-start="4.5" data-duration="6.5" data-track-index="3">15 NÃO</div>
+      <div id="s2-note" class="clip t body" style="top: 820px" data-start="4.5" data-duration="6.5" data-track-index="4">Os 15 votos contrários: todos da bancada do PT</div>
+      <div id="s3-name" class="clip t kicker" style="top: 300px" data-start="11" data-duration="6.5" data-track-index="0">LUIZ INÁCIO LULA DA SILVA · LÍDER DA BANCADA DO PT</div>
+      <div id="s3-vote" class="clip t big no" style="top: 380px" data-start="11" data-duration="6.5" data-track-index="1">votou NÃO</div>
+      <div id="s3-why" class="clip t body" style="top: 640px" data-start="11" data-duration="6.5" data-track-index="2">O PT considerou o texto conservador e criticou, entre outros pontos, a reforma agrária aprovada</div>
+      <div id="s4-head" class="clip t h2" style="top: 260px" data-start="17.5" data-duration="6.0" data-track-index="0">Foi essa Constituição<br>que criou o SUS</div>
+      <div id="s4-quote" class="clip t quote" style="top: 560px" data-start="17.5" data-duration="6.0" data-track-index="1">“A saúde é direito de todos e dever do Estado”</div>
+      <div id="s4-ref" class="clip t small" style="top: 760px" data-start="17.5" data-duration="6.0" data-track-index="2">Art. 196 · Constituição Federal de 1988</div>
+      <div id="s5-head" class="clip t kicker" style="top: 250px" data-start="23.5" data-duration="6.0" data-track-index="0">O CONTEXTO</div>
+      <div id="s5-p1" class="clip t body lg" style="top: 360px" data-start="23.5" data-duration="6.0" data-track-index="1">O voto foi contra o texto inteiro da Constituição, não contra um artigo específico do SUS</div>
+      <div id="s5-p2" class="clip t body lg" style="top: 640px" data-start="23.5" data-duration="6.0" data-track-index="2">Em 5 de outubro de 1988, Lula e os deputados do PT assinaram a Constituição promulgada</div>
+      <div id="s6-label" class="clip t kicker" style="top: 200px" data-start="29.5" data-duration="6.5" data-track-index="0">VEREDITO</div>
+      <div id="s6-v" class="clip t h2" style="top: 290px" data-start="29.5" data-duration="6.5" data-track-index="1">Lula votou contra a Constituição<br>que criou o SUS: <em>FATO</em></div>
+      <div id="s6-ctx" class="clip t body" style="top: 560px" data-start="29.5" data-duration="6.5" data-track-index="2">Mas a votação não era específica sobre o SUS: era sobre o texto final completo</div>
+      <div id="s6-src" class="clip t small" style="top: 900px" data-start="29.5" data-duration="6.5" data-track-index="3">Fontes: Diário da Assembleia Nacional Constituinte · g1 Fato ou Fake (23/10/2026) · Fundação Perseu Abramo</div>
+      <div id="bar" class="clip" data-start="0" data-duration="36" data-track-index="6"></div>
     </div>
     <script>
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({ paused: true });
-      tl.fromTo("#title", { scale: 0.96 }, { scale: 1, duration: 1.2, ease: "power3.out" }, 0);
-      tl.fromTo("#bar", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power2.inOut" }, 0.7);
-      tl.fromTo("#subtitle", { opacity: 0 }, { opacity: 0.8, duration: 0.6 }, 1.1);
-      tl.to(["#title", "#bar", "#subtitle"], { opacity: 0, duration: 0.5 }, 5.5);
+      tl.fromTo("#s1-title", { scale: 0.94 }, { scale: 1, duration: 4, ease: "power1.out" }, 0);
+      tl.fromTo("#s1-kicker", { y: 0 }, { y: -12, duration: 4, ease: "power1.out" }, 0);
+      tl.to(["#s1-kicker", "#s1-title"], { opacity: 0, duration: 0.35 }, 4.15);
+      tl.fromTo("#s2-date", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 4.75);
+      tl.fromTo("#s2-desc", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 5.2);
+      tl.fromTo("#s2-yes", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 5.65);
+      tl.fromTo("#s2-no", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 6.1);
+      tl.fromTo("#s2-note", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 6.55);
+      tl.to(["#s2-date", "#s2-desc", "#s2-yes", "#s2-no", "#s2-note"], { opacity: 0, duration: 0.35 }, 10.65);
+      tl.fromTo("#s3-name", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 11.25);
+      tl.fromTo("#s3-vote", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 11.7);
+      tl.fromTo("#s3-why", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 12.15);
+      tl.to(["#s3-name", "#s3-vote", "#s3-why"], { opacity: 0, duration: 0.35 }, 17.15);
+      tl.fromTo("#s4-head", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 17.75);
+      tl.fromTo("#s4-quote", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 18.2);
+      tl.fromTo("#s4-ref", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 18.65);
+      tl.to(["#s4-head", "#s4-quote", "#s4-ref"], { opacity: 0, duration: 0.35 }, 23.15);
+      tl.fromTo("#s5-head", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 23.75);
+      tl.fromTo("#s5-p1", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 24.2);
+      tl.fromTo("#s5-p2", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 24.65);
+      tl.to(["#s5-head", "#s5-p1", "#s5-p2"], { opacity: 0, duration: 0.35 }, 29.15);
+      tl.fromTo("#s6-label", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 29.75);
+      tl.fromTo("#s6-v", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 30.2);
+      tl.fromTo("#s6-ctx", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 30.65);
+      tl.fromTo("#s6-src", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 31.1);
+      tl.fromTo("#s6-v em", { color: "#ffffff" }, { color: "#ffd166", duration: 0.4 }, 31.2);
+      tl.fromTo("#bar", { scaleX: 0 }, { scaleX: 1, duration: 36, ease: "none" }, 0);
       window.__timelines["main"] = tl;
       tl.seek(0);
     </script>
