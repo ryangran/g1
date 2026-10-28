@@ -1,0 +1,3 @@
+renders/video*.mp4
+.hyperframes/
+build/

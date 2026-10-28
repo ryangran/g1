@@ -1,13 +1,16 @@
-/* As 8 variações da referência, como poses do rig + acessórios. ?pose=1..8 */
-(function () {
+/*
+ * As 8 variações da referência: poses do rig + acessórios.
+ * LulaCena(canvas, W, H) monta renderer, luz, personagem, POSES e acessórios
+ * (cada acessório fica registrado com a pose a que pertence).
+ * Em poses.html (figurinhas) renderiza ?pose=1..8; no vídeo, video.js anima entre elas.
+ */
+window.LulaCena = function (canvas, W, H) {
   const THREE = window.THREE;
   const E = window.Estudio3D;
-  const W = 1024, H = 1024;
-  const params = new URLSearchParams(location.search);
-  const N = Number(params.get("pose") || 1);
-  const ANG = Number(params.get("ang") || 0); // giro extra da câmera (turntable)
+  const acessorios = []; // { obj, pose }
+  let poseAtual = 0;
 
-  const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("c"), antialias: true, alpha: true, preserveDrawingBuffer: true });
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, preserveDrawingBuffer: true });
   renderer.setPixelRatio(1); renderer.setSize(W, H, false);
   renderer.setClearColor(0x000000, 0);
   renderer.outputColorSpace = THREE.SRGBColorSpace;
@@ -120,8 +123,11 @@
     }
     return g;
   }
-  const naMao = (lado, obj, pos, rot) => { obj.position.set(...pos); obj.rotation.set(...(rot || [0, 0, 0])); P.rig[lado].add(obj); return obj; };
-  const naCabeca = (obj, pos, rot) => { obj.position.set(...pos); obj.rotation.set(...(rot || [0, 0, 0])); P.rig.cabeca.add(obj); return obj; };
+  const registra = (obj) => { acessorios.push({ obj, pose: poseAtual, escala: obj.scale.clone() }); return obj; };
+  const naMao = (lado, obj, pos, rot) => { obj.position.set(...pos); obj.rotation.set(...(rot || [0, 0, 0])); P.rig[lado].add(obj); return registra(obj); };
+  const naCabeca = (obj, pos, rot) => { obj.position.set(...pos); obj.rotation.set(...(rot || [0, 0, 0])); P.rig.cabeca.add(obj); return registra(obj); };
+  const noTronco = (obj) => { P.rig.tronco.add(obj); return registra(obj); };
+  const naCena = (obj) => { cena.add(obj); return registra(obj); };
 
   // ---------- poses (ângulos em rad: [x, y, z]) ----------
   const SENTA = { coxaE: [-1.5, 0, -0.12], coxaD: [-1.5, 0, 0.12], joelhoE: [0.15, 0, 0], joelhoD: [0.15, 0, 0], peE: [-0.2, 0, 0], peD: [-0.2, 0, 0] };
@@ -140,15 +146,15 @@
         ombroE: [-1.15, 0, -0.55], ombroD: [-1.15, 0, 0.55], cotoveloE: [-0.5, 0, -0.9], cotoveloD: [-0.5, 0, 0.9], cabeca: [0.35, 0.2, 0.4] },
       rotRoot: [0, -0.4, 0], camAlt: 0.35,
       rosto: { olhos: 1, sorriso: 0.25, boca: "sorriso" },
-      props: () => { const st = estrela(1.05); st.position.set(0.15, 1.05, 1.45); st.rotation.set(-0.35, 0.25, 0.25); P.rig.tronco.add(st); },
-      extra: () => { const z = texto("z z Z", "#1b1b22", 150); z.scale.multiplyScalar(1.5); z.position.set(1.4, 4.4, 0.6); cena.add(z); },
+      props: () => { const st = estrela(1.05); st.position.set(0.15, 1.05, 1.45); st.rotation.set(-0.35, 0.25, 0.25); noTronco(st); },
+      extra: () => { const z = texto("z z Z", "#1b1b22", 150); z.scale.multiplyScalar(1.5); z.position.set(1.4, 4.4, 0.6); naCena(z); },
     },
     4: { // sentado, coçando a cabeça, confuso
       juntas: { ...SENTA, ombroD: [-0.6, 0, -2.4], cotoveloD: [-1.3, 0, -1.0], ombroE: [-0.5, 0, 0.2], cotoveloE: [-0.9, 0, 0], cabeca: [0.12, 0, -0.15], tronco: [0.08, 0, 0] },
       rotRoot: [0, -0.3, 0], camAlt: 0.4,
       rosto: { olhos: 0.15, sorriso: 0, boca: "preocupado", sobrancelha: 0.35 },
       props: () => { naCabeca(boneBrasil(), [0, 0.42, -0.02], [-0.18, 0, 0]); },
-      extra: () => { const q = texto("?", "#1b1b22", 230); q.scale.multiplyScalar(1.7); q.position.set(1.3, 4.7, 0.4); cena.add(q); },
+      extra: () => { const q = texto("?", "#1b1b22", 230); q.scale.multiplyScalar(1.7); q.position.set(1.3, 4.7, 0.4); naCena(q); },
     },
     5: { // sentado comendo pizza
       juntas: { ...SENTA, ombroD: [-1.3, 0, -0.35], cotoveloD: [-1.6, 0, 0.35], ombroE: [-0.9, 0, 0.3], cotoveloE: [-0.6, 0, 0], cabeca: [-0.06, 0, 0.08] },
@@ -160,7 +166,7 @@
       juntas: { ombroE: [0, 0, 2.6], ombroD: [0, 0, -2.6], cotoveloE: [0, 0, 0.35], cotoveloD: [0, 0, -0.35], coxaE: [-0.5, 0, -0.1], coxaD: [-0.3, 0, 0.15], joelhoE: [1.1, 0, 0], joelhoD: [0.9, 0, 0], cabeca: [-0.15, 0, 0] },
       altura: 0.9,
       rosto: { olhos: 1, sorriso: 1, boca: "aberta", sobeSobrancelha: 0.04 },
-      extra: () => cena.add(confete()),
+      extra: () => naCena(confete()),
     },
     7: { // sentado acenando, boné azul
       juntas: { ...SENTA, ombroD: [0.1, 0, -2.5], cotoveloD: [0, 0, 0.5], ombroE: [0.5, 0, 0.45], cotoveloE: [0, 0, 0], tronco: [-0.2, 0, 0.05], cabeca: [-0.05, 0, -0.1] },
@@ -171,26 +177,47 @@
     8: { // sentado lendo "História"
       juntas: { ...SENTA, ombroD: [-0.75, 0, -0.25], cotoveloD: [-1.0, 0, 0.55], ombroE: [-0.75, 0, 0.25], cotoveloE: [-1.0, 0, -0.55], cabeca: [0.3, 0, 0] },
       rosto: { olhos: 0.55, sorriso: 0.5, boca: "sorriso" },
-      props: () => { const lv = livro(); lv.scale.setScalar(1.25); lv.position.set(0, 0.95, 1.55); lv.rotation.set(-0.25, 0, 0); P.rig.tronco.add(lv); },
+      props: () => { const lv = livro(); lv.scale.setScalar(1.25); lv.position.set(0, 0.95, 1.55); lv.rotation.set(-0.25, 0, 0); noTronco(lv); },
       rotRoot: [0, -0.3, 0], camAlt: 0.4,
     },
   };
 
-  const pose = POSES[N];
-  if (pose.props) pose.props();
-  P.root.traverse((o) => { if (o.isMesh) o.castShadow = true; });
-  P.posar(pose);
-  if (pose.extra) pose.extra();
+  /** Cria os acessórios de todas as poses (para o vídeo) ou só de uma (figurinha). */
+  function criarAcessorios(lista) {
+    for (const n of lista) {
+      poseAtual = n;
+      if (POSES[n].props) POSES[n].props();
+      if (POSES[n].extra) POSES[n].extra();
+    }
+    P.root.traverse((o) => { if (o.isMesh) o.castShadow = true; });
+  }
 
-  // enquadra o personagem: câmera 3/4 levemente de cima
-  const caixa = new THREE.Box3().setFromObject(P.root);
-  const centro = caixa.getCenter(new THREE.Vector3());
-  const tam = caixa.getSize(new THREE.Vector3());
-  const raio = Math.max(tam.y * 0.52, tam.x * 0.52, 2.7);
-  const dist = raio / Math.tan((cam.fov * Math.PI) / 360) * 1.08;
+  /** Enquadramento de uma pose: centro e distância para a câmera. */
+  function enquadrar(pose, aspecto) {
+    const caixa = new THREE.Box3().setFromObject(P.root);
+    const centro = caixa.getCenter(new THREE.Vector3());
+    const tam = caixa.getSize(new THREE.Vector3());
+    const raio = Math.max(tam.y * 0.52, (tam.x * 0.52) / Math.min(1, aspecto), 2.7);
+    const dist = (raio / Math.tan((cam.fov * Math.PI) / 360)) * 1.08;
+    return { centro, dist, alt: pose.camAlt ?? 0.18, sobe: pose.extra ? 0.35 : 0 };
+  }
+
+  return { THREE, E, renderer, cena, cam, P, POSES, acessorios, criarAcessorios, enquadrar };
+};
+
+// ---------- modo figurinha (poses.html?pose=N) ----------
+if (document.getElementById("c") && !window.__modoVideo) {
+  const params = new URLSearchParams(location.search);
+  const N = Number(params.get("pose") || 1);
+  const ANG = Number(params.get("ang") || 0);
+  const C = window.LulaCena(document.getElementById("c"), 1024, 1024);
+  C.criarAcessorios([N]);
+  const pose = C.POSES[N];
+  C.P.posar(pose);
+  const f = C.enquadrar(pose, 1);
   const a = 0.38 + ANG;
-  cam.position.set(centro.x + Math.sin(a) * dist, centro.y + dist * (pose.camAlt ?? 0.18), centro.z + Math.cos(a) * dist);
-  cam.lookAt(centro.x, centro.y + (pose.extra ? 0.35 : 0), centro.z);
-  renderer.render(cena, cam);
+  C.cam.position.set(f.centro.x + Math.sin(a) * f.dist, f.centro.y + f.dist * f.alt, f.centro.z + Math.cos(a) * f.dist);
+  C.cam.lookAt(f.centro.x, f.centro.y + f.sobe, f.centro.z);
+  C.renderer.render(C.cena, C.cam);
   window.__pronto = true;
-})();
+}

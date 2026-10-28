@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/three-bundle.js"></script>
+    <script src="assets/lib/estudio3d.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #2b2f5e; }
+      #root { position: relative; width: 100%; height: 100%; font-family: "Inter", sans-serif; }
+      #ceu { position: absolute; inset: 0; background: linear-gradient(180deg, #2b2f5e 0%, #f2a07b 78%); }
+      #palco { position: absolute; inset: 0; width: 1080px; height: 1920px; }
+      .hora { inset: auto 0 auto 0; top: 200px; text-align: center; font-family: "Archivo Black", sans-serif; font-size: 120px;
+              color: #fff; letter-spacing: 0.02em; }
+      .hora { display: flex; justify-content: center; }
+      .hora::before { content: none; }
+      .frase { inset: auto 0 auto 0; top: 1200px; padding: 0 70px; text-align: center; }
+      .frase span { display: inline-block; background: #fff; color: #17181d; border-radius: 28px; padding: 18px 40px;
+                    font-size: 66px; font-weight: 900; line-height: 1.1; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); }
+      .pilula { background: rgba(10, 12, 30, 0.55); border-radius: 30px; padding: 6px 36px; }
+      .final span { background: #f5c518; color: #0f5d2c; font-size: 110px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="21.6" data-width="1080" data-height="1920">
+      <div id="ceu" class="clip" data-start="0" data-duration="21.6" data-track-index="0" data-hold></div>
+      <canvas id="palco" class="clip" data-start="0" data-duration="21.6" data-track-index="1" width="1080" height="1920" data-layout-allow-overflow data-hold></canvas>
+      <div id="hora-0" class="clip hora" data-start="0.0" data-duration="2.65" data-track-index="2"><span class="pilula">6h00</span></div>
+      <div id="frase-0" class="clip frase" data-start="0.0" data-duration="2.65" data-track-index="3"><span>Mais 5 minutinhos…</span></div>
+      <div id="hora-1" class="clip hora" data-start="2.65" data-duration="2.65" data-track-index="2"><span class="pilula">6h05</span></div>
+      <div id="frase-1" class="clip frase" data-start="2.65" data-duration="2.65" data-track-index="3"><span>Que dia é hoje?</span></div>
+      <div id="hora-2" class="clip hora" data-start="5.3" data-duration="2.65" data-track-index="2"><span class="pilula">8h00</span></div>
+      <div id="frase-2" class="clip frase" data-start="5.3" data-duration="2.65" data-track-index="3"><span>Estudando História</span></div>
+      <div id="hora-3" class="clip hora" data-start="7.95" data-duration="2.65" data-track-index="2"><span class="pilula">12h00</span></div>
+      <div id="frase-3" class="clip frase" data-start="7.95" data-duration="2.65" data-track-index="3"><span>Hora do almoço</span></div>
+      <div id="hora-4" class="clip hora" data-start="10.6" data-duration="2.65" data-track-index="2"><span class="pilula">15h00</span></div>
+      <div id="frase-4" class="clip frase" data-start="10.6" data-duration="2.65" data-track-index="3"><span>Bora trabalhar!</span></div>
+      <div id="hora-5" class="clip hora" data-start="13.25" data-duration="2.65" data-track-index="2"><span class="pilula">18h00</span></div>
+      <div id="frase-5" class="clip frase" data-start="13.25" data-duration="2.65" data-track-index="3"><span>Abraço pra todo mundo</span></div>
+      <div id="hora-6" class="clip hora" data-start="15.9" data-duration="2.65" data-track-index="2"><span class="pilula">19h00</span></div>
+      <div id="frase-6" class="clip frase" data-start="15.9" data-duration="2.65" data-track-index="3"><span>Tchau, tchau!</span></div>
+      <div id="hora-7" class="clip hora" data-start="18.55" data-duration="3.05" data-track-index="2"><span class="pilula">20h00</span></div>
+      <div id="frase-7" class="clip frase final" data-start="18.55" data-duration="3.05" data-track-index="3"><span>SEXTOU!</span></div>
+      <audio id="trilha" class="clip" src="assets/audio/trilha.mp3" data-start="0" data-duration="21.6" data-track-index="4" data-volume="1"></audio>
+      <audio id="sfx-whoosh-0" class="clip" src="assets/audio/whoosh-short.mp3" data-start="2.2" data-duration="0.57" data-track-index="5" data-volume="0.45"></audio>
+      <audio id="sfx-whoosh-1" class="clip" src="assets/audio/whoosh-short.mp3" data-start="4.85" data-duration="0.57" data-track-index="5" data-volume="0.55"></audio>
+      <audio id="sfx-whoosh-2" class="clip" src="assets/audio/whoosh-short.mp3" data-start="7.5" data-duration="0.57" data-track-index="5" data-volume="0.45"></audio>
+      <audio id="sfx-whoosh-3" class="clip" src="assets/audio/whoosh-short.mp3" data-start="10.15" data-duration="0.57" data-track-index="5" data-volume="0.55"></audio>
+      <audio id="sfx-whoosh-4" class="clip" src="assets/audio/whoosh-short.mp3" data-start="12.8" data-duration="0.57" data-track-index="5" data-volume="0.45"></audio>
+      <audio id="sfx-whoosh-5" class="clip" src="assets/audio/whoosh-short.mp3" data-start="15.45" data-duration="0.57" data-track-index="5" data-volume="0.55"></audio>
+      <audio id="sfx-whoosh-6" class="clip" src="assets/audio/whoosh-short.mp3" data-start="18.1" data-duration="0.57" data-track-index="5" data-volume="0.45"></audio>
+      <audio id="sfx-pop-1" class="clip" src="assets/audio/pop.mp3" data-start="2.76" data-duration="0.7" data-track-index="6" data-volume="0.7"></audio>
+      <audio id="sfx-pop-2" class="clip" src="assets/audio/pop.mp3" data-start="5.41" data-duration="0.7" data-track-index="6" data-volume="0.7"></audio>
+      <audio id="sfx-pop-3" class="clip" src="assets/audio/pop.mp3" data-start="8.06" data-duration="0.7" data-track-index="6" data-volume="0.7"></audio>
+      <audio id="sfx-pop-6" class="clip" src="assets/audio/pop.mp3" data-start="16.01" data-duration="0.7" data-track-index="6" data-volume="0.7"></audio>
+      <audio id="sfx-despertador" class="clip" src="assets/audio/chime.mp3" data-start="1.22" data-duration="2.5" data-track-index="7" data-volume="0.6"></audio>
+      <audio id="sfx-sextou" class="clip" src="assets/audio/sparkle.mp3" data-start="18.66" data-duration="1.8" data-track-index="7" data-volume="0.8"></audio>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.to(["#hora-0", "#frase-0 span"], { opacity: 0, duration: 0.3 }, 2.0);
+      tl.fromTo("#hora-1", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, 2.6999999999999997);
+      tl.fromTo("#frase-1 span", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.2)" }, 2.8);
+      tl.to(["#hora-1", "#frase-1 span"], { opacity: 0, duration: 0.3 }, 4.65);
+      tl.fromTo("#hora-2", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, 5.35);
+      tl.fromTo("#frase-2 span", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.2)" }, 5.45);
+      tl.to(["#hora-2", "#frase-2 span"], { opacity: 0, duration: 0.3 }, 7.3);
+      tl.fromTo("#hora-3", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, 8.0);
+      tl.fromTo("#frase-3 span", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.2)" }, 8.1);
+      tl.to(["#hora-3", "#frase-3 span"], { opacity: 0, duration: 0.3 }, 9.95);
+      tl.fromTo("#hora-4", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, 10.65);
+      tl.fromTo("#frase-4 span", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.2)" }, 10.75);
+      tl.to(["#hora-4", "#frase-4 span"], { opacity: 0, duration: 0.3 }, 12.6);
+      tl.fromTo("#hora-5", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, 13.3);
+      tl.fromTo("#frase-5 span", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.2)" }, 13.4);
+      tl.to(["#hora-5", "#frase-5 span"], { opacity: 0, duration: 0.3 }, 15.25);
+      tl.fromTo("#hora-6", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, 15.950000000000001);
+      tl.fromTo("#frase-6 span", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.2)" }, 16.05);
+      tl.to(["#hora-6", "#frase-6 span"], { opacity: 0, duration: 0.3 }, 17.9);
+      tl.fromTo("#hora-7", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, 18.6);
+      tl.fromTo("#frase-7 span", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.2)" }, 18.7);
+      window.__timelines["main"] = tl;
+    </script>
+    <script src="personagem.js"></script>
+    <script src="poses.js"></script>
+    <script src="video.js"></script>
+  </body>
+</html>
