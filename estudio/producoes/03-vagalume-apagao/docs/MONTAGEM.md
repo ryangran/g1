@@ -79,6 +79,9 @@ O pico de cada efeito cai **1 quadro depois** da imagem correspondente. "Embutid
 
 ## 4. Montagem no HyperFrames (pronta)
 
+> **Atualização:** a versão animada em 3D já existe (`lumi.js` + `cena.js`, veja o `README.md`). O `index.html` agora usa o canvas 3D. Para usar clipes gerados por IA, troque o `<canvas>` por `<video>` dos arquivos `assets/clips/cena-N.mp4`, com os tempos da tabela da seção 2.
+
+
 `index.html` já tem a linha do tempo completa: os 9 clipes, os SFX embutidos posicionados e a faixa de música. Hoje os clipes são **placeholders do animatic** (`tools/animatic.sh`): cartões com o número, o título e a ação de cada cena, na duração certa. Para montar o vídeo final:
 
 1. Substitua `assets/clips/cena-N.mp4` pelos clipes gerados (mesmo nome).
