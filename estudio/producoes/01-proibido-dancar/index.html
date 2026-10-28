@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/lib/gsap.min.js"></script>
+    <script src="assets/lib/three-bundle.js"></script>
+    <script src="assets/lib/estudio3d.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #0b0d11;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+      #palco {
+        position: absolute;
+        inset: 0;
+        width: 1080px;
+        height: 1920px;
+      }
+      #vinheta {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: radial-gradient(ellipse 75% 60% at 50% 45%, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.55) 100%);
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="38.5"
+      data-width="1080"
+      data-height="1920"
+    >
+      <canvas id="palco" class="clip" data-start="0" data-duration="38.5" data-track-index="0" data-layout-allow-overflow data-hold width="1080" height="1920"></canvas>
+      <div id="vinheta" class="clip" data-start="0" data-duration="38.5" data-track-index="1" data-layout-ignore></div>
+      <!-- trilha (música 144 BPM + passos, arranhão, zumbido, neon) — audio/gerar_trilha.py -->
+      <audio id="trilha" class="clip" src="assets/audio/trilha.wav" data-start="0" data-duration="38.5" data-track-index="2" data-volume="1"></audio>
+      <!-- efeitos: pico do som 1 quadro depois da imagem -->
+      <audio id="sfx-congela" class="clip" src="assets/audio/pop.mp3" data-start="7.46" data-duration="0.6" data-track-index="3" data-volume="0.8"></audio>
+      <audio id="sfx-servo-1" class="clip" src="assets/audio/click-soft.mp3" data-start="12.66" data-duration="0.36" data-track-index="4" data-volume="0.7"></audio>
+      <audio id="sfx-servo-2" class="clip" src="assets/audio/click-soft.mp3" data-start="12.96" data-duration="0.36" data-track-index="5" data-volume="0.6"></audio>
+      <audio id="sfx-servo-3" class="clip" src="assets/audio/click-soft.mp3" data-start="13.36" data-duration="0.36" data-track-index="6" data-volume="0.5"></audio>
+      <audio id="sfx-cara-a-cara" class="clip" src="assets/audio/impact-bass-1.mp3" data-start="23.86" data-duration="2.1" data-track-index="3" data-volume="1"></audio>
+      <audio id="sfx-aponta" class="clip" src="assets/audio/whoosh-short.mp3" data-start="27.82" data-duration="0.57" data-track-index="4" data-volume="0.6"></audio>
+      <audio id="sfx-riser" class="clip" src="assets/audio/riser.mp3" data-start="26.43" data-duration="3.9" data-track-index="5" data-volume="0.55" data-fade-out="0.3"></audio>
+      <audio id="sfx-tabua-cai" class="clip" src="assets/audio/whoosh-short.mp3" data-start="29.47" data-duration="0.57" data-track-index="6" data-volume="0.8"></audio>
+      <audio id="sfx-revela" class="clip" src="assets/audio/impact-bass-1.mp3" data-start="29.86" data-duration="2.1" data-track-index="3" data-volume="1"></audio>
+      <audio id="sfx-neon" class="clip" src="assets/audio/impact-bass-1.mp3" data-start="36.71" data-duration="1.75" data-track-index="4" data-volume="0.55"></audio>
+    </div>
+    <script>
+      // timeline raiz: o 3D é desenhado no hf-seek (cena.js); ela dá a duração ao runtime
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.to({ t: 0 }, { t: 38.5, duration: 38.5, ease: "none" }, 0);
+      window.__timelines["main"] = tl;
+    </script>
+    <script src="cena.js"></script>
+  </body>
+</html>
