@@ -1,0 +1,220 @@
+/* =========================================================
+   Tema roxo — fundo da página inteira
+   Carregado por último no <head>: precisa vencer o <style>
+   inline que define a cor de marca (#5b0e5c).
+   ========================================================= */
+
+:root {
+	--pg-roxo: #7a2a8c;
+	--pg-roxo-fundo: #6d2380;
+	--pg-roxo-escuro: #5b0e5c;
+	--pg-tinta: #f7edf9;
+	--pg-tinta-fraca: rgba(247, 237, 249, .72);
+	--pg-ouro: #f2b01e;
+	--pg-coral: #ffb4a6;
+	--pg-verde: #7ce6a0;
+}
+
+html {
+	background: var(--pg-roxo);
+}
+
+body {
+	background: transparent;
+	color: var(--pg-tinta);
+}
+
+/* mesmo grão da seção de avaliações, agora na página toda */
+body::before {
+	content: "";
+	position: fixed;
+	inset: 0;
+	z-index: -1;
+	opacity: .45;
+	pointer-events: none;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.34'/%3E%3C/svg%3E");
+}
+
+/* ---------- cabeçalho ---------- */
+
+header#topo {
+	background: transparent;
+	border-bottom: none;
+}
+
+/* a faixa arredondada que sobe por cima da capa era branca */
+header#topo .borda {
+	background: var(--pg-roxo);
+}
+
+header#topo #menuCategorias {
+	background: var(--pg-roxo-escuro);
+}
+
+header#topo #menuCategorias.fixed {
+	box-shadow: 0 2px 18px rgba(0, 0, 0, .28);
+}
+
+/* ---------- títulos e textos soltos sobre o fundo ---------- */
+
+main#lista h2 {
+	color: #ffffff;
+	letter-spacing: -.01em;
+}
+
+main#lista .categoria > h2 {
+	margin-bottom: 12px;
+}
+
+main #desenvolvimento,
+main #desenvolvimento a {
+	color: var(--pg-tinta-fraca);
+}
+
+/* ---------- avisos sobre o fundo ---------- */
+
+main#lista > .container > .alert,
+main#lista .container > .alert {
+	background: rgba(255, 255, 255, .1);
+	outline: 1px solid rgba(255, 255, 255, .22);
+	color: var(--pg-tinta);
+	text-shadow: none;
+	border-radius: 14px;
+}
+
+.alert-success {
+	outline-color: rgba(124, 230, 160, .45);
+	color: var(--pg-verde);
+}
+
+.alert-success b {
+	color: #ffffff;
+}
+
+.alert label {
+	color: var(--pg-tinta-fraca) !important;
+}
+
+/* contador de promoção: o HTML traz estilo inline vermelho/rosa */
+main#lista .categoria > .alert {
+	background: rgba(0, 0, 0, .24) !important;
+	outline: 1px solid rgba(229, 52, 43, .55) !important;
+	color: #ffffff !important;
+	text-shadow: none !important;
+	border-radius: 16px !important;
+	float: none !important;
+}
+
+/* rótulo em coral claro: vermelho puro sobre o roxo cai para 1,7:1,
+   este tom mantém a leitura (4,9:1) e continua lendo como alerta */
+main#lista .categoria > .alert b,
+main#lista.avaliacoes .alert b {
+	color: var(--pg-coral);
+}
+
+/* ---------- cronômetros: vermelho de urgência ---------- */
+
+#minutes,
+#seconds,
+#days,
+#hours,
+main#lista.avaliacoes #minutes,
+main#lista.avaliacoes #seconds {
+	background: linear-gradient(165deg, #f04438 0%, #d21b13 55%, #a5100f 100%) !important;
+	border: 1px solid rgba(255, 255, 255, .34);
+	border-radius: 12px;
+	color: #ffffff;
+	font-variant-numeric: tabular-nums;
+	letter-spacing: .02em;
+	text-shadow: 0 1px 2px rgba(90, 0, 0, .55);
+	box-shadow:
+		0 0 0 4px rgba(229, 52, 43, .16),
+		0 10px 22px -12px rgba(140, 8, 8, .9),
+		inset 0 1px 0 rgba(255, 255, 255, .25);
+}
+
+/* os segundos pulsam: o que realmente comunica urgência é o movimento */
+#seconds,
+main#lista.avaliacoes #seconds {
+	animation: pg-pulsa 1s ease-in-out infinite;
+}
+
+@keyframes pg-pulsa {
+	0%, 100% {
+		box-shadow:
+			0 0 0 4px rgba(229, 52, 43, .16),
+			0 10px 22px -12px rgba(140, 8, 8, .9),
+			inset 0 1px 0 rgba(255, 255, 255, .25);
+	}
+	50% {
+		box-shadow:
+			0 0 0 9px rgba(229, 52, 43, .05),
+			0 10px 26px -10px rgba(190, 12, 12, .95),
+			inset 0 1px 0 rgba(255, 255, 255, .25);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	#seconds,
+	main#lista.avaliacoes #seconds {
+		animation: none;
+	}
+}
+
+/* ---------- cartões de produto ---------- */
+
+main#lista .produtos .item a {
+	border-color: rgba(255, 255, 255, .28);
+	box-shadow: 0 14px 30px -20px rgba(20, 2, 25, .9);
+}
+
+main#lista .produtos .item a:hover {
+	background: #fffdff;
+	box-shadow: 0 20px 40px -20px rgba(20, 2, 25, .95);
+}
+
+/* ---------- painéis brancos que ficam sobre o fundo ---------- */
+
+#info,
+#produto,
+#meuCarrinho,
+#pedido {
+	color: #403f3f;
+}
+
+/* ---------- cabeçalho: textos que ficavam cinza sobre branco ---------- */
+
+header#topo .info h1 {
+	color: #ffffff;
+}
+
+header#topo .info h2,
+header#topo .info .detalhes,
+header#topo .info .detalhe {
+	color: var(--pg-tinta-fraca);
+}
+
+header#topo .info .detalhe b {
+	color: #ffffff;
+}
+
+/* botões redondos (info / compartilhar) */
+header#topo .info .icones a {
+	background: rgba(255, 255, 255, .12);
+	border-color: rgba(255, 255, 255, .3);
+	color: var(--pg-tinta);
+}
+
+header#topo .info .icones a:hover {
+	background: rgba(255, 255, 255, .2);
+	border-color: #ffffff;
+	color: #ffffff;
+}
+
+/* horários / status de abertura */
+header#topo .info .horarios .item {
+	color: var(--pg-tinta-fraca);
+}
+
+/* O `a { color: #403f3f }` global continua valendo dentro dos cartões
+   brancos — de propósito: mudá-lo apagaria o texto dos produtos. */
