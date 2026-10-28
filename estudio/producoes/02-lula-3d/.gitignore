@@ -1,3 +1,5 @@
 renders/video*.mp4
+renders/.*
+renders/work-*
 .hyperframes/
 build/
