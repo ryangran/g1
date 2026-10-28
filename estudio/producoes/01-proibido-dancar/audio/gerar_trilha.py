@@ -1,10 +1,12 @@
 """Trilha de "Proibido Dançar": funk eletrônico 144 BPM + efeitos sintetizados.
 
-Gera assets/audio/trilha.wav. Os SFX prontos (impacto, whoosh, riser, pop)
+Gera assets/audio/trilha.mp3. Os SFX prontos (impacto, whoosh, riser, pop)
 ficam como <audio> separados no index.html, editáveis no Studio.
 
 Uso (na pasta do episódio): python3 audio/gerar_trilha.py   (requer numpy, soundfile)
 """
+import os
+
 import numpy as np
 import soundfile as sf
 
@@ -168,7 +170,10 @@ mix = musica * 0.8 + sfx
 mix = np.stack([mix, mix], 1)
 # leve abertura estéreo nos hats/melodia
 mix[:, 1] = np.roll(mix[:, 1], 9)
+os.makedirs("build", exist_ok=True)
 mix = np.tanh(mix * 1.2) / np.tanh(1.2)
 mix *= 0.85 / np.abs(mix).max()
-sf.write("assets/audio/trilha.wav", mix.astype(np.float32), SR)
+sf.write("build/trilha.wav", mix.astype(np.float32), SR)
+import subprocess
+subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", "build/trilha.wav", "-c:a", "libmp3lame", "-b:a", "192k", "assets/audio/trilha.mp3"], check=True)
 print("ok", mix.shape[0] / SR)
