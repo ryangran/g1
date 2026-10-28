@@ -322,8 +322,6 @@
 											26,90</b> </span>
 									<span><i>A maioria dos clientes escolhe esse porque é o melhor
 											custo-benefício!</i></span>
-									<span class="estoque" style="margin-top: 4px;">🔥 Apenas <b style="background: red; color: white; border-radius: 8px; padding: 0px 4px;"><span id="estoqueCombo">8</span>
-											combo(s)</b> com esse preço especial</span>
 								</div>
 								<div class="fotoProduto">
 									<figure>
@@ -420,8 +418,6 @@
 											29,90</b> </span>
 									<span><i>A maioria dos clientes escolhe esse porque é o melhor
 											custo-benefício!</i></span>
-									<span class="estoque" style="margin-top: 4px;">🔥 Apenas <b style="background: red; color: white; border-radius: 8px; padding: 0px 4px;"><span id="estoqueCombo">16</span>
-											combo(s)</b> com esse preço especial</span>
 								</div>
 								<div class="fotoProduto">
 									<figure>
@@ -926,71 +922,6 @@
 	<script src="js/all.js" data-auto-replace-svg="nest" defer="" type="text/javascript"></script>
 
 	<script src="js/sweetalert.min.js"></script>
-
-	<script>
-
-		function escolherFraseAleatoria() {
-			const frases = [
-				"🎉 <b>Lucas</b> acabou de comprar o Combo 2 Copos de 700ml!",
-				"🚀 <b>Ana</b> garantiu o Combo Zero Açúcar 500ml há 2 minutos!",
-				"🍨 <b>Rafaela</b> finalizou a compra do Combo 2 Copos de 1L agora!",
-				"🔥 <b>Fernando</b> comprou o Combo 2 Copos de 500ml há poucos instantes!",
-				"😋 <b>Isabela</b> adicionou um Combo 2 Copos de 300ml ao carrinho!",
-				"⏳ <b>Bruno</b> comprou o Combo 3! Restam poucas unidades!",
-				"📦 <b>João</b> pediu 2 Combos de Açaí 700ml agora mesmo!",
-				"🏆 <b>Mirella</b> garantiu o Combo Mais Vendido – 2 Copos de 700ml!",
-				"🚨 <b>Atenção</b>! Mais de <b>15 pedidos</b> nos últimos 10 minutos!",
-				"🔥 Nas últimas 2 horas, 37 pessoas compraram nossos combos de açaí!",
-				"⚡ Acabamos de bater 100 pedidos de açaí só hoje!",
-				"⏳ Apenas 4 unidades do Combo 3 restantes! Corra antes que acabe!",
-				"🚀 +20 pedidos feitos nos últimos 30 minutos! Açaí bombando!",
-				"🍨 Os combos de 700ml estão esgotando rápido! Aproveite agora!",
-				"🎯 Mais de 250 clientes satisfeitos nos últimos 7 dias!",
-				"💜 Obrigado! Mais de 500 pedidos já saíram esse mês!",
-				"🚀 Só hoje, 73 clientes garantiram seu combo de açaí!",
-				"⏳ O estoque do Combo 3 está quase esgotando! Últimas unidades!",
-				"🎉 Promoção Pague 1 Leve 2 está fazendo sucesso! +40 pedidos só hoje!"
-			];
-
-			const indiceAleatorio = Math.floor(Math.random() * frases.length);
-			return frases[indiceAleatorio];
-		}
-
-		function mostrarNotificacao(frase) {
-			if (!Swal.isVisible()) {
-				const Toast = Swal.mixin({
-					toast: true,
-					position: "bottom-end",
-					showConfirmButton: false,
-					timer: 6500,
-					timerProgressBar: true,
-				});
-				Toast.fire({
-					icon: "success",
-					title: frase
-				});
-			}
-		}
-
-		setInterval(() => {
-			const fraseAleatoria = escolherFraseAleatoria();
-			mostrarNotificacao(fraseAleatoria);
-		}, 25000);
-	</script>
-
-	<script>
-		function diminuirEstoque() {
-			document.querySelectorAll("#estoqueCombo").forEach(elemento => {
-				let estoqueAtual = parseInt(elemento.textContent, 10);
-				if (estoqueAtual > 1) {
-					elemento.textContent = estoqueAtual - 1;
-				}
-			});
-		}
-
-		// Executa a função a cada 15 segundos
-		setInterval(diminuirEstoque, 15000);
-	</script>
 
 
 
