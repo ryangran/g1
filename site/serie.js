@@ -4,8 +4,8 @@ window.SERIE = {
   logoLetra: "B",
   tituloPagina: "O Bilhete · Você decide o que o Clóvis faz com R$ 40 milhões",
   rodape: "História fictícia, personagens fictícios. Todo prêmio tem dono.",
-  instagram: "https://www.instagram.com/",      // link do perfil da série (trocar pelo @ oficial)
-  reelAtual: "https://www.instagram.com/",      // link do Reel com a votação aberta
+  instagram: "https://www.instagram.com/clovis.obilhete/",
+  reelAtual: "https://www.instagram.com/clovis.obilhete/",  // trocar pelo link do Reel da votação aberta
   tiktok: "", youtube: "",
   linkPagamento: "",  // Link de pagamento do Mercado Pago (R$ 9,90, Pix). Vazio = botão mostra "em breve".
   precoPasse: "R$ 9,90",
