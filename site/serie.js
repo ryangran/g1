@@ -33,7 +33,7 @@ window.SERIE = {
   },
 
   partes: [
-    { n: 1, titulo: "Todo prêmio tem dono", capa: "assets/capas/hotel.jpg", decisao: null, link: "" },
+    { n: 1, titulo: "Todo prêmio tem dono", capa: "assets/capas/parte1.jpg", decisao: null, link: "" },
   ],
   mural: [
     { capa: "assets/capas/susto.jpg", legenda: "O SUSTO" },
