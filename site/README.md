@@ -17,5 +17,8 @@ Site estático com uma página, pensado primeiro para o celular (o público vem 
 
 O site **não guarda** dados de ninguém. Ele só leva o @ junto para o link de pagamento, e a conferência é feita no painel do Mercado Pago.
 
+## Publicar
+`./site/publicar.sh` sobe o site para https://obilhete.vercel.app. Na Vercel, o projeto `obilhete` já tem `IG_TOKEN`, `IG_USER_ID` e `VOTO_OPCOES`.
+
 ## Ver localmente
 `npx serve site`, ou abra o `index.html` direto no navegador.
