@@ -6,6 +6,10 @@ Uso (na pasta do episódio): python3 tools/narracao_google.py && python3 tools/m
 """
 import json
 import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import cenas  # noqa: E402
 import unicodedata
 
 T = json.load(open("build/timing.json"))
@@ -94,7 +98,12 @@ for n, ((pid, alvo, t0), t1) in enumerate(zip(PLANOS, fim)):
     if alvo.startswith("#"):
         continue  # cartões são escritos abaixo com o mesmo tempo
     src = imagem(alvo)
-    els.append(f'      <div id="{pid}" class="clip plano" data-start="{round(t0, 3)}" data-duration="{d}" data-track-index="1"><img id="{pid}-img" src="{src}" alt=""></div>')
+    if src.endswith(".svg") and alvo in cenas.CENAS:
+        # sem ilustração do Gemini: usa a cena desenhada e animada (tools/cenas.py)
+        els.append(f'      <div id="{pid}" class="clip plano" data-start="{round(t0, 3)}" data-duration="{d}" data-track-index="1"><div id="{pid}-img" class="palco">{cenas.CENAS[alvo]()}</div></div>')
+        js += cenas.anim(alvo, pid, round(t0, 3), round(t1, 3), pal)
+    else:
+        els.append(f'      <div id="{pid}" class="clip plano" data-start="{round(t0, 3)}" data-duration="{d}" data-track-index="1"><img id="{pid}-img" src="{src}" alt=""></div>')
     # Ken Burns: alterna aproximar/afastar e o lado do deslize
     a, b = (1.0, 1.09) if n % 2 == 0 else (1.1, 1.02)
     x = 22 if n % 3 == 0 else -22
@@ -123,8 +132,8 @@ TAGS = [("tag-1", "PROBLEMA 1 · O PASSAGEIRO", ini("Problema um"), tempo["#cart
         ("tag-2", "PROBLEMA 2 · A CENTRAL", ini("Problema dois"), ini("Problema três")),
         ("tag-3", "PROBLEMA 3 · O VERSO", ini("Problema três"), ini("Seu Antônio. Mas"))]
 CARIMBOS = [("car-lembra", "ELE LEMBRA", pal("E ele lembra", "tocando") + 0.3, tempo["#cartao-ficha"][1], 1180, -7),
-            ("car-registrada", "REGISTRADA", pal("Problema dois", "motorista") + 0.1, ini("Problema três"), 980, 6),
-            ("car-nome", "TEM NOME", pal("Problema três", "Antônio") + 0.05, ini("Seu Antônio. Mas"), 980, -6)]
+            ("car-registrada", "REGISTRADA", pal("Problema dois", "motorista") + 0.1, ini("Problema três"), 1470, 6),
+            ("car-nome", "TEM NOME", pal("Problema três", "Antônio") + 0.05, ini("Seu Antônio. Mas"), 1470, -6)]
 for cid, _, t0, _, _, rot in CARIMBOS:
     js.append(f'tl.fromTo("#{cid} span", {{ scale: 2.4, opacity: 0, rotation: {rot} }}, {{ scale: 1, opacity: 1, rotation: {rot}, duration: 0.22, ease: "power4.in" }}, {round(t0, 3)});')
 for tid, _, t0, _ in TAGS:
@@ -216,6 +225,7 @@ page = f'''<!doctype html>
       #root {{ position: relative; width: 100%; height: 100%; font-family: "Inter", sans-serif; overflow: hidden; }}
       .plano {{ position: absolute; inset: 0; overflow: hidden; }}
       .plano img {{ width: 100%; height: 100%; object-fit: cover; display: block; }}
+      .palco, .palco svg {{ width: 1080px; height: 1920px; display: block; }}
       .cartao {{ position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 90px; }}
       .preto {{ background: #1c1a17; color: #fff; }}
       .creme {{ background: #efe9df; color: #1c1a17; }}
@@ -252,7 +262,7 @@ page = f'''<!doctype html>
       .cap span {{ display: inline-block; font-family: "Archivo Black", sans-serif; font-size: 68px; line-height: 1.12; color: #fff; -webkit-text-stroke: 3px #000; paint-order: stroke fill; text-shadow: 0 6px 0 #000, 0 10px 24px rgba(0,0,0,.6); }}
       .dest {{ color: #ffd23a; }}
       /* selos, círculo, fecho */
-      .selo {{ position: absolute; left: 0; right: 0; top: 560px; text-align: center; }}
+      .selo {{ position: absolute; left: 0; right: 0; top: 420px; text-align: center; }}
       .selo span {{ display: inline-block; font-family: "Archivo Black", sans-serif; font-size: 96px; padding: 14px 50px; border-radius: 24px; border: 7px solid #000; box-shadow: 0 12px 0 #000; color: #111; }}
       #circulo {{ position: absolute; left: {cx - cr}px; top: {cy - cr}px; width: {2 * cr}px; height: {2 * cr}px; border: 14px solid #ffd23a; border-radius: 50%; box-shadow: 0 0 0 6px rgba(0,0,0,.5), 0 0 40px rgba(255,210,58,.6); }}
       .fecho {{ position: absolute; left: 0; right: 0; text-align: center; color: #fff; }}
@@ -317,4 +327,4 @@ page = f'''<!doctype html>
 '''
 open("index.html", "w").write(page)
 faltam = [n for n in CENAS if imagem(n).endswith(".svg")]
-print("ok", len(caps), "legendas ·", DUR, "s · provisórias:", " ".join(faltam) or "nenhuma")
+print("ok", len(caps), "legendas ·", DUR, "s · cenas desenhadas (sem ilustração do Gemini):", " ".join(faltam) or "nenhuma")
