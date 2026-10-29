@@ -81,6 +81,19 @@
   .opcoes .btn { min-width: 150px; font-family: var(--titulo); font-weight: 400; font-size: 26px; min-height: 66px; }
   .dica { border: 1px dashed rgba(255,255,255,.3); border-radius: 12px; padding: 12px 14px; font: 500 14px var(--mono); color: #d9ddd5; max-width: 620px; }
 
+  .placar { max-width: 620px; background: var(--fundo-2); border: 1px solid var(--linha); border-radius: 18px; padding: 18px; margin: 0 0 18px; }
+  .placar-topo, .placar-rodape { display: flex; justify-content: space-between; gap: 10px; font: 700 12px var(--mono); letter-spacing: .12em; color: var(--suave); }
+  .placar-rodape { margin-top: 10px; letter-spacing: .04em; font-weight: 500; }
+  .aovivo { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--perigo); margin-right: 8px; vertical-align: 1px; animation: pisca 1.4s infinite; }
+  .placar.fechada .aovivo { animation: none; background: var(--suave); }
+  @keyframes pisca { 50% { opacity: .25; } }
+  .barra-voto { margin-top: 14px; }
+  .barra-voto .rot { display: flex; justify-content: space-between; font-family: var(--titulo); font-size: 22px; }
+  .barra-voto .rot b { font-weight: 400; color: var(--acao); }
+  .barra-voto .trilho-voto { height: 16px; background: rgba(255,255,255,.1); border-radius: 8px; overflow: hidden; margin-top: 6px; }
+  .barra-voto .trilho-voto i { display: block; height: 100%; background: var(--papel); border-radius: 8px; transition: width .8s cubic-bezier(.2,.8,.2,1); }
+  .barra-voto.lider .trilho-voto i { background: var(--acao); }
+  .selo-demo { color: var(--acao); }
   /* passe */
   .cards { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); margin-top: 26px; }
   .card { background: var(--fundo-2); border: 1px solid var(--linha); border-radius: 18px; padding: 22px; }
@@ -184,6 +197,11 @@
       <h2 id="voto-chamada"></h2>
       <p id="voto-regra" style="color:#d9ddd5;max-width:620px"></p>
       <div class="opcoes" id="opcoes"></div>
+      <div class="placar" id="placar" hidden>
+        <div class="placar-topo"><span><i class="aovivo"></i><span id="placar-estado">AO VIVO</span></span><span id="placar-total"></span></div>
+        <div id="placar-barras"></div>
+        <div class="placar-rodape"><span id="placar-outros"></span><span id="placar-hora"></span></div>
+      </div>
       <div class="dica">👀 <span id="voto-dica"></span></div>
       <p style="margin-top:20px"><a class="btn btn-linha" id="link-reel" target="_blank" rel="noopener">Votar no Reel →</a></p>
     </div>
@@ -376,6 +394,25 @@
     $("contagem").textContent = `${p(Math.floor(s / 3600))}:${p(Math.floor(s / 60) % 60)}:${p(s % 60)}`;
   };
   tick(); setInterval(tick, 1000);
+
+  // placar ao vivo: /api/votos lê os comentários do Reel (cache de 1 min na Vercel)
+  const placar = async () => {
+    try {
+      const r = await fetch("/api/votos", { cache: "no-store" });
+      if (!r.ok) throw new Error(r.status);
+      const v = await r.json();
+      const max = Math.max(...v.opcoes.map((o) => o.votos));
+      $("placar").hidden = false;
+      $("placar").classList.toggle("fechada", !!v.fechada);
+      $("placar-estado").innerHTML = v.fechada ? "VOTAÇÃO FECHADA" : v.demo ? 'AO VIVO <span class="selo-demo">· DADOS DE TESTE</span>' : "AO VIVO";
+      $("placar-total").textContent = `${v.total.toLocaleString("pt-BR")} votos`;
+      $("placar-barras").innerHTML = v.opcoes.map((o) =>
+        `<div class="barra-voto${o.votos === max && max > 0 ? " lider" : ""}"><div class="rot"><span>${esc(o.opcao)}</span><b>${o.pct}%</b></div><div class="trilho-voto"><i style="width:${o.pct}%"></i></div></div>`).join("");
+      $("placar-outros").textContent = v.outros ? `+ ${v.outros} palpites do 3º jeito ou comentários sem voto` : "";
+      $("placar-hora").textContent = "atualizado " + new Date(v.atualizado).toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit", timeZone: "America/Sao_Paulo" });
+    } catch (e) { /* sem API (site aberto como arquivo) ou Instagram fora: o placar fica escondido */ }
+  };
+  placar(); setInterval(placar, 30000);
 })();
 </script>
 </body>
