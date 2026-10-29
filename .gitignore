@@ -7,3 +7,6 @@ estudio/.chaves/
 estudio/producoes/*/.hyperframes/
 estudio/producoes/*/build/render.log
 estudio/producoes/*/build/gvoz/*.wav
+__pycache__/
+estudio/producoes/*/renders/work-*/
+estudio/producoes/*/renders/.*hf-transaction*/
