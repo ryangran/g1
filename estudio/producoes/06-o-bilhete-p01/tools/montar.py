@@ -197,6 +197,8 @@ for cid, _, t0, _, _, _ in CARIMBOS:
     SFX.append((f"car-{cid}", "impact-bass-2", t0 + 0.22 - 1.95, 2.5, 0.5))
 for fid, tt in FICHA:
     SFX.append((f"clk-{fid}", "click-soft", tt - 0.19, 0.36, 0.8))
+# abertura: o táxi chegando e a porta batendo quando o passageiro desce
+SFX += [("chegada", "whoosh", 0.0, 0.8, 0.45), ("porta", "impact-bass-2", min(2.3, ini("Quando olhou") * 0.33) + 0.9 - 1.95, 2.5, 0.25)]
 SFX += [("virada", "glitch-3", pal("Seu Antônio. Mas", "nenhum") - 0.05, 0.6, 0.35),
         ("selo-a", "pop", t_acel - 0.09, 0.7, 0.6), ("selo-b", "pop", t_esp - 0.09, 0.7, 0.6),
         ("circulo", "sparkle", t_circ, 1.8, 0.55), ("fecho", "impact-bass-1", tempo["#fecho"][0] + 1.4 - 0.04, 2.0, 0.55)]
