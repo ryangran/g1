@@ -174,6 +174,25 @@
   footer h4 { font: 700 11px var(--mono); letter-spacing: .16em; color: var(--texto); margin-bottom: 8px; }
   footer a { display: block; text-decoration: none; margin: 4px 0; }
   .vazio { color: var(--suave); font-style: italic; }
+  /* janela do Pix */
+  .pix-fundo { position: fixed; inset: 0; z-index: 50; background: rgba(4,6,5,.72); backdrop-filter: blur(3px); display: grid; place-items: center; padding: 16px; }
+  .pix-fundo[hidden] { display: none; }
+  .pix { position: relative; width: min(520px, 100%); max-height: calc(100vh - 32px); overflow: auto; background: var(--papel); color: var(--tinta); border-radius: 26px; padding: 30px 28px 26px; text-align: center; box-shadow: 0 30px 80px rgba(0,0,0,.6); }
+  .pix .fechar { position: absolute; top: 14px; right: 16px; width: 36px; height: 36px; border: 0; background: none; font-size: 26px; cursor: pointer; color: var(--tinta); }
+  .pix .kicker { color: #6b6457; }
+  .pix h3 { font: 800 clamp(22px, 5vw, 30px)/1.15 Inter, sans-serif; margin: 6px 0 18px; }
+  .pix .qr { width: min(300px, 78%); aspect-ratio: 1; margin: 0 auto 18px; background: #fff; border-radius: 18px; padding: 16px; display: grid; place-items: center; }
+  .pix .qr img { width: 100%; height: 100%; image-rendering: pixelated; }
+  .pix .copia { display: flex; gap: 10px; margin-bottom: 14px; }
+  .pix .copia input { flex: 1; min-width: 0; height: 48px; border: 2px solid #cfc6b6; border-radius: 12px; padding: 0 12px; font: 500 14px var(--mono); background: #fff; color: var(--tinta); }
+  .pix .copia button { height: 48px; padding: 0 20px; border: 0; border-radius: 12px; background: var(--tinta); color: var(--acao); font: 800 16px Inter, sans-serif; cursor: pointer; }
+  .pix .espera { display: flex; align-items: center; justify-content: center; gap: 10px; font: 600 14px var(--mono); color: #5b554a; margin-bottom: 12px; }
+  .pix .giro { width: 18px; height: 18px; border-radius: 50%; border: 3px solid #cfc6b6; border-top-color: var(--tinta); animation: gira 1s linear infinite; }
+  @keyframes gira { to { transform: rotate(360deg); } }
+  .pix p.ajuda { font-size: 15px; color: #5b554a; }
+  .pix .ok { font-family: var(--titulo); font-size: clamp(40px, 10vw, 64px); color: var(--tinta); margin: 10px 0 4px; }
+  .pix .ok-sub { font-size: 17px; color: #3b372f; margin-bottom: 18px; }
+  .pix .btn-ok { display: inline-flex; height: 50px; align-items: center; padding: 0 28px; border-radius: 14px; background: var(--tinta); color: var(--acao); font: 800 16px Inter, sans-serif; border: 0; cursor: pointer; }
 </style>
 </head>
 <body>
@@ -301,6 +320,26 @@
   </div>
 </footer>
 
+
+<div class="pix-fundo" id="pix" hidden role="dialog" aria-modal="true" aria-labelledby="pix-titulo">
+  <div class="pix">
+    <button class="fechar" id="pix-fechar" aria-label="Fechar">×</button>
+    <div id="pix-pagar">
+      <div class="kicker">Pix · <span class="preco-txt"></span></div>
+      <h3 id="pix-titulo">Pague pra entrar na corrida</h3>
+      <div class="qr"><img id="pix-qr" alt="QR Code do Pix"></div>
+      <div class="copia"><input id="pix-codigo" readonly aria-label="Pix copia e cola"><button id="pix-copiar" type="button">Copiar</button></div>
+      <div class="espera"><i class="giro"></i><span id="pix-estado">Esperando o pagamento…</span></div>
+      <p class="ajuda">Abra o app do seu banco, escolha Pix e leia o QR Code ou cole o código. Esta tela confirma sozinha quando o pagamento cair. O código vale <span id="pix-min">30</span> minutos.</p>
+    </div>
+    <div id="pix-pronto" hidden>
+      <div class="kicker">Pagamento confirmado</div>
+      <div class="ok" id="pix-numero">#001</div>
+      <p class="ok-sub">Você é passageiro da madrugada. Seu @ entra na próxima parte, e o comprovante foi para o seu e-mail.</p>
+      <button class="btn-ok" id="pix-ok" type="button">Fechar</button>
+    </div>
+  </div>
+</div>
 <script>
 (() => {
   const S = window.SERIE, $ = (id) => document.getElementById(id);
@@ -381,7 +420,6 @@
   $("faq-horario").textContent = horario;
   $("f-botao").textContent = "Pagamento abre em breve";
   fetch("/api/pedido").then((r) => r.json()).then((j) => { if (j.ativo) $("f-botao").textContent = `${P.botao} por ${S.precoPasse} no Pix`; }).catch(() => {});
-  if (/[?&]pago=1/.test(location.search)) $("f-msg").textContent = "Pagamento recebido! Seu @ entra na próxima parte. O comprovante vai para o seu e-mail.";
   $("nav-passe").textContent = P.nav; $("nav-rank").textContent = P.rankNav;
   $("f-arroba").addEventListener("input", (e) => { e.target.value = e.target.value.replace(/@/g, "").replace(/\s/g, ""); });
   $("ficha").addEventListener("submit", async (e) => {
@@ -390,15 +428,48 @@
     if (!/^@[A-Za-z0-9._]{1,30}$/.test(arroba)) return (msg.textContent = "Confira seu @ do Instagram.");
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return (msg.textContent = "Confira seu e-mail.");
     if (!$("f-aceite").checked) return (msg.textContent = "Marque que concorda em aparecer na história.");
-    $("f-botao").disabled = true; msg.textContent = "Abrindo o Pix…";
+    $("f-botao").disabled = true; msg.textContent = "Gerando o Pix…";
     try {
       const r = await fetch("/api/pedido", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ arroba, email }) });
       const j = await r.json();
-      if (j.link) return (location.href = j.link);
-      msg.textContent = j.erro || "Não deu para abrir o pagamento agora.";
+      if (j.qr) { msg.textContent = ""; abrirPix(j); }
+      else msg.textContent = j.erro || "Não deu para gerar o Pix agora.";
     } catch { msg.textContent = "Sem conexão. Tente de novo."; }
     $("f-botao").disabled = false;
   });
+
+  // janela do Pix: QR, copia e cola, e confirmação automática (consulta o pagamento a cada 4 s)
+  let vigia = null;
+  const fecharPix = () => { $("pix").hidden = true; clearInterval(vigia); document.body.style.overflow = ""; };
+  const abrirPix = (j) => {
+    $("pix-qr").src = `data:image/png;base64,${j.qr64}`;
+    $("pix-codigo").value = j.qr;
+    $("pix-min").textContent = j.minutos;
+    $("pix-pagar").hidden = false; $("pix-pronto").hidden = true; $("pix-estado").textContent = "Esperando o pagamento…";
+    $("pix").hidden = false; document.body.style.overflow = "hidden";
+    const fim = Date.now() + j.minutos * 60e3;
+    clearInterval(vigia);
+    vigia = setInterval(async () => {
+      if (Date.now() > fim) { clearInterval(vigia); $("pix-estado").textContent = "Este código venceu. Feche e gere outro."; return; }
+      try {
+        const st = await (await fetch(`/api/status?id=${encodeURIComponent(j.id)}`, { cache: "no-store" })).json();
+        if (st.status === "approved") {
+          clearInterval(vigia);
+          $("pix-numero").textContent = `#${String(st.numero || 1).padStart(3, "0")}`;
+          $("pix-pagar").hidden = true; $("pix-pronto").hidden = false;
+        } else if (["rejected", "cancelled"].includes(st.status)) { clearInterval(vigia); $("pix-estado").textContent = "Pagamento não concluído. Feche e tente de novo."; }
+      } catch {}
+    }, 4000);
+  };
+  $("pix-copiar").addEventListener("click", async () => {
+    const t = $("pix-codigo"); t.select();
+    try { await navigator.clipboard.writeText(t.value); } catch { document.execCommand("copy"); }
+    $("pix-copiar").textContent = "Copiado!"; setTimeout(() => ($("pix-copiar").textContent = "Copiar"), 1800);
+  });
+  $("pix-fechar").addEventListener("click", fecharPix);
+  $("pix-ok").addEventListener("click", fecharPix);
+  $("pix").addEventListener("click", (e) => { if (e.target.id === "pix") fecharPix(); });
+  addEventListener("keydown", (e) => { if (e.key === "Escape" && !$("pix").hidden) fecharPix(); });
 
   // procurados
   const rank = [...S.agentes].sort((a, b) => (b.partes || 0) - (a.partes || 0)).slice(0, 3);
