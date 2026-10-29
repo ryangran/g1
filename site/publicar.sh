@@ -5,7 +5,7 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 DESTINO=$(mktemp -d)
-cp -r index.html serie.js api lib package.json assets "$DESTINO"/
+cp -r index.html termos.html privacidade.html serie.js api lib package.json assets "$DESTINO"/
 cd "$DESTINO"
 npx --yes vercel@65 link --yes --project obilhete --scope vetrexs-projects >/dev/null
 npx --yes vercel@65 deploy --prod --yes

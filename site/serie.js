@@ -33,16 +33,18 @@ window.SERIE = {
   },
 
   partes: [
-    { n: 1, titulo: "Todo prêmio tem dono", capa: "assets/capas/parte1.jpg", decisao: null, link: "" },
+    { n: 1, titulo: "Todo prêmio tem dono", capa: "assets/capas/parte1.jpg", cena: "assets/capas/hotel.jpg", decisao: null, link: "" },
   ],
+  // mural: 5 fotos em volta (troque por cenas de cada parte conforme forem saindo); o centro vem da última parte
   mural: [
     { capa: "assets/capas/susto.jpg", legenda: "O SUSTO" },
     { capa: "assets/capas/verso.jpg", legenda: "SEU ANTÔNIO" },
-    { capa: "assets/capas/hotel.jpg", legenda: "PARTE 1 · NO AR", principal: true },
-    { capa: "assets/capas/homem.jpg", legenda: "QUEM É ELE?" },
     { capa: "assets/capas/banco.jpg", legenda: "BANCO DE TRÁS" },
+    { capa: "assets/capas/homem.jpg", legenda: "QUEM É ELE?" },
+    { capa: "assets/capas/acelera.jpg", legenda: "ACELERA?" },
   ],
-  etiquetas: ["RISCO 85%", "R$ 40 MI NO BANCO"],
+  notaMural: "Quem é o Seu Antônio?",
+  etiquetas: ["RISCO 85%", "R$ 40.000.000 no banco de trás"],
 
   // a vaga paga dentro da história
   passe: {
