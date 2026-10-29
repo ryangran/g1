@@ -6,3 +6,4 @@ npm-debug.log*
 estudio/.chaves/
 estudio/producoes/*/.hyperframes/
 estudio/producoes/*/build/render.log
+estudio/producoes/*/build/gvoz/*.wav
