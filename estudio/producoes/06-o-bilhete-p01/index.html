@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/lib/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #0b111b; }
+      #root { position: relative; width: 100%; height: 100%; font-family: "Inter", sans-serif; overflow: hidden; }
+      .plano { position: absolute; inset: 0; overflow: hidden; }
+      .plano img { width: 100%; height: 100%; object-fit: cover; display: block; }
+      .cartao { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 90px; }
+      .preto { background: #1c1a17; color: #fff; }
+      .creme { background: #efe9df; color: #1c1a17; }
+      .kick { font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 30px; letter-spacing: .18em; opacity: .7; margin-bottom: 40px; }
+      .grande { font-family: "Archivo Black", sans-serif; font-size: 118px; line-height: 1.02; }
+      .amarelo { color: #ffd23a; }
+      /* painel */
+      #hud { position: absolute; left: 36px; right: 36px; top: 180px; }
+      #hud-in { display: flex; gap: 12px; }
+      .caixa { background: rgba(8,10,14,.84); border: 3px solid rgba(255,255,255,.16); border-radius: 16px; padding: 10px 14px; color: #fff; position: relative; }
+      .caixa small { display: block; font-family: "JetBrains Mono", monospace; font-size: 28px; font-weight: 700; letter-spacing: .06em; color: #a8b0ba; }
+      .caixa b { display: block; font-family: "Archivo Black", sans-serif; font-size: 40px; line-height: 1.15; }
+      #cx-mala { flex: 1.7; } #cx-bolso { flex: 1; } #cx-risco { flex: 1.1; }
+      #cx-risco b { color: #ff4b3e; }
+      .barra { height: 8px; background: rgba(255,255,255,.14); border-radius: 4px; margin-top: 4px; overflow: hidden; }
+      #hud-risco-barra { height: 100%; width: 100%; background: linear-gradient(90deg, #ffd23a, #ff4b3e); transform-origin: left center; }
+      #hud-delta { position: absolute; right: 12px; top: 8px; font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 28px; color: #fff; background: #e23b2e; border-radius: 8px; padding: 0 8px; opacity: 0; }
+      #hud-mala { display: inline-block; transform-origin: left center; }
+      /* etiqueta e carimbos */
+      .tag { position: absolute; left: 36px; top: 330px; }
+      .tag span { display: inline-block; font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 30px; letter-spacing: .12em; color: #111; background: #ffd23a; padding: 6px 16px; border-radius: 8px; }
+      .carimbo { position: absolute; left: 0; right: 0; text-align: center; }
+      .carimbo span { display: inline-block; font-family: "Archivo Black", sans-serif; font-size: 96px; color: #ff3b30; border: 10px solid #ff3b30; border-radius: 16px; padding: 4px 30px; background: rgba(255,255,255,.1); }
+      .creme .carimbo span { background: transparent; }
+      /* ficha */
+      .ficha-linha { font-family: "Archivo Black", sans-serif; font-size: 82px; line-height: 1.25; }
+      .ficha-linha i { font-style: normal; font-family: "JetBrains Mono", monospace; font-size: 40px; display: block; opacity: .55; letter-spacing: .1em; }
+      /* regra */
+      .riscadas { font-family: "JetBrains Mono", monospace; font-size: 26px; color: #6d6a64; text-decoration: line-through; margin-bottom: 20px; }
+      #regra-2 { font-family: "Archivo Black", sans-serif; font-size: 84px; line-height: 1.1; }
+      #regra-3 { font-family: "Archivo Black", sans-serif; font-size: 72px; line-height: 1.12; color: #ffd23a; margin-top: 24px; }
+      /* legendas */
+      .cap { position: absolute; left: 0; right: 0; top: 1300px; text-align: center; padding: 0 60px; }
+      .cap span { display: inline-block; font-family: "Archivo Black", sans-serif; font-size: 68px; line-height: 1.12; color: #fff; -webkit-text-stroke: 3px #000; paint-order: stroke fill; text-shadow: 0 6px 0 #000, 0 10px 24px rgba(0,0,0,.6); }
+      .dest { color: #ffd23a; }
+      /* selos, círculo, fecho */
+      .selo { position: absolute; left: 0; right: 0; top: 560px; text-align: center; }
+      .selo span { display: inline-block; font-family: "Archivo Black", sans-serif; font-size: 96px; padding: 14px 50px; border-radius: 24px; border: 7px solid #000; box-shadow: 0 12px 0 #000; color: #111; }
+      #circulo { position: absolute; left: 700px; top: 1400px; width: 260px; height: 260px; border: 14px solid #ffd23a; border-radius: 50%; box-shadow: 0 0 0 6px rgba(0,0,0,.5), 0 0 40px rgba(255,210,58,.6); }
+      .fecho { position: absolute; left: 0; right: 0; text-align: center; color: #fff; }
+      #fecho-1 { top: 520px; font-size: 66px; font-weight: 800; }
+      #fecho-2 { top: 640px; display: flex; justify-content: center; gap: 26px; }
+      #fecho-2 .bt { font-family: "Archivo Black", sans-serif; font-size: 70px; padding: 12px 34px; border-radius: 20px; border: 6px solid #000; box-shadow: 0 10px 0 #000; color: #111; }
+      #fecho-3 { top: 830px; font-size: 42px; color: #cfd3d8; line-height: 1.3; }
+      #fecho-4 { top: 960px; font-family: "Archivo Black", sans-serif; font-size: 124px; line-height: 1; color: #ffd23a; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="85.47" data-width="1080" data-height="1920">
+      <div id="p01" class="clip plano" data-start="0.0" data-duration="6.85" data-track-index="1"><img id="p01-img" src="assets/img/i01.svg" alt=""></div>
+      <div id="p02" class="clip plano" data-start="6.85" data-duration="3.22" data-track-index="1"><img id="p02-img" src="assets/img/i02.svg" alt=""></div>
+      <div id="p03" class="clip plano" data-start="10.07" data-duration="5.12" data-track-index="1"><img id="p03-img" src="assets/img/i03.svg" alt=""></div>
+      <div id="p04" class="clip plano" data-start="15.19" data-duration="2.14" data-track-index="1"><img id="p04-img" src="assets/img/i04.svg" alt=""></div>
+      <div id="p05" class="clip plano" data-start="17.33" data-duration="4.38" data-track-index="1"><img id="p05-img" src="assets/img/i05.svg" alt=""></div>
+      <div id="p07" class="clip plano" data-start="25.57" data-duration="4.34" data-track-index="1"><img id="p07-img" src="assets/img/i06.svg" alt=""></div>
+      <div id="p09" class="clip plano" data-start="35.27" data-duration="6.9" data-track-index="1"><img id="p09-img" src="assets/img/i07.svg" alt=""></div>
+      <div id="p10" class="clip plano" data-start="42.17" data-duration="7.15" data-track-index="1"><img id="p10-img" src="assets/img/i08.svg" alt=""></div>
+      <div id="p11" class="clip plano" data-start="49.32" data-duration="3.17" data-track-index="1"><img id="p11-img" src="assets/img/i09.svg" alt=""></div>
+      <div id="p12" class="clip plano" data-start="52.49" data-duration="6.44" data-track-index="1"><img id="p12-img" src="assets/img/i10.svg" alt=""></div>
+      <div id="p14" class="clip plano" data-start="64.34" data-duration="5.73" data-track-index="1"><img id="p14-img" src="assets/img/i11.svg" alt=""></div>
+      <div id="p15" class="clip plano" data-start="70.07" data-duration="4.32" data-track-index="1"><img id="p15-img" src="assets/img/i12.svg" alt=""></div>
+      <div id="p16" class="clip plano" data-start="74.39" data-duration="4.54" data-track-index="1"><img id="p16-img" src="assets/img/i02.svg" alt=""></div>
+      <div id="cartao-dono" class="clip cartao preto" data-start="21.71" data-duration="3.86" data-track-index="2">
+        <div class="kick">PARTE 1 · O BILHETE</div>
+        <div class="grande" id="dono-1">TODO PRÊMIO</div>
+        <div class="grande amarelo" id="dono-2">TEM DONO</div>
+      </div>
+      <div id="cartao-ficha" class="clip cartao creme" data-start="29.91" data-duration="5.36" data-track-index="2">
+        <div class="kick" id="ficha-topo">PROBLEMA 1 · O QUE ELE LEMBRA</div>
+        <div class="ficha-linha" id="ficha-1"><i>CARRO</i>TÁXI BRANCO</div>
+        <div class="ficha-linha" id="ficha-2"><i>PLACA</i>FINAL 7</div>
+        <div class="ficha-linha" id="ficha-3"><i>RÁDIO</i>98,1 FM</div>
+      </div>
+      <div id="cartao-regra" class="clip cartao preto" data-start="58.93" data-duration="5.41" data-track-index="2">
+        <div class="kick" id="regra-1">O CÓDIGO DA MADRUGADA · REGRA 1</div>
+        <div id="regra-2">Todo bilhete tem dois donos.</div>
+        <div id="regra-3">Quem comprou… e quem tá com ele.</div>
+      </div>
+      <div id="fecho" class="clip cartao preto" data-start="78.93" data-duration="6.54" data-track-index="2"></div>
+      <div id="tag-1" class="clip tag" data-start="25.62" data-duration="4.29" data-track-index="6"><span>PROBLEMA 1 · O PASSAGEIRO</span></div>
+      <div id="tag-2" class="clip tag" data-start="35.32" data-duration="6.9" data-track-index="6"><span>PROBLEMA 2 · A CENTRAL</span></div>
+      <div id="tag-3" class="clip tag" data-start="42.22" data-duration="7.15" data-track-index="6"><span>PROBLEMA 3 · O VERSO</span></div>
+      <div id="car-lembra" class="clip carimbo" style="top: 1180px" data-start="34.64" data-duration="0.63" data-track-index="7"><span>ELE LEMBRA</span></div>
+      <div id="car-registrada" class="clip carimbo" style="top: 980px" data-start="41.11" data-duration="1.11" data-track-index="7"><span>REGISTRADA</span></div>
+      <div id="car-nome" class="clip carimbo" style="top: 980px" data-start="47.38" data-duration="1.99" data-track-index="7"><span>TEM NOME</span></div>
+      <div id="selo-acelera" class="clip selo" data-start="66.39" data-duration="3.68" data-track-index="8"><span style="background:#fff">ACELERA</span></div>
+      <div id="selo-espera" class="clip selo" data-start="70.53" data-duration="3.86" data-track-index="9"><span style="background:#ffd23a">ESPERA</span></div>
+      <div id="circulo" class="clip" data-start="75.65" data-duration="3.23" data-track-index="10"></div>
+      <div id="hud" class="clip" data-start="0" data-duration="78.93" data-track-index="3">
+        <div id="hud-in">
+          <div class="caixa" id="cx-mala"><small>NO BANCO DE TRÁS</small><b><span id="hud-mala">R$ 40.000.000</span></b></div>
+          <div class="caixa" id="cx-bolso"><small>NO BOLSO</small><b>R$ 0</b></div>
+          <div class="caixa" id="cx-risco"><small>RISCO</small><b><span id="hud-risco-n">0</span>%</b><div class="barra"><div id="hud-risco-barra"></div></div><div id="hud-delta">+0%</div></div>
+        </div>
+      </div>
+      <div id="legendas" class="clip" data-start="0" data-duration="81.567" data-track-index="4" data-track-kind="captions" style="position:absolute;inset:0">
+        <div id="cap-0-0" class="clip cap" data-start="0.1" data-duration="1.16" data-track-index="0"><span>Uma da manhã.</span></div>
+        <div id="cap-0-1" class="clip cap" data-start="1.26" data-duration="0.84" data-track-index="0"><span>O <b class="dest">Clóvis,</b></span></div>
+        <div id="cap-0-2" class="clip cap" data-start="2.1" data-duration="0.87" data-track-index="0"><span>taxista há vinte</span></div>
+        <div id="cap-0-3" class="clip cap" data-start="2.97" data-duration="0.81" data-track-index="0"><span>e dois anos,</span></div>
+        <div id="cap-0-4" class="clip cap" data-start="3.78" data-duration="0.78" data-track-index="0"><span>acabou de deixar</span></div>
+        <div id="cap-0-5" class="clip cap" data-start="4.56" data-duration="0.6" data-track-index="0"><span>um <b class="dest">passageiro</b> de</span></div>
+        <div id="cap-0-6" class="clip cap" data-start="5.16" data-duration="0.86" data-track-index="0"><span>terno na porta</span></div>
+        <div id="cap-0-7" class="clip cap" data-start="6.02" data-duration="0.81" data-track-index="0"><span>de um hotel.</span></div>
+        <div id="cap-1-0" class="clip cap" data-start="6.84" data-duration="0.72" data-track-index="0"><span>Quando olhou pra</span></div>
+        <div id="cap-1-1" class="clip cap" data-start="7.56" data-duration="0.84" data-track-index="0"><span>trás, tinha um</span></div>
+        <div id="cap-1-2" class="clip cap" data-start="8.4" data-duration="0.96" data-track-index="0"><span><b class="dest">bilhete</b> de loteria</span></div>
+        <div id="cap-1-3" class="clip cap" data-start="9.36" data-duration="0.69" data-track-index="0"><span>no banco.</span></div>
+        <div id="cap-2-0" class="clip cap" data-start="10.06" data-duration="0.87" data-track-index="0"><span>Ele conferiu os</span></div>
+        <div id="cap-2-1" class="clip cap" data-start="10.93" data-duration="1.35" data-track-index="0"><span>números no celular.</span></div>
+        <div id="cap-2-2" class="clip cap" data-start="12.28" data-duration="1.16" data-track-index="0"><span>Um, dois,</span></div>
+        <div id="cap-2-3" class="clip cap" data-start="13.44" data-duration="1.73" data-track-index="0"><span>três… os <b class="dest">seis.</b></span></div>
+        <div id="cap-3-0" class="clip cap" data-start="15.18" data-duration="1.56" data-track-index="0"><span><b class="dest">Quarenta</b> <b class="dest">milhões</b> de</span></div>
+        <div id="cap-3-1" class="clip cap" data-start="16.74" data-duration="0.57" data-track-index="0"><span>reais.</span></div>
+        <div id="cap-4-0" class="clip cap" data-start="17.32" data-duration="0.78" data-track-index="0"><span>No banco de</span></div>
+        <div id="cap-4-1" class="clip cap" data-start="18.1" data-duration="0.96" data-track-index="0"><span>trás de um</span></div>
+        <div id="cap-4-2" class="clip cap" data-start="19.06" data-duration="0.36" data-track-index="0"><span>táxi com a</span></div>
+        <div id="cap-4-3" class="clip cap" data-start="19.42" data-duration="1.18" data-track-index="0"><span>parcela atrasada há</span></div>
+        <div id="cap-4-4" class="clip cap" data-start="20.6" data-duration="1.09" data-track-index="0"><span>três meses.</span></div>
+        <div id="cap-5-0" class="clip cap" data-start="21.7" data-duration="0.52" data-track-index="0"><span>Agora vem a</span></div>
+        <div id="cap-5-1" class="clip cap" data-start="22.22" data-duration="1.06" data-track-index="0"><span>parte difícil.</span></div>
+        <div id="cap-5-2" class="clip cap" data-start="23.28" data-duration="1.28" data-track-index="0"><span>Porque todo prêmio…</span></div>
+        <div id="cap-5-3" class="clip cap" data-start="24.56" data-duration="0.99" data-track-index="0"><span>tem <b class="dest">dono.</b></span></div>
+        <div id="cap-6-0" class="clip cap" data-start="25.56" data-duration="0.7" data-track-index="0"><span>Problema um:</span></div>
+        <div id="cap-6-1" class="clip cap" data-start="26.26" data-duration="1.0" data-track-index="0"><span>o <b class="dest">passageiro.</b></span></div>
+        <div id="cap-6-2" class="clip cap" data-start="27.26" data-duration="0.94" data-track-index="0"><span>Em dois minutos</span></div>
+        <div id="cap-6-3" class="clip cap" data-start="28.2" data-duration="0.78" data-track-index="0"><span>ele percebe o</span></div>
+        <div id="cap-6-4" class="clip cap" data-start="28.98" data-duration="0.91" data-track-index="0"><span>que esqueceu.</span></div>
+        <div id="cap-7-0" class="clip cap" data-start="29.9" data-duration="0.7" data-track-index="0"><span>E ele lembra</span></div>
+        <div id="cap-7-1" class="clip cap" data-start="30.6" data-duration="0.72" data-track-index="0"><span>de <b class="dest">tudo:</b></span></div>
+        <div id="cap-7-2" class="clip cap" data-start="31.32" data-duration="0.69" data-track-index="0"><span>táxi branco,</span></div>
+        <div id="cap-7-3" class="clip cap" data-start="32.01" data-duration="1.07" data-track-index="0"><span>placa final sete,</span></div>
+        <div id="cap-7-4" class="clip cap" data-start="33.08" data-duration="0.77" data-track-index="0"><span>a música que</span></div>
+        <div id="cap-7-5" class="clip cap" data-start="33.85" data-duration="1.4" data-track-index="0"><span>tava tocando.</span></div>
+        <div id="cap-8-0" class="clip cap" data-start="35.26" data-duration="0.88" data-track-index="0"><span>Problema dois:</span></div>
+        <div id="cap-8-1" class="clip cap" data-start="36.14" data-duration="1.11" data-track-index="0"><span>a <b class="dest">central.</b></span></div>
+        <div id="cap-8-2" class="clip cap" data-start="37.25" data-duration="0.89" data-track-index="0"><span>Toda corrida fica</span></div>
+        <div id="cap-8-3" class="clip cap" data-start="38.14" data-duration="0.84" data-track-index="0"><span>no sistema.</span></div>
+        <div id="cap-8-4" class="clip cap" data-start="38.98" data-duration="1.2" data-track-index="0"><span>Hora, endereço…</span></div>
+        <div id="cap-8-5" class="clip cap" data-start="40.18" data-duration="0.51" data-track-index="0"><span>e o nome</span></div>
+        <div id="cap-8-6" class="clip cap" data-start="40.69" data-duration="1.16" data-track-index="0"><span>do <b class="dest">motorista.</b></span></div>
+        <div id="cap-9-0" class="clip cap" data-start="42.16" data-duration="0.88" data-track-index="0"><span>Problema três:</span></div>
+        <div id="cap-9-1" class="clip cap" data-start="43.04" data-duration="0.87" data-track-index="0"><span>o <b class="dest">Clóvis</b> virou</span></div>
+        <div id="cap-9-2" class="clip cap" data-start="43.91" data-duration="0.91" data-track-index="0"><span>o <b class="dest">bilhete.</b></span></div>
+        <div id="cap-9-3" class="clip cap" data-start="44.82" data-duration="1.35" data-track-index="0"><span>Atrás, escrito à</span></div>
+        <div id="cap-9-4" class="clip cap" data-start="46.17" data-duration="1.73" data-track-index="0"><span>caneta: Seu <b class="dest">Antônio.</b></span></div>
+        <div id="cap-9-5" class="clip cap" data-start="47.9" data-duration="1.4" data-track-index="0"><span>E um telefone.</span></div>
+        <div id="cap-10-0" class="clip cap" data-start="49.31" data-duration="0.65" data-track-index="0"><span>Seu <b class="dest">Antônio.</b></span></div>
+        <div id="cap-10-1" class="clip cap" data-start="49.96" data-duration="1.06" data-track-index="0"><span>Mas o <b class="dest">passageiro…</b></span></div>
+        <div id="cap-10-2" class="clip cap" data-start="51.02" data-duration="0.8" data-track-index="0"><span>não era <b class="dest">nenhum</b></span></div>
+        <div id="cap-10-3" class="clip cap" data-start="51.82" data-duration="0.65" data-track-index="0"><span><b class="dest">Antônio.</b></span></div>
+        <div id="cap-11-0" class="clip cap" data-start="52.48" data-duration="0.59" data-track-index="0"><span>Ele saiu do</span></div>
+        <div id="cap-11-1" class="clip cap" data-start="53.07" data-duration="1.01" data-track-index="0"><span>hotel correndo,</span></div>
+        <div id="cap-11-2" class="clip cap" data-start="54.08" data-duration="0.8" data-track-index="0"><span>com o telefone</span></div>
+        <div id="cap-11-3" class="clip cap" data-start="54.88" data-duration="0.84" data-track-index="0"><span>na orelha.</span></div>
+        <div id="cap-11-4" class="clip cap" data-start="55.72" data-duration="0.75" data-track-index="0"><span>E o <b class="dest">Clóvis</b></span></div>
+        <div id="cap-11-5" class="clip cap" data-start="56.47" data-duration="1.16" data-track-index="0"><span>ouviu: Achei o</span></div>
+        <div id="cap-11-6" class="clip cap" data-start="57.63" data-duration="1.28" data-track-index="0"><span>táxi do <b class="dest">velho.</b></span></div>
+        <div id="cap-12-0" class="clip cap" data-start="58.92" data-duration="1.14" data-track-index="0"><span>Regra número um:</span></div>
+        <div id="cap-12-1" class="clip cap" data-start="60.06" data-duration="1.11" data-track-index="0"><span>todo <b class="dest">bilhete</b> tem</span></div>
+        <div id="cap-12-2" class="clip cap" data-start="61.17" data-duration="1.03" data-track-index="0"><span>dois <b class="dest">donos.</b></span></div>
+        <div id="cap-12-3" class="clip cap" data-start="62.2" data-duration="0.72" data-track-index="0"><span>Quem comprou…</span></div>
+        <div id="cap-12-4" class="clip cap" data-start="62.92" data-duration="0.66" data-track-index="0"><span>e quem tá</span></div>
+        <div id="cap-12-5" class="clip cap" data-start="63.58" data-duration="0.74" data-track-index="0"><span>com ele.</span></div>
+        <div id="cap-13-0" class="clip cap" data-start="64.33" data-duration="0.3" data-track-index="0"><span>O que a</span></div>
+        <div id="cap-13-1" class="clip cap" data-start="64.63" data-duration="1.3" data-track-index="0"><span>gente faz agora?</span></div>
+        <div id="cap-13-2" class="clip cap" data-start="65.93" data-duration="0.45" data-track-index="0"><span>Opção A:</span></div>
+        <div id="cap-13-3" class="clip cap" data-start="66.38" data-duration="1.06" data-track-index="0"><span>acelerar e sumir</span></div>
+        <div id="cap-13-4" class="clip cap" data-start="67.44" data-duration="1.06" data-track-index="0"><span>na madrugada.</span></div>
+        <div id="cap-13-5" class="clip cap" data-start="68.5" data-duration="1.55" data-track-index="0"><span>Comente <b class="dest">ACELERA.</b></span></div>
+        <div id="cap-14-0" class="clip cap" data-start="70.06" data-duration="0.46" data-track-index="0"><span>Opção B:</span></div>
+        <div id="cap-14-1" class="clip cap" data-start="70.52" data-duration="1.02" data-track-index="0"><span>esperar o homem</span></div>
+        <div id="cap-14-2" class="clip cap" data-start="71.54" data-duration="0.78" data-track-index="0"><span>e devolver o</span></div>
+        <div id="cap-14-3" class="clip cap" data-start="72.32" data-duration="2.05" data-track-index="0"><span><b class="dest">bilhete.</b> Comente <b class="dest">ESPERA.</b></span></div>
+        <div id="cap-15-0" class="clip cap" data-start="74.38" data-duration="0.43" data-track-index="0"><span>Ou tem um</span></div>
+        <div id="cap-15-1" class="clip cap" data-start="74.81" data-duration="1.47" data-track-index="0"><span><b class="dest">terceiro</b> jeito <b class="dest">escondido</b></span></div>
+        <div id="cap-15-2" class="clip cap" data-start="76.28" data-duration="0.74" data-track-index="0"><span>nessa cena.</span></div>
+        <div id="cap-15-3" class="clip cap" data-start="77.02" data-duration="0.61" data-track-index="0"><span>Só vale se</span></div>
+        <div id="cap-15-4" class="clip cap" data-start="77.63" data-duration="1.08" data-track-index="0"><span>você disser qual</span></div>
+        <div id="cap-15-5" class="clip cap" data-start="78.71" data-duration="0.2" data-track-index="0"><span>é.</span></div>
+        <div id="cap-16-0" class="clip cap" data-start="78.92" data-duration="1.04" data-track-index="0"><span>A maioria escreve</span></div>
+        <div id="cap-16-1" class="clip cap" data-start="79.96" data-duration="0.68" data-track-index="0"><span>a parte dois</span></div>
+        <div id="cap-16-2" class="clip cap" data-start="80.64" data-duration="0.66" data-track-index="0"><span><b class="dest">amanhã.</b></span></div>
+      </div>
+      <div id="fecho-1" class="clip fecho" data-start="78.93" data-duration="6.54" data-track-index="11">Comente <span class="amarelo">uma</span> palavra</div>
+      <div id="fecho-2" class="clip fecho" data-start="78.93" data-duration="6.54" data-track-index="12"><span class="bt" style="background:#fff">ACELERA</span><span class="bt" style="background:#ffd23a">ESPERA</span></div>
+      <div id="fecho-3" class="clip fecho" data-start="78.93" data-duration="6.54" data-track-index="13">ou ache o 3º jeito escondido<br>(só vale se disser qual é)</div>
+      <div id="fecho-4" class="clip fecho" data-start="78.93" data-duration="6.54" data-track-index="14">PARTE 2<br>AMANHÃ</div>
+      <audio id="narracao" class="clip" src="assets/audio/narracao.mp3" data-start="0" data-duration="81.27" data-track-index="20" data-volume="1"></audio>
+      <audio id="trilha" class="clip" src="assets/audio/trilha.mp3" data-start="0" data-duration="85.47" data-track-index="21" data-volume="0.42"></audio>
+      <audio id="sfx-wh-p03" class="clip" src="assets/audio/whoosh-short.mp3" data-start="9.94" data-duration="0.57" data-track-index="30" data-volume="0.28"></audio>
+      <audio id="sfx-wh-p05" class="clip" src="assets/audio/whoosh-short.mp3" data-start="17.2" data-duration="0.57" data-track-index="31" data-volume="0.28"></audio>
+      <audio id="sfx-wh-p07" class="clip" src="assets/audio/whoosh-short.mp3" data-start="25.44" data-duration="0.57" data-track-index="32" data-volume="0.28"></audio>
+      <audio id="sfx-wh-p09" class="clip" src="assets/audio/whoosh-short.mp3" data-start="35.14" data-duration="0.57" data-track-index="33" data-volume="0.28"></audio>
+      <audio id="sfx-wh-p11" class="clip" src="assets/audio/whoosh-short.mp3" data-start="49.19" data-duration="0.57" data-track-index="34" data-volume="0.28"></audio>
+      <audio id="sfx-wh-p15" class="clip" src="assets/audio/whoosh-short.mp3" data-start="69.94" data-duration="0.57" data-track-index="35" data-volume="0.28"></audio>
+      <audio id="sfx-imp-cartao-dono" class="clip" src="assets/audio/impact-bass-1.mp3" data-start="21.67" data-duration="2.0" data-track-index="36" data-volume="0.75"></audio>
+      <audio id="sfx-imp-cartao-regra" class="clip" src="assets/audio/impact-bass-1.mp3" data-start="58.89" data-duration="2.0" data-track-index="37" data-volume="0.75"></audio>
+      <audio id="sfx-car-car-lembra" class="clip" src="assets/audio/impact-bass-2.mp3" data-start="32.91" data-duration="2.5" data-track-index="38" data-volume="0.5"></audio>
+      <audio id="sfx-car-car-registrada" class="clip" src="assets/audio/impact-bass-2.mp3" data-start="39.38" data-duration="2.5" data-track-index="39" data-volume="0.5"></audio>
+      <audio id="sfx-car-car-nome" class="clip" src="assets/audio/impact-bass-2.mp3" data-start="45.65" data-duration="2.5" data-track-index="40" data-volume="0.5"></audio>
+      <audio id="sfx-clk-ficha-1" class="clip" src="assets/audio/click-soft.mp3" data-start="31.31" data-duration="0.36" data-track-index="41" data-volume="0.8"></audio>
+      <audio id="sfx-clk-ficha-2" class="clip" src="assets/audio/click-soft.mp3" data-start="32.59" data-duration="0.36" data-track-index="42" data-volume="0.8"></audio>
+      <audio id="sfx-clk-ficha-3" class="clip" src="assets/audio/click-soft.mp3" data-start="34.15" data-duration="0.36" data-track-index="43" data-volume="0.8"></audio>
+      <audio id="sfx-virada" class="clip" src="assets/audio/glitch-3.mp3" data-start="51.48" data-duration="0.6" data-track-index="44" data-volume="0.35"></audio>
+      <audio id="sfx-selo-a" class="clip" src="assets/audio/pop.mp3" data-start="66.35" data-duration="0.7" data-track-index="45" data-volume="0.6"></audio>
+      <audio id="sfx-selo-b" class="clip" src="assets/audio/pop.mp3" data-start="70.49" data-duration="0.7" data-track-index="46" data-volume="0.6"></audio>
+      <audio id="sfx-circulo" class="clip" src="assets/audio/sparkle.mp3" data-start="75.7" data-duration="1.8" data-track-index="47" data-volume="0.55"></audio>
+      <audio id="sfx-fecho" class="clip" src="assets/audio/impact-bass-1.mp3" data-start="80.29" data-duration="2.0" data-track-index="48" data-volume="0.55"></audio>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#p01-img", { scale: 1.0, x: -11.0 }, { scale: 1.09, x: 11.0, duration: 6.85, ease: "none", immediateRender: false }, 0.0);
+      tl.fromTo("#p02-img", { scale: 1.1, x: 11.0 }, { scale: 1.02, x: -11.0, duration: 3.22, ease: "none", immediateRender: false }, 6.85);
+      tl.fromTo("#p03-img", { scale: 1.0, x: 11.0 }, { scale: 1.09, x: -11.0, duration: 5.12, ease: "none", immediateRender: false }, 10.07);
+      tl.fromTo("#p04-img", { scale: 1.1, x: -11.0 }, { scale: 1.02, x: 11.0, duration: 2.14, ease: "none", immediateRender: false }, 15.19);
+      tl.fromTo("#p05-img", { scale: 1.0, x: 11.0 }, { scale: 1.09, x: -11.0, duration: 4.38, ease: "none", immediateRender: false }, 17.33);
+      tl.fromTo("#p07-img", { scale: 1.0, x: -11.0 }, { scale: 1.09, x: 11.0, duration: 4.34, ease: "none", immediateRender: false }, 25.57);
+      tl.fromTo("#p09-img", { scale: 1.0, x: 11.0 }, { scale: 1.09, x: -11.0, duration: 6.9, ease: "none", immediateRender: false }, 35.27);
+      tl.fromTo("#p10-img", { scale: 1.1, x: -11.0 }, { scale: 1.02, x: 11.0, duration: 7.15, ease: "none", immediateRender: false }, 42.17);
+      tl.fromTo("#p11-img", { scale: 1.0, x: 11.0 }, { scale: 1.09, x: -11.0, duration: 3.17, ease: "none", immediateRender: false }, 49.32);
+      tl.fromTo("#p12-img", { scale: 1.1, x: 11.0 }, { scale: 1.02, x: -11.0, duration: 6.44, ease: "none", immediateRender: false }, 52.49);
+      tl.fromTo("#p14-img", { scale: 1.1, x: 11.0 }, { scale: 1.02, x: -11.0, duration: 5.73, ease: "none", immediateRender: false }, 64.34);
+      tl.fromTo("#p15-img", { scale: 1.0, x: 11.0 }, { scale: 1.09, x: -11.0, duration: 4.32, ease: "none", immediateRender: false }, 70.07);
+      tl.fromTo("#p16-img", { scale: 1.1, x: -11.0 }, { scale: 1.02, x: 11.0, duration: 4.54, ease: "none", immediateRender: false }, 74.39);
+      tl.set("#hud-risco-barra", { scaleX: 0 }, 0);
+      tl.fromTo("#hud-mala", { scale: 1.18, color: "#ffd23a" }, { scale: 1, color: "#ffffff", duration: 0.6, ease: "power2.out", immediateRender: false }, 15.540000000000001);
+      tl.to("#hud-risco-n", { textContent: 25, snap: { textContent: 1 }, duration: 0.5, ease: "power1.out" }, 30.83);
+      tl.to("#hud-risco-barra", { scaleX: 0.25, duration: 0.5, ease: "power1.out" }, 30.83);
+      tl.fromTo("#hud-delta", { opacity: 1, y: 0 }, { opacity: 0, y: -14, duration: 1.1, ease: "power1.in", immediateRender: false, onStart: () => {} }, 30.83);
+      tl.set("#hud-delta", { textContent: "+25%" }, 30.83);
+      tl.to("#hud-risco-n", { textContent: 45, snap: { textContent: 1 }, duration: 0.5, ease: "power1.out" }, 41.01);
+      tl.to("#hud-risco-barra", { scaleX: 0.45, duration: 0.5, ease: "power1.out" }, 41.01);
+      tl.fromTo("#hud-delta", { opacity: 1, y: 0 }, { opacity: 0, y: -14, duration: 1.1, ease: "power1.in", immediateRender: false, onStart: () => {} }, 41.01);
+      tl.set("#hud-delta", { textContent: "+20%" }, 41.01);
+      tl.to("#hud-risco-n", { textContent: 60, snap: { textContent: 1 }, duration: 0.5, ease: "power1.out" }, 47.33);
+      tl.to("#hud-risco-barra", { scaleX: 0.6, duration: 0.5, ease: "power1.out" }, 47.33);
+      tl.fromTo("#hud-delta", { opacity: 1, y: 0 }, { opacity: 0, y: -14, duration: 1.1, ease: "power1.in", immediateRender: false, onStart: () => {} }, 47.33);
+      tl.set("#hud-delta", { textContent: "+15%" }, 47.33);
+      tl.to("#hud-risco-n", { textContent: 85, snap: { textContent: 1 }, duration: 0.5, ease: "power1.out" }, 58.2);
+      tl.to("#hud-risco-barra", { scaleX: 0.85, duration: 0.5, ease: "power1.out" }, 58.2);
+      tl.fromTo("#hud-delta", { opacity: 1, y: 0 }, { opacity: 0, y: -14, duration: 1.1, ease: "power1.in", immediateRender: false, onStart: () => {} }, 58.2);
+      tl.set("#hud-delta", { textContent: "+25%" }, 58.2);
+      tl.to("#hud-in", { opacity: 0, duration: 0.15 }, 21.71); tl.to("#hud-in", { opacity: 1, duration: 0.15 }, 25.57);
+      tl.to("#hud-in", { opacity: 0, duration: 0.15 }, 29.91); tl.to("#hud-in", { opacity: 1, duration: 0.15 }, 35.27);
+      tl.to("#hud-in", { opacity: 0, duration: 0.15 }, 58.93); tl.to("#hud-in", { opacity: 1, duration: 0.15 }, 64.34);
+      tl.fromTo("#car-lembra span", { scale: 2.4, opacity: 0, rotation: -7 }, { scale: 1, opacity: 1, rotation: -7, duration: 0.22, ease: "power4.in" }, 34.64);
+      tl.fromTo("#car-registrada span", { scale: 2.4, opacity: 0, rotation: 6 }, { scale: 1, opacity: 1, rotation: 6, duration: 0.22, ease: "power4.in" }, 41.11);
+      tl.fromTo("#car-nome span", { scale: 2.4, opacity: 0, rotation: -6 }, { scale: 1, opacity: 1, rotation: -6, duration: 0.22, ease: "power4.in" }, 47.38);
+      tl.fromTo("#tag-1 span", { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, 25.62);
+      tl.fromTo("#tag-2 span", { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, 35.32);
+      tl.fromTo("#tag-3 span", { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, 42.22);
+      tl.fromTo("#dono-1", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "power3.out" }, 21.810000000000002);
+      tl.fromTo("#dono-2", { scale: 1.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.25, ease: "power4.in" }, 24.8);
+      tl.fromTo("#ficha-topo", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 29.96);
+      tl.fromTo("#ficha-1", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.25, ease: "power3.out" }, 31.35);
+      tl.fromTo("#ficha-2", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.25, ease: "power3.out" }, 32.63);
+      tl.fromTo("#ficha-3", { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.25, ease: "power3.out" }, 34.19);
+      tl.fromTo("#regra-1", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 58.98);
+      tl.fromTo("#regra-2", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "power3.out" }, 60.019999999999996);
+      tl.fromTo("#regra-3", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "power3.out" }, 62.16);
+      tl.fromTo("#fecho-1", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "power3.out" }, 78.98);
+      tl.fromTo("#fecho-2 .bt", { scale: 0.4, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2.5)", stagger: 0.25 }, 79.23);
+      tl.fromTo("#fecho-3", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 79.83000000000001);
+      tl.fromTo("#fecho-4", { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(2)" }, 80.33000000000001);
+      tl.fromTo("#selo-acelera", { scale: 0.4, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2.5)" }, 66.44);
+      tl.fromTo("#selo-espera", { scale: 0.4, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2.5)" }, 70.58);
+      tl.fromTo("#circulo", { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(2)" }, 75.7);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

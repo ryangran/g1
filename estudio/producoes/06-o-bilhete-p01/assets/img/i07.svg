@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+<defs><radialGradient id="g" cx="50%" cy="40%" r="75%"><stop offset="0" stop-color="#26364d"/><stop offset="1" stop-color="#0b111b"/></radialGradient></defs>
+<rect width="1080" height="1920" fill="url(#g)"/><rect x="60" y="420" width="960" height="1080" rx="30" fill="none" stroke="#f29b38" stroke-width="6" stroke-dasharray="26 18"/>
+<text x="540" y="760" font-family="Archivo Black, sans-serif" font-size="120" fill="#f29b38" text-anchor="middle">I07</text>
+<text x="540" y="1380" font-family="Inter, sans-serif" font-size="34" fill="#7f8a99" text-anchor="middle">ilustração provisória · gerar no app Gemini</text><text x="540" y="900" font-family="Inter, sans-serif" font-size="46" fill="#c9d2dc" text-anchor="middle">Painel: app da corrida + luz</text><text x="540" y="970" font-family="Inter, sans-serif" font-size="46" fill="#c9d2dc" text-anchor="middle">vermelha de gravação</text></svg>
