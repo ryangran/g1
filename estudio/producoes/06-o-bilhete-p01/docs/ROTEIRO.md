@@ -22,8 +22,8 @@ Na Parte 1 ainda não há "vocês decidiram": o gancho entra direto.
 | 15 | Ou tem um terceiro jeito escondido nessa cena. Só vale se você disser qual é. | **I02** de novo, com círculo amarelo no **recibo de farmácia** caído no tapete | 85% |
 | 16 | A maioria escreve a parte dois amanhã. | **FECHO** (preto): "Comente uma palavra · ACELERA / ESPERA · ou ache o 3º jeito · PARTE 2 AMANHÃ" | — |
 
-**O 3º jeito (resposta):** o recibo de farmácia no tapete tem o nome e o endereço do Seu Antônio (Rua das Acácias, 51). O Clóvis pode ir **direto ao dono de verdade**, sem passar pelo homem de terno.
-Ele fica visível em I02 desde o começo, para quem pausar.
+**O 3º jeito (resposta):** o recibo da *Drogaria São Jorge* caído no tapete diz "CLIENTE: ANTÔNIO S. · R. DAS ACÁCIAS, 51". O Clóvis pode ir **direto à casa do dono de verdade**, sem passar pelo homem de terno.
+O recibo aparece legível (pausando) no plano do banco de trás desde o começo. No "terceiro jeito escondido", a câmera dá zoom nele e o círculo amarelo o marca.
 
 ## Publicação
 - **Títulos:**

@@ -19,7 +19,7 @@ BILHETE = "#f5e7a1"
 
 
 def svg(corpo, defs=""):
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" width="1080" height="1920" preserveAspectRatio="xMidYMid slice">
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" width="1080" height="1920" preserveAspectRatio="xMidYMid slice" overflow="visible">
 <defs>
 <radialGradient id="vinheta" cx="50%" cy="48%" r="70%"><stop offset="0.55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.7"/></radialGradient>
 <linearGradient id="noite" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#070b14"/><stop offset="1" stop-color="#16233a"/></linearGradient>
@@ -245,8 +245,8 @@ def i02():
 <path d="M0 760 C 200 720 880 720 1080 760 L 1080 1500 L 0 1500 Z" fill="#5c6067" {O}/>
 <path d="M0 780 C 200 745 880 745 1080 780 L 1080 900 C 880 870 200 870 0 900 Z" fill="#6e737b"/>
 <path d="M360 760 L 340 1500 M720 760 L 740 1500" stroke="#4a4e55" stroke-width="10"/>
-<path d="M0 1500 L 1080 1500 L 1080 1920 L 0 1920 Z" fill="#23262c" {O}/>
-<path d="M120 1560 L 960 1560 L 1000 1880 L 80 1880 Z" fill="#2f333a" {O4}/>
+<path d="M0 1500 L 1080 1500 L 1080 2700 L 0 2700 Z" fill="#23262c" {O}/>
+<path d="M120 1560 L 960 1560 L 1010 2100 L 70 2100 Z" fill="#2f333a" {O4}/>
 <polygon points="300,820 980,820 1080,1500 520,1500" fill="#ffb661" opacity="0.12"/>
 <g id="bilhete" transform="translate(560 1140) rotate(-14)">
   <rect x="-150" y="-80" width="300" height="160" rx="8" fill="{BILHETE}" {O}/>
@@ -255,7 +255,19 @@ def i02():
   <path d="M-120 50 h240" stroke="#8b7f4a" stroke-width="5" stroke-dasharray="10 8"/>
 </g>
 <g id="brilho-bilhete"><path d="M560 1050 l 14 40 l 40 14 l -40 14 l -14 40 l -14 -40 l -40 -14 l 40 -14 Z" fill="#fff" opacity="0.9"/></g>
-<g id="recibo" transform="translate(830 1690) rotate(18)"><path d="M-70 -50 L 60 -60 L 75 40 L 20 55 L -60 60 Z" fill="#e9e9e4" {O4}/><path d="M-45 -30 h80 M-45 -10 h60 M-45 10 h85 M-45 30 h40" stroke="#9a9a96" stroke-width="5"/><rect x="-50" y="-48" width="22" height="14" fill="#2fae6a"/></g>
+<g id="recibo" data-layout-ignore transform="translate(800 1690) rotate(-10)">
+  <path d="M-150 -105 L 150 -112 L 156 100 L 120 92 L 90 104 L 60 92 L 30 104 L 0 92 L -30 104 L -60 92 L -90 104 L -120 92 L -146 100 Z" fill="#f1f0ea" {O4}/>
+  <rect x="-132" y="-96" width="30" height="24" fill="#2fae6a"/><path d="M-123 -84 h12 M-117 -90 v12" stroke="#fff" stroke-width="4"/>
+  <text x="-94" y="-76" font-family="Inter, sans-serif" font-weight="800" font-size="22" fill="#1d6b45">DROGARIA SÃO JORGE</text>
+  <path d="M-132 -60 h264" stroke="#b7b6ae" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="-132" y="-34" font-family="JetBrains Mono, monospace" font-weight="700" font-size="19" fill="#333">CLIENTE: ANTÔNIO S.</text>
+  <text x="-132" y="0" font-family="JetBrains Mono, monospace" font-weight="700" font-size="19" fill="#333">R. DAS ACÁCIAS, 51</text>
+  <text x="-132" y="34" font-family="JetBrains Mono, monospace" font-size="16" fill="#666">DIPIRONA 500MG</text><text x="132" y="34" font-family="JetBrains Mono, monospace" font-size="16" fill="#666" text-anchor="end">12,90</text>
+  <text x="-132" y="64" font-family="JetBrains Mono, monospace" font-size="16" fill="#666">TOTAL</text><text x="132" y="64" font-family="JetBrains Mono, monospace" font-weight="700" font-size="16" fill="#333" text-anchor="end">R$ 12,90</text>
+</g>
+<circle id="circulo-sombra" cx="800" cy="1690" r="185" fill="none" stroke="#000" stroke-width="30" opacity="0"/>
+<circle id="circulo-recibo" cx="800" cy="1690" r="185" fill="none" stroke="#ffd23a" stroke-width="16" opacity="0"/>
+
 ''')
 
 
@@ -488,6 +500,12 @@ def anim(nome, pid, t0, t1, pal):
               # o Clóvis vira a cabeça para o banco de trás
               f'tl.fromTo("{q("#clovis-janela")}", {{ x: 0, rotation: 0, transformOrigin: "50% 100%" }}, {{ x: 10, rotation: 14, duration: 0.5, ease: "power2.inOut", immediateRender: false }}, {round(t0 + d - 1.3, 3)});',
               f'tl.fromTo("{q("#brilho-neon")}", {{ opacity: 1 }}, {{ opacity: 0.35, duration: 0.08, yoyo: true, repeat: 5, immediateRender: false }}, {round(t0 + chega + 1.6, 3)});']
+    if nome == "i02" and pid != "p02":
+        # o 3º jeito: zoom no recibo e círculo em volta dele (dentro da cena, acompanha a câmera)
+        tz = round(pal("Ou tem um terceiro", "escondido"), 3)
+        j += [f'tl.fromTo("#{pid} svg", {{ scale: 1, x: 0, y: 0, transformOrigin: "0px 0px" }}, {{ scale: 2.1, x: {540 - 800 * 2.1}, y: {930 - 1690 * 2.1}, duration: 0.7, ease: "power3.inOut", immediateRender: false }}, {round(tz - 0.35, 3)});',
+              f'tl.fromTo("{q("#circulo-recibo")},{q("#circulo-sombra")}", {{ opacity: 0, scale: 1.7, transformOrigin: "50% 50%" }}, {{ opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)", immediateRender: false }}, {tz});',
+              f'tl.fromTo("{q("#circulo-recibo")}", {{ strokeWidth: 16 }}, {{ strokeWidth: 24, duration: 0.5, yoyo: true, repeat: 5, ease: "sine.inOut", immediateRender: false }}, {round(tz + 0.5, 3)});']
     if nome == "i02":
         j += [f'tl.fromTo("{q("#brilho-bilhete")}", {{ scale: 0, opacity: 0, transformOrigin: "50% 50%" }}, {{ scale: 1.3, opacity: 1, duration: 0.5, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }}, {t0 + 0.6});',
               f'tl.fromTo("{q("#poste-janela")}", {{ opacity: 0.8 }}, {{ opacity: 1, duration: 1.2, yoyo: true, repeat: {max(1, int(d / 1.2))}, ease: "sine.inOut", immediateRender: false }}, {t0});']

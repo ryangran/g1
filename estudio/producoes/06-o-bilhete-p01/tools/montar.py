@@ -163,7 +163,6 @@ t_acel, t_esp = pal("O que a gente faz", "ACELERA"), pal("Opção B", "ESPERA")
 js += [f'tl.fromTo("#selo-acelera", {{ scale: 0.4, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2.5)" }}, {t_acel});',
        f'tl.fromTo("#selo-espera", {{ scale: 0.4, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2.5)" }}, {t_esp});']
 t_circ = pal("Ou tem um terceiro", "escondido")
-js.append(f'tl.fromTo("#circulo", {{ scale: 1.8, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.45, ease: "back.out(2)" }}, {t_circ});')
 
 # ---------------------------------------------------------------- legendas palavra por palavra
 DESTAQUE = {"clovis", "bilhete", "seis", "quarenta", "milhoes", "dono", "passageiro", "tudo", "central", "motorista", "antonio",
@@ -299,7 +298,6 @@ page = f'''<!doctype html>
 {carimbos}
       <div id="selo-acelera" class="clip selo" data-start="{round(t_acel - 0.05, 3)}" data-duration="{round(ini("Opção B") - 0.05 - t_acel + 0.05, 3)}" data-track-index="8"><span style="background:#fff">ACELERA</span></div>
       <div id="selo-espera" class="clip selo" data-start="{round(t_esp - 0.05, 3)}" data-duration="{round(ini("Ou tem um terceiro") - t_esp, 3)}" data-track-index="9"><span style="background:#ffd23a">ESPERA</span></div>
-      <div id="circulo" class="clip" data-start="{round(t_circ - 0.05, 3)}" data-duration="{round(fecho_ini - t_circ, 3)}" data-track-index="10"></div>
       <div id="hud" class="clip" data-start="0" data-duration="{round(fecho_ini, 3)}" data-track-index="3">
         <div id="hud-in">
           <div class="caixa" id="cx-mala"><small>NO BANCO DE TRÁS</small><b><span id="hud-mala">R$ 40.000.000</span></b></div>
