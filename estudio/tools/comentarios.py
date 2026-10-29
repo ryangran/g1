@@ -80,10 +80,14 @@ def base_e_conta(t):
         return API, "me", tk
     fb = "https://graph.facebook.com/v21.0"
     paginas = pegar(f"{fb}/me/accounts?fields=name,instagram_business_account{{id,username}}&access_token={tk}").get("data", [])
-    contas = [p["instagram_business_account"] for p in paginas if p.get("instagram_business_account")]
-    if not contas:
-        raise LookupError("token do Facebook sem Página com Instagram ligado (falta pages_show_list ou o vínculo Página↔Instagram)")
-    return fb, contas[0]["id"], tk
+    contas = [p["instagram_business_account"]["id"] for p in paginas if p.get("instagram_business_account")]
+    # login unificado: o token não lista Páginas, mas lê a conta pelo id (estudio/instagram.json ou IG_USER_ID)
+    conf = os.path.join(RAIZ, "instagram.json")
+    fixo = os.environ.get("IG_USER_ID") or (json.load(open(conf)).get("id") if os.path.exists(conf) else None)
+    conta = contas[0] if contas else fixo
+    if not conta:
+        raise LookupError("token do Facebook sem conta do Instagram: defina o id em estudio/instagram.json")
+    return fb, conta, tk
 
 
 def do_instagram(a):
@@ -101,6 +105,8 @@ def do_instagram(a):
     post_ts = None
     if not media:
         lista = pegar(f"{API_}/{conta}/media?fields=id,permalink,timestamp,caption&limit=25&access_token={tk}")["data"]
+        if not lista:
+            sys.exit("A conta ainda não tem posts. Publique o Reel da Parte 1 e rode de novo.")
         if a.link:
             alvo = a.link.rstrip("/").split("?")[0]
             achou = [m for m in lista if m.get("permalink", "").rstrip("/").split("?")[0] == alvo]

@@ -37,3 +37,19 @@ test("erro do Instagram vira 502 sem derrubar o site", async () => {
   assert.equal(res.code, 502);
   assert.match(res.corpo.detalhe, /token expirado/);
 });
+
+test("token EAA (login unificado) lê pela conta em graph.facebook.com", async () => {
+  process.env.IG_TOKEN = "EAAteste"; process.env.IG_USER_ID = "17841450576591219"; delete process.env.IG_MEDIA_ID;
+  const chamadas = [];
+  global.fetch = async (url) => {
+    chamadas.push(url);
+    const corpo = url.includes("/media") ? { data: [{ id: "999" }] } : { data: [{ username: "a", text: "espera", timestamp: "2026-10-30T10:00:00Z" }] };
+    return { ok: true, status: 200, json: async () => corpo };
+  };
+  delete require.cache[require.resolve("../api/votos")];
+  const res = { headers: {}, setHeader() {}, status(c) { this.code = c; return this; }, json(o) { this.corpo = o; } };
+  await require("../api/votos")({}, res);
+  assert.equal(res.code, 200);
+  assert.match(chamadas[0], /graph\.facebook\.com\/v21\.0\/17841450576591219\/media/);
+  assert.match(chamadas[1], /graph\.facebook\.com\/v21\.0\/999\/comments/);
+});

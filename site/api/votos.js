@@ -4,10 +4,13 @@
 //   VOTO_OPCOES  ex.: "ACELERA,ESPERA"
 //   VOTO_FECHA   ex.: "2026-10-30T15:00:00-03:00" (opcional)
 //   IG_MEDIA_ID  id do Reel da votação (opcional; sem ele usa o post mais recente)
+//   IG_USER_ID   id da conta profissional (obrigatório com token EAA… do login unificado; ex.: 17841450576591219)
 // A resposta fica em cache na CDN por 60 s: o Instagram é consultado no máximo 1 vez por minuto.
 const { contar } = require("../lib/contagem");
 
-const API = "https://graph.instagram.com/v21.0";
+// token IG… (login do Instagram) usa graph.instagram.com/me; token EAA… (login unificado) usa graph.facebook.com/<id da conta>
+const base = (token) => (token.startsWith("EAA") ? "https://graph.facebook.com/v21.0" : "https://graph.instagram.com/v21.0");
+const conta = (token) => (token.startsWith("EAA") ? process.env.IG_USER_ID : "me");
 
 async function pegar(url) {
   const r = await fetch(url);
@@ -18,7 +21,7 @@ async function pegar(url) {
 
 async function comentarios(mediaId, token) {
   const todos = [];
-  let url = `${API}/${mediaId}/comments?fields=id,text,username,timestamp&limit=50&access_token=${encodeURIComponent(token)}`;
+  let url = `${base(token)}/${mediaId}/comments?fields=id,text,username,timestamp&limit=50&access_token=${encodeURIComponent(token)}`;
   for (let pag = 0; url && pag < 40; pag++) { // até 2.000 comentários por consulta
     const j = await pegar(url);
     todos.push(...(j.data || []));
@@ -44,7 +47,8 @@ module.exports = async (req, res) => {
     }
     let mediaId = process.env.IG_MEDIA_ID;
     if (!mediaId) {
-      const j = await pegar(`${API}/me/media?fields=id&limit=1&access_token=${encodeURIComponent(token)}`);
+      if (!conta(token)) throw new Error("defina IG_USER_ID para token EAA");
+      const j = await pegar(`${base(token)}/${conta(token)}/media?fields=id&limit=1&access_token=${encodeURIComponent(token)}`);
       mediaId = j.data?.[0]?.id;
       if (!mediaId) throw new Error("nenhum post encontrado na conta");
     }
