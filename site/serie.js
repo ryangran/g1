@@ -14,9 +14,10 @@ window.SERIE = {
   horaFechaVoto: 15,
 
   heroKicker: "Série interativa no Instagram",
-  heroTitulo: "Ele achou R$ 40 milhões no banco de trás.",
+  arroba: "@clovis.obilhete",
+  heroTitulo: "Ele achou R$ 40 milhões.",
   heroDestaque: "Você decide.",
-  heroTexto: "Uma da manhã. O Clóvis, taxista há 22 anos, achou um bilhete premiado no táxi. Todo dia sai uma parte, e os comentários escrevem a próxima.",
+  heroTexto: "Um taxista achou um bilhete premiado no banco de trás do táxi. Todo dia sai uma parte, e os comentários escrevem a próxima.",
 
   painel: [
     { rotulo: "No banco de trás", valor: "R$ 40 mi" },

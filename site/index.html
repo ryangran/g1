@@ -6,7 +6,7 @@
 <title>O Bilhete · Você decide</title>
 <meta name="description" content="Série interativa: todo dia sai uma parte e os comentários escrevem a próxima." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
 <script src="serie.js"></script>
 <style>
   :root {
@@ -45,8 +45,8 @@
   /* herói */
   .heroi { padding: 44px 0 56px; background: radial-gradient(120% 70% at 85% 0%, rgba(255,210,58,.22), transparent 60%); border: 0; }
   .heroi-grade { display: grid; gap: 36px; grid-template-columns: 1fr; }
-  @media (min-width: 900px) { .heroi-grade { grid-template-columns: 1.05fr 1fr; align-items: center; } }
-  .heroi h1 { font-size: clamp(42px, 9vw, 76px); margin: 14px 0 16px; }
+  @media (min-width: 900px) { .heroi-grade { grid-template-columns: 1.6fr 1fr; align-items: center; } }
+  .heroi h1 { font-family: Inter, system-ui, sans-serif; font-weight: 900; letter-spacing: -0.045em; line-height: .96; font-size: clamp(50px, 10.5vw, 92px); margin: 16px 0 20px; }
   .heroi h1 em { font-style: normal; color: var(--acao); display: block; }
   .heroi p.lead { font-size: 18px; color: #d9ddd5; max-width: 560px; }
   .ctas { display: grid; gap: 12px; margin-top: 24px; max-width: 520px; }
@@ -61,7 +61,7 @@
   .contagem b { font: 700 22px var(--mono); color: var(--acao); }
 
   /* mural: quadro de investigação (o centro é sempre a parte mais recente) */
-  .mural { position: relative; aspect-ratio: 1 / 1.04; border-radius: 22px; overflow: hidden;
+  .mural { container-type: inline-size; position: relative; aspect-ratio: 1 / 1.04; border-radius: 22px; overflow: hidden;
            background: radial-gradient(circle at 30% 20%, #6e4c2e, #4f3621 75%); box-shadow: inset 0 0 0 10px #3a2817, 0 30px 60px rgba(0,0,0,.5); }
   .mural::before { content: ""; position: absolute; inset: 0; opacity: .45; pointer-events: none;
                    background-image: radial-gradient(rgba(0,0,0,.45) 1.2px, transparent 1.6px); background-size: 9px 9px; }
@@ -69,19 +69,19 @@
   .foto { --r: 0deg; position: absolute; z-index: 2; width: 27%; margin: 0; background: #f1ede4; padding: 7% 7% 0; padding: 8px 8px 0;
           transform: rotate(var(--r)); box-shadow: 0 10px 22px rgba(0,0,0,.45); transition: transform .25s ease, box-shadow .25s ease; cursor: pointer; }
   .foto img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; background: #222; }
-  .foto span { display: block; text-align: center; padding: 9px 2px 11px; font: 700 clamp(8px, 1.3vw, 11px) var(--mono); letter-spacing: .1em; color: var(--tinta); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .foto span { display: block; text-align: center; padding: 9px 2px 11px; font: 700 2.3cqw var(--mono); letter-spacing: .08em; color: var(--tinta); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .alfinete { position: absolute; top: -8px; left: 50%; width: 16px; height: 16px; margin-left: -8px; border-radius: 50%; z-index: 4;
               background: radial-gradient(circle at 35% 35%, #ff7a70, #c62828 70%); box-shadow: 0 3px 4px rgba(0,0,0,.5); transition: transform .25s ease; }
   .foto.principal { width: 40%; z-index: 2; outline: 5px solid var(--acao); outline-offset: -1px; }
   .foto:hover { transform: rotate(0deg) scale(1.08) translateY(-6px); z-index: 6; box-shadow: 0 22px 40px rgba(0,0,0,.6); }
   .foto:hover .alfinete { transform: translateY(-3px) scale(1.15); }
-  .nota { position: absolute; z-index: 2; background: #f1ede4; color: var(--tinta); padding: 10px 14px; font: 800 clamp(11px, 2vw, 17px) Inter, sans-serif;
+  .nota { position: absolute; z-index: 2; background: #f1ede4; color: var(--tinta); padding: 10px 14px; font: 800 3.6cqw Inter, sans-serif;
           transform: rotate(-3deg); box-shadow: 0 8px 16px rgba(0,0,0,.4); transition: transform .25s ease; }
   .nota:hover { transform: rotate(0deg) scale(1.06); z-index: 6; }
   .etiqueta { position: absolute; z-index: 5; transition: transform .25s ease; }
-  .etiqueta.carimbo { font: 700 clamp(12px, 2.4vw, 20px) var(--mono); letter-spacing: .06em; color: var(--perigo); border: 3px solid var(--perigo);
+  .etiqueta.carimbo { font: 700 3.8cqw var(--mono); letter-spacing: .06em; color: var(--perigo); border: 3px solid var(--perigo);
                       outline: 2px solid rgba(226,59,46,.35); outline-offset: 3px; background: rgba(241,237,228,.92); padding: 6px 12px; transform: rotate(-7deg); }
-  .etiqueta.post { background: var(--acao); color: #111; padding: 10px 14px; font: 800 clamp(11px, 2vw, 16px)/1.2 Inter, sans-serif; transform: rotate(-2deg); box-shadow: 0 8px 16px rgba(0,0,0,.4); }
+  .etiqueta.post { background: var(--acao); color: #111; padding: 2cqw 2.8cqw; max-width: 42%; font: 800 3.2cqw/1.2 Inter, sans-serif; transform: rotate(-2deg); box-shadow: 0 8px 16px rgba(0,0,0,.4); }
   .etiqueta:hover { transform: rotate(0deg) scale(1.06); }
   /* votação */
   .opcoes { display: flex; flex-wrap: wrap; gap: 14px; margin: 22px 0; }
@@ -302,7 +302,7 @@
 
   const P = S.passe;
   document.title = S.tituloPagina || document.title;
-  $("marca").textContent = S.marca;
+  $("marca").innerHTML = S.marca.replace(/^(O |A )?(.*)$/, (_, art, nome) => `${art || ""}<span style="color:var(--acao)">${esc(nome)}</span>`);
   document.querySelectorAll(".logo-letra").forEach((e) => (e.textContent = S.logoLetra));
   $("rodape-txt").textContent = S.rodape;
   $("passe-kicker").textContent = P.kicker;
@@ -317,8 +317,9 @@
   document.querySelectorAll(".preco-txt").forEach((e) => (e.textContent = S.precoPasse));
   const faixa = `PARTE ${S.votacao.parte} · ${S.votacao.opcoes.join(" OU ")} · VOTE NO REEL · ■ · `;
   $("faixa").textContent = faixa.repeat(4);
-  $("heroi-kicker").textContent = S.heroKicker;
-  $("heroi-titulo").textContent = S.heroTitulo;
+  $("heroi-kicker").textContent = S.heroKicker + (S.arroba ? ` · ${S.arroba}` : "");
+  // valores tipo "R$ 40 milhões." nunca quebram no meio
+  $("heroi-titulo").innerHTML = esc(S.heroTitulo).replace(/(R\$ ?[\d.,]+ ?\w*\.?)/, '<span style="white-space:nowrap">$1</span>').replace(/^(\S+ \S+) /, "$1<br>");
   $("heroi-destaque").textContent = S.heroDestaque;
   $("heroi-texto").textContent = S.heroTexto;
   $("link-insta").href = S.instagram;
