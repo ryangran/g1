@@ -19,6 +19,7 @@ import os
 import re
 import sys
 import unicodedata
+import urllib.error
 import urllib.parse
 import urllib.request
 from datetime import datetime
@@ -47,29 +48,59 @@ def quando(ts):
 
 
 def pegar(url):
-    with urllib.request.urlopen(url, timeout=30) as r:
-        j = json.load(r)
+    try:
+        with urllib.request.urlopen(url, timeout=30) as r:
+            j = json.load(r)
+    except urllib.error.HTTPError as e:
+        j = json.load(e)
     if "error" in j:
         sys.exit(f"ERRO do Instagram: {j['error'].get('message')}")
     return j
 
 
-def token():
-    t = os.environ.get("IG_TOKEN")
-    if not t:
-        p = os.path.join(RAIZ, ".chaves", "instagram.key")
-        if not os.path.exists(p):
-            sys.exit("ERRO: sem token. Defina IG_TOKEN ou crie estudio/.chaves/instagram.key (veja site/INSTAGRAM-PASSO-A-PASSO.md)")
-        t = open(p).read().strip()
-    return t
+def tokens():
+    """Tokens disponíveis, na ordem: IG_TOKEN, estudio/.chaves/instagram-ig.key (login do Instagram, IG…),
+    estudio/.chaves/instagram.key (Facebook, EAA…)."""
+    ts = [os.environ.get("IG_TOKEN")]
+    for nome in ("instagram-ig.key", "instagram.key"):
+        p = os.path.join(RAIZ, ".chaves", nome)
+        if os.path.exists(p):
+            ts.append(open(p).read().strip())
+    ts = [t for t in ts if t]
+    if not ts:
+        sys.exit("ERRO: sem token. Defina IG_TOKEN ou crie estudio/.chaves/instagram.key (veja site/INSTAGRAM-PASSO-A-PASSO.md)")
+    return ts
+
+
+def base_e_conta(t):
+    """Token IG… usa graph.instagram.com/me. Token EAA… (login do Facebook) chega na conta profissional
+    pela Página do Facebook ligada a ela, em graph.facebook.com."""
+    tk = urllib.parse.quote(t)
+    if not t.startswith("EAA"):
+        return API, "me", tk
+    fb = "https://graph.facebook.com/v21.0"
+    paginas = pegar(f"{fb}/me/accounts?fields=name,instagram_business_account{{id,username}}&access_token={tk}").get("data", [])
+    contas = [p["instagram_business_account"] for p in paginas if p.get("instagram_business_account")]
+    if not contas:
+        raise LookupError("token do Facebook sem Página com Instagram ligado (falta pages_show_list ou o vínculo Página↔Instagram)")
+    return fb, contas[0]["id"], tk
 
 
 def do_instagram(a):
-    tk = urllib.parse.quote(token())
+    erros = []
+    for t in tokens():
+        try:
+            base, conta, tk = base_e_conta(t)
+            break
+        except (LookupError, SystemExit, urllib.error.HTTPError) as e:
+            erros.append(str(e))
+    else:
+        sys.exit("ERRO: nenhum token chegou à conta do Instagram:\n  " + "\n  ".join(erros))
+    API_ = base
     media = a.media
     post_ts = None
     if not media:
-        lista = pegar(f"{API}/me/media?fields=id,permalink,timestamp,caption&limit=25&access_token={tk}")["data"]
+        lista = pegar(f"{API_}/{conta}/media?fields=id,permalink,timestamp,caption&limit=25&access_token={tk}")["data"]
         if a.link:
             alvo = a.link.rstrip("/").split("?")[0]
             achou = [m for m in lista if m.get("permalink", "").rstrip("/").split("?")[0] == alvo]
@@ -80,8 +111,8 @@ def do_instagram(a):
             m = lista[0]
         media, post_ts = m["id"], m.get("timestamp")
     else:
-        post_ts = pegar(f"{API}/{media}?fields=timestamp&access_token={tk}").get("timestamp")
-    todos, url = [], f"{API}/{media}/comments?fields=id,text,username,timestamp,like_count&limit=50&access_token={tk}"
+        post_ts = pegar(f"{API_}/{media}?fields=timestamp&access_token={tk}").get("timestamp")
+    todos, url = [], f"{API_}/{media}/comments?fields=id,text,username,timestamp,like_count&limit=50&access_token={tk}"
     while url and len(todos) < 5000:
         j = pegar(url)
         todos += j.get("data", [])
