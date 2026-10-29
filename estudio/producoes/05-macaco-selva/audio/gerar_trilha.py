@@ -15,6 +15,10 @@ BPM = 100
 STEP = 60 / BPM / 4
 N = int(DUR * SR)
 rng = np.random.default_rng(5)
+import json
+_ini = {f["texto"]: f["ini"] for f in json.load(open("build/timing.json"))["frases"]}
+CR = _ini["O rio tem crocodilo."]; RI = _ini["Só tem um problema."] - 0.1
+ES = _ini["Comente CIPÓ ou PEDRA."]; FE = _ini["A parte dois sai amanhã."]
 t_all = np.arange(N) / SR
 
 
@@ -98,11 +102,11 @@ for t0 in np.arange(0.4, DUR, 2.3) + rng.uniform(0, 0.8, len(np.arange(0.4, DUR,
     add(passaros, t0 + 0.22, pio, 0.7)
 
 # dinâmica: entra leve, cresce nos perigos, segura na escolha, corta no fecho
-g_tamb = env([(0, 0.35), (5.3, 0.45), (7.2, 0.8), (9.8, 0.85), (18.2, 1.0), (18.3, 0.5), (23.9, 0.6), (24.0, 0.0), (30, 0)])
-g_med = env([(0, 0), (7.1, 0), (7.2, 0.7), (18.2, 1.0), (18.3, 0.4), (23.9, 0.4), (24.0, 0), (30, 0)])
-g_mar = env([(0, 0.8), (9.8, 0.8), (18.3, 0.9), (24.0, 0.9), (24.05, 0.6), (29.0, 0.5), (30, 0)])
-g_drone = env([(0, 0.2), (5.3, 0.5), (7.2, 1.0), (18.3, 0.7), (24, 0.4), (30, 0.2)])
-g_amb = env([(0, 1.0), (24, 1.0), (30, 0.6)])
+g_tamb = env([(0, 0.35), (RI, 0.45), (CR, 0.8), (CR + 2.6, 0.85), (ES - 0.1, 1.0), (ES, 0.5), (FE - 0.1, 0.6), (FE, 0.0), (30, 0)])
+g_med = env([(0, 0), (CR - 0.1, 0), (CR, 0.7), (ES - 0.1, 1.0), (ES, 0.4), (FE - 0.1, 0.4), (FE, 0), (30, 0)])
+g_mar = env([(0, 0.8), (CR + 2.6, 0.8), (ES, 0.9), (FE, 0.9), (FE + 0.05, 0.6), (29.0, 0.5), (30, 0)])
+g_drone = env([(0, 0.2), (RI, 0.5), (CR, 1.0), (ES, 0.7), (FE, 0.4), (30, 0.2)])
+g_amb = env([(0, 1.0), (FE, 1.0), (30, 0.6)])
 
 mix = (graves * g_tamb + medios * g_med + shk * g_tamb * 0.8 + mar * g_mar + drone * g_drone
        + (insetos + agua + passaros) * g_amb)

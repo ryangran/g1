@@ -7,6 +7,7 @@
 ## Onde as coisas estão
 
 - `estudio/` — o estúdio de produção: análise do ambiente, catálogo de recursos, biblioteca 3D, modelos de documentos e as produções em `estudio/producoes/`.
+- `estudio/VOZ.md` — **voz fixa do estúdio** (Gemini TTS, voz Orus, estilo em `estudio/VOZ-ESTILO.txt`). Toda narração usa essa voz.
 - `estudio/RECURSOS.md` — catálogo de bibliotecas, vozes, áudios, transições e assets (o que funciona aqui e o que precisa de conta).
 - `video/` — projeto HyperFrames anterior (checagem Lula/SUS).
 - Skills do HyperFrames em `.claude/skills/` (`/hyperframes`, `/hyperframes-cli`, `/hyperframes-registry`, `/media-use`). Leia `/hyperframes` antes de editar qualquer composição.

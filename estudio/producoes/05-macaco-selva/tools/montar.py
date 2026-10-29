@@ -149,15 +149,23 @@ def cam(fx, fy, s):
     return {"x": round(540 - fx * s, 1), "y": round(900 - fy * s, 1), "scale": s}
 
 ini = {x["texto"]: x["ini"] for x in F}
+# cortes derivados da narração (mudou a voz, os planos acompanham)
+C_RIO = ini["Só tem um problema."] - 0.1
+C_CROC = ini["O rio tem crocodilo."]
+C_ROSTO = C_CROC + 1.5
+C_CIPO = ini["Opção um: o cipó."]
+C_PEDRA = ini["Opção dois: as pedras."]
+C_ESCOLHA = ini["Comente CIPÓ ou PEDRA."]
+C_FECHO = ini["A parte dois sai amanhã."]
 PLANOS = [  # (t0, de, para, ease)
-    (0.0, cam(560, 980, 0.95), cam(1500, 960, 0.95), "power2.inOut", 5.2),
-    (5.2, cam(1500, 960, 0.95), cam(1110, 1380, 0.78), "power2.inOut", 7.2),
-    (7.2, cam(1100, 1440, 1.9), cam(1100, 1440, 2.15), "none", 8.7),
-    (8.7, cam(560, 760, 3.2), cam(560, 760, 3.45), "none", 9.86),
-    (9.86, cam(1120, 1000, 1.7), cam(1120, 1010, 1.95), "none", 13.69),
-    (13.69, cam(1090, 1565, 1.85), cam(1170, 1550, 2.6), "power2.inOut", 18.29),
-    (18.29, cam(1100, 1000, 0.49), cam(1100, 1000, 0.5), "none", 24.0),
-    (24.0, cam(1100, 1000, 0.5), cam(1100, 1000, 0.52), "none", DUR),
+    (0.0, cam(560, 980, 0.95), cam(1500, 960, 0.95), "power2.inOut", C_RIO),
+    (C_RIO, cam(1500, 960, 0.95), cam(1110, 1380, 0.78), "power2.inOut", C_CROC),
+    (C_CROC, cam(1100, 1440, 1.9), cam(1100, 1440, 2.15), "none", C_ROSTO),
+    (C_ROSTO, cam(560, 760, 3.2), cam(560, 760, 3.45), "none", C_CIPO),
+    (C_CIPO, cam(1120, 1000, 1.7), cam(1120, 1010, 1.95), "none", C_PEDRA),
+    (C_PEDRA, cam(1090, 1565, 1.85), cam(1170, 1550, 2.6), "power2.inOut", C_ESCOLHA),
+    (C_ESCOLHA, cam(1100, 1000, 0.49), cam(1100, 1000, 0.5), "none", C_FECHO),
+    (C_FECHO, cam(1100, 1000, 0.5), cam(1100, 1000, 0.52), "none", DUR),
 ]
 js = []
 for t0, de, para, ez, t1 in PLANOS:
@@ -185,9 +193,9 @@ js += [
     f'tl.fromTo("#palpebra-pedra", {{ scaleY: 1, svgOrigin: "1155 1526" }}, {{ scaleY: 0.05, duration: 0.15 }}, {ini["Só que uma delas... piscou."] + 1.2});',
     f'tl.to("#palpebra-pedra", {{ scaleY: 1, duration: 0.15 }}, {ini["Só que uma delas... piscou."] + 1.75});',
     # macaco volta a sorrir nos planos abertos (escolha)
-    'tl.set("#boca-o", { opacity: 0 }, 18.29); tl.set("#boca-riso", { opacity: 1 }, 18.29);',
-    'tl.set("#palp-e,#palp-d", { scaleY: 0.25 }, 18.29); tl.set("#pupilas", { x: 6, scale: 1 }, 18.29);',
-    'tl.set("#sobr-e,#sobr-d", { y: 0, rotation: 0 }, 18.29);',
+    f'tl.set("#boca-o", {{ opacity: 0 }}, {C_ESCOLHA}); tl.set("#boca-riso", {{ opacity: 1 }}, {C_ESCOLHA});',
+    f'tl.set("#palp-e,#palp-d", {{ scaleY: 0.25 }}, {C_ESCOLHA}); tl.set("#pupilas", {{ x: 6, scale: 1 }}, {C_ESCOLHA});',
+    f'tl.set("#sobr-e,#sobr-d", {{ y: 0, rotation: 0 }}, {C_ESCOLHA});',
     # banana brilha, ondas
     'tl.fromTo("#brilho-banana", { opacity: 0.5 }, { opacity: 1, duration: 1.5, yoyo: true, repeat: 19, ease: "sine.inOut" }, 0);',
     # círculo no tronco escondido
@@ -207,48 +215,47 @@ js.append(f'tl.to("#hud-energia-n", {{ textContent: 72, snap: {{ textContent: 1 
 DESTAQUE = {"macaco.", "banana", "rio.", "crocodilo.", "cipó.", "rachando.", "pedras.", "piscou.", "CIPÓ", "PEDRA.", "terceiro", "escondido", "amanhã."}
 caps = []
 for k, fr in enumerate(F):
-    ws = fr["texto"].split()
+    pal = fr["palavras"]  # tempo de cada palavra (whisper sobre a narração final)
     grupos, g = [], []
-    for w in ws:
+    for w in pal:
         g.append(w)
-        if len(g) == 3 or w.endswith((".", ":", "?")):
+        if len(g) == 3 or w["p"].endswith((".", ":", "?")):
             grupos.append(g); g = []
     if g:
         grupos.append(g)
-    tot = sum(len(" ".join(x)) for x in grupos)
-    t = fr["ini"]
     for j, g in enumerate(grupos):
-        d = (fr["fim"] - fr["ini"]) * len(" ".join(g)) / tot
-        a, b = t - (0.06 if j == 0 else 0), t + d + (0.12 if j == len(grupos) - 1 else 0)
-        html = " ".join(f'<b class="dest">{w}</b>' if w in DESTAQUE else w for w in g)
+        a = g[0]["ini"] - 0.06
+        b = grupos[j + 1][0]["ini"] - 0.06 if j + 1 < len(grupos) else g[-1]["fim"] + 0.12
+        if k + 1 < len(F):
+            b = min(b, F[k + 1]["ini"] - 0.07)
+        html = " ".join(f'<b class="dest">{w["p"]}</b>' if w["p"] in DESTAQUE else w["p"] for w in g)
         caps.append((f"cap-{k}-{j}", round(a, 3), round(b - a, 3), html))
-        t += d
 
 # ---------------------------------------------------------------- carimbos, escolha, fecho
-CAR = [("car-racha", "RACHANDO", ini["Mas ele tá rachando."] + 0.55, 13.69, 620, -8),
-       ("car-piscou", "UMA PISCOU", ini["Só que uma delas... piscou."] + 1.25, 18.29, 620, 7)]
+CAR = [("car-racha", "RACHANDO", ini["Mas ele tá rachando."] + 0.55, C_PEDRA, 620, -8),
+       ("car-piscou", "UMA PISCOU", ini["Só que uma delas... piscou."] + 1.25, C_ESCOLHA, 620, 7)]
 for cid, _, t0, _, _, rot in CAR:
     js.append(f'tl.fromTo("#{cid} span", {{ scale: 2.4, opacity: 0, rotation: {rot} }}, {{ scale: 1, opacity: 1, rotation: {rot}, duration: 0.22, ease: "power4.in" }}, {t0});')
 t_opc = ini["Comente CIPÓ ou PEDRA."]
 js += [
     f'tl.fromTo("#opc-cipo", {{ scale: 0.4, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2.5)" }}, {t_opc + 0.25});',
     f'tl.fromTo("#opc-pedra", {{ scale: 0.4, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2.5)" }}, {t_opc + 1.1});',
-    'tl.fromTo("#escurece", { opacity: 0 }, { opacity: 0.72, duration: 0.4 }, 24.0);',
-    'tl.fromTo("#fecho-1", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "power3.out" }, 24.1);',
-    'tl.fromTo("#fecho-2 .bt", { scale: 0.4, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2.5)", stagger: 0.25 }, 24.35);',
-    'tl.fromTo("#fecho-3", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 25.0);',
-    'tl.fromTo("#fecho-4", { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(2)" }, 25.6);',
+    f'tl.fromTo("#escurece", {{ opacity: 0 }}, {{ opacity: 0.72, duration: 0.4 }}, {C_FECHO});',
+    f'tl.fromTo("#fecho-1", {{ y: 30, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.4, ease: "power3.out" }}, {C_FECHO + 0.1});',
+    f'tl.fromTo("#fecho-2 .bt", {{ scale: 0.4, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2.5)", stagger: 0.25 }}, {C_FECHO + 0.35});',
+    f'tl.fromTo("#fecho-3", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.4 }}, {C_FECHO + 1.0});',
+    f'tl.fromTo("#fecho-4", {{ scale: 0.5, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.45, ease: "back.out(2)" }}, {C_FECHO + 1.6});',
 ]
 
 els = []
 for cid, a, d, html in caps:
-    baixo = ' style="top: 1520px"' if a >= 18.2 else ''
+    baixo = ' style="top: 1520px"' if a >= C_ESCOLHA - 0.1 else ''
     els.append(f'        <div id="{cid}" class="clip cap"{baixo} data-start="{a}" data-duration="{d}" data-track-index="0"><span>{html}</span></div>')
 carimbos = "\n".join(f'      <div id="{cid}" class="clip carimbo" style="top: {top}px" data-start="{round(t0, 3)}" data-duration="{round(t1 - t0, 3)}" data-track-index="5"><span>{txt}</span></div>' for cid, txt, t0, t1, top, _ in CAR)
 
 SFX = [  # id, arquivo, início (pico 1 quadro depois da imagem), duração, volume
-    ("whoosh-1", "whoosh-short", 7.2 - 0.13, 0.57, 0.55), ("whoosh-2", "whoosh-short", 9.86 - 0.13, 0.57, 0.45),
-    ("whoosh-3", "whoosh-short", 13.69 - 0.13, 0.57, 0.5), ("whoosh-4", "whoosh", 18.29 - 0.2, 0.57, 0.45),
+    ("whoosh-1", "whoosh-short", C_CROC - 0.13, 0.57, 0.55), ("whoosh-2", "whoosh-short", C_CIPO - 0.13, 0.57, 0.45),
+    ("whoosh-3", "whoosh-short", C_PEDRA - 0.13, 0.57, 0.5), ("whoosh-4", "whoosh", C_ESCOLHA - 0.2, 0.57, 0.45),
     ("croc", "impact-bass-1", ini["O rio tem crocodilo."] + 0.6 - 0.04, 2.0, 0.9),
     ("racha", "glitch-3", ini["Mas ele tá rachando."] + 0.5, 0.6, 0.5),
     ("carimbo-1", "impact-bass-2", ini["Mas ele tá rachando."] + 0.55 + 0.22 - 1.95, 2.5, 0.55),
@@ -256,7 +263,7 @@ SFX = [  # id, arquivo, início (pico 1 quadro depois da imagem), duração, vol
     ("carimbo-2", "impact-bass-1", ini["Só que uma delas... piscou."] + 1.25 + 0.22 - 0.04, 2.0, 0.8),
     ("opc-1", "pop", t_opc + 0.25 - 0.09, 0.7, 0.7), ("opc-2", "pop", t_opc + 1.1 - 0.09, 0.7, 0.7),
     ("circulo", "sparkle", ini["E tem um terceiro jeito escondido nessa imagem."] + 1.4, 1.8, 0.6),
-    ("fecho", "impact-bass-1", 25.6 - 0.04, 2.0, 0.6),
+    ("fecho", "impact-bass-1", C_FECHO + 1.6 - 0.04, 2.0, 0.6),
 ]
 sfx = "\n".join(f'      <audio id="sfx-{i}" class="clip" src="assets/audio/{f}.mp3" data-start="{round(max(0, s), 3)}" data-duration="{d}" data-track-index="{20 + n}" data-volume="{v}"></audio>' for n, (i, f, s, d, v) in enumerate(SFX))
 
@@ -310,22 +317,22 @@ page = f'''<!doctype html>
       <div id="cena" class="clip" data-start="0" data-duration="{DUR}" data-track-index="1" data-layout-allow-overflow data-layout-ignore>
         <svg viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg"><g id="mundo">{mundo}</g></svg>
       </div>
-      <div id="escurece" class="clip" data-start="24.0" data-duration="{round(DUR - 24.0, 2)}" data-track-index="2" data-layout-ignore></div>
-      <div id="hud" class="clip" data-start="0" data-duration="24.0" data-track-index="3">
+      <div id="escurece" class="clip" data-start="{round(C_FECHO, 3)}" data-duration="{round(DUR - C_FECHO, 3)}" data-track-index="2" data-layout-ignore></div>
+      <div id="hud" class="clip" data-start="0" data-duration="{round(C_FECHO, 3)}" data-track-index="3">
         <div class="caixa"><small>BANANAS</small><b>0</b></div>
         <div class="caixa"><small>ENERGIA</small><b><span id="hud-energia-n">100</span>%</b></div>
         <div class="caixa" id="hud-perigo"><small>PERIGO</small><b><span id="hud-perigo-n">0</span>%</b><div class="barra"><div id="hud-perigo-barra"></div></div></div>
       </div>
-      <div id="legendas" class="clip" data-start="0" data-duration="26.2" data-track-index="4" data-track-kind="captions">
+      <div id="legendas" class="clip" data-start="0" data-duration="{round(T['total'] + 0.3, 3)}" data-track-index="4" data-track-kind="captions">
 {chr(10).join(els)}
       </div>
 {carimbos}
-      <div id="opc-cipo" class="clip opc" data-start="{round(t_opc, 3)}" data-duration="{round(24.0 - t_opc, 3)}" data-track-index="6">CIPÓ</div>
-      <div id="opc-pedra" class="clip opc" data-start="{round(t_opc, 3)}" data-duration="{round(24.0 - t_opc, 3)}" data-track-index="7">PEDRA</div>
-      <div id="fecho-1" class="clip fecho" data-start="24.0" data-duration="{round(DUR - 24, 2)}" data-track-index="8">Comente uma palavra</div>
-      <div id="fecho-2" class="clip fecho" data-start="24.0" data-duration="{round(DUR - 24, 2)}" data-track-index="9"><span class="bt" style="background:#fff;color:#111">CIPÓ</span><span class="bt" style="background:#ffd23a;color:#111">PEDRA</span></div>
-      <div id="fecho-3" class="clip fecho" data-start="24.0" data-duration="{round(DUR - 24, 2)}" data-track-index="10">ou ache o 3º jeito escondido</div>
-      <div id="fecho-4" class="clip fecho" data-start="24.0" data-duration="{round(DUR - 24, 2)}" data-track-index="11">PARTE 2<br>AMANHÃ</div>
+      <div id="opc-cipo" class="clip opc" data-start="{round(t_opc, 3)}" data-duration="{round(C_FECHO - t_opc, 3)}" data-track-index="6">CIPÓ</div>
+      <div id="opc-pedra" class="clip opc" data-start="{round(t_opc, 3)}" data-duration="{round(C_FECHO - t_opc, 3)}" data-track-index="7">PEDRA</div>
+      <div id="fecho-1" class="clip fecho" data-start="{round(C_FECHO, 3)}" data-duration="{round(DUR - C_FECHO, 3)}" data-track-index="8">Comente uma palavra</div>
+      <div id="fecho-2" class="clip fecho" data-start="{round(C_FECHO, 3)}" data-duration="{round(DUR - C_FECHO, 3)}" data-track-index="9"><span class="bt" style="background:#fff;color:#111">CIPÓ</span><span class="bt" style="background:#ffd23a;color:#111">PEDRA</span></div>
+      <div id="fecho-3" class="clip fecho" data-start="{round(C_FECHO, 3)}" data-duration="{round(DUR - C_FECHO, 3)}" data-track-index="10">ou ache o 3º jeito escondido</div>
+      <div id="fecho-4" class="clip fecho" data-start="{round(C_FECHO, 3)}" data-duration="{round(DUR - C_FECHO, 3)}" data-track-index="11">PARTE 2<br>AMANHÃ</div>
       <audio id="narracao" class="clip" src="assets/audio/narracao.mp3" data-start="0" data-duration="{T['total']:.2f}" data-track-index="12" data-volume="1"></audio>
       <audio id="trilha" class="clip" src="assets/audio/trilha.mp3" data-start="0" data-duration="{DUR}" data-track-index="13" data-volume="0.5"></audio>
 {sfx}
