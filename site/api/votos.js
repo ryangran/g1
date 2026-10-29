@@ -1,7 +1,7 @@
 // GET /api/votos → placar da votação aberta, lido dos comentários do Reel.
 // Variáveis na Vercel (Settings → Environment Variables):
 //   IG_TOKEN     token de acesso do Instagram (API do Instagram com login do Instagram)
-//   VOTO_OPCOES  ex.: "CIPÓ,PEDRA"
+//   VOTO_OPCOES  ex.: "ACELERA,ESPERA"
 //   VOTO_FECHA   ex.: "2026-10-30T15:00:00-03:00" (opcional)
 //   IG_MEDIA_ID  id do Reel da votação (opcional; sem ele usa o post mais recente)
 // A resposta fica em cache na CDN por 60 s: o Instagram é consultado no máximo 1 vez por minuto.
@@ -28,7 +28,7 @@ async function comentarios(mediaId, token) {
 }
 
 module.exports = async (req, res) => {
-  const opcoes = (process.env.VOTO_OPCOES || "CIPÓ,PEDRA").split(",").map((s) => s.trim()).filter(Boolean);
+  const opcoes = (process.env.VOTO_OPCOES || "ACELERA,ESPERA").split(",").map((s) => s.trim()).filter(Boolean);
   const fecha = process.env.VOTO_FECHA || null;
   res.setHeader("Content-Type", "application/json; charset=utf-8");
   res.setHeader("Cache-Control", "public, s-maxage=60, stale-while-revalidate=300");
@@ -39,7 +39,7 @@ module.exports = async (req, res) => {
       const demo = [];
       const base = Date.now() - 3600e3;
       for (let i = 0; i < 137; i++) demo.push({ username: `demo${i}`, text: i % 5 < 3 ? opcoes[0] : opcoes[1] || opcoes[0], timestamp: new Date(base + i * 1000).toISOString() });
-      for (let i = 0; i < 9; i++) demo.push({ username: `palpite${i}`, text: "acho que é o tronco", timestamp: new Date(base).toISOString() });
+      for (let i = 0; i < 9; i++) demo.push({ username: `palpite${i}`, text: "vai na casa do seu antônio, tá no recibo", timestamp: new Date(base).toISOString() });
       return res.status(200).json({ demo: true, atualizado: new Date().toISOString(), fechaEm: fecha, ...contar(demo, opcoes, null) });
     }
     let mediaId = process.env.IG_MEDIA_ID;

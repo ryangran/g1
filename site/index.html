@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>3º Jeito · Você decide</title>
+<title>O Bilhete · Você decide</title>
 <meta name="description" content="Série interativa: todo dia sai uma parte e os comentários escrevem a próxima." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
@@ -168,8 +168,8 @@
 <header>
   <div class="faixa"><span id="faixa"></span></div>
   <div class="wrap barra-topo">
-    <a class="logo" href="#"><i>3º</i><span id="marca"></span></a>
-    <nav><a href="#votacao">Votação</a><a href="#passe">Virar agente</a><a href="#procurados">Procurados</a><a href="#arquivo">Partes</a></nav>
+    <a class="logo" href="#"><i class="logo-letra"></i><span id="marca"></span></a>
+    <nav><a href="#votacao">Votação</a><a href="#passe" id="nav-passe"></a><a href="#procurados" id="nav-rank"></a><a href="#arquivo">Partes</a></nav>
   </div>
 </header>
 
@@ -209,14 +209,10 @@
 
   <section id="passe">
     <div class="wrap">
-      <div class="kicker">Passe de agente</div>
-      <h2>Seu @ dentro do episódio.</h2>
-      <p style="color:#d9ddd5;max-width:620px">Cada passe vale uma parte. Seu @ aparece dentro da cena e na legenda do Reel. Entrou de novo, aparece de novo, e sobe nos Mais Procurados.</p>
-      <div class="cards">
-        <div class="card"><div class="ic">🎬</div><h3>Dentro da cena</h3><p>Num cartaz pregado na árvore, numa pedra, numa placa ou nos créditos. Pause, ache seu nome, marque os amigos.</p></div>
-        <div class="card"><div class="ic">📝</div><h3>Na legenda do Reel</h3><p>"🕵️ Agentes da próxima parte: @você", clicável para todo mundo que assistir.</p></div>
-        <div class="card"><div class="ic">🗂️</div><h3>Número de agente</h3><p>Agente nº 001, 002, 003… O seu é para sempre e mostra quem chegou primeiro.</p></div>
-        <div class="card"><div class="ic">⭐</div><h3>Mais Procurados</h3><p>Quem entra em mais partes sobe no ranking. Os 3 primeiros ganham um cartaz de procurado desenhado.</p></div>
+      <div class="kicker" id="passe-kicker"></div>
+      <h2 id="passe-titulo"></h2>
+      <p style="color:#d9ddd5;max-width:620px" id="passe-texto"></p>
+      <div class="cards" id="passe-cards">
       </div>
       <div class="passe-grade">
         <div class="quadro">
@@ -234,7 +230,7 @@
           <input type="email" id="f-email" placeholder="voce@email.com" required />
           <label class="aceite" style="text-transform:none;letter-spacing:0;font:500 14px Inter;color:var(--tinta)">
             <input type="checkbox" id="f-aceite" />
-            <span>Concordo em aparecer como agente numa história de ficção, com meu @ visível no vídeo, na legenda e neste site.</span>
+            <span id="aceite-txt"></span>
           </label>
           <button class="btn" type="submit" id="f-botao"></button>
           <div class="msg" id="f-msg" role="status"></div>
@@ -247,8 +243,8 @@
   <section id="procurados">
     <div class="wrap">
       <div class="kicker">Ranking</div>
-      <h2>Mais Procurados</h2>
-      <p style="color:#d9ddd5">Agentes classificados por quantas partes já entraram.</p>
+      <h2 id="rank-titulo"></h2>
+      <p style="color:#d9ddd5" id="rank-texto"></p>
       <div class="procurados" id="lista-procurados"></div>
     </div>
   </section>
@@ -277,7 +273,7 @@
       <details><summary>Eu vou receber dinheiro?</summary><p>Não. Você paga para ter seu @ dentro do episódio. Ninguém do canal manda Pix para você, e ninguém vai pedir senha ou dados bancários.</p></details>
       <details><summary>Pagar muda a história?</summary><p>Não. A história é decidida só pelos comentários no Instagram, e votar é sempre grátis.</p></details>
       <details><summary>Quando meu @ aparece?</summary><p id="faq-horario"></p></details>
-      <details><summary>Posso entrar em mais de uma parte?</summary><p>Pode. Cada passe vale uma parte. Quanto mais partes, mais você sobe nos Mais Procurados.</p></details>
+      <details><summary>Posso entrar em mais de uma parte?</summary><p id="faq-mais"></p></details>
       <details><summary>E se meu @ não aparecer?</summary><p>Se por qualquer motivo seu @ não entrar em nenhuma parte, você recebe o valor de volta. Fale com a gente pelo Instagram.</p></details>
       <details><summary>Que @ não entra?</summary><p>Perfis com conteúdo ofensivo, golpe ou propaganda proibida. Nesse caso a gente devolve o valor.</p></details>
     </div>
@@ -286,7 +282,7 @@
 
 <footer>
   <div class="wrap colunas">
-    <div><a class="logo" href="#"><i>3º</i><span class="marca-txt"></span></a><p style="margin-top:10px;max-width:320px">História fictícia, personagens fictícios. Toda escolha tem um 3º jeito.</p></div>
+    <div><a class="logo" href="#"><i class="logo-letra"></i><span class="marca-txt"></span></a><p style="margin-top:10px;max-width:320px" id="rodape-txt"></p></div>
     <div><h4>SIGA</h4><span id="redes"></span></div>
   </div>
 </footer>
@@ -297,7 +293,19 @@
   const esc = (t) => String(t).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const proxParte = (S.partes.at(-1)?.n || 0) + 1;
 
+  const P = S.passe;
+  document.title = S.tituloPagina || document.title;
   $("marca").textContent = S.marca;
+  document.querySelectorAll(".logo-letra").forEach((e) => (e.textContent = S.logoLetra));
+  $("rodape-txt").textContent = S.rodape;
+  $("passe-kicker").textContent = P.kicker;
+  $("passe-titulo").textContent = P.titulo;
+  $("passe-texto").textContent = P.texto;
+  $("passe-cards").innerHTML = P.cards.map((c) => `<div class="card"><div class="ic">${c.ic}</div><h3>${esc(c.t)}</h3><p>${esc(c.p)}</p></div>`).join("");
+  $("aceite-txt").textContent = P.aceite;
+  $("rank-titulo").textContent = P.rankTitulo;
+  $("rank-texto").textContent = P.rankTexto;
+  $("faq-mais").textContent = P.faqMais;
   document.querySelectorAll(".marca-txt").forEach((e) => (e.textContent = S.marca));
   document.querySelectorAll(".preco-txt").forEach((e) => (e.textContent = S.precoPasse));
   const faixa = `PARTE ${S.votacao.parte} · ${S.votacao.opcoes.join(" OU ")} · VOTE NO REEL · ■ · `;
@@ -336,7 +344,7 @@
   // vagas e ficha
   const daParte = S.agentes.filter((a) => (a.parteAtual || 0) === proxParte);
   const livres = S.vagasPorParte - daParte.length;
-  $("quadro-titulo").textContent = `QUADRO DO CASO · PARTE ${proxParte}`;
+  $("quadro-titulo").textContent = `${P.quadro || "QUADRO DO CASO"} · PARTE ${proxParte}`;
   $("quadro-vagas").textContent = `${livres} VAGAS`;
   const base = S.agentes.length;
   $("vagas").innerHTML = Array.from({ length: Math.min(S.vagasPorParte, 8) }, (_, i) => {
@@ -349,7 +357,8 @@
   const horario = `Pagou até ${S.horaFechaVoto}h (Brasília), entra na parte das ${S.horaParte}h. Depois disso, ou com as vagas cheias, entra na seguinte.`;
   $("nota-horario").textContent = horario;
   $("faq-horario").textContent = horario;
-  $("f-botao").textContent = S.linkPagamento ? `Virar agente por ${S.precoPasse} no Pix` : "Pagamento abre em breve";
+  $("f-botao").textContent = S.linkPagamento ? `${P.botao} por ${S.precoPasse} no Pix` : "Pagamento abre em breve";
+  $("nav-passe").textContent = P.nav; $("nav-rank").textContent = P.rankNav;
   $("ficha").addEventListener("submit", (e) => {
     e.preventDefault();
     const arroba = $("f-arroba").value.trim().replace(/^@*/, "@"), email = $("f-email").value.trim(), msg = $("f-msg");
@@ -366,8 +375,8 @@
   const rank = [...S.agentes].sort((a, b) => (b.partes || 0) - (a.partes || 0)).slice(0, 3);
   $("lista-procurados").innerHTML = [0, 1, 2].map((i) => {
     const a = rank[i];
-    return `<div class="cartaz"><h3>PROCURADO</h3><div class="silhueta"><b>#${i + 1}</b><svg viewBox="0 0 100 90"><circle cx="50" cy="30" r="20" fill="#0a0908"/><path d="M6 90 C 8 62 26 52 50 52 C 74 52 92 62 94 90 Z" fill="#0a0908"/></svg></div>
-      ${a ? `<small>${esc(a.titulo || "AGENTE")}</small><div class="arroba">${esc(a.arroba)}</div><small>AGENTE Nº ${String(a.numero).padStart(3, "0")}</small>`
+    return `<div class="cartaz"><h3>${esc(P.cartaz)}</h3><div class="silhueta"><b>#${i + 1}</b><svg viewBox="0 0 100 90"><circle cx="50" cy="30" r="20" fill="#0a0908"/><path d="M6 90 C 8 62 26 52 50 52 C 74 52 92 62 94 90 Z" fill="#0a0908"/></svg></div>
+      ${a ? `<small>${esc(a.titulo || P.rotulo)}</small><div class="arroba">${esc(a.arroba)}</div><small>${esc(P.rotulo)} Nº ${String(a.numero).padStart(3, "0")}</small>`
           : `<small>VAGA ABERTA</small><div class="arroba" style="text-decoration:none">pode ser você</div><small>ENTRE NA PRÓXIMA PARTE</small>`}</div>`;
   }).join("");
 
