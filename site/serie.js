@@ -7,7 +7,6 @@ window.SERIE = {
   instagram: "https://www.instagram.com/clovis.obilhete/",
   reelAtual: "https://www.instagram.com/clovis.obilhete/",  // trocar pelo link do Reel da votação aberta
   tiktok: "", youtube: "",
-  linkPagamento: "",  // Link de pagamento do Mercado Pago (R$ 9,90, Pix). Vazio = botão mostra "em breve".
   precoPasse: "R$ 9,90",
   vagasPorParte: 10,
   horaParte: 19,

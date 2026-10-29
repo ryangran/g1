@@ -234,6 +234,8 @@
           <hr />
           <label for="f-arroba">Seu @ no Instagram</label>
           <input type="text" id="f-arroba" placeholder="@seu.usuario" autocomplete="off" required />
+          <label for="f-email">E-mail (para o comprovante)</label>
+          <input type="email" id="f-email" placeholder="voce@email.com" autocomplete="email" required />
           
           <label class="aceite" style="text-transform:none;letter-spacing:0;font:500 14px Inter;color:var(--tinta)">
             <input type="checkbox" id="f-aceite" />
@@ -373,17 +375,24 @@
   const horario = `Pagou até ${S.horaFechaVoto}h (Brasília), entra na parte das ${S.horaParte}h. Depois disso, ou com as vagas cheias, entra na seguinte.`;
   $("nota-horario").textContent = horario;
   $("faq-horario").textContent = horario;
-  $("f-botao").textContent = S.linkPagamento ? `${P.botao} por ${S.precoPasse} no Pix` : "Pagamento abre em breve";
+  $("f-botao").textContent = "Pagamento abre em breve";
+  fetch("/api/pedido").then((r) => r.json()).then((j) => { if (j.ativo) $("f-botao").textContent = `${P.botao} por ${S.precoPasse} no Pix`; }).catch(() => {});
+  if (/[?&]pago=1/.test(location.search)) $("f-msg").textContent = "Pagamento recebido! Seu @ entra na próxima parte. O comprovante vai para o seu e-mail.";
   $("nav-passe").textContent = P.nav; $("nav-rank").textContent = P.rankNav;
-  $("ficha").addEventListener("submit", (e) => {
+  $("ficha").addEventListener("submit", async (e) => {
     e.preventDefault();
-    const arroba = $("f-arroba").value.trim().replace(/^@*/, "@"), msg = $("f-msg");
+    const arroba = $("f-arroba").value.trim().replace(/^@*/, "@"), email = $("f-email").value.trim(), msg = $("f-msg");
     if (!/^@[A-Za-z0-9._]{1,30}$/.test(arroba)) return (msg.textContent = "Confira seu @ do Instagram.");
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return (msg.textContent = "Confira seu e-mail.");
     if (!$("f-aceite").checked) return (msg.textContent = "Marque que concorda em aparecer na história.");
-    if (!S.linkPagamento) return (msg.textContent = "As vagas abrem junto com a série. Siga o perfil para saber quando.");
-    const url = new URL(S.linkPagamento);
-    url.searchParams.set("external_reference", arroba);  // o link de pagamento leva o @ para conferência
-    location.href = url.toString();
+    $("f-botao").disabled = true; msg.textContent = "Abrindo o Pix…";
+    try {
+      const r = await fetch("/api/pedido", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ arroba, email }) });
+      const j = await r.json();
+      if (j.link) return (location.href = j.link);
+      msg.textContent = j.erro || "Não deu para abrir o pagamento agora.";
+    } catch { msg.textContent = "Sem conexão. Tente de novo."; }
+    $("f-botao").disabled = false;
   });
 
   // procurados

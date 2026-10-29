@@ -10,12 +10,9 @@ Site estático com uma página, pensado primeiro para o celular (o público vem 
 2. Anote a decisão da parte anterior (ex.: `"Cipó · 62%"`). Use só números reais da contagem dos comentários.
 3. Adicione os agentes pagos em `agentes` (`arroba`, `numero`, `partes`, `parteAtual`).
 
-## Pagamento
-`linkPagamento` vazio faz o botão mostrar "Pagamento abre em breve" (nada é cobrado). Para cobrar:
-1. Crie um **Link de pagamento** de R$ 9,90 no Mercado Pago, com Pix.
-2. Cole o link em `linkPagamento`.
-
-O site **não guarda** dados de ninguém. Ele só leva o @ junto para o link de pagamento, e a conferência é feita no painel do Mercado Pago.
+## Pagamento (Mercado Pago, só Pix)
+`api/pedido.js` cria o pagamento no Mercado Pago com o e-mail do comprador (que recebe o comprovante) e o @ como referência (aparece no painel do Mercado Pago).
+Para ligar, coloque o **Access token de produção** (Mercado Pago → Suas integrações → Credenciais de produção) na Vercel como `MP_ACCESS_TOKEN` e publique de novo. Sem ele, o botão mostra "Pagamento abre em breve".
 
 ## Publicar
 `./site/publicar.sh` sobe o site para https://obilhete.vercel.app. Na Vercel, o projeto `obilhete` já tem `IG_TOKEN`, `IG_USER_ID` e `VOTO_OPCOES`.
