@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs><radialGradient id="f" cx="50%" cy="35%" r="75%"><stop offset="0" stop-color="#26364d"/><stop offset="1" stop-color="#0b111b"/></radialGradient>
+  <radialGradient id="g" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffd23a" stop-opacity=".45"/><stop offset="1" stop-color="#ffd23a" stop-opacity="0"/></radialGradient></defs>
+  <rect width="1024" height="1024" rx="200" fill="url(#f)"/>
+  <circle cx="512" cy="560" r="420" fill="url(#g)"/>
+  <g transform="translate(512 300)"><rect x="-170" y="-60" width="340" height="120" rx="18" fill="#e23b2e" stroke="#120f0c" stroke-width="14"/>
+    <text x="0" y="34" font-family="Archivo Black, Arial Black, sans-serif" font-size="96" fill="#fff" text-anchor="middle">TÁXI</text></g>
+  <g transform="translate(512 610) rotate(-9)">
+    <path d="M-330 -170 L 330 -170 L 330 -60 A 60 60 0 0 0 330 60 L 330 170 L -330 170 L -330 60 A 60 60 0 0 0 -330 -60 Z" fill="#f5e7a1" stroke="#120f0c" stroke-width="18" stroke-linejoin="round"/>
+    <rect x="-270" y="-128" width="540" height="56" fill="#e0c96a"/>
+    <g fill="none" stroke="#e02f24" stroke-width="12">
+      <circle cx="-200" cy="20" r="44"/><circle cx="-80" cy="20" r="44"/><circle cx="40" cy="20" r="44"/><circle cx="160" cy="20" r="44"/></g>
+    <g font-family="Archivo Black, Arial Black, sans-serif" font-size="52" fill="#2a2a2a" text-anchor="middle"><text x="-200" y="38">07</text><text x="-80" y="38">22</text><text x="40" y="38">31</text><text x="160" y="38">58</text></g>
+    <path d="M-270 110 h540" stroke="#8b7f4a" stroke-width="10" stroke-dasharray="26 18"/>
+  </g>
+</svg>
