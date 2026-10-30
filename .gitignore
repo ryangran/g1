@@ -11,3 +11,4 @@ __pycache__/
 estudio/producoes/*/renders/work-*/
 estudio/producoes/*/renders/.*hf-transaction*/
 **/.hyperframes/
+site/assets/reel/*.mp4
