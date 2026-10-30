@@ -5,7 +5,7 @@ window.SERIE = {
   tituloPagina: "O Bilhete · Você decide o que o Clóvis faz com R$ 40 milhões",
   rodape: "História fictícia, personagens fictícios. Todo prêmio tem dono.",
   instagram: "https://www.instagram.com/clovis.obilhete/",
-  reelAtual: "https://www.instagram.com/clovis.obilhete/",  // trocar pelo link do Reel da votação aberta
+  reelAtual: "https://www.instagram.com/reel/DfIm0RTin1y/",  // Reel da votação aberta
   tiktok: "", youtube: "",
   precoPasse: "R$ 9,90",
   vagasPorParte: 10,
@@ -33,7 +33,7 @@ window.SERIE = {
   },
 
   partes: [
-    { n: 1, titulo: "Todo prêmio tem dono", capa: "assets/capas/parte1.jpg", cena: "assets/capas/hotel.jpg", decisao: null, link: "" },
+    { n: 1, titulo: "Todo prêmio tem dono", capa: "assets/capas/parte1.jpg", cena: "assets/capas/hotel.jpg", decisao: null, link: "https://www.instagram.com/reel/DfIm0RTin1y/" },
   ],
   // mural: 5 fotos em volta (troque por cenas de cada parte conforme forem saindo); o centro vem da última parte
   mural: [
