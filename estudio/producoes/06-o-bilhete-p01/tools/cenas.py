@@ -199,13 +199,22 @@ def mao(x, y, rot=0, s=1.0, cid=""):
 </g>'''
 
 
+def pose(nome, x, y, largura, cid="", noite=True):
+    """Pose oficial do Clóvis (assets/clovis/, recortada das folhas em docs/). x, y = canto superior esquerdo."""
+    from PIL import Image
+    arq = f"assets/clovis/{nome}{'-noite' if noite else ''}.png"
+    w, h = Image.open(arq).size
+    alt = round(largura * h / w)
+    return f'<g {f"id={chr(34)}{cid}{chr(34)}" if cid else ""}><image href="{arq}" x="{x}" y="{y}" width="{largura}" height="{alt}" preserveAspectRatio="none"/></g>'
+
+
 # ================================================================ CENAS
 
 def i01():
     """O táxi chega, freia em frente ao Hotel Imperial e o passageiro desce do lado da calçada (atrás do carro)
     e anda até a porta. Escala real: porta 2,4 m ≈ 310 px, pessoa 1,75 m ≈ 220 px, carro 4,5 m ≈ 560 px."""
     janelas = "".join(f'<rect x="{x}" y="{y}" width="74" height="96" fill="{c}" {O4}/>' for x in (110, 240, 370, 630, 760, 890) for y, c in ((330, "#ffcf7a" if x in (240, 630, 890) else "#3a4560"), (470, "#ffcf7a" if x in (110, 370, 760) else "#3a4560")))
-    cabeca = f'<g id="clovis-janela"><g transform="translate(290 86) scale(0.16)">{clovis_cabeca("c1")}</g></g>'
+    cabeca = f'<g id="clovis-janela">{pose("rosto-sorriso", 246, 40, 92)}</g>'
     return svg(f'''
 <rect width="1080" height="1920" fill="url(#noite)"/>
 <rect x="40" y="150" width="1000" height="1040" fill="#2c2433" {O}/>
@@ -302,7 +311,7 @@ def i04():
 <rect width="1080" height="1920" fill="#0a0d12"/>
 <circle id="neon-fundo" cx="900" cy="500" r="420" fill="url(#vermelho)"/>
 <rect x="0" y="0" width="1080" height="1920" fill="#0d1a2c" opacity="0.4"/>
-<g transform="translate(540 980) scale(2.05)">{clovis_cabeca("c4")}<g id="suor">{gotas_suor}</g></g>
+<g id="susto">{pose("susto-suor", 20, 300, 1040)}</g>
 <rect x="0" y="1000" width="1080" height="920" fill="url(#verde)"/>
 <path d="M0 1700 C 300 1640 780 1640 1080 1700 L 1080 1920 L 0 1920 Z" fill="#0c0f14" {O}/>
 <g id="terco4" transform="translate(170 160)"><path d="M0 0 C -20 180 40 300 10 420" fill="none" stroke="#8a5a32" stroke-width="10" stroke-dasharray="2 16" stroke-linecap="round"/><path d="M-12 410 h44 M10 390 v60" stroke="#8a5a32" stroke-width="14" stroke-linecap="round"/></g>
@@ -324,7 +333,7 @@ def i05():
 <g id="envelope"><g transform="translate(720 1380) rotate(8)"><rect x="-200" y="-120" width="400" height="240" fill="#e8e2d0" {O}/><path d="M-200 -120 L 0 20 L 200 -120" fill="none" {O4}/>
   <rect x="-150" y="40" width="300" height="50" fill="none" stroke="#c0392b" stroke-width="7"/><text x="0" y="78" font-family="Archivo Black, sans-serif" font-size="34" fill="#c0392b" text-anchor="middle">EM ATRASO</text></g></g>
 <g id="terco5" transform="translate(540 0)"><path d="M0 0 C -30 200 50 340 10 520" fill="none" stroke="#8a5a32" stroke-width="12" stroke-dasharray="2 18" stroke-linecap="round"/><path d="M-16 510 h52 M10 486 v74" stroke="#8a5a32" stroke-width="16" stroke-linecap="round"/></g>
-{clovis_busto(860, 1560, 0.9, "c5")}
+<g id="c5">{pose("rosto-preocupado", 560, 1180, 560)}</g>
 ''')
 
 
@@ -464,8 +473,8 @@ def i12():
 <rect x="0" y="1100" width="1080" height="820" fill="#11161f"/>
 <rect x="0" y="1100" width="1080" height="60" fill="#2b2f38" {O4}/>
 {taxi_lado(-120, 1080, 1.1, "taxi12")}
-{homem_corpo(800, 720, 0.85, "hc12")}
-{clovis_corpo(330, 830, 1.25, "cc12")}
+{homem_corpo(820, 650, 0.78, "hc12")}
+<g id="cc12">{pose("segura-bilhete", 250, 1250, 830)}</g>
 <rect x="0" y="1500" width="1080" height="420" fill="#ffb661" opacity="0.06"/>
 {chuva("chuva12", 90, 13)}
 ''')
@@ -517,18 +526,13 @@ def anim(nome, pid, t0, t1, pal):
                   f'tl.fromTo("{q(f"#num-{i}")}", {{ scale: 1, transformOrigin: "50% 50%" }}, {{ scale: 1.15, duration: 0.12, yoyo: true, repeat: 1, immediateRender: false }}, {round(tt, 3)});']
         j.append(f'tl.set("{q("[id^=risco-]")}", {{ opacity: 0 }}, {t0});')
     if nome in ("i04",):
-        j += [f'tl.fromTo("{q("#c4-pupilas")}", {{ scale: 1, transformOrigin: "50% 50%" }}, {{ scale: 0.6, duration: 0.15, immediateRender: false }}, {t0 + 0.25});',
-              f'tl.fromTo("{q("#c4-palp-e")},{q("#c4-palp-d")}", {{ y: 0 }}, {{ y: -16, duration: 0.15, immediateRender: false }}, {t0 + 0.25});',
-              f'tl.fromTo("{q("#c4-sobr-e")},{q("#c4-sobr-d")}", {{ y: 0 }}, {{ y: -22, duration: 0.15, immediateRender: false }}, {t0 + 0.25});',
-              f'tl.set("{q("#c4-boca")}", {{ opacity: 0 }}, {t0 + 0.3}); tl.set("{q("#c4-boca-o")}", {{ opacity: 1 }}, {t0 + 0.3});',
-              f'tl.fromTo("{q("#suor-0")}", {{ y: 0, opacity: 0 }}, {{ y: 90, opacity: 1, duration: {d}, ease: "power1.in", immediateRender: false }}, {t0});',
-              f'tl.fromTo("{q("#suor-1")}", {{ y: 0, opacity: 0 }}, {{ y: 60, opacity: 1, duration: {d}, ease: "power1.in", immediateRender: false }}, {t0 + 0.3});',
+        j += [f'tl.fromTo("{q("#susto")}", {{ scale: 1, transformOrigin: "50% 40%" }}, {{ scale: 1.08, duration: {d}, ease: "power1.in", immediateRender: false }}, {t0});',
+              f'tl.fromTo("{q("#susto")}", {{ x: 0 }}, {{ x: 6, duration: 0.05, yoyo: true, repeat: 7, immediateRender: false }}, {round(t0 + 0.25, 3)});',
               f'tl.fromTo("{q("#neon-fundo")}", {{ opacity: 1 }}, {{ opacity: 0.4, duration: 0.07, yoyo: true, repeat: 3, immediateRender: false }}, {t0 + 0.9});',
               f'tl.fromTo("{q("#terco4")}", {{ rotation: -6, transformOrigin: "50% 0%" }}, {{ rotation: 6, duration: 1.1, yoyo: true, repeat: 2, ease: "sine.inOut", immediateRender: false }}, {t0});']
     if nome == "i05":
         j += [f'tl.fromTo("{q("#terco5")}", {{ rotation: -5, transformOrigin: "50% 0%" }}, {{ rotation: 5, duration: 1.3, yoyo: true, repeat: {max(1, int(d / 1.3))}, ease: "sine.inOut", immediateRender: false }}, {t0});',
-              f'tl.fromTo("{q("#c5-pupilas")}", {{ x: 0 }}, {{ x: -16, duration: 0.4, immediateRender: false }}, {t0 + 0.3});',
-              f'tl.fromTo("{q("#c5-palp-e")},{q("#c5-palp-d")}", {{ y: 0 }}, {{ y: 8, duration: 0.4, immediateRender: false }}, {t0 + 0.3});',
+              f'tl.fromTo("{q("#c5")}", {{ y: 40 }}, {{ y: 0, duration: 0.8, ease: "power2.out", immediateRender: false }}, {t0});',
               f'tl.fromTo("{q("#envelope")}", {{ y: 30, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.5, ease: "power2.out", immediateRender: false }}, {t0 + d * 0.45});']
     if nome == "i06":
         j += [f'tl.fromTo("{q("#h6-braco-e")}", {{ rotation: 0, transformOrigin: "50% 0%" }}, {{ rotation: 28, duration: 0.35, yoyo: true, repeat: 5, ease: "sine.inOut", immediateRender: false }}, {t0 + 0.3});',
@@ -560,7 +564,7 @@ def anim(nome, pid, t0, t1, pal):
         j += [f'tl.fromTo("{q("#hc12")}", {{ x: 0 }}, {{ x: -150, duration: {d}, ease: "none", immediateRender: false }}, {t0});',
               f'tl.fromTo("{q("#hc12-perna-e")}", {{ rotation: -10, transformOrigin: "50% 0%" }}, {{ rotation: 10, duration: 0.45, yoyo: true, repeat: {int(d / 0.45)}, immediateRender: false }}, {t0});',
               f'tl.fromTo("{q("#hc12-perna-d")}", {{ rotation: 10, transformOrigin: "50% 0%" }}, {{ rotation: -10, duration: 0.45, yoyo: true, repeat: {int(d / 0.45)}, immediateRender: false }}, {t0});',
-              f'tl.fromTo("{q("#cc12-braco")}", {{ rotation: 0, transformOrigin: "0% 100%" }}, {{ rotation: -6, duration: 0.6, yoyo: true, repeat: {max(1, int(d / 0.6))}, ease: "sine.inOut", immediateRender: false }}, {t0});']
+              f'tl.fromTo("{q("#cc12")}", {{ y: 0 }}, {{ y: -10, duration: 0.9, yoyo: true, repeat: {max(1, int(d / 0.9))}, ease: "sine.inOut", immediateRender: false }}, {t0});']
     for cid in ("chuva", "chuva5", "chuva6", "chuva7", "chuva9", "chuva10", "chuva11", "chuva12"):
         if f'id="{cid}"' in CENAS[nome]():
             j.append(chuva_js(f"{pid} #{cid}", t0, t1))

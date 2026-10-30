@@ -13,6 +13,12 @@
 Uma regra por parte, no cartão preto. As anteriores aparecem riscadas em cinza acima.
 1. **Todo bilhete tem dois donos: quem comprou… e quem tá com ele.**
 
+## Visual oficial do Clóvis (definitivo)
+- **Referências:** `docs/clovis-folha.jpg` (frente, 3/4, lado, rostos, táxi) e `docs/clovis-poses.webp` (dirigindo, retrovisor, susto suando, segurando o bilhete, telefone, correndo).
+- **Banco de poses recortadas:** `assets/clovis/*.png`, gerado por `tools/recortar_clovis.py`. Cada pose tem uma versão `-noite` já com a cor da madrugada. As cenas usam `pose()` em `tools/cenas.py`.
+- Pose nova: peça ao Gemini **no mesmo chat da folha**, com fundo cinza liso e sem texto, e acrescente a caixa de recorte em `recortar_clovis.py`.
+- O desenho vetorial antigo do Clóvis não é mais usado.
+
 ## Personagens (descrição definitiva: copie igual em todo prompt)
 
 ### Clóvis Ferreira — protagonista

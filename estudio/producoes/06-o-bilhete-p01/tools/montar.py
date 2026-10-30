@@ -183,7 +183,9 @@ for k, f in enumerate(F):
             b = min(b, F[k + 1]["ini"] - 0.07)
         html = " ".join(f'<b class="dest">{w["p"]}</b>' if norm(w["p"]) in DESTAQUE else w["p"] for w in g)
         caps.append((f"cap-{k}-{j}", round(a, 3), round(max(b - a, 0.2), 3), html))
-cap_els = "\n".join(f'        <div id="{cid}" class="clip cap" data-start="{a}" data-duration="{d}" data-track-index="0"><span>{h}</span></div>' for cid, a, d, h in caps)
+# na abertura (táxi chegando) a legenda desce para não cobrir o carro
+FIM_ABERTURA = PLANOS[1][2]
+cap_els = "\n".join(f'        <div id="{cid}" class="clip cap"{' style="top: 1500px"' if a < FIM_ABERTURA else ''} data-start="{a}" data-duration="{d}" data-track-index="0"><span>{h}</span></div>' for cid, a, d, h in caps)
 
 # ---------------------------------------------------------------- som
 SFX = []
