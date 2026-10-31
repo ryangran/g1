@@ -5,7 +5,7 @@ window.SERIE = {
   tituloPagina: "O Bilhete · Você decide o que o Clóvis faz com R$ 40 milhões",
   rodape: "História fictícia, personagens fictícios. Todo prêmio tem dono.",
   instagram: "https://www.instagram.com/clovis.obilhete/",
-  reelAtual: "https://www.instagram.com/reel/DfIm0RTin1y/",  // Reel da votação aberta
+  reelAtual: "https://www.instagram.com/reel/DfLLnsmFCrZ/",  // Reel da votação aberta
   tiktok: "", youtube: "",
   precoPasse: "R$ 9,90",
   vagasPorParte: 10,
@@ -21,30 +21,31 @@ window.SERIE = {
   painel: [
     { rotulo: "No banco de trás", valor: "R$ 40 mi" },
     { rotulo: "No bolso", valor: "R$ 0" },
-    { rotulo: "Risco", valor: "85%", barra: 85, alerta: true },
+    { rotulo: "Risco", valor: "99%", barra: 99, alerta: true },
   ],
 
   votacao: {
-    parte: 1,
-    titulo: "Acelera ou espera?",
+    parte: 2,
+    titulo: "Posto ou liga?",
     chamada: "Daqui pra frente, você decide.",
-    opcoes: ["ACELERA", "ESPERA"],
-    dica: "Tem um 3º jeito escondido no banco de trás. Só vale se você disser qual é.",
+    opcoes: ["POSTO", "LIGA"],
+    dica: "Tem um 3º jeito escondido na cena do sinal. Só vale se você disser qual é.",
   },
 
   partes: [
-    { n: 1, titulo: "Todo prêmio tem dono", capa: "assets/capas/parte1.jpg", cena: "assets/capas/hotel.jpg", decisao: null, link: "https://www.instagram.com/reel/DfIm0RTin1y/" },
+    { n: 1, titulo: "Todo prêmio tem dono", capa: "assets/capas/parte1.jpg", cena: "assets/capas/hotel.jpg", decisao: "Acelera · 75%", link: "https://www.instagram.com/reel/DfIm0RTin1y/" },
+    { n: 2, titulo: "Quem tem pressa", capa: "assets/capas/parte2.jpg", cena: "assets/capas/carro-preto.jpg", decisao: null, link: "https://www.instagram.com/reel/DfLLnsmFCrZ/" },
   ],
   // mural: 5 fotos em volta (troque por cenas de cada parte conforme forem saindo); o centro vem da última parte
   mural: [
     { capa: "assets/capas/susto.jpg", legenda: "O SUSTO" },
     { capa: "assets/capas/verso.jpg", legenda: "SEU ANTÔNIO" },
-    { capa: "assets/capas/banco.jpg", legenda: "BANCO DE TRÁS" },
+    { capa: "assets/capas/placa.jpg", legenda: "FINAL 7" },
     { capa: "assets/capas/homem.jpg", legenda: "QUEM É ELE?" },
-    { capa: "assets/capas/acelera.jpg", legenda: "ACELERA?" },
+    { capa: "assets/capas/hotel.jpg", legenda: "PARTE 1" },
   ],
-  notaMural: "Quem é o Seu Antônio?",
-  etiquetas: ["RISCO 85%", "R$ 40.000.000 no banco de trás"],
+  notaMural: "Quem está no carro preto?",
+  etiquetas: ["RISCO 99%", "R$ 40.000.000 no banco de trás"],
 
   // a vaga paga dentro da história
   passe: {
