@@ -1,0 +1,1180 @@
+{
+ "voz": "gemini-tts:Orus",
+ "frases": [
+  {
+   "texto": "O sinal fechou. E um carro preto parou colado no táxi do Clóvis.",
+   "ini": 0.0,
+   "fim": 4.34,
+   "palavras": [
+    {
+     "p": "O",
+     "ini": 0.0,
+     "fim": 0.26
+    },
+    {
+     "p": "sinal",
+     "ini": 0.26,
+     "fim": 0.56
+    },
+    {
+     "p": "fechou.",
+     "ini": 0.56,
+     "fim": 1.06
+    },
+    {
+     "p": "E",
+     "ini": 1.06,
+     "fim": 1.62
+    },
+    {
+     "p": "um",
+     "ini": 1.62,
+     "fim": 1.74
+    },
+    {
+     "p": "carro",
+     "ini": 1.74,
+     "fim": 1.94
+    },
+    {
+     "p": "preto",
+     "ini": 1.94,
+     "fim": 2.38
+    },
+    {
+     "p": "parou",
+     "ini": 2.38,
+     "fim": 2.62
+    },
+    {
+     "p": "colado",
+     "ini": 2.62,
+     "fim": 3.2
+    },
+    {
+     "p": "no",
+     "ini": 3.2,
+     "fim": 3.4
+    },
+    {
+     "p": "táxi",
+     "ini": 3.4,
+     "fim": 3.78
+    },
+    {
+     "p": "do",
+     "ini": 3.78,
+     "fim": 3.92
+    },
+    {
+     "p": "Clóvis.",
+     "ini": 3.92,
+     "fim": 4.34
+    }
+   ]
+  },
+  {
+   "texto": "Mas volta dez minutos.",
+   "ini": 4.78,
+   "fim": 6.12,
+   "palavras": [
+    {
+     "p": "Mas",
+     "ini": 4.78,
+     "fim": 5.04
+    },
+    {
+     "p": "volta",
+     "ini": 5.04,
+     "fim": 5.34
+    },
+    {
+     "p": "dez",
+     "ini": 5.34,
+     "fim": 5.7
+    },
+    {
+     "p": "minutos.",
+     "ini": 5.7,
+     "fim": 6.12
+    }
+   ]
+  },
+  {
+   "texto": "A maioria de vocês mandou acelerar. E o terceiro jeito? Ninguém achou. Ele continua lá, no tapete do banco de trás.",
+   "ini": 6.74,
+   "fim": 14.42,
+   "palavras": [
+    {
+     "p": "A",
+     "ini": 6.74,
+     "fim": 6.84
+    },
+    {
+     "p": "maioria",
+     "ini": 6.84,
+     "fim": 7.08
+    },
+    {
+     "p": "de",
+     "ini": 7.08,
+     "fim": 7.36
+    },
+    {
+     "p": "vocês",
+     "ini": 7.36,
+     "fim": 7.64
+    },
+    {
+     "p": "mandou",
+     "ini": 7.64,
+     "fim": 8.02
+    },
+    {
+     "p": "acelerar.",
+     "ini": 8.02,
+     "fim": 8.66
+    },
+    {
+     "p": "E",
+     "ini": 8.66,
+     "fim": 9.12
+    },
+    {
+     "p": "o",
+     "ini": 9.16,
+     "fim": 9.22
+    },
+    {
+     "p": "terceiro",
+     "ini": 9.22,
+     "fim": 9.58
+    },
+    {
+     "p": "jeito?",
+     "ini": 9.58,
+     "fim": 9.86
+    },
+    {
+     "p": "Ninguém",
+     "ini": 10.36,
+     "fim": 10.74
+    },
+    {
+     "p": "achou.",
+     "ini": 10.74,
+     "fim": 11.2
+    },
+    {
+     "p": "Ele",
+     "ini": 11.64,
+     "fim": 11.82
+    },
+    {
+     "p": "continua",
+     "ini": 11.82,
+     "fim": 12.26
+    },
+    {
+     "p": "lá,",
+     "ini": 12.26,
+     "fim": 12.56
+    },
+    {
+     "p": "no",
+     "ini": 12.86,
+     "fim": 13.08
+    },
+    {
+     "p": "tapete",
+     "ini": 13.08,
+     "fim": 13.56
+    },
+    {
+     "p": "do",
+     "ini": 13.56,
+     "fim": 13.76
+    },
+    {
+     "p": "banco",
+     "ini": 13.76,
+     "fim": 14.0
+    },
+    {
+     "p": "de",
+     "ini": 14.0,
+     "fim": 14.16
+    },
+    {
+     "p": "trás.",
+     "ini": 14.16,
+     "fim": 14.42
+    }
+   ]
+  },
+  {
+   "texto": "O Clóvis arrancou. Mas no retrovisor, o homem de terno levantou o celular… e fotografou a placa.",
+   "ini": 14.88,
+   "fim": 21.0,
+   "palavras": [
+    {
+     "p": "O",
+     "ini": 14.88,
+     "fim": 15.08
+    },
+    {
+     "p": "Clóvis",
+     "ini": 15.08,
+     "fim": 15.38
+    },
+    {
+     "p": "arrancou.",
+     "ini": 15.38,
+     "fim": 15.86
+    },
+    {
+     "p": "Mas",
+     "ini": 16.32,
+     "fim": 16.48
+    },
+    {
+     "p": "no",
+     "ini": 16.48,
+     "fim": 16.6
+    },
+    {
+     "p": "retrovisor,",
+     "ini": 16.6,
+     "fim": 17.1
+    },
+    {
+     "p": "o",
+     "ini": 17.66,
+     "fim": 17.72
+    },
+    {
+     "p": "homem",
+     "ini": 17.72,
+     "fim": 17.88
+    },
+    {
+     "p": "de",
+     "ini": 17.88,
+     "fim": 18.1
+    },
+    {
+     "p": "terno",
+     "ini": 18.1,
+     "fim": 18.44
+    },
+    {
+     "p": "levantou",
+     "ini": 18.44,
+     "fim": 18.9
+    },
+    {
+     "p": "o",
+     "ini": 18.9,
+     "fim": 19.02
+    },
+    {
+     "p": "celular…",
+     "ini": 19.02,
+     "fim": 19.36
+    },
+    {
+     "p": "e",
+     "ini": 19.36,
+     "fim": 19.94
+    },
+    {
+     "p": "fotografou",
+     "ini": 19.94,
+     "fim": 20.58
+    },
+    {
+     "p": "a",
+     "ini": 20.58,
+     "fim": 20.7
+    },
+    {
+     "p": "placa.",
+     "ini": 20.7,
+     "fim": 21.0
+    }
+   ]
+  },
+  {
+   "texto": "Problema um: agora ele tem a placa. Final sete.",
+   "ini": 21.48,
+   "fim": 24.85,
+   "palavras": [
+    {
+     "p": "Problema",
+     "ini": 21.48,
+     "fim": 21.86
+    },
+    {
+     "p": "um:",
+     "ini": 21.86,
+     "fim": 22.5
+    },
+    {
+     "p": "agora",
+     "ini": 22.5,
+     "fim": 22.76
+    },
+    {
+     "p": "ele",
+     "ini": 22.76,
+     "fim": 22.98
+    },
+    {
+     "p": "tem",
+     "ini": 22.98,
+     "fim": 23.16
+    },
+    {
+     "p": "a",
+     "ini": 23.16,
+     "fim": 23.28
+    },
+    {
+     "p": "placa.",
+     "ini": 23.28,
+     "fim": 23.66
+    },
+    {
+     "p": "Final",
+     "ini": 24.1,
+     "fim": 24.28
+    },
+    {
+     "p": "sete.",
+     "ini": 24.28,
+     "fim": 24.85
+    }
+   ]
+  },
+  {
+   "texto": "Dez minutos depois, o rádio da central chiou.",
+   "ini": 24.85,
+   "fim": 27.84,
+   "palavras": [
+    {
+     "p": "Dez",
+     "ini": 24.85,
+     "fim": 25.42
+    },
+    {
+     "p": "minutos",
+     "ini": 25.42,
+     "fim": 25.68
+    },
+    {
+     "p": "depois,",
+     "ini": 25.68,
+     "fim": 26.04
+    },
+    {
+     "p": "o",
+     "ini": 26.6,
+     "fim": 26.78
+    },
+    {
+     "p": "rádio",
+     "ini": 26.78,
+     "fim": 27.06
+    },
+    {
+     "p": "da",
+     "ini": 27.06,
+     "fim": 27.18
+    },
+    {
+     "p": "central",
+     "ini": 27.18,
+     "fim": 27.54
+    },
+    {
+     "p": "chiou.",
+     "ini": 27.54,
+     "fim": 27.84
+    }
+   ]
+  },
+  {
+   "texto": "Clóvis, um passageiro do Imperial ligou. Disse que esqueceu uma coisa no teu carro. Pediu teu nome… e eu passei.",
+   "ini": 27.84,
+   "fim": 35.18,
+   "palavras": [
+    {
+     "p": "Clóvis,",
+     "ini": 27.84,
+     "fim": 28.72
+    },
+    {
+     "p": "um",
+     "ini": 29.1,
+     "fim": 29.36
+    },
+    {
+     "p": "passageiro",
+     "ini": 29.36,
+     "fim": 29.9
+    },
+    {
+     "p": "do",
+     "ini": 29.9,
+     "fim": 30.02
+    },
+    {
+     "p": "Imperial",
+     "ini": 30.02,
+     "fim": 30.36
+    },
+    {
+     "p": "ligou.",
+     "ini": 30.36,
+     "fim": 30.78
+    },
+    {
+     "p": "Disse",
+     "ini": 31.22,
+     "fim": 31.5
+    },
+    {
+     "p": "que",
+     "ini": 31.5,
+     "fim": 31.68
+    },
+    {
+     "p": "esqueceu",
+     "ini": 31.68,
+     "fim": 32.04
+    },
+    {
+     "p": "uma",
+     "ini": 32.04,
+     "fim": 32.2
+    },
+    {
+     "p": "coisa",
+     "ini": 32.2,
+     "fim": 32.48
+    },
+    {
+     "p": "no",
+     "ini": 32.48,
+     "fim": 32.64
+    },
+    {
+     "p": "teu",
+     "ini": 32.64,
+     "fim": 32.76
+    },
+    {
+     "p": "carro.",
+     "ini": 32.76,
+     "fim": 33.08
+    },
+    {
+     "p": "Pediu",
+     "ini": 33.4,
+     "fim": 33.66
+    },
+    {
+     "p": "teu",
+     "ini": 33.66,
+     "fim": 33.84
+    },
+    {
+     "p": "nome…",
+     "ini": 33.84,
+     "fim": 34.14
+    },
+    {
+     "p": "e",
+     "ini": 34.52,
+     "fim": 34.68
+    },
+    {
+     "p": "eu",
+     "ini": 34.68,
+     "fim": 34.78
+    },
+    {
+     "p": "passei.",
+     "ini": 34.78,
+     "fim": 35.18
+    }
+   ]
+  },
+  {
+   "texto": "Problema dois: agora ele tem o seu nome.",
+   "ini": 35.54,
+   "fim": 37.8,
+   "palavras": [
+    {
+     "p": "Problema",
+     "ini": 35.54,
+     "fim": 35.88
+    },
+    {
+     "p": "dois:",
+     "ini": 35.88,
+     "fim": 36.6
+    },
+    {
+     "p": "agora",
+     "ini": 36.6,
+     "fim": 36.9
+    },
+    {
+     "p": "ele",
+     "ini": 36.9,
+     "fim": 37.1
+    },
+    {
+     "p": "tem",
+     "ini": 37.1,
+     "fim": 37.28
+    },
+    {
+     "p": "o",
+     "ini": 37.28,
+     "fim": 37.36
+    },
+    {
+     "p": "seu",
+     "ini": 37.36,
+     "fim": 37.48
+    },
+    {
+     "p": "nome.",
+     "ini": 37.48,
+     "fim": 37.8
+    }
+   ]
+  },
+  {
+   "texto": "E a central contou mais uma coisa. O homem se chama Rodrigo. E é sobrinho do Seu Antônio.",
+   "ini": 37.8,
+   "fim": 43.34,
+   "palavras": [
+    {
+     "p": "E",
+     "ini": 37.8,
+     "fim": 38.28
+    },
+    {
+     "p": "a",
+     "ini": 38.28,
+     "fim": 38.36
+    },
+    {
+     "p": "central",
+     "ini": 38.36,
+     "fim": 38.64
+    },
+    {
+     "p": "contou",
+     "ini": 38.64,
+     "fim": 39.04
+    },
+    {
+     "p": "mais",
+     "ini": 39.04,
+     "fim": 39.26
+    },
+    {
+     "p": "uma",
+     "ini": 39.26,
+     "fim": 39.4
+    },
+    {
+     "p": "coisa.",
+     "ini": 39.4,
+     "fim": 39.72
+    },
+    {
+     "p": "O",
+     "ini": 40.26,
+     "fim": 40.36
+    },
+    {
+     "p": "homem",
+     "ini": 40.36,
+     "fim": 40.54
+    },
+    {
+     "p": "se",
+     "ini": 40.54,
+     "fim": 40.76
+    },
+    {
+     "p": "chama",
+     "ini": 40.76,
+     "fim": 40.98
+    },
+    {
+     "p": "Rodrigo.",
+     "ini": 40.98,
+     "fim": 41.58
+    },
+    {
+     "p": "E",
+     "ini": 41.58,
+     "fim": 42.04
+    },
+    {
+     "p": "é",
+     "ini": 42.04,
+     "fim": 42.12
+    },
+    {
+     "p": "sobrinho",
+     "ini": 42.12,
+     "fim": 42.56
+    },
+    {
+     "p": "do",
+     "ini": 42.56,
+     "fim": 42.72
+    },
+    {
+     "p": "Seu",
+     "ini": 42.72,
+     "fim": 42.88
+    },
+    {
+     "p": "Antônio.",
+     "ini": 42.88,
+     "fim": 43.34
+    }
+   ]
+  },
+  {
+   "texto": "Ou seja: o bilhete nunca foi dele.",
+   "ini": 43.7,
+   "fim": 45.8,
+   "palavras": [
+    {
+     "p": "Ou",
+     "ini": 43.7,
+     "fim": 43.82
+    },
+    {
+     "p": "seja:",
+     "ini": 43.82,
+     "fim": 44.14
+    },
+    {
+     "p": "o",
+     "ini": 44.62,
+     "fim": 44.68
+    },
+    {
+     "p": "bilhete",
+     "ini": 44.68,
+     "fim": 45.02
+    },
+    {
+     "p": "nunca",
+     "ini": 45.02,
+     "fim": 45.26
+    },
+    {
+     "p": "foi",
+     "ini": 45.26,
+     "fim": 45.54
+    },
+    {
+     "p": "dele.",
+     "ini": 45.54,
+     "fim": 45.8
+    }
+   ]
+  },
+  {
+   "texto": "Duas da manhã. Avenida vazia. O sinal fechou.",
+   "ini": 46.22,
+   "fim": 49.4,
+   "palavras": [
+    {
+     "p": "Duas",
+     "ini": 46.22,
+     "fim": 46.58
+    },
+    {
+     "p": "da",
+     "ini": 46.58,
+     "fim": 46.7
+    },
+    {
+     "p": "manhã.",
+     "ini": 46.7,
+     "fim": 46.98
+    },
+    {
+     "p": "Avenida",
+     "ini": 47.42,
+     "fim": 47.8
+    },
+    {
+     "p": "vazia.",
+     "ini": 47.8,
+     "fim": 48.24
+    },
+    {
+     "p": "O",
+     "ini": 48.74,
+     "fim": 48.8
+    },
+    {
+     "p": "sinal",
+     "ini": 48.8,
+     "fim": 49.0
+    },
+    {
+     "p": "fechou.",
+     "ini": 49.0,
+     "fim": 49.4
+    }
+   ]
+  },
+  {
+   "texto": "O carro preto encostou do lado. E o vidro desceu… devagar.",
+   "ini": 49.8,
+   "fim": 53.54,
+   "palavras": [
+    {
+     "p": "O",
+     "ini": 49.8,
+     "fim": 49.88
+    },
+    {
+     "p": "carro",
+     "ini": 49.88,
+     "fim": 50.04
+    },
+    {
+     "p": "preto",
+     "ini": 50.04,
+     "fim": 50.38
+    },
+    {
+     "p": "encostou",
+     "ini": 50.38,
+     "fim": 50.78
+    },
+    {
+     "p": "do",
+     "ini": 50.78,
+     "fim": 50.86
+    },
+    {
+     "p": "lado.",
+     "ini": 50.86,
+     "fim": 51.14
+    },
+    {
+     "p": "E",
+     "ini": 51.14,
+     "fim": 51.74
+    },
+    {
+     "p": "o",
+     "ini": 51.74,
+     "fim": 51.86
+    },
+    {
+     "p": "vidro",
+     "ini": 51.86,
+     "fim": 52.12
+    },
+    {
+     "p": "desceu…",
+     "ini": 52.12,
+     "fim": 52.54
+    },
+    {
+     "p": "devagar.",
+     "ini": 52.98,
+     "fim": 53.54
+    }
+   ]
+  },
+  {
+   "texto": "Regra número dois: quem tem pressa de pegar… não é o dono.",
+   "ini": 53.54,
+   "fim": 57.64,
+   "palavras": [
+    {
+     "p": "Regra",
+     "ini": 53.54,
+     "fim": 54.3
+    },
+    {
+     "p": "número",
+     "ini": 54.3,
+     "fim": 54.44
+    },
+    {
+     "p": "dois:",
+     "ini": 54.44,
+     "fim": 55.28
+    },
+    {
+     "p": "quem",
+     "ini": 55.28,
+     "fim": 55.46
+    },
+    {
+     "p": "tem",
+     "ini": 55.46,
+     "fim": 55.6
+    },
+    {
+     "p": "pressa",
+     "ini": 55.6,
+     "fim": 55.98
+    },
+    {
+     "p": "de",
+     "ini": 55.98,
+     "fim": 56.06
+    },
+    {
+     "p": "pegar…",
+     "ini": 56.06,
+     "fim": 56.38
+    },
+    {
+     "p": "não",
+     "ini": 56.7,
+     "fim": 56.96
+    },
+    {
+     "p": "é",
+     "ini": 56.96,
+     "fim": 57.14
+    },
+    {
+     "p": "o",
+     "ini": 57.14,
+     "fim": 57.26
+    },
+    {
+     "p": "dono.",
+     "ini": 57.26,
+     "fim": 57.64
+    }
+   ]
+  },
+  {
+   "texto": "O que a gente faz agora? Opção A: entrar no posto vinte e quatro horas, cheio de gente, e esperar. Comente POSTO.",
+   "ini": 57.88,
+   "fim": 64.6,
+   "palavras": [
+    {
+     "p": "O",
+     "ini": 57.88,
+     "fim": 58.06
+    },
+    {
+     "p": "que",
+     "ini": 58.06,
+     "fim": 58.16
+    },
+    {
+     "p": "a",
+     "ini": 58.16,
+     "fim": 58.2
+    },
+    {
+     "p": "gente",
+     "ini": 58.2,
+     "fim": 58.34
+    },
+    {
+     "p": "faz",
+     "ini": 58.34,
+     "fim": 58.52
+    },
+    {
+     "p": "agora?",
+     "ini": 58.52,
+     "fim": 58.8
+    },
+    {
+     "p": "Opção",
+     "ini": 59.26,
+     "fim": 59.58
+    },
+    {
+     "p": "A:",
+     "ini": 59.58,
+     "fim": 59.78
+    },
+    {
+     "p": "entrar",
+     "ini": 60.18,
+     "fim": 60.46
+    },
+    {
+     "p": "no",
+     "ini": 60.46,
+     "fim": 60.64
+    },
+    {
+     "p": "posto",
+     "ini": 60.64,
+     "fim": 60.98
+    },
+    {
+     "p": "vinte",
+     "ini": 60.98,
+     "fim": 61.067
+    },
+    {
+     "p": "e",
+     "ini": 61.067,
+     "fim": 61.153
+    },
+    {
+     "p": "quatro",
+     "ini": 61.153,
+     "fim": 61.24
+    },
+    {
+     "p": "horas,",
+     "ini": 61.24,
+     "fim": 61.7
+    },
+    {
+     "p": "cheio",
+     "ini": 62.0,
+     "fim": 62.36
+    },
+    {
+     "p": "de",
+     "ini": 62.36,
+     "fim": 62.46
+    },
+    {
+     "p": "gente,",
+     "ini": 62.46,
+     "fim": 62.7
+    },
+    {
+     "p": "e",
+     "ini": 62.7,
+     "fim": 63.1
+    },
+    {
+     "p": "esperar.",
+     "ini": 63.1,
+     "fim": 63.38
+    },
+    {
+     "p": "Comente",
+     "ini": 63.88,
+     "fim": 64.14
+    },
+    {
+     "p": "POSTO.",
+     "ini": 64.14,
+     "fim": 64.6
+    }
+   ]
+  },
+  {
+   "texto": "Opção B: ligar pro número escrito atrás do bilhete. Comente LIGA.",
+   "ini": 64.94,
+   "fim": 69.04,
+   "palavras": [
+    {
+     "p": "Opção",
+     "ini": 64.94,
+     "fim": 65.28
+    },
+    {
+     "p": "B:",
+     "ini": 65.28,
+     "fim": 65.48
+    },
+    {
+     "p": "ligar",
+     "ini": 65.88,
+     "fim": 66.24
+    },
+    {
+     "p": "pro",
+     "ini": 66.24,
+     "fim": 66.44
+    },
+    {
+     "p": "número",
+     "ini": 66.44,
+     "fim": 66.66
+    },
+    {
+     "p": "escrito",
+     "ini": 66.66,
+     "fim": 67.0
+    },
+    {
+     "p": "atrás",
+     "ini": 67.0,
+     "fim": 67.38
+    },
+    {
+     "p": "do",
+     "ini": 67.38,
+     "fim": 67.56
+    },
+    {
+     "p": "bilhete.",
+     "ini": 67.56,
+     "fim": 67.92
+    },
+    {
+     "p": "Comente",
+     "ini": 68.28,
+     "fim": 68.68
+    },
+    {
+     "p": "LIGA.",
+     "ini": 68.68,
+     "fim": 69.04
+    }
+   ]
+  },
+  {
+   "texto": "Ou tem um terceiro jeito escondido nessa cena. Só vale se você disser qual é.",
+   "ini": 69.48,
+   "fim": 73.52,
+   "palavras": [
+    {
+     "p": "Ou",
+     "ini": 69.48,
+     "fim": 69.64
+    },
+    {
+     "p": "tem",
+     "ini": 69.64,
+     "fim": 69.76
+    },
+    {
+     "p": "um",
+     "ini": 69.76,
+     "fim": 69.86
+    },
+    {
+     "p": "terceiro",
+     "ini": 69.86,
+     "fim": 70.22
+    },
+    {
+     "p": "jeito",
+     "ini": 70.22,
+     "fim": 70.38
+    },
+    {
+     "p": "escondido",
+     "ini": 70.38,
+     "fim": 70.98
+    },
+    {
+     "p": "nessa",
+     "ini": 70.98,
+     "fim": 71.2
+    },
+    {
+     "p": "cena.",
+     "ini": 71.2,
+     "fim": 71.54
+    },
+    {
+     "p": "Só",
+     "ini": 72.0,
+     "fim": 72.22
+    },
+    {
+     "p": "vale",
+     "ini": 72.22,
+     "fim": 72.46
+    },
+    {
+     "p": "se",
+     "ini": 72.46,
+     "fim": 72.64
+    },
+    {
+     "p": "você",
+     "ini": 72.64,
+     "fim": 72.8
+    },
+    {
+     "p": "disser",
+     "ini": 72.8,
+     "fim": 73.16
+    },
+    {
+     "p": "qual",
+     "ini": 73.16,
+     "fim": 73.3
+    },
+    {
+     "p": "é.",
+     "ini": 73.3,
+     "fim": 73.52
+    }
+   ]
+  },
+  {
+   "texto": "A maioria escreve a parte três amanhã.",
+   "ini": 73.92,
+   "fim": 76.8,
+   "palavras": [
+    {
+     "p": "A",
+     "ini": 73.92,
+     "fim": 74.02
+    },
+    {
+     "p": "maioria",
+     "ini": 74.02,
+     "fim": 74.28
+    },
+    {
+     "p": "escreve",
+     "ini": 74.28,
+     "fim": 74.9
+    },
+    {
+     "p": "a",
+     "ini": 75.3,
+     "fim": 75.4
+    },
+    {
+     "p": "parte",
+     "ini": 75.4,
+     "fim": 75.6
+    },
+    {
+     "p": "três",
+     "ini": 75.6,
+     "fim": 76.42
+    },
+    {
+     "p": "amanhã.",
+     "ini": 76.42,
+     "fim": 76.8
+    }
+   ]
+  }
+ ],
+ "total": 76.957
+}

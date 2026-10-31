@@ -1,0 +1,31 @@
+{
+ "total_votos": 4,
+ "placar": [
+  {
+   "opcao": "ACELERA",
+   "votos": 3,
+   "pct": 75
+  },
+  {
+   "opcao": "ESPERA",
+   "votos": 1,
+   "pct": 25
+  },
+  {
+   "opcao": "3º JEITO",
+   "votos": 0,
+   "pct": 0
+  }
+ ],
+ "vencedor": "ACELERA",
+ "primeiro_3o_jeito": null,
+ "outros_que_acharam": [],
+ "destaques": [
+  {
+   "username": "clovis.obilhete",
+   "text": "Vale o último comentário de cada um. Votação fecha amanhã às 15h ⏰",
+   "like_count": 0
+  }
+ ],
+ "comentarios_lidos": 6
+}
