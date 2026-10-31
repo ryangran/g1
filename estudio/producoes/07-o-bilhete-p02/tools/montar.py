@@ -33,7 +33,7 @@ def ini(prefixo):
 
 
 # frases da Parte 1 que as animações das cenas reaproveitadas procuram → equivalentes da Parte 2
-ALIAS = {("Ele saiu do hotel", "velho"): ("Ou seja", "dele"), ("Ele conferiu", None): ("A maioria", None),
+ALIAS = {("Ele saiu do hotel", "velho"): ("E mais", "dele"), ("Ele conferiu", None): ("Setenta", None),
          ("Problema três", None): ("Problema dois", None)}
 
 
@@ -50,23 +50,23 @@ def cena(nome):
 
 PLANOS = [  # (id, cena ou #cartão, início)
     ("p01", "s01", 0.0),
-    ("p02", "#rebobina", ini("Mas volta") - 0.05),
-    ("p03", "#votos", ini("A maioria") - 0.05),
-    ("p04", "i02", pal("A maioria", "terceiro") - 0.15),
+    ("p02", "#rebobina", ini("Volta dez") - 0.05),
+    ("p03", "#votos", ini("Setenta") - 0.05),
+    ("p04", "i02", pal("Setenta", "recibo") - 0.15),
     ("p05", "i11", ini("O Clóvis arrancou") - 0.05),
     ("p06", "i09", pal("O Clóvis arrancou", "Mas") - 0.05),
     ("p07", "#placa", ini("Problema um") - 0.05),
-    ("p08", "s06", ini("Dez minutos") - 0.05),
-    ("p09", "s07", ini("Clóvis, um passageiro") - 0.05),
+    ("p08", "s06", ini("Aí o rádio") - 0.05),
+    ("p09", "s07", pal("Aí o rádio", "Clóvis") - 0.05),
     ("p10", "s08", ini("Problema dois") - 0.05),
-    ("p11", "#ficha", ini("E a central contou") - 0.05),
-    ("p12", "i10", ini("Ou seja") - 0.05),
+    ("p11", "#ficha", ini("E mais") - 0.05),
+    ("p12", "i10", pal("E mais", "bilhete") - 0.3),
     ("p13", "s01", ini("Duas da manhã") - 0.05),
-    ("p14", "s12", ini("O carro preto encostou") - 0.05),
+    ("p14", "s12", pal("Duas da manhã", "carro") - 0.3),
     ("p15", "#regra", ini("Regra número dois") - 0.05),
-    ("p16", "s14", ini("O que a gente faz") - 0.05),
+    ("p16", "s14", ini("Opção A") - 0.05),
     ("p17", "s15", ini("Opção B") - 0.05),
-    ("p18", "s01", ini("Ou tem um terceiro") - 0.05),
+    ("p18", "s01", ini("Ou tem") - 0.05),
     ("p19", "#fecho", ini("A maioria escreve") - 0.05),
 ]
 fim = [p[2] for p in PLANOS[1:]] + [DUR]
@@ -89,7 +89,7 @@ for n, ((pid, alvo, t0), t1) in enumerate(zip(PLANOS, fim)):
 # o recibo continua no tapete (ninguém achou): zoom nele com uma interrogação
 t_rec = tempo["#votos"][1]
 js += [f'tl.fromTo("#p04 svg", {{ scale: 1, x: 0, y: 0, transformOrigin: "0px 0px" }}, {{ scale: 2.0, x: {540 - 800 * 2.0}, y: {960 - 1690 * 2.0}, duration: 1.0, ease: "power3.inOut", immediateRender: false }}, {round(t_rec + 0.6, 3)});',
-       f'tl.fromTo("#interroga", {{ scale: 0.3, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2.5)" }}, {round(pal("A maioria", "Ele"), 3)});']
+       f'tl.fromTo("#interroga", {{ scale: 0.3, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2.5)" }}, {round(pal("Setenta", "Ninguém"), 3)});']
 # flash do celular fotografando a placa
 t_foto = pal("O Clóvis arrancou", "fotografou")
 js.append(f'tl.fromTo("#flash", {{ opacity: 0 }}, {{ opacity: 0.9, duration: 0.06, yoyo: true, repeat: 1, immediateRender: false }}, {round(t_foto + 0.25, 3)});')
@@ -112,7 +112,7 @@ for k, p in enumerate(placar):
 total_txt = f'{VOTOS["total_votos"]} voto{"s" if VOTOS["total_votos"] != 1 else ""} · vale o último comentário'
 
 # ---------------------------------------------------------------- painel
-RISCO = [(pal("Problema um", "placa"), 90), (pal("Problema dois", "nome"), 95), (pal("O carro preto encostou", "devagar"), 99)]
+RISCO = [(pal("Problema um", "placa"), 90), (pal("Problema dois", "nome"), 95), (pal("Duas da manhã", "devagar"), 99)]
 js.append('tl.set("#hud-risco-barra", { scaleX: 0.85 }, 0);')
 antes = 85
 for tt, v in RISCO:
@@ -129,9 +129,9 @@ for alvo in ("#rebobina", "#votos", "#placa", "#ficha", "#regra"):
 a, b = tempo["#placa"]
 js += [f'tl.fromTo("#placa-topo", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.3 }}, {a + 0.05});',
        f'tl.fromTo("#placa-foto", {{ scale: 0.6, rotation: -8, opacity: 0 }}, {{ scale: 1, rotation: -3, opacity: 1, duration: 0.4, ease: "back.out(1.8)" }}, {a + 0.15});',
-       f'tl.fromTo("#placa-7", {{ color: "#1c1a17" }}, {{ color: "#e23b2e", duration: 0.2 }}, {round(pal("Problema um", "sete") - 0.05, 3)});']
+       f'tl.fromTo("#placa-7", {{ color: "#1c1a17" }}, {{ color: "#e23b2e", duration: 0.2 }}, {round(pal("Problema um", "placa") - 0.05, 3)});']
 a, b = tempo["#ficha"]
-FICHA = [("ficha-1", pal("E a central contou", "Rodrigo")), ("ficha-2", pal("E a central contou", "sobrinho"))]
+FICHA = [("ficha-1", pal("E mais", "Rodrigo")), ("ficha-2", pal("E mais", "sobrinho"))]
 js.append(f'tl.fromTo("#ficha-topo", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.3 }}, {a + 0.05});')
 for fid, tt in FICHA:
     js.append(f'tl.fromTo("#{fid}", {{ x: -60, opacity: 0 }}, {{ x: 0, opacity: 1, duration: 0.25, ease: "power3.out" }}, {round(tt - 0.15, 3)});')
@@ -140,12 +140,12 @@ js += [f'tl.fromTo("#regra-1", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.3 }}
        f'tl.fromTo("#regra-riscada", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.3 }}, {a + 0.1});',
        f'tl.fromTo("#regra-2", {{ y: 30, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.35, ease: "power3.out" }}, {pal("Regra número dois", "quem") - 0.1});',
        f'tl.fromTo("#regra-3", {{ y: 30, opacity: 0 }}, {{ y: 0, opacity: 1, duration: 0.35, ease: "power3.out" }}, {pal("Regra número dois", "não") - 0.1});']
-CARIMBOS = [("car-foto", "FOTOGRAFADA", pal("Problema um", "Final"), tempo["#placa"][1], 1380, -6),
-            ("car-ident", "IDENTIFICADO", pal("Problema dois", "nome") + 0.05, ini("E a central contou") - 0.05, 1500, 6),
-            ("car-dono", "NÃO É O DONO", pal("Ou seja", "dele") - 0.1, ini("Duas da manhã") - 0.05, 1470, -5)]
+CARIMBOS = [("car-foto", "FOTOGRAFADA", pal("Problema um", "placa") + 0.3, tempo["#placa"][1], 1380, -6),
+            ("car-ident", "IDENTIFICADO", pal("Problema dois", "nome") + 0.05, ini("E mais") - 0.05, 1500, 6),
+            ("car-dono", "NÃO É O DONO", pal("E mais", "dele") - 0.1, ini("Duas da manhã") - 0.05, 1470, -5)]
 for cid, _, t0, _, _, rot in CARIMBOS:
     js.append(f'tl.fromTo("#{cid} span", {{ scale: 2.4, opacity: 0, rotation: {rot} }}, {{ scale: 1, opacity: 1, rotation: {rot}, duration: 0.22, ease: "power4.in" }}, {round(t0, 3)});')
-TAGS = [("tag-2", "PROBLEMA 2 · O NOME", ini("Problema dois"), ini("E a central contou") - 0.05)]
+TAGS = [("tag-2", "PROBLEMA 2 · O NOME", ini("Problema dois"), ini("E mais") - 0.05)]
 for tid, _, t0, _ in TAGS:
     js.append(f'tl.fromTo("#{tid} span", {{ x: -40, opacity: 0 }}, {{ x: 0, opacity: 1, duration: 0.3, ease: "power3.out" }}, {round(t0, 3)});')
 a, b = tempo["#fecho"]
@@ -153,10 +153,10 @@ js += [f'tl.fromTo("#fecho-1", {{ y: 30, opacity: 0 }}, {{ y: 0, opacity: 1, dur
        f'tl.fromTo("#fecho-2 .bt", {{ scale: 0.4, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2.5)", stagger: 0.25 }}, {a + 0.3});',
        f'tl.fromTo("#fecho-3", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.4 }}, {a + 0.9});',
        f'tl.fromTo("#fecho-4", {{ scale: 0.5, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.45, ease: "back.out(2)" }}, {a + 1.4});']
-t_a, t_b = pal("O que a gente faz", "POSTO"), pal("Opção B", "LIGA")
+t_a, t_b = pal("Opção A", "POSTO"), pal("Opção B", "LIGA")
 js += [f'tl.fromTo("#selo-a", {{ scale: 0.4, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2.5)" }}, {t_a});',
        f'tl.fromTo("#selo-b", {{ scale: 0.4, opacity: 0 }}, {{ scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2.5)" }}, {t_b});']
-t_circ = pal("Ou tem um terceiro", "escondido")
+t_circ = pal("Ou tem", "escondido")
 
 # ---------------------------------------------------------------- legendas
 DESTAQUE = {"carro", "preto", "clovis", "acelerar", "terceiro", "ninguem", "tapete", "placa", "sete", "nome", "rodrigo", "sobrinho", "antonio",
@@ -193,7 +193,7 @@ for cid, _, t0, _, _, _ in CARIMBOS:
     SFX.append((f"car-{cid}", "impact-bass-2", t0 + 0.22 - 1.95, 2.5, 0.5))
 for fid, tt in FICHA:
     SFX.append((f"clk-{fid}", "click-soft", tt - 0.19, 0.36, 0.8))
-SFX += [("virada", "glitch-3", pal("Ou seja", "dele") - 0.15, 0.6, 0.35), ("radio", "glitch-3", ini("Clóvis, um passageiro") - 0.1, 0.6, 0.4),
+SFX += [("virada", "glitch-3", pal("E mais", "dele") - 0.15, 0.6, 0.35), ("radio", "glitch-3", pal("Aí o rádio", "Clóvis") - 0.1, 0.6, 0.4),
         ("selo-a", "pop", t_a - 0.09, 0.7, 0.6), ("selo-b", "pop", t_b - 0.09, 0.7, 0.6),
         ("circulo", "sparkle", t_circ, 1.8, 0.55), ("fecho", "impact-bass-1", tempo["#fecho"][0] + 1.4 - 0.04, 2.0, 0.55)]
 sfx = "\n".join(f'      <audio id="sfx-{i}" class="clip" src="assets/audio/{f}.mp3" data-start="{round(max(0, s), 3)}" data-duration="{d}" data-track-index="{30 + n}" data-volume="{v}"></audio>' for n, (i, f, s, d, v) in enumerate(SFX))
@@ -291,7 +291,7 @@ page = f'''<!doctype html>
         {barras}
         <div id="votos-total">{total_txt}</div>
       </div>
-      <div id="interroga" class="clip" data-start="{round(pal("A maioria", "Ele") - 0.05, 3)}" data-duration="{round(p04b - pal("A maioria", "Ele") + 0.05, 3)}" data-track-index="5">?</div>
+      <div id="interroga" class="clip" data-start="{round(pal("Setenta", "Ninguém") - 0.05, 3)}" data-duration="{round(p04b - pal("Setenta", "Ninguém") + 0.05, 3)}" data-track-index="5">?</div>
       <div id="flash" class="clip" data-start="{round(p06a, 3)}" data-duration="{round(p06b - p06a, 3)}" data-track-index="5"></div>
       <div id="placa" class="clip cartao creme" {cl("#placa")} data-track-index="2">
         <div class="kick" id="placa-topo">PROBLEMA 1 · A PLACA</div>
@@ -312,7 +312,7 @@ page = f'''<!doctype html>
 {tags}
 {carimbos}
       <div id="selo-a" class="clip selo" data-start="{round(t_a - 0.05, 3)}" data-duration="{round(ini("Opção B") - t_a, 3)}" data-track-index="8"><span style="background:#fff">POSTO</span></div>
-      <div id="selo-b" class="clip selo" data-start="{round(t_b - 0.05, 3)}" data-duration="{round(ini("Ou tem um terceiro") - t_b, 3)}" data-track-index="9"><span style="background:#ffd23a">LIGA</span></div>
+      <div id="selo-b" class="clip selo" data-start="{round(t_b - 0.05, 3)}" data-duration="{round(ini("Ou tem") - t_b, 3)}" data-track-index="9"><span style="background:#ffd23a">LIGA</span></div>
       <div id="hud" class="clip" data-start="0" data-duration="{round(fecho_ini, 3)}" data-track-index="3">
         <div id="hud-in">
           <div class="caixa" id="cx-mala"><small>NO BANCO DE TRÁS</small><b>R$ 40.000.000</b></div>

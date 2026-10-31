@@ -40,10 +40,10 @@ def add(buf, at, sig, g=1.0):
         j = min(len(buf), i + len(sig)); buf[i:j] += sig[: j - i] * g
 
 
-P1, P2, P3 = ini("Problema um"), ini("Problema dois"), ini("E a central contou")
-VIRA, OUVIU, REGRA = ini("Ou seja"), ini("O carro preto encostou"), ini("Regra número dois")
-VOLTA = ini("Mas volta")  # o gancho é o fim da cena; "volta dez minutos" rebobina
-ESC, FECHO = ini("O que a gente faz"), ini("A maioria escreve")
+P1, P2, P3 = ini("Problema um"), ini("Problema dois"), ini("E mais")
+VIRA, OUVIU, REGRA = ini("E mais"), ini("Duas da manhã"), ini("Regra número dois")
+VOLTA = ini("Volta dez")  # o gancho é o fim da cena; "volta dez minutos" rebobina
+ESC, FECHO = ini("Opção A"), ini("A maioria escreve")
 
 # drone grave (lá menor) com batimento lento
 drone = lowpass(sum(2 * ((t * f) % 1) - 1 for f in (55.0, 55.35, 82.4, 110.2)), 220) * 0.22

@@ -184,7 +184,7 @@ def anim(nome, pid, t0, t1, pal, ini):
             from cenas2 import VIATURA
             vx, vy, vs = VIATURA
             cx, cy = vx + 300 * vs, vy + 130 * vs
-            tz = round(pal("Ou tem um terceiro", "escondido"), 3)
+            tz = round(pal("Ou tem", "escondido"), 3)
             j += [f'tl.fromTo("#{pid} svg", {{ scale: 1, x: 0, y: 0, transformOrigin: "0px 0px" }}, {{ scale: 2.2, x: {540 - cx * 2.2:.0f}, y: {760 - cy * 2.2:.0f}, duration: 0.7, ease: "power3.inOut", immediateRender: false }}, {round(tz - 0.35, 3)});',
                   f'tl.fromTo("{q("#circulo-viatura")}", {{ opacity: 0, scale: 1.7, transformOrigin: "50% 50%" }}, {{ opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)", immediateRender: false }}, {tz});']
     if nome == "s06":
@@ -197,7 +197,7 @@ def anim(nome, pid, t0, t1, pal, ini):
     if nome == "s08":
         j += [f'tl.fromTo("#{pid} image", {{ x: 0 }}, {{ x: 5, duration: 0.05, yoyo: true, repeat: 7, immediateRender: false }}, {round(pal("Problema dois", "nome"), 3)});']
     if nome == "s12":
-        j += [f'tl.fromTo("{q("#suv12-vidro")}", {{ y: 0 }}, {{ y: 66, duration: 2.6, ease: "power1.inOut", immediateRender: false }}, {round(pal("O carro preto encostou", "vidro") - 0.2, 3)});',
+        j += [f'tl.fromTo("{q("#suv12-vidro")}", {{ y: 0 }}, {{ y: 66, duration: 2.6, ease: "power1.inOut", immediateRender: false }}, {round(pal("Duas da manhã", "vidro") - 0.2, 3)});',
               f'tl.fromTo("{q("#suv12-brasa")}", {{ opacity: 0.5 }}, {{ opacity: 1, duration: 0.5, yoyo: true, repeat: {max(1, int(d / 0.5))}, immediateRender: false }}, {t0});']
     if nome == "s14":
         j += [f'tl.fromTo("{q("#taxi14")}", {{ x: -300 }}, {{ x: 0, duration: 1.4, ease: "power2.out", immediateRender: false }}, {t0});',

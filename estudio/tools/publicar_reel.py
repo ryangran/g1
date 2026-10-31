@@ -1,6 +1,6 @@
 """Publica um Reel no @clovis.obilhete pela API do Instagram (envio do arquivo direto, sem hospedar o vídeo).
 
-  python3 estudio/tools/publicar_reel.py VIDEO.mp4 --legenda LEGENDA.txt [--capa URL_DA_CAPA] [--teste]
+  python3 estudio/tools/publicar_reel.py VIDEO.mp4 --legenda LEGENDA.txt [--capa URL_DA_CAPA] [--comentario COMENTARIO.txt] [--teste]
 
 --teste: envia e espera o Instagram processar, mas NÃO publica (o rascunho some sozinho em 24 h).
 Token: IG_TOKEN ou estudio/.chaves/instagram.key; conta: estudio/instagram.json.
@@ -43,6 +43,7 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("video", help="arquivo local (envio direto) ou URL pública https://… do vídeo"); ap.add_argument("--legenda", required=True); ap.add_argument("--capa")
     ap.add_argument("--teste", action="store_true")
+    ap.add_argument("--comentario", help="arquivo .txt com um comentário para postar logo depois de publicar")
     a = ap.parse_args()
     tk = token()
     conta = json.load(open(os.path.join(RAIZ, "instagram.json")))["id"]
@@ -78,3 +79,6 @@ if __name__ == "__main__":
     p = chamar("POST", f"{G}/{conta}/media_publish", {"creation_id": cid, "access_token": tk})
     m = chamar("GET", f"{G}/{p['id']}?fields=permalink,timestamp&access_token={urllib.parse.quote(tk)}")
     print("PUBLICADO:", m.get("permalink"), m.get("timestamp"))
+    if a.comentario:  # a API comenta, mas não fixa: fixar é no app
+        c = chamar("POST", f"{G}/{p['id']}/comments", {"message": open(a.comentario).read().strip(), "access_token": tk})
+        print("COMENTÁRIO:", c.get("id"))
