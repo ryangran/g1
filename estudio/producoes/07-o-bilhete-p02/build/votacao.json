@@ -1,15 +1,15 @@
 {
- "total_votos": 4,
+ "total_votos": 1,
  "placar": [
   {
-   "opcao": "ACELERA",
-   "votos": 3,
-   "pct": 75
+   "opcao": "POSTO",
+   "votos": 1,
+   "pct": 100
   },
   {
-   "opcao": "ESPERA",
-   "votos": 1,
-   "pct": 25
+   "opcao": "LIGA",
+   "votos": 0,
+   "pct": 0
   },
   {
    "opcao": "3º JEITO",
@@ -17,15 +17,15 @@
    "pct": 0
   }
  ],
- "vencedor": "ACELERA",
+ "vencedor": "POSTO",
  "primeiro_3o_jeito": null,
  "outros_que_acharam": [],
  "destaques": [
   {
    "username": "clovis.obilhete",
-   "text": "Vale o último comentário de cada um. Votação fecha amanhã às 15h ⏰",
+   "text": "🚕 Vale o último comentário de cada um. Votação fecha amanhã às 15h ⏰ E o recibo da Parte 1 continua lá… alguém vai achar o 3º jeito dessa vez?",
    "like_count": 0
   }
  ],
- "comentarios_lidos": 6
+ "comentarios_lidos": 2
 }
