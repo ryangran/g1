@@ -20,21 +20,22 @@ window.SERIE = {
 
   painel: [
     { rotulo: "No banco de trás", valor: "R$ 40 mi" },
-    { rotulo: "No bolso", valor: "R$ 0" },
+    { rotulo: "Na mesa", valor: "R$ 20 mi" },
     { rotulo: "Risco", valor: "99%", barra: 99, alerta: true },
   ],
 
   votacao: {
-    parte: 2,
-    titulo: "Posto ou liga?",
-    chamada: "Daqui pra frente, você decide.",
-    opcoes: ["POSTO", "LIGA"],
-    dica: "Tem um 3º jeito escondido na cena do sinal. Só vale se você disser qual é.",
+    parte: 3,
+    titulo: "Vende ou foge?",
+    chamada: "R$ 20 milhões na mesa. Você decide.",
+    opcoes: ["VENDE", "FOGE"],
+    dica: "Tem um 3º jeito escondido na cena do posto. Só vale se você disser qual é.",
   },
 
   partes: [
     { n: 1, titulo: "Todo prêmio tem dono", capa: "assets/capas/parte1.jpg", cena: "assets/capas/hotel.jpg", decisao: "Acelera · 75%", link: "https://www.instagram.com/reel/DfIm0RTin1y/" },
-    { n: 2, titulo: "Quem tem pressa", capa: "assets/capas/parte2.jpg", cena: "assets/capas/carro-preto.jpg", decisao: null, link: "https://www.instagram.com/reel/DfLLnsmFCrZ/" },
+    { n: 2, titulo: "Quem tem pressa", capa: "assets/capas/parte2.jpg", cena: "assets/capas/carro-preto.jpg", decisao: "Posto · 100%", link: "https://www.instagram.com/reel/DfLLnsmFCrZ/" },
+    { n: 3, titulo: "Todo comprador tem pressa", capa: "assets/capas/parte3.jpg", cena: "assets/capas/posto.jpg", decisao: null, link: "__LINK3__" },
   ],
   // mural: 5 fotos em volta (troque por cenas de cada parte conforme forem saindo); o centro vem da última parte
   mural: [
@@ -42,9 +43,9 @@ window.SERIE = {
     { capa: "assets/capas/verso.jpg", legenda: "SEU ANTÔNIO" },
     { capa: "assets/capas/placa.jpg", legenda: "FINAL 7" },
     { capa: "assets/capas/homem.jpg", legenda: "QUEM É ELE?" },
-    { capa: "assets/capas/hotel.jpg", legenda: "PARTE 1" },
+    { capa: "assets/capas/carro-preto.jpg", legenda: "O CARRO PRETO" },
   ],
-  notaMural: "Quem está no carro preto?",
+  notaMural: "R$ 20 milhões. Quem paga isso por um papel?",
   etiquetas: ["RISCO 99%", "R$ 40.000.000 no banco de trás"],
 
   // a vaga paga dentro da história

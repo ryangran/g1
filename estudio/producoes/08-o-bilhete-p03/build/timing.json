@@ -1,0 +1,877 @@
+{
+ "voz": "gemini-tts:Orus",
+ "frases": [
+  {
+   "texto": "O homem do carro preto entrou no posto… e sentou do lado do Clóvis.",
+   "ini": 0.0,
+   "fim": 4.46,
+   "palavras": [
+    {
+     "p": "O",
+     "ini": 0.0,
+     "fim": 0.34
+    },
+    {
+     "p": "homem",
+     "ini": 0.34,
+     "fim": 0.64
+    },
+    {
+     "p": "do",
+     "ini": 0.64,
+     "fim": 0.84
+    },
+    {
+     "p": "carro",
+     "ini": 0.84,
+     "fim": 1.1
+    },
+    {
+     "p": "preto",
+     "ini": 1.1,
+     "fim": 1.7
+    },
+    {
+     "p": "entrou",
+     "ini": 1.7,
+     "fim": 2.22
+    },
+    {
+     "p": "no",
+     "ini": 2.22,
+     "fim": 2.34
+    },
+    {
+     "p": "posto…",
+     "ini": 2.34,
+     "fim": 3.18
+    },
+    {
+     "p": "e",
+     "ini": 3.18,
+     "fim": 3.36
+    },
+    {
+     "p": "sentou",
+     "ini": 3.36,
+     "fim": 3.51
+    },
+    {
+     "p": "do",
+     "ini": 3.51,
+     "fim": 3.66
+    },
+    {
+     "p": "lado",
+     "ini": 3.66,
+     "fim": 3.9
+    },
+    {
+     "p": "do",
+     "ini": 3.9,
+     "fim": 4.06
+    },
+    {
+     "p": "Clóvis.",
+     "ini": 4.06,
+     "fim": 4.46
+    }
+   ]
+  },
+  {
+   "texto": "Um taxista achou quarenta milhões no banco de trás. E desde então, alguém tá seguindo ele.",
+   "ini": 4.9,
+   "fim": 10.94,
+   "palavras": [
+    {
+     "p": "Um",
+     "ini": 4.9,
+     "fim": 5.16
+    },
+    {
+     "p": "taxista",
+     "ini": 5.16,
+     "fim": 5.84
+    },
+    {
+     "p": "achou",
+     "ini": 5.84,
+     "fim": 6.34
+    },
+    {
+     "p": "quarenta",
+     "ini": 6.34,
+     "fim": 6.78
+    },
+    {
+     "p": "milhões",
+     "ini": 6.78,
+     "fim": 7.06
+    },
+    {
+     "p": "no",
+     "ini": 7.06,
+     "fim": 7.34
+    },
+    {
+     "p": "banco",
+     "ini": 7.34,
+     "fim": 7.56
+    },
+    {
+     "p": "de",
+     "ini": 7.56,
+     "fim": 7.72
+    },
+    {
+     "p": "trás.",
+     "ini": 7.72,
+     "fim": 8.0
+    },
+    {
+     "p": "E",
+     "ini": 8.0,
+     "fim": 8.74
+    },
+    {
+     "p": "desde",
+     "ini": 8.78,
+     "fim": 8.92
+    },
+    {
+     "p": "então,",
+     "ini": 8.92,
+     "fim": 9.36
+    },
+    {
+     "p": "alguém",
+     "ini": 9.82,
+     "fim": 10.1
+    },
+    {
+     "p": "tá",
+     "ini": 10.1,
+     "fim": 10.24
+    },
+    {
+     "p": "seguindo",
+     "ini": 10.24,
+     "fim": 10.64
+    },
+    {
+     "p": "ele.",
+     "ini": 10.64,
+     "fim": 10.94
+    }
+   ]
+  },
+  {
+   "texto": "Vocês mandaram o Clóvis entrar no posto. Gente, luz, câmera. Parecia seguro.",
+   "ini": 11.4,
+   "fim": 16.68,
+   "palavras": [
+    {
+     "p": "Vocês",
+     "ini": 11.4,
+     "fim": 11.68
+    },
+    {
+     "p": "mandaram",
+     "ini": 11.68,
+     "fim": 12.1
+    },
+    {
+     "p": "o",
+     "ini": 12.1,
+     "fim": 12.26
+    },
+    {
+     "p": "Clóvis",
+     "ini": 12.26,
+     "fim": 12.6
+    },
+    {
+     "p": "entrar",
+     "ini": 12.6,
+     "fim": 12.84
+    },
+    {
+     "p": "no",
+     "ini": 12.84,
+     "fim": 12.98
+    },
+    {
+     "p": "posto.",
+     "ini": 12.98,
+     "fim": 13.52
+    },
+    {
+     "p": "Gente,",
+     "ini": 13.84,
+     "fim": 14.14
+    },
+    {
+     "p": "luz,",
+     "ini": 14.14,
+     "fim": 14.48
+    },
+    {
+     "p": "câmera.",
+     "ini": 14.94,
+     "fim": 15.36
+    },
+    {
+     "p": "Parecia",
+     "ini": 15.86,
+     "fim": 16.22
+    },
+    {
+     "p": "seguro.",
+     "ini": 16.22,
+     "fim": 16.68
+    }
+   ]
+  },
+  {
+   "texto": "Mas o carro preto estacionou lá fora. E o homem pediu um café.",
+   "ini": 17.16,
+   "fim": 20.66,
+   "palavras": [
+    {
+     "p": "Mas",
+     "ini": 17.16,
+     "fim": 17.4
+    },
+    {
+     "p": "o",
+     "ini": 17.4,
+     "fim": 17.56
+    },
+    {
+     "p": "carro",
+     "ini": 17.56,
+     "fim": 17.72
+    },
+    {
+     "p": "preto",
+     "ini": 17.72,
+     "fim": 18.1
+    },
+    {
+     "p": "estacionou",
+     "ini": 18.1,
+     "fim": 18.54
+    },
+    {
+     "p": "lá",
+     "ini": 18.54,
+     "fim": 18.66
+    },
+    {
+     "p": "fora.",
+     "ini": 18.66,
+     "fim": 19.0
+    },
+    {
+     "p": "E",
+     "ini": 19.0,
+     "fim": 19.7
+    },
+    {
+     "p": "o",
+     "ini": 19.7,
+     "fim": 19.8
+    },
+    {
+     "p": "homem",
+     "ini": 19.8,
+     "fim": 19.98
+    },
+    {
+     "p": "pediu",
+     "ini": 19.98,
+     "fim": 20.28
+    },
+    {
+     "p": "um",
+     "ini": 20.28,
+     "fim": 20.38
+    },
+    {
+     "p": "café.",
+     "ini": 20.38,
+     "fim": 20.66
+    }
+   ]
+  },
+  {
+   "texto": "E você? Ficava sentado… ou fugia?",
+   "ini": 20.66,
+   "fim": 24.32,
+   "palavras": [
+    {
+     "p": "E",
+     "ini": 20.66,
+     "fim": 21.34
+    },
+    {
+     "p": "você?",
+     "ini": 21.34,
+     "fim": 21.7
+    },
+    {
+     "p": "Ficava",
+     "ini": 21.7,
+     "fim": 22.62
+    },
+    {
+     "p": "sentado…",
+     "ini": 22.62,
+     "fim": 23.22
+    },
+    {
+     "p": "ou",
+     "ini": 23.22,
+     "fim": 23.88
+    },
+    {
+     "p": "fugia?",
+     "ini": 23.88,
+     "fim": 24.32
+    }
+   ]
+  },
+  {
+   "texto": "Ele deslizou um cartão pelo balcão: comprador de bilhetes.",
+   "ini": 24.78,
+   "fim": 28.42,
+   "palavras": [
+    {
+     "p": "Ele",
+     "ini": 24.78,
+     "fim": 25.0
+    },
+    {
+     "p": "deslizou",
+     "ini": 25.0,
+     "fim": 25.5
+    },
+    {
+     "p": "um",
+     "ini": 25.5,
+     "fim": 25.6
+    },
+    {
+     "p": "cartão",
+     "ini": 25.6,
+     "fim": 25.88
+    },
+    {
+     "p": "pelo",
+     "ini": 25.88,
+     "fim": 26.08
+    },
+    {
+     "p": "balcão:",
+     "ini": 26.08,
+     "fim": 26.54
+    },
+    {
+     "p": "comprador",
+     "ini": 26.98,
+     "fim": 27.56
+    },
+    {
+     "p": "de",
+     "ini": 27.56,
+     "fim": 27.74
+    },
+    {
+     "p": "bilhetes.",
+     "ini": 27.74,
+     "fim": 28.42
+    }
+   ]
+  },
+  {
+   "texto": "Pago vinte milhões agora. Em dinheiro. O Rodrigo ia me vender por dez.",
+   "ini": 28.42,
+   "fim": 33.36,
+   "palavras": [
+    {
+     "p": "Pago",
+     "ini": 28.42,
+     "fim": 29.1
+    },
+    {
+     "p": "vinte",
+     "ini": 29.1,
+     "fim": 29.42
+    },
+    {
+     "p": "milhões",
+     "ini": 29.42,
+     "fim": 29.72
+    },
+    {
+     "p": "agora.",
+     "ini": 29.72,
+     "fim": 30.16
+    },
+    {
+     "p": "Em",
+     "ini": 30.6,
+     "fim": 30.96
+    },
+    {
+     "p": "dinheiro.",
+     "ini": 30.96,
+     "fim": 31.4
+    },
+    {
+     "p": "O",
+     "ini": 32.0,
+     "fim": 32.12
+    },
+    {
+     "p": "Rodrigo",
+     "ini": 32.12,
+     "fim": 32.46
+    },
+    {
+     "p": "ia",
+     "ini": 32.46,
+     "fim": 32.54
+    },
+    {
+     "p": "me",
+     "ini": 32.54,
+     "fim": 32.68
+    },
+    {
+     "p": "vender",
+     "ini": 32.68,
+     "fim": 32.88
+    },
+    {
+     "p": "por",
+     "ini": 32.88,
+     "fim": 33.08
+    },
+    {
+     "p": "dez.",
+     "ini": 33.08,
+     "fim": 33.36
+    }
+   ]
+  },
+  {
+   "texto": "Ou você vende pra mim… ou eu compro do Rodrigo. E ele vai saber onde você mora.",
+   "ini": 34.0,
+   "fim": 39.0,
+   "palavras": [
+    {
+     "p": "Ou",
+     "ini": 34.0,
+     "fim": 34.26
+    },
+    {
+     "p": "você",
+     "ini": 34.26,
+     "fim": 34.52
+    },
+    {
+     "p": "vende",
+     "ini": 34.52,
+     "fim": 34.76
+    },
+    {
+     "p": "pra",
+     "ini": 34.76,
+     "fim": 34.98
+    },
+    {
+     "p": "mim…",
+     "ini": 34.98,
+     "fim": 35.18
+    },
+    {
+     "p": "ou",
+     "ini": 35.66,
+     "fim": 35.9
+    },
+    {
+     "p": "eu",
+     "ini": 35.9,
+     "fim": 36.0
+    },
+    {
+     "p": "compro",
+     "ini": 36.0,
+     "fim": 36.32
+    },
+    {
+     "p": "do",
+     "ini": 36.32,
+     "fim": 36.42
+    },
+    {
+     "p": "Rodrigo.",
+     "ini": 36.42,
+     "fim": 37.0
+    },
+    {
+     "p": "E",
+     "ini": 37.0,
+     "fim": 37.6
+    },
+    {
+     "p": "ele",
+     "ini": 37.6,
+     "fim": 37.74
+    },
+    {
+     "p": "vai",
+     "ini": 37.74,
+     "fim": 37.88
+    },
+    {
+     "p": "saber",
+     "ini": 37.88,
+     "fim": 38.12
+    },
+    {
+     "p": "onde",
+     "ini": 38.12,
+     "fim": 38.3
+    },
+    {
+     "p": "você",
+     "ini": 38.3,
+     "fim": 38.56
+    },
+    {
+     "p": "mora.",
+     "ini": 38.56,
+     "fim": 39.0
+    }
+   ]
+  },
+  {
+   "texto": "Regra número três: todo comprador tem pressa. Todo vendedor tem medo.",
+   "ini": 39.52,
+   "fim": 44.66,
+   "palavras": [
+    {
+     "p": "Regra",
+     "ini": 39.52,
+     "fim": 39.86
+    },
+    {
+     "p": "número",
+     "ini": 39.86,
+     "fim": 40.04
+    },
+    {
+     "p": "três:",
+     "ini": 40.04,
+     "fim": 40.5
+    },
+    {
+     "p": "todo",
+     "ini": 41.32,
+     "fim": 41.56
+    },
+    {
+     "p": "comprador",
+     "ini": 41.56,
+     "fim": 42.18
+    },
+    {
+     "p": "tem",
+     "ini": 42.18,
+     "fim": 42.38
+    },
+    {
+     "p": "pressa.",
+     "ini": 42.38,
+     "fim": 43.08
+    },
+    {
+     "p": "Todo",
+     "ini": 43.42,
+     "fim": 43.7
+    },
+    {
+     "p": "vendedor",
+     "ini": 43.7,
+     "fim": 44.14
+    },
+    {
+     "p": "tem",
+     "ini": 44.14,
+     "fim": 44.34
+    },
+    {
+     "p": "medo.",
+     "ini": 44.34,
+     "fim": 44.66
+    }
+   ]
+  },
+  {
+   "texto": "Opção A: pegar os vinte milhões e acabar com isso. Comente VENDE.",
+   "ini": 45.32,
+   "fim": 50.02,
+   "palavras": [
+    {
+     "p": "Opção",
+     "ini": 45.32,
+     "fim": 45.72
+    },
+    {
+     "p": "A:",
+     "ini": 45.72,
+     "fim": 45.96
+    },
+    {
+     "p": "pegar",
+     "ini": 46.52,
+     "fim": 46.74
+    },
+    {
+     "p": "os",
+     "ini": 46.74,
+     "fim": 46.92
+    },
+    {
+     "p": "vinte",
+     "ini": 46.92,
+     "fim": 47.12
+    },
+    {
+     "p": "milhões",
+     "ini": 47.12,
+     "fim": 47.48
+    },
+    {
+     "p": "e",
+     "ini": 47.48,
+     "fim": 47.66
+    },
+    {
+     "p": "acabar",
+     "ini": 47.66,
+     "fim": 47.84
+    },
+    {
+     "p": "com",
+     "ini": 47.84,
+     "fim": 48.12
+    },
+    {
+     "p": "isso.",
+     "ini": 48.12,
+     "fim": 48.38
+    },
+    {
+     "p": "Comente",
+     "ini": 49.16,
+     "fim": 49.58
+    },
+    {
+     "p": "VENDE.",
+     "ini": 49.58,
+     "fim": 50.02
+    }
+   ]
+  },
+  {
+   "texto": "Opção B: sair pela porta dos fundos e sumir. Comente FOGE.",
+   "ini": 50.7,
+   "fim": 55.3,
+   "palavras": [
+    {
+     "p": "Opção",
+     "ini": 50.7,
+     "fim": 51.18
+    },
+    {
+     "p": "B:",
+     "ini": 51.18,
+     "fim": 51.44
+    },
+    {
+     "p": "sair",
+     "ini": 52.06,
+     "fim": 52.24
+    },
+    {
+     "p": "pela",
+     "ini": 52.24,
+     "fim": 52.44
+    },
+    {
+     "p": "porta",
+     "ini": 52.44,
+     "fim": 52.68
+    },
+    {
+     "p": "dos",
+     "ini": 52.68,
+     "fim": 52.9
+    },
+    {
+     "p": "fundos",
+     "ini": 52.9,
+     "fim": 53.24
+    },
+    {
+     "p": "e",
+     "ini": 53.24,
+     "fim": 53.4
+    },
+    {
+     "p": "sumir.",
+     "ini": 53.4,
+     "fim": 53.7
+    },
+    {
+     "p": "Comente",
+     "ini": 54.38,
+     "fim": 54.84
+    },
+    {
+     "p": "FOGE.",
+     "ini": 54.84,
+     "fim": 55.3
+    }
+   ]
+  },
+  {
+   "texto": "Ou tem um terceiro jeito escondido nessa cena. Só vale se você disser qual é.",
+   "ini": 55.38,
+   "fim": 60.52,
+   "palavras": [
+    {
+     "p": "Ou",
+     "ini": 55.38,
+     "fim": 56.26
+    },
+    {
+     "p": "tem",
+     "ini": 56.26,
+     "fim": 56.4
+    },
+    {
+     "p": "um",
+     "ini": 56.4,
+     "fim": 56.5
+    },
+    {
+     "p": "terceiro",
+     "ini": 56.5,
+     "fim": 56.84
+    },
+    {
+     "p": "jeito",
+     "ini": 56.84,
+     "fim": 57.02
+    },
+    {
+     "p": "escondido",
+     "ini": 57.02,
+     "fim": 57.58
+    },
+    {
+     "p": "nessa",
+     "ini": 57.58,
+     "fim": 57.76
+    },
+    {
+     "p": "cena.",
+     "ini": 57.76,
+     "fim": 58.14
+    },
+    {
+     "p": "Só",
+     "ini": 58.82,
+     "fim": 59.26
+    },
+    {
+     "p": "vale",
+     "ini": 59.26,
+     "fim": 59.48
+    },
+    {
+     "p": "se",
+     "ini": 59.48,
+     "fim": 59.64
+    },
+    {
+     "p": "você",
+     "ini": 59.64,
+     "fim": 59.82
+    },
+    {
+     "p": "disser",
+     "ini": 59.82,
+     "fim": 60.16
+    },
+    {
+     "p": "qual",
+     "ini": 60.16,
+     "fim": 60.28
+    },
+    {
+     "p": "é.",
+     "ini": 60.28,
+     "fim": 60.52
+    }
+   ]
+  },
+  {
+   "texto": "A maioria escreve a parte quatro amanhã.",
+   "ini": 61.34,
+   "fim": 63.3,
+   "palavras": [
+    {
+     "p": "A",
+     "ini": 61.34,
+     "fim": 61.5
+    },
+    {
+     "p": "maioria",
+     "ini": 61.5,
+     "fim": 61.72
+    },
+    {
+     "p": "escreve",
+     "ini": 61.72,
+     "fim": 62.3
+    },
+    {
+     "p": "a",
+     "ini": 62.3,
+     "fim": 62.38
+    },
+    {
+     "p": "parte",
+     "ini": 62.38,
+     "fim": 62.54
+    },
+    {
+     "p": "quatro",
+     "ini": 62.54,
+     "fim": 62.88
+    },
+    {
+     "p": "amanhã.",
+     "ini": 62.88,
+     "fim": 63.3
+    }
+   ]
+  }
+ ],
+ "total": 63.425
+}

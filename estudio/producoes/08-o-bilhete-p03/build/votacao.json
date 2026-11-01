@@ -1,0 +1,31 @@
+{
+ "total_votos": 1,
+ "placar": [
+  {
+   "opcao": "POSTO",
+   "votos": 1,
+   "pct": 100
+  },
+  {
+   "opcao": "LIGA",
+   "votos": 0,
+   "pct": 0
+  },
+  {
+   "opcao": "3º JEITO",
+   "votos": 0,
+   "pct": 0
+  }
+ ],
+ "vencedor": "POSTO",
+ "primeiro_3o_jeito": null,
+ "outros_que_acharam": [],
+ "destaques": [
+  {
+   "username": "clovis.obilhete",
+   "text": "🚕 Vale o último comentário de cada um. Votação fecha amanhã às 15h ⏰ E o recibo da Parte 1 continua lá… alguém vai achar o 3º jeito dessa vez?",
+   "like_count": 0
+  }
+ ],
+ "comentarios_lidos": 2
+}
