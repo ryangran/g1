@@ -1,13 +1,13 @@
 {
- "total_votos": 1,
+ "total_votos": 2,
  "placar": [
   {
-   "opcao": "POSTO",
-   "votos": 1,
+   "opcao": "VENDE",
+   "votos": 2,
    "pct": 100
   },
   {
-   "opcao": "LIGA",
+   "opcao": "FOGE",
    "votos": 0,
    "pct": 0
   },
@@ -17,15 +17,15 @@
    "pct": 0
   }
  ],
- "vencedor": "POSTO",
+ "vencedor": "VENDE",
  "primeiro_3o_jeito": null,
  "outros_que_acharam": [],
  "destaques": [
   {
    "username": "clovis.obilhete",
-   "text": "🚕 Vale o último comentário de cada um. Votação fecha amanhã às 15h ⏰ E o recibo da Parte 1 continua lá… alguém vai achar o 3º jeito dessa vez?",
+   "text": "🚕 Vende ou foge? Vale o último comentário de cada um. Votação fecha amanhã às 15h ⏰ E olha bem a cena do posto… o 3º jeito tá lá.",
    "like_count": 0
   }
  ],
- "comentarios_lidos": 2
+ "comentarios_lidos": 3
 }
