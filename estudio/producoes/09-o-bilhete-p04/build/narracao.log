@@ -1,0 +1,16 @@
+ok build/gvoz/narracao.wav audio/L16;codec=pcm;rate=24000 49.73s
+alinhamento: 122/127 palavras casadas
+41.14 s
+0.0 1.02 O Clóvis vendeu.
+1.02 6.38 Quarenta milhões no bilhete. Vinte milhões na mala. E vocês mandaram vender.
+6.82 9.98 O Clóvis empurrou o bilhete pelo balcão… e a mão dele tremia.
+10.54 13.54 O homem guardou o bilhete no casaco. E tirou um segundo envelope.
+14.26 17.42 Agora você vem comigo até a lotérica. E retira o prêmio no seu nome.
+17.86 20.62 O Clóvis não vendeu um bilhete. Ele alugou o próprio nome.
+21.08 24.28 Regra número quatro: quem paga em dinheiro… não pode aparecer.
+24.66 27.36 Amanhã. Oito da manhã. Não se atrasa.
+27.36 30.58 Opção A: ir com ele e pegar a mala. Comente VAI.
+31.02 34.82 Opção B: devolver a mala e pedir o bilhete de volta. Comente RECUSA.
+35.22 38.98 Ou tem um terceiro jeito escondido nessa cena. Só vale se você disser qual é.
+39.34 41.0 A maioria escreve a parte cinco amanhã.
+EXIT 0

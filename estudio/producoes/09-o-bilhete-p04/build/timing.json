@@ -1,0 +1,725 @@
+{
+ "voz": "gemini-tts:Orus",
+ "frases": [
+  {
+   "texto": "O Clóvis vendeu.",
+   "ini": 0.0,
+   "fim": 1.02,
+   "palavras": [
+    {
+     "p": "O",
+     "ini": 0.0,
+     "fim": 0.26
+    },
+    {
+     "p": "Clóvis",
+     "ini": 0.26,
+     "fim": 0.6
+    },
+    {
+     "p": "vendeu.",
+     "ini": 0.6,
+     "fim": 1.02
+    }
+   ]
+  },
+  {
+   "texto": "Quarenta milhões no bilhete. Vinte milhões na mala. E vocês mandaram vender.",
+   "ini": 1.02,
+   "fim": 6.38,
+   "palavras": [
+    {
+     "p": "Quarenta",
+     "ini": 1.02,
+     "fim": 1.92
+    },
+    {
+     "p": "milhões",
+     "ini": 1.92,
+     "fim": 2.44
+    },
+    {
+     "p": "no",
+     "ini": 2.44,
+     "fim": 2.74
+    },
+    {
+     "p": "bilhete.",
+     "ini": 2.74,
+     "fim": 3.18
+    },
+    {
+     "p": "Vinte",
+     "ini": 3.18,
+     "fim": 3.9
+    },
+    {
+     "p": "milhões",
+     "ini": 3.9,
+     "fim": 4.32
+    },
+    {
+     "p": "na",
+     "ini": 4.32,
+     "fim": 4.62
+    },
+    {
+     "p": "mala.",
+     "ini": 4.62,
+     "fim": 4.9
+    },
+    {
+     "p": "E",
+     "ini": 4.9,
+     "fim": 5.36
+    },
+    {
+     "p": "vocês",
+     "ini": 5.36,
+     "fim": 5.62
+    },
+    {
+     "p": "mandaram",
+     "ini": 5.62,
+     "fim": 6.08
+    },
+    {
+     "p": "vender.",
+     "ini": 6.08,
+     "fim": 6.38
+    }
+   ]
+  },
+  {
+   "texto": "O Clóvis empurrou o bilhete pelo balcão… e a mão dele tremia.",
+   "ini": 6.82,
+   "fim": 9.98,
+   "palavras": [
+    {
+     "p": "O",
+     "ini": 6.82,
+     "fim": 6.96
+    },
+    {
+     "p": "Clóvis",
+     "ini": 6.96,
+     "fim": 7.24
+    },
+    {
+     "p": "empurrou",
+     "ini": 7.24,
+     "fim": 7.66
+    },
+    {
+     "p": "o",
+     "ini": 7.66,
+     "fim": 7.82
+    },
+    {
+     "p": "bilhete",
+     "ini": 7.82,
+     "fim": 8.08
+    },
+    {
+     "p": "pelo",
+     "ini": 8.08,
+     "fim": 8.3
+    },
+    {
+     "p": "balcão…",
+     "ini": 8.3,
+     "fim": 8.68
+    },
+    {
+     "p": "e",
+     "ini": 8.68,
+     "fim": 9.16
+    },
+    {
+     "p": "a",
+     "ini": 9.16,
+     "fim": 9.22
+    },
+    {
+     "p": "mão",
+     "ini": 9.22,
+     "fim": 9.34
+    },
+    {
+     "p": "dele",
+     "ini": 9.34,
+     "fim": 9.54
+    },
+    {
+     "p": "tremia.",
+     "ini": 9.54,
+     "fim": 9.98
+    }
+   ]
+  },
+  {
+   "texto": "O homem guardou o bilhete no casaco. E tirou um segundo envelope.",
+   "ini": 10.54,
+   "fim": 13.54,
+   "palavras": [
+    {
+     "p": "O",
+     "ini": 10.54,
+     "fim": 10.58
+    },
+    {
+     "p": "homem",
+     "ini": 10.58,
+     "fim": 10.76
+    },
+    {
+     "p": "guardou",
+     "ini": 10.76,
+     "fim": 11.12
+    },
+    {
+     "p": "o",
+     "ini": 11.12,
+     "fim": 11.2
+    },
+    {
+     "p": "bilhete",
+     "ini": 11.2,
+     "fim": 11.46
+    },
+    {
+     "p": "no",
+     "ini": 11.46,
+     "fim": 11.58
+    },
+    {
+     "p": "casaco.",
+     "ini": 11.58,
+     "fim": 12.0
+    },
+    {
+     "p": "E",
+     "ini": 12.0,
+     "fim": 12.62
+    },
+    {
+     "p": "tirou",
+     "ini": 12.62,
+     "fim": 12.86
+    },
+    {
+     "p": "um",
+     "ini": 12.86,
+     "fim": 12.98
+    },
+    {
+     "p": "segundo",
+     "ini": 12.98,
+     "fim": 13.26
+    },
+    {
+     "p": "envelope.",
+     "ini": 13.26,
+     "fim": 13.54
+    }
+   ]
+  },
+  {
+   "texto": "Agora você vem comigo até a lotérica. E retira o prêmio no seu nome.",
+   "ini": 14.26,
+   "fim": 17.42,
+   "palavras": [
+    {
+     "p": "Agora",
+     "ini": 14.26,
+     "fim": 14.54
+    },
+    {
+     "p": "você",
+     "ini": 14.54,
+     "fim": 14.78
+    },
+    {
+     "p": "vem",
+     "ini": 14.78,
+     "fim": 14.9
+    },
+    {
+     "p": "comigo",
+     "ini": 14.9,
+     "fim": 15.14
+    },
+    {
+     "p": "até",
+     "ini": 15.14,
+     "fim": 15.32
+    },
+    {
+     "p": "a",
+     "ini": 15.32,
+     "fim": 15.38
+    },
+    {
+     "p": "lotérica.",
+     "ini": 15.38,
+     "fim": 15.72
+    },
+    {
+     "p": "E",
+     "ini": 15.72,
+     "fim": 16.36
+    },
+    {
+     "p": "retira",
+     "ini": 16.36,
+     "fim": 16.64
+    },
+    {
+     "p": "o",
+     "ini": 16.64,
+     "fim": 16.72
+    },
+    {
+     "p": "prêmio",
+     "ini": 16.72,
+     "fim": 16.94
+    },
+    {
+     "p": "no",
+     "ini": 16.94,
+     "fim": 17.08
+    },
+    {
+     "p": "seu",
+     "ini": 17.08,
+     "fim": 17.2
+    },
+    {
+     "p": "nome.",
+     "ini": 17.2,
+     "fim": 17.42
+    }
+   ]
+  },
+  {
+   "texto": "O Clóvis não vendeu um bilhete. Ele alugou o próprio nome.",
+   "ini": 17.86,
+   "fim": 20.62,
+   "palavras": [
+    {
+     "p": "O",
+     "ini": 17.86,
+     "fim": 17.92
+    },
+    {
+     "p": "Clóvis",
+     "ini": 17.92,
+     "fim": 18.24
+    },
+    {
+     "p": "não",
+     "ini": 18.24,
+     "fim": 18.36
+    },
+    {
+     "p": "vendeu",
+     "ini": 18.36,
+     "fim": 18.6
+    },
+    {
+     "p": "um",
+     "ini": 18.6,
+     "fim": 18.76
+    },
+    {
+     "p": "bilhete.",
+     "ini": 18.76,
+     "fim": 19.1
+    },
+    {
+     "p": "Ele",
+     "ini": 19.5,
+     "fim": 19.66
+    },
+    {
+     "p": "alugou",
+     "ini": 19.66,
+     "fim": 19.96
+    },
+    {
+     "p": "o",
+     "ini": 19.96,
+     "fim": 20.08
+    },
+    {
+     "p": "próprio",
+     "ini": 20.08,
+     "fim": 20.32
+    },
+    {
+     "p": "nome.",
+     "ini": 20.32,
+     "fim": 20.62
+    }
+   ]
+  },
+  {
+   "texto": "Regra número quatro: quem paga em dinheiro… não pode aparecer.",
+   "ini": 21.08,
+   "fim": 24.28,
+   "palavras": [
+    {
+     "p": "Regra",
+     "ini": 21.08,
+     "fim": 21.4
+    },
+    {
+     "p": "número",
+     "ini": 21.4,
+     "fim": 21.56
+    },
+    {
+     "p": "quatro:",
+     "ini": 21.56,
+     "fim": 22.38
+    },
+    {
+     "p": "quem",
+     "ini": 22.38,
+     "fim": 22.44
+    },
+    {
+     "p": "paga",
+     "ini": 22.44,
+     "fim": 22.7
+    },
+    {
+     "p": "em",
+     "ini": 22.7,
+     "fim": 22.82
+    },
+    {
+     "p": "dinheiro…",
+     "ini": 22.82,
+     "fim": 23.16
+    },
+    {
+     "p": "não",
+     "ini": 23.16,
+     "fim": 23.64
+    },
+    {
+     "p": "pode",
+     "ini": 23.64,
+     "fim": 23.88
+    },
+    {
+     "p": "aparecer.",
+     "ini": 23.88,
+     "fim": 24.28
+    }
+   ]
+  },
+  {
+   "texto": "Amanhã. Oito da manhã. Não se atrasa.",
+   "ini": 24.66,
+   "fim": 27.36,
+   "palavras": [
+    {
+     "p": "Amanhã.",
+     "ini": 24.66,
+     "fim": 25.02
+    },
+    {
+     "p": "Oito",
+     "ini": 25.5,
+     "fim": 25.7
+    },
+    {
+     "p": "da",
+     "ini": 25.7,
+     "fim": 25.84
+    },
+    {
+     "p": "manhã.",
+     "ini": 25.84,
+     "fim": 26.14
+    },
+    {
+     "p": "Não",
+     "ini": 26.54,
+     "fim": 26.7
+    },
+    {
+     "p": "se",
+     "ini": 26.7,
+     "fim": 26.82
+    },
+    {
+     "p": "atrasa.",
+     "ini": 26.82,
+     "fim": 27.36
+    }
+   ]
+  },
+  {
+   "texto": "Opção A: ir com ele e pegar a mala. Comente VAI.",
+   "ini": 27.36,
+   "fim": 30.58,
+   "palavras": [
+    {
+     "p": "Opção",
+     "ini": 27.36,
+     "fim": 27.92
+    },
+    {
+     "p": "A:",
+     "ini": 27.92,
+     "fim": 28.1
+    },
+    {
+     "p": "ir",
+     "ini": 28.46,
+     "fim": 28.68
+    },
+    {
+     "p": "com",
+     "ini": 28.68,
+     "fim": 28.84
+    },
+    {
+     "p": "ele",
+     "ini": 28.84,
+     "fim": 29.04
+    },
+    {
+     "p": "e",
+     "ini": 29.04,
+     "fim": 29.12
+    },
+    {
+     "p": "pegar",
+     "ini": 29.12,
+     "fim": 29.28
+    },
+    {
+     "p": "a",
+     "ini": 29.28,
+     "fim": 29.42
+    },
+    {
+     "p": "mala.",
+     "ini": 29.42,
+     "fim": 29.64
+    },
+    {
+     "p": "Comente",
+     "ini": 29.92,
+     "fim": 30.34
+    },
+    {
+     "p": "VAI.",
+     "ini": 30.34,
+     "fim": 30.58
+    }
+   ]
+  },
+  {
+   "texto": "Opção B: devolver a mala e pedir o bilhete de volta. Comente RECUSA.",
+   "ini": 31.02,
+   "fim": 34.82,
+   "palavras": [
+    {
+     "p": "Opção",
+     "ini": 31.02,
+     "fim": 31.36
+    },
+    {
+     "p": "B:",
+     "ini": 31.36,
+     "fim": 31.58
+    },
+    {
+     "p": "devolver",
+     "ini": 32.0,
+     "fim": 32.34
+    },
+    {
+     "p": "a",
+     "ini": 32.34,
+     "fim": 32.44
+    },
+    {
+     "p": "mala",
+     "ini": 32.44,
+     "fim": 32.62
+    },
+    {
+     "p": "e",
+     "ini": 32.62,
+     "fim": 32.72
+    },
+    {
+     "p": "pedir",
+     "ini": 32.72,
+     "fim": 32.9
+    },
+    {
+     "p": "o",
+     "ini": 32.9,
+     "fim": 33.0
+    },
+    {
+     "p": "bilhete",
+     "ini": 33.0,
+     "fim": 33.26
+    },
+    {
+     "p": "de",
+     "ini": 33.26,
+     "fim": 33.38
+    },
+    {
+     "p": "volta.",
+     "ini": 33.38,
+     "fim": 33.56
+    },
+    {
+     "p": "Comente",
+     "ini": 33.94,
+     "fim": 34.36
+    },
+    {
+     "p": "RECUSA.",
+     "ini": 34.36,
+     "fim": 34.82
+    }
+   ]
+  },
+  {
+   "texto": "Ou tem um terceiro jeito escondido nessa cena. Só vale se você disser qual é.",
+   "ini": 35.22,
+   "fim": 38.98,
+   "palavras": [
+    {
+     "p": "Ou",
+     "ini": 35.22,
+     "fim": 35.4
+    },
+    {
+     "p": "tem",
+     "ini": 35.4,
+     "fim": 35.56
+    },
+    {
+     "p": "um",
+     "ini": 35.56,
+     "fim": 35.66
+    },
+    {
+     "p": "terceiro",
+     "ini": 35.66,
+     "fim": 36.06
+    },
+    {
+     "p": "jeito",
+     "ini": 36.06,
+     "fim": 36.18
+    },
+    {
+     "p": "escondido",
+     "ini": 36.18,
+     "fim": 36.68
+    },
+    {
+     "p": "nessa",
+     "ini": 36.68,
+     "fim": 36.86
+    },
+    {
+     "p": "cena.",
+     "ini": 36.86,
+     "fim": 37.16
+    },
+    {
+     "p": "Só",
+     "ini": 37.52,
+     "fim": 37.76
+    },
+    {
+     "p": "vale",
+     "ini": 37.76,
+     "fim": 38.0
+    },
+    {
+     "p": "se",
+     "ini": 38.0,
+     "fim": 38.16
+    },
+    {
+     "p": "você",
+     "ini": 38.16,
+     "fim": 38.3
+    },
+    {
+     "p": "disser",
+     "ini": 38.3,
+     "fim": 38.64
+    },
+    {
+     "p": "qual",
+     "ini": 38.64,
+     "fim": 38.78
+    },
+    {
+     "p": "é.",
+     "ini": 38.78,
+     "fim": 38.98
+    }
+   ]
+  },
+  {
+   "texto": "A maioria escreve a parte cinco amanhã.",
+   "ini": 39.34,
+   "fim": 41.0,
+   "palavras": [
+    {
+     "p": "A",
+     "ini": 39.34,
+     "fim": 39.46
+    },
+    {
+     "p": "maioria",
+     "ini": 39.46,
+     "fim": 39.7
+    },
+    {
+     "p": "escreve",
+     "ini": 39.7,
+     "fim": 40.22
+    },
+    {
+     "p": "a",
+     "ini": 40.22,
+     "fim": 40.28
+    },
+    {
+     "p": "parte",
+     "ini": 40.28,
+     "fim": 40.42
+    },
+    {
+     "p": "cinco",
+     "ini": 40.42,
+     "fim": 40.68
+    },
+    {
+     "p": "amanhã.",
+     "ini": 40.68,
+     "fim": 41.0
+    }
+   ]
+  }
+ ],
+ "total": 41.143
+}
