@@ -5,7 +5,7 @@ window.SERIE = {
   tituloPagina: "O Bilhete · Você decide o que o Clóvis faz com R$ 40 milhões",
   rodape: "História fictícia, personagens fictícios. Todo prêmio tem dono.",
   instagram: "https://www.instagram.com/clovis.obilhete/",
-  reelAtual: "https://www.instagram.com/reel/DfQVEBoGHRF/",  // Reel da votação aberta
+  reelAtual: "https://www.instagram.com/reel/DfTGqr0DhBF/",  // Reel da votação aberta
   tiktok: "", youtube: "",
   precoPasse: "R$ 9,90",
   vagasPorParte: 10,
@@ -25,18 +25,19 @@ window.SERIE = {
   ],
 
   votacao: {
-    parte: 4,
-    titulo: "Vai ou recusa?",
-    chamada: "Ele vendeu. Agora querem o nome dele.",
-    opcoes: ["VAI", "RECUSA"],
-    dica: "Tem um 3º jeito escondido no posto. Só vale se você disser qual é.",
+    parte: 5,
+    titulo: "Conta ou finge?",
+    chamada: "O dono do bilhete tava na fila. Você decide.",
+    opcoes: ["CONTA", "FINGE"],
+    dica: "Tem um 3º jeito escondido no balcão da lotérica. Só vale se você disser qual é.",
   },
 
   partes: [
     { n: 1, titulo: "Todo prêmio tem dono", capa: "assets/capas/parte1.jpg", cena: "assets/capas/hotel.jpg", decisao: "Acelera · 75%", link: "https://www.instagram.com/reel/DfIm0RTin1y/" },
     { n: 2, titulo: "Quem tem pressa", capa: "assets/capas/parte2.jpg", cena: "assets/capas/carro-preto.jpg", decisao: "Posto · 100%", link: "https://www.instagram.com/reel/DfLLnsmFCrZ/" },
     { n: 3, titulo: "Todo comprador tem pressa", capa: "assets/capas/parte3.jpg", cena: "assets/capas/posto.jpg", decisao: "Vende · 100%", link: "https://www.instagram.com/reel/DfN9lWiEZp6/" },
-    { n: 4, titulo: "Todo dinheiro tem dono", capa: "assets/capas/parte4.jpg", cena: "assets/capas/posto.jpg", decisao: null, link: "https://www.instagram.com/reel/DfQVEBoGHRF/" },
+    { n: 4, titulo: "Todo dinheiro tem dono", capa: "assets/capas/parte4.jpg", cena: "assets/capas/posto.jpg", decisao: "Vai · 100%", link: "https://www.instagram.com/reel/DfQVEBoGHRF/" },
+    { n: 5, titulo: "Todo bilhete tem um nome", capa: "assets/capas/parte5.jpg", cena: "assets/capas/posto.jpg", decisao: null, link: "https://www.instagram.com/reel/DfTGqr0DhBF/" },
   ],
   // mural: 5 fotos em volta (troque por cenas de cada parte conforme forem saindo); o centro vem da última parte
   mural: [
@@ -46,7 +47,7 @@ window.SERIE = {
     { capa: "assets/capas/homem.jpg", legenda: "QUEM É ELE?" },
     { capa: "assets/capas/carro-preto.jpg", legenda: "O CARRO PRETO" },
   ],
-  notaMural: "Ele vendeu o bilhete. E o nome junto.",
+  notaMural: "O dono do bilhete tava na fila.",
   etiquetas: ["RISCO 99%", "R$ 40.000.000 no banco de trás"],
 
   // a vaga paga dentro da história

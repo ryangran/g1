@@ -1,0 +1,71 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=1080, height=1920">
+<script src="assets/lib/gsap.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box} html,body{width:1080px;height:1920px;overflow:hidden;background:#0b111b}
+#root{position:relative;width:100%;height:100%;font-family:"Inter",sans-serif;overflow:hidden}
+#cena{position:absolute;inset:0;transform:translateY(120px) scale(1.06);transform-origin:50% 0} #atendente{opacity:0} #cena svg{width:1080px;height:1920px;display:block}
+#escuro{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,9,14,.97) 0%,rgba(6,9,14,.92) 40%,rgba(6,9,14,.4) 56%,rgba(6,9,14,0) 68%,rgba(6,9,14,.15) 86%,rgba(6,9,14,.75) 100%)}
+.t{position:absolute;left:0;right:0;text-align:center;color:#fff}
+#kick{top:250px;font-family:"JetBrains Mono",monospace;font-weight:700;font-size:34px;letter-spacing:.32em;color:#d7dbe2}
+#parte{top:330px;font-family:"Archivo Black",sans-serif;font-size:170px;line-height:1;letter-spacing:.01em}
+#parte b{color:#ffd23a;font-weight:400;font-size:230px;vertical-align:-14px}
+#linha{top:585px;left:480px;right:480px;height:10px;background:#ffd23a;border-radius:5px}
+#titulo{top:625px;font-family:"Archivo Black",sans-serif;font-size:112px;line-height:1.04}#titulo span{font-size:76px}
+#titulo span{color:#ffd23a}
+#pilula{bottom:150px} #pilula span{display:inline-block;font-family:"Archivo Black",sans-serif;font-size:46px;color:#111;background:#ffd23a;padding:18px 40px;border-radius:22px;box-shadow:0 10px 0 #000}
+</style></head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="1" data-width="1080" data-height="1920">
+<div id="cena" class="clip" data-start="0" data-duration="1" data-track-index="0" data-layout-ignore><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" width="1080" height="1920" preserveAspectRatio="xMidYMid slice" overflow="visible">
+<defs>
+<radialGradient id="vinheta" cx="50%" cy="48%" r="70%"><stop offset="0.55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.7"/></radialGradient>
+<linearGradient id="noite" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#070b14"/><stop offset="1" stop-color="#16233a"/></linearGradient>
+<radialGradient id="poste" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffb661" stop-opacity="0.85"/><stop offset="1" stop-color="#ffb661" stop-opacity="0"/></radialGradient>
+<radialGradient id="verde" cx="50%" cy="100%" r="80%"><stop offset="0" stop-color="#38e08a" stop-opacity="0.55"/><stop offset="1" stop-color="#38e08a" stop-opacity="0"/></radialGradient>
+<radialGradient id="vermelho" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ff3b30" stop-opacity="0.6"/><stop offset="1" stop-color="#ff3b30" stop-opacity="0"/></radialGradient>
+
+</defs>
+
+<rect width="1080" height="1920" fill="#16243a"/>
+<rect x="0" y="260" width="1080" height="666" fill="#1b2c45"/>
+<rect x="0" y="250" width="1080" height="16" fill="#ffd23a"/>
+<rect x="60" y="440" width="190" height="120" rx="10" fill="#24456f" stroke="#120f0c" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><text x="155" y="515" font-family="Archivo Black, sans-serif" font-size="34" fill="#ffd23a" text-anchor="middle">MEGA</text>
+
+<rect x="0" y="926" width="1080" height="1000" fill="#121a28"/>
+<path d="M60 1180 L 1020 1180" stroke="#d9b44a" stroke-width="10"/><rect x="40" y="1100" width="26" height="420" fill="#8a8f98" stroke="#120f0c" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><rect x="1014" y="1100" width="26" height="420" fill="#8a8f98" stroke="#120f0c" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<g id="antonio53"><g id="sa" transform="translate(540 1150) scale(1.5)">
+  <path d="M-260 520 C -260 330 -190 255 -70 235 L 70 235 C 190 255 260 330 260 520 Z" fill="#7a5233" stroke="#120f0c" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M-70 235 L 0 360 L 70 235 L 40 205 L -40 205 Z" fill="#e8e2d0" stroke="#120f0c" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M-70 235 L -10 360 L -100 520 L -150 300 Z M70 235 L 10 360 L 100 520 L 150 300 Z" fill="#5e3e26" stroke="#120f0c" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M-38 165 L -38 235 L 38 235 L 38 165 Z" fill="#d6a47c" stroke="#120f0c" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+  <g id="sa-cabeca">
+    <path d="M-125 -50 C -135 -175 135 -175 125 -50 C 132 60 100 140 0 155 C -100 140 -132 60 -125 -50 Z" fill="#d6a47c" stroke="#120f0c" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M-20 150 C 50 140 105 90 118 20 C 125 90 95 140 0 155 Z" fill="#c08d69" opacity="0.55"/>
+    <path d="M-130 -40 C -150 -170 -40 -210 20 -200 C 110 -195 160 -150 130 -40 C 120 -110 60 -150 -10 -150 C -70 -148 -110 -110 -130 -40 Z" fill="#d9d6cf" stroke="#120f0c" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M-60 -170 C -20 -185 40 -185 80 -165 M -40 -150 C 0 -165 50 -160 90 -140" fill="none" stroke="#3a3d48" stroke-width="5"/>
+    <path id="sa-sobr-e" d="M-92 -50 L -26 -40" stroke="#120f0c" stroke-width="12" stroke-linecap="round"/>
+    <path id="sa-sobr-d" d="M26 -40 L 92 -50" stroke="#120f0c" stroke-width="12" stroke-linecap="round"/>
+    <g id="sa-olhos"><path d="M-88 -16 Q -58 -36 -28 -16 Q -58 -4 -88 -16 Z" fill="#fff" stroke="#120f0c" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><path d="M28 -16 Q 58 -36 88 -16 Q 58 -4 28 -16 Z" fill="#fff" stroke="#120f0c" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+      <circle cx="-56" cy="-18" r="9" fill="#101010"/><circle cx="60" cy="-18" r="9" fill="#101010"/></g>
+    <path d="M-4 -10 C -10 30 -24 46 -12 54 C 0 58 10 56 18 52" fill="none" stroke="#120f0c" stroke-width="6" stroke-linecap="round"/>
+    <path id="sa-boca" d="M-40 96 Q 10 112 48 88" fill="none" stroke="#120f0c" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  
+</g><g transform="translate(540 1150) scale(1.5)">
+  <path d="M-138 -70 C -140 -200 140 -200 138 -70 Z" fill="#cdb68a" stroke="#120f0c" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/><path d="M60 -80 C 140 -84 200 -70 220 -50 L 120 -50 Z" fill="#b89e6e" stroke="#120f0c" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="-58" cy="-18" r="40" fill="none" stroke="#120f0c" stroke-width="10"/><circle cx="58" cy="-18" r="40" fill="none" stroke="#120f0c" stroke-width="10"/><path d="M-18 -18 h36" stroke="#120f0c" stroke-width="8"/>
+  <path d="M-60 74 C -30 60 30 60 60 74 C 40 90 -40 90 -60 74 Z" fill="#eeeae2" stroke="#120f0c" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M-80 20 q 12 10 24 0 M56 20 q 12 10 24 0" stroke="#8a5a40" stroke-width="4" fill="none"/>
+</g></g>
+
+
+<rect width="1080" height="1920" fill="url(#vinheta)" pointer-events="none"/>
+</svg></div>
+<div id="escuro" class="clip" data-start="0" data-duration="1" data-track-index="1" data-layout-ignore></div>
+<div id="kick" class="clip t" data-start="0" data-duration="1" data-track-index="2">TODO BILHETE TEM UM NOME</div>
+<div id="parte" class="clip t" data-start="0" data-duration="1" data-track-index="3">PARTE <b>5</b></div>
+<div id="linha" class="clip t" data-start="0" data-duration="1" data-track-index="4"></div>
+<div id="titulo" class="clip t" data-start="0" data-duration="1" data-track-index="5">O DONO<br><span>TAVA NA FILA.</span></div>
+<div id="pilula" class="clip t" data-start="0" data-duration="1" data-track-index="6"><span>VOCÊ DECIDE O QUE ELE FAZ</span></div>
+</div>
+<script>window.__timelines=window.__timelines||{};const tl=gsap.timeline({paused:true});tl.set("#root",{opacity:1},0);window.__timelines["main"]=tl;</script>
+</body></html>

@@ -1,0 +1,25 @@
+{
+ "total_votos": 1,
+ "placar": [
+  {
+   "opcao": "VAI",
+   "votos": 1,
+   "pct": 100
+  },
+  {
+   "opcao": "RECUSA",
+   "votos": 0,
+   "pct": 0
+  },
+  {
+   "opcao": "3º JEITO",
+   "votos": 0,
+   "pct": 0
+  }
+ ],
+ "vencedor": "VAI",
+ "primeiro_3o_jeito": null,
+ "outros_que_acharam": [],
+ "destaques": [],
+ "comentarios_lidos": 3
+}

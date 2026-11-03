@@ -1,0 +1,686 @@
+{
+ "voz": "gemini-tts:Orus",
+ "frases": [
+  {
+   "texto": "Um taxista foi sacar quarenta milhões… que não são dele.",
+   "ini": 0.0,
+   "fim": 3.74,
+   "palavras": [
+    {
+     "p": "Um",
+     "ini": 0.0,
+     "fim": 0.32
+    },
+    {
+     "p": "taxista",
+     "ini": 0.32,
+     "fim": 0.9
+    },
+    {
+     "p": "foi",
+     "ini": 0.9,
+     "fim": 1.12
+    },
+    {
+     "p": "sacar",
+     "ini": 1.12,
+     "fim": 1.32
+    },
+    {
+     "p": "quarenta",
+     "ini": 1.32,
+     "fim": 1.88
+    },
+    {
+     "p": "milhões…",
+     "ini": 1.88,
+     "fim": 2.2
+    },
+    {
+     "p": "que",
+     "ini": 2.74,
+     "fim": 2.9
+    },
+    {
+     "p": "não",
+     "ini": 2.9,
+     "fim": 3.14
+    },
+    {
+     "p": "são",
+     "ini": 3.14,
+     "fim": 3.4
+    },
+    {
+     "p": "dele.",
+     "ini": 3.4,
+     "fim": 3.74
+    }
+   ]
+  },
+  {
+   "texto": "Ele achou o bilhete no táxi. Vendeu pra um estranho. E vocês mandaram ele ir até o fim.",
+   "ini": 4.2,
+   "fim": 9.1,
+   "palavras": [
+    {
+     "p": "Ele",
+     "ini": 4.2,
+     "fim": 4.38
+    },
+    {
+     "p": "achou",
+     "ini": 4.38,
+     "fim": 4.64
+    },
+    {
+     "p": "o",
+     "ini": 4.64,
+     "fim": 4.74
+    },
+    {
+     "p": "bilhete",
+     "ini": 4.74,
+     "fim": 4.98
+    },
+    {
+     "p": "no",
+     "ini": 4.98,
+     "fim": 5.12
+    },
+    {
+     "p": "táxi.",
+     "ini": 5.12,
+     "fim": 5.4
+    },
+    {
+     "p": "Vendeu",
+     "ini": 5.84,
+     "fim": 6.16
+    },
+    {
+     "p": "pra",
+     "ini": 6.16,
+     "fim": 6.38
+    },
+    {
+     "p": "um",
+     "ini": 6.38,
+     "fim": 6.48
+    },
+    {
+     "p": "estranho.",
+     "ini": 6.48,
+     "fim": 6.94
+    },
+    {
+     "p": "E",
+     "ini": 7.28,
+     "fim": 7.44
+    },
+    {
+     "p": "vocês",
+     "ini": 7.44,
+     "fim": 7.72
+    },
+    {
+     "p": "mandaram",
+     "ini": 7.72,
+     "fim": 8.2
+    },
+    {
+     "p": "ele",
+     "ini": 8.2,
+     "fim": 8.44
+    },
+    {
+     "p": "ir",
+     "ini": 8.44,
+     "fim": 8.6
+    },
+    {
+     "p": "até",
+     "ini": 8.6,
+     "fim": 8.8
+    },
+    {
+     "p": "o",
+     "ini": 8.8,
+     "fim": 8.9
+    },
+    {
+     "p": "fim.",
+     "ini": 8.9,
+     "fim": 9.1
+    }
+   ]
+  },
+  {
+   "texto": "A moça do caixa passou o bilhete na máquina… e parou.",
+   "ini": 9.6,
+   "fim": 12.52,
+   "palavras": [
+    {
+     "p": "A",
+     "ini": 9.6,
+     "fim": 9.74
+    },
+    {
+     "p": "moça",
+     "ini": 9.74,
+     "fim": 9.96
+    },
+    {
+     "p": "do",
+     "ini": 9.96,
+     "fim": 10.08
+    },
+    {
+     "p": "caixa",
+     "ini": 10.08,
+     "fim": 10.38
+    },
+    {
+     "p": "passou",
+     "ini": 10.38,
+     "fim": 10.72
+    },
+    {
+     "p": "o",
+     "ini": 10.72,
+     "fim": 10.86
+    },
+    {
+     "p": "bilhete",
+     "ini": 10.86,
+     "fim": 11.1
+    },
+    {
+     "p": "na",
+     "ini": 11.1,
+     "fim": 11.24
+    },
+    {
+     "p": "máquina…",
+     "ini": 11.24,
+     "fim": 11.56
+    },
+    {
+     "p": "e",
+     "ini": 11.56,
+     "fim": 12.18
+    },
+    {
+     "p": "parou.",
+     "ini": 12.18,
+     "fim": 12.52
+    }
+   ]
+  },
+  {
+   "texto": "Esse bilhete foi registrado como perdido. Ontem. Por um tal de Seu Antônio.",
+   "ini": 12.96,
+   "fim": 17.64,
+   "palavras": [
+    {
+     "p": "Esse",
+     "ini": 12.96,
+     "fim": 13.14
+    },
+    {
+     "p": "bilhete",
+     "ini": 13.14,
+     "fim": 13.54
+    },
+    {
+     "p": "foi",
+     "ini": 13.54,
+     "fim": 13.74
+    },
+    {
+     "p": "registrado",
+     "ini": 13.74,
+     "fim": 14.32
+    },
+    {
+     "p": "como",
+     "ini": 14.32,
+     "fim": 14.58
+    },
+    {
+     "p": "perdido.",
+     "ini": 14.58,
+     "fim": 15.12
+    },
+    {
+     "p": "Ontem.",
+     "ini": 15.58,
+     "fim": 15.96
+    },
+    {
+     "p": "Por",
+     "ini": 16.38,
+     "fim": 16.46
+    },
+    {
+     "p": "um",
+     "ini": 16.46,
+     "fim": 16.62
+    },
+    {
+     "p": "tal",
+     "ini": 16.62,
+     "fim": 16.78
+    },
+    {
+     "p": "de",
+     "ini": 16.78,
+     "fim": 16.94
+    },
+    {
+     "p": "Seu",
+     "ini": 16.94,
+     "fim": 17.12
+    },
+    {
+     "p": "Antônio.",
+     "ini": 17.12,
+     "fim": 17.64
+    }
+   ]
+  },
+  {
+   "texto": "E o Seu Antônio… tava na fila. Logo atrás dele.",
+   "ini": 18.0,
+   "fim": 21.38,
+   "palavras": [
+    {
+     "p": "E",
+     "ini": 18.0,
+     "fim": 18.12
+    },
+    {
+     "p": "o",
+     "ini": 18.12,
+     "fim": 18.24
+    },
+    {
+     "p": "Seu",
+     "ini": 18.24,
+     "fim": 18.36
+    },
+    {
+     "p": "Antônio…",
+     "ini": 18.36,
+     "fim": 18.96
+    },
+    {
+     "p": "tava",
+     "ini": 18.96,
+     "fim": 19.46
+    },
+    {
+     "p": "na",
+     "ini": 19.46,
+     "fim": 19.66
+    },
+    {
+     "p": "fila.",
+     "ini": 19.66,
+     "fim": 20.08
+    },
+    {
+     "p": "Logo",
+     "ini": 20.38,
+     "fim": 20.72
+    },
+    {
+     "p": "atrás",
+     "ini": 20.72,
+     "fim": 21.08
+    },
+    {
+     "p": "dele.",
+     "ini": 21.08,
+     "fim": 21.38
+    }
+   ]
+  },
+  {
+   "texto": "O homem do carro preto colocou a mão dentro do casaco.",
+   "ini": 21.86,
+   "fim": 24.58,
+   "palavras": [
+    {
+     "p": "O",
+     "ini": 21.86,
+     "fim": 22.04
+    },
+    {
+     "p": "homem",
+     "ini": 22.04,
+     "fim": 22.22
+    },
+    {
+     "p": "do",
+     "ini": 22.22,
+     "fim": 22.38
+    },
+    {
+     "p": "carro",
+     "ini": 22.38,
+     "fim": 22.6
+    },
+    {
+     "p": "preto",
+     "ini": 22.6,
+     "fim": 23.0
+    },
+    {
+     "p": "colocou",
+     "ini": 23.0,
+     "fim": 23.4
+    },
+    {
+     "p": "a",
+     "ini": 23.4,
+     "fim": 23.5
+    },
+    {
+     "p": "mão",
+     "ini": 23.5,
+     "fim": 23.66
+    },
+    {
+     "p": "dentro",
+     "ini": 23.66,
+     "fim": 23.96
+    },
+    {
+     "p": "do",
+     "ini": 23.96,
+     "fim": 24.14
+    },
+    {
+     "p": "casaco.",
+     "ini": 24.14,
+     "fim": 24.58
+    }
+   ]
+  },
+  {
+   "texto": "Opção A: contar a verdade pro Seu Antônio. Comente CONTA.",
+   "ini": 24.94,
+   "fim": 28.44,
+   "palavras": [
+    {
+     "p": "Opção",
+     "ini": 24.94,
+     "fim": 25.36
+    },
+    {
+     "p": "A:",
+     "ini": 25.36,
+     "fim": 25.54
+    },
+    {
+     "p": "contar",
+     "ini": 25.96,
+     "fim": 26.16
+    },
+    {
+     "p": "a",
+     "ini": 26.16,
+     "fim": 26.36
+    },
+    {
+     "p": "verdade",
+     "ini": 26.36,
+     "fim": 26.64
+    },
+    {
+     "p": "pro",
+     "ini": 26.64,
+     "fim": 26.98
+    },
+    {
+     "p": "Seu",
+     "ini": 26.98,
+     "fim": 27.06
+    },
+    {
+     "p": "Antônio.",
+     "ini": 27.06,
+     "fim": 27.54
+    },
+    {
+     "p": "Comente",
+     "ini": 27.54,
+     "fim": 28.14
+    },
+    {
+     "p": "CONTA.",
+     "ini": 28.14,
+     "fim": 28.44
+    }
+   ]
+  },
+  {
+   "texto": "Opção B: fingir que não é nada e sacar. Comente FINGE.",
+   "ini": 28.94,
+   "fim": 32.66,
+   "palavras": [
+    {
+     "p": "Opção",
+     "ini": 28.94,
+     "fim": 29.3
+    },
+    {
+     "p": "B:",
+     "ini": 29.3,
+     "fim": 29.5
+    },
+    {
+     "p": "fingir",
+     "ini": 29.96,
+     "fim": 30.32
+    },
+    {
+     "p": "que",
+     "ini": 30.32,
+     "fim": 30.44
+    },
+    {
+     "p": "não",
+     "ini": 30.44,
+     "fim": 30.58
+    },
+    {
+     "p": "é",
+     "ini": 30.58,
+     "fim": 30.66
+    },
+    {
+     "p": "nada",
+     "ini": 30.66,
+     "fim": 30.88
+    },
+    {
+     "p": "e",
+     "ini": 30.88,
+     "fim": 31.04
+    },
+    {
+     "p": "sacar.",
+     "ini": 31.04,
+     "fim": 31.16
+    },
+    {
+     "p": "Comente",
+     "ini": 31.58,
+     "fim": 32.0
+    },
+    {
+     "p": "FINGE.",
+     "ini": 32.0,
+     "fim": 32.66
+    }
+   ]
+  },
+  {
+   "texto": "Ou tem um terceiro jeito escondido nessa cena. Só vale se você disser qual é.",
+   "ini": 32.76,
+   "fim": 36.92,
+   "palavras": [
+    {
+     "p": "Ou",
+     "ini": 32.76,
+     "fim": 33.0
+    },
+    {
+     "p": "tem",
+     "ini": 33.0,
+     "fim": 33.14
+    },
+    {
+     "p": "um",
+     "ini": 33.14,
+     "fim": 33.24
+    },
+    {
+     "p": "terceiro",
+     "ini": 33.24,
+     "fim": 33.64
+    },
+    {
+     "p": "jeito",
+     "ini": 33.64,
+     "fim": 33.8
+    },
+    {
+     "p": "escondido",
+     "ini": 33.8,
+     "fim": 34.38
+    },
+    {
+     "p": "nessa",
+     "ini": 34.38,
+     "fim": 34.56
+    },
+    {
+     "p": "cena.",
+     "ini": 34.56,
+     "fim": 34.9
+    },
+    {
+     "p": "Só",
+     "ini": 35.32,
+     "fim": 35.58
+    },
+    {
+     "p": "vale",
+     "ini": 35.58,
+     "fim": 35.86
+    },
+    {
+     "p": "se",
+     "ini": 35.86,
+     "fim": 36.04
+    },
+    {
+     "p": "você",
+     "ini": 36.04,
+     "fim": 36.26
+    },
+    {
+     "p": "disser",
+     "ini": 36.26,
+     "fim": 36.58
+    },
+    {
+     "p": "qual",
+     "ini": 36.58,
+     "fim": 36.74
+    },
+    {
+     "p": "é.",
+     "ini": 36.74,
+     "fim": 36.92
+    }
+   ]
+  },
+  {
+   "texto": "Hoje só vale CONTA ou FINGE. A maioria escreve a parte seis amanhã.",
+   "ini": 37.34,
+   "fim": 41.18,
+   "palavras": [
+    {
+     "p": "Hoje",
+     "ini": 37.34,
+     "fim": 37.56
+    },
+    {
+     "p": "só",
+     "ini": 37.56,
+     "fim": 37.76
+    },
+    {
+     "p": "vale",
+     "ini": 37.76,
+     "fim": 38.02
+    },
+    {
+     "p": "CONTA",
+     "ini": 38.02,
+     "fim": 38.36
+    },
+    {
+     "p": "ou",
+     "ini": 38.36,
+     "fim": 38.54
+    },
+    {
+     "p": "FINGE.",
+     "ini": 38.54,
+     "fim": 39.0
+    },
+    {
+     "p": "A",
+     "ini": 39.36,
+     "fim": 39.46
+    },
+    {
+     "p": "maioria",
+     "ini": 39.46,
+     "fim": 39.72
+    },
+    {
+     "p": "escreve",
+     "ini": 39.72,
+     "fim": 40.28
+    },
+    {
+     "p": "a",
+     "ini": 40.28,
+     "fim": 40.34
+    },
+    {
+     "p": "parte",
+     "ini": 40.34,
+     "fim": 40.62
+    },
+    {
+     "p": "seis",
+     "ini": 40.62,
+     "fim": 40.9
+    },
+    {
+     "p": "amanhã.",
+     "ini": 40.9,
+     "fim": 41.18
+    }
+   ]
+  }
+ ],
+ "total": 41.352
+}
