@@ -21,13 +21,18 @@ async function pegar(url) {
 
 async function comentarios(mediaId, token) {
   const todos = [];
-  let url = `${base(token)}/${mediaId}/comments?fields=id,text,username,timestamp&limit=50&access_token=${encodeURIComponent(token)}`;
+  let url = `${base(token)}/${mediaId}/comments?fields=id,text,username,timestamp,replies{id,text,username,timestamp}&limit=50&access_token=${encodeURIComponent(token)}`;
   for (let pag = 0; url && pag < 40; pag++) { // até 2.000 comentários por consulta
     const j = await pegar(url);
-    todos.push(...(j.data || []));
+    for (const c of j.data || []) {
+      todos.push(c);
+      todos.push(...(c.replies?.data || [])); // resposta também vale voto
+    }
     url = j.paging?.next || null;
   }
-  return todos;
+  // comentários e respostas do próprio perfil não votam
+  const eu = (await pegar(`${base(token)}/${conta(token)}?fields=username&access_token=${encodeURIComponent(token)}`)).username;
+  return todos.filter((c) => c.username !== eu);
 }
 
 module.exports = async (req, res) => {

@@ -118,11 +118,15 @@ def do_instagram(a):
         media, post_ts = m["id"], m.get("timestamp")
     else:
         post_ts = pegar(f"{API_}/{media}?fields=timestamp&access_token={tk}").get("timestamp")
-    todos, url = [], f"{API_}/{media}/comments?fields=id,text,username,timestamp,like_count&limit=50&access_token={tk}"
+    todos, url = [], f"{API_}/{media}/comments?fields=id,text,username,timestamp,like_count,replies{{id,text,username,timestamp,like_count}}&limit=50&access_token={tk}"
     while url and len(todos) < 5000:
         j = pegar(url)
-        todos += j.get("data", [])
+        for c in j.get("data", []):
+            todos.append(c)
+            todos += c.pop("replies", {}).get("data", [])  # resposta também vale voto (muita gente vota respondendo)
         url = j.get("paging", {}).get("next")
+    eu = pegar(f"{API_}/{conta}?fields=username&access_token={tk}").get("username")
+    todos = [c for c in todos if c.get("username") != eu]  # comentários e respostas do próprio perfil não votam
     return todos, post_ts
 
 

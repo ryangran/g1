@@ -25,8 +25,29 @@ test("lê o post mais recente, segue a paginação e conta", async () => {
   assert.equal(res.code, 200);
   assert.equal(res.corpo.demo, false);
   assert.equal(res.corpo.total, 2);
-  assert.equal(chamadas.length, 3);
+  assert.equal(chamadas.length, 4); // post, 2 páginas de comentários, username do perfil
   assert.match(chamadas[1], /\/123\/comments/);
+});
+
+test("respostas contam como voto; o próprio perfil não vota", async () => {
+  process.env.IG_TOKEN = "x"; process.env.VOTO_OPCOES = "VAI,RECUSA"; delete process.env.IG_MEDIA_ID; delete process.env.VOTO_FECHA;
+  global.fetch = async (url) => {
+    const corpo = url.includes("/me/media") ? { data: [{ id: "9" }] }
+      : url.includes("fields=username") ? { username: "perfil" }
+      : { data: [
+          { username: "perfil", text: "Vai ou recusa?", timestamp: "2026-11-02T22:00:00Z" },
+          { username: "ana", text: "foge", timestamp: "2026-11-02T22:10:00Z",
+            replies: { data: [{ username: "perfil", text: "@ana a opção é vai", timestamp: "2026-11-02T22:11:00Z" },
+                              { username: "bia", text: "@perfil vai", timestamp: "2026-11-02T22:12:00Z" }] } },
+        ] };
+    return { ok: true, status: 200, json: async () => corpo };
+  };
+  delete require.cache[require.resolve("../api/votos")];
+  const res = resFalso();
+  await require("../api/votos")({}, res);
+  assert.equal(res.code, 200);
+  assert.equal(res.corpo.total, 1);
+  assert.deepEqual(res.corpo.opcoes.map((o) => o.votos), [1, 0]);
 });
 
 test("erro do Instagram vira 502 sem derrubar o site", async () => {

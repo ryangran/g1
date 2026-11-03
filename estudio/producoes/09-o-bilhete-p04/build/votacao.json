@@ -1,13 +1,13 @@
 {
- "total_votos": 2,
+ "total_votos": 1,
  "placar": [
   {
-   "opcao": "VENDE",
-   "votos": 2,
+   "opcao": "VAI",
+   "votos": 1,
    "pct": 100
   },
   {
-   "opcao": "FOGE",
+   "opcao": "RECUSA",
    "votos": 0,
    "pct": 0
   },
@@ -17,15 +17,9 @@
    "pct": 0
   }
  ],
- "vencedor": "VENDE",
+ "vencedor": "VAI",
  "primeiro_3o_jeito": null,
  "outros_que_acharam": [],
- "destaques": [
-  {
-   "username": "clovis.obilhete",
-   "text": "🚕 Vende ou foge? Vale o último comentário de cada um. Votação fecha amanhã às 15h ⏰ E olha bem a cena do posto… o 3º jeito tá lá.",
-   "like_count": 0
-  }
- ],
+ "destaques": [],
  "comentarios_lidos": 3
 }
