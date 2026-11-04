@@ -1,0 +1,546 @@
+{
+ "voz": "gemini-tts:Orus",
+ "frases": [
+  {
+   "texto": "Você mandou sua divulgação. Pra três grupos. E parou por aí.",
+   "ini": 0.0,
+   "fim": 4.54,
+   "palavras": [
+    {
+     "p": "Você",
+     "ini": 0.0,
+     "fim": 0.68
+    },
+    {
+     "p": "mandou",
+     "ini": 0.68,
+     "fim": 1.04
+    },
+    {
+     "p": "sua",
+     "ini": 1.04,
+     "fim": 1.24
+    },
+    {
+     "p": "divulgação.",
+     "ini": 1.24,
+     "fim": 1.88
+    },
+    {
+     "p": "Pra",
+     "ini": 1.88,
+     "fim": 2.34
+    },
+    {
+     "p": "três",
+     "ini": 2.34,
+     "fim": 2.64
+    },
+    {
+     "p": "grupos.",
+     "ini": 2.64,
+     "fim": 3.02
+    },
+    {
+     "p": "E",
+     "ini": 3.02,
+     "fim": 3.68
+    },
+    {
+     "p": "parou",
+     "ini": 3.68,
+     "fim": 4.12
+    },
+    {
+     "p": "por",
+     "ini": 4.12,
+     "fim": 4.34
+    },
+    {
+     "p": "aí.",
+     "ini": 4.34,
+     "fim": 4.54
+    }
+   ]
+  },
+  {
+   "texto": "A Vetrex Networking existe pra isso não acontecer.",
+   "ini": 4.86,
+   "fim": 8.04,
+   "palavras": [
+    {
+     "p": "A",
+     "ini": 4.86,
+     "fim": 5.04
+    },
+    {
+     "p": "Vetrex",
+     "ini": 5.04,
+     "fim": 5.46
+    },
+    {
+     "p": "Networking",
+     "ini": 5.46,
+     "fim": 6.2
+    },
+    {
+     "p": "existe",
+     "ini": 6.2,
+     "fim": 6.64
+    },
+    {
+     "p": "pra",
+     "ini": 6.64,
+     "fim": 6.98
+    },
+    {
+     "p": "isso",
+     "ini": 6.98,
+     "fim": 7.24
+    },
+    {
+     "p": "não",
+     "ini": 7.24,
+     "fim": 7.5
+    },
+    {
+     "p": "acontecer.",
+     "ini": 7.5,
+     "fim": 8.04
+    }
+   ]
+  },
+  {
+   "texto": "Sua mensagem sai todo dia, no automático, em grupos e no status do WhatsApp.",
+   "ini": 8.5,
+   "fim": 13.48,
+   "palavras": [
+    {
+     "p": "Sua",
+     "ini": 8.5,
+     "fim": 8.78
+    },
+    {
+     "p": "mensagem",
+     "ini": 8.78,
+     "fim": 9.28
+    },
+    {
+     "p": "sai",
+     "ini": 9.28,
+     "fim": 9.58
+    },
+    {
+     "p": "todo",
+     "ini": 9.58,
+     "fim": 9.84
+    },
+    {
+     "p": "dia,",
+     "ini": 9.84,
+     "fim": 10.24
+    },
+    {
+     "p": "no",
+     "ini": 10.24,
+     "fim": 10.6
+    },
+    {
+     "p": "automático,",
+     "ini": 10.6,
+     "fim": 11.28
+    },
+    {
+     "p": "em",
+     "ini": 11.48,
+     "fim": 11.76
+    },
+    {
+     "p": "grupos",
+     "ini": 11.76,
+     "fim": 12.06
+    },
+    {
+     "p": "e",
+     "ini": 12.06,
+     "fim": 12.44
+    },
+    {
+     "p": "no",
+     "ini": 12.44,
+     "fim": 12.54
+    },
+    {
+     "p": "status",
+     "ini": 12.54,
+     "fim": 12.94
+    },
+    {
+     "p": "do",
+     "ini": 12.94,
+     "fim": 13.16
+    },
+    {
+     "p": "WhatsApp.",
+     "ini": 13.16,
+     "fim": 13.48
+    }
+   ]
+  },
+  {
+   "texto": "Você escreve uma vez. O bot cuida do resto.",
+   "ini": 13.98,
+   "fim": 16.9,
+   "palavras": [
+    {
+     "p": "Você",
+     "ini": 13.98,
+     "fim": 14.32
+    },
+    {
+     "p": "escreve",
+     "ini": 14.32,
+     "fim": 14.74
+    },
+    {
+     "p": "uma",
+     "ini": 14.74,
+     "fim": 14.94
+    },
+    {
+     "p": "vez.",
+     "ini": 14.94,
+     "fim": 15.28
+    },
+    {
+     "p": "O",
+     "ini": 15.28,
+     "fim": 15.82
+    },
+    {
+     "p": "bot",
+     "ini": 15.82,
+     "fim": 16.14
+    },
+    {
+     "p": "cuida",
+     "ini": 16.14,
+     "fim": 16.52
+    },
+    {
+     "p": "do",
+     "ini": 16.52,
+     "fim": 16.66
+    },
+    {
+     "p": "resto.",
+     "ini": 16.66,
+     "fim": 16.9
+    }
+   ]
+  },
+  {
+   "texto": "Escolheu. Pagou. Disparou.",
+   "ini": 17.3,
+   "fim": 19.36,
+   "palavras": [
+    {
+     "p": "Escolheu.",
+     "ini": 17.3,
+     "fim": 17.92
+    },
+    {
+     "p": "Pagou.",
+     "ini": 18.16,
+     "fim": 18.48
+    },
+    {
+     "p": "Disparou.",
+     "ini": 18.92,
+     "fim": 19.36
+    }
+   ]
+  },
+  {
+   "texto": "Dez reais o dia. E quanto mais dias você pega, menor fica o valor.",
+   "ini": 19.36,
+   "fim": 24.04,
+   "palavras": [
+    {
+     "p": "Dez",
+     "ini": 19.36,
+     "fim": 19.73
+    },
+    {
+     "p": "reais",
+     "ini": 19.73,
+     "fim": 20.1
+    },
+    {
+     "p": "o",
+     "ini": 20.1,
+     "fim": 20.56
+    },
+    {
+     "p": "dia.",
+     "ini": 20.56,
+     "fim": 20.8
+    },
+    {
+     "p": "E",
+     "ini": 20.8,
+     "fim": 21.26
+    },
+    {
+     "p": "quanto",
+     "ini": 21.26,
+     "fim": 21.52
+    },
+    {
+     "p": "mais",
+     "ini": 21.52,
+     "fim": 21.8
+    },
+    {
+     "p": "dias",
+     "ini": 21.8,
+     "fim": 22.08
+    },
+    {
+     "p": "você",
+     "ini": 22.08,
+     "fim": 22.38
+    },
+    {
+     "p": "pega,",
+     "ini": 22.38,
+     "fim": 22.7
+    },
+    {
+     "p": "menor",
+     "ini": 23.08,
+     "fim": 23.36
+    },
+    {
+     "p": "fica",
+     "ini": 23.36,
+     "fim": 23.7
+    },
+    {
+     "p": "o",
+     "ini": 23.7,
+     "fim": 23.82
+    },
+    {
+     "p": "valor.",
+     "ini": 23.82,
+     "fim": 24.04
+    }
+   ]
+  },
+  {
+   "texto": "Precisa de público novo? Tem venda de link de grupo também.",
+   "ini": 24.52,
+   "fim": 27.88,
+   "palavras": [
+    {
+     "p": "Precisa",
+     "ini": 24.52,
+     "fim": 24.98
+    },
+    {
+     "p": "de",
+     "ini": 24.98,
+     "fim": 25.16
+    },
+    {
+     "p": "público",
+     "ini": 25.16,
+     "fim": 25.44
+    },
+    {
+     "p": "novo?",
+     "ini": 25.44,
+     "fim": 25.84
+    },
+    {
+     "p": "Tem",
+     "ini": 26.22,
+     "fim": 26.4
+    },
+    {
+     "p": "venda",
+     "ini": 26.4,
+     "fim": 26.72
+    },
+    {
+     "p": "de",
+     "ini": 26.72,
+     "fim": 26.88
+    },
+    {
+     "p": "link",
+     "ini": 26.88,
+     "fim": 27.14
+    },
+    {
+     "p": "de",
+     "ini": 27.14,
+     "fim": 27.3
+    },
+    {
+     "p": "grupo",
+     "ini": 27.3,
+     "fim": 27.56
+    },
+    {
+     "p": "também.",
+     "ini": 27.56,
+     "fim": 27.88
+    }
+   ]
+  },
+  {
+   "texto": "Tudo dentro do Telegram. Num bot só.",
+   "ini": 28.46,
+   "fim": 30.84,
+   "palavras": [
+    {
+     "p": "Tudo",
+     "ini": 28.46,
+     "fim": 28.7
+    },
+    {
+     "p": "dentro",
+     "ini": 28.7,
+     "fim": 29.08
+    },
+    {
+     "p": "do",
+     "ini": 29.08,
+     "fim": 29.3
+    },
+    {
+     "p": "Telegram.",
+     "ini": 29.3,
+     "fim": 29.68
+    },
+    {
+     "p": "Num",
+     "ini": 29.68,
+     "fim": 30.16
+    },
+    {
+     "p": "bot",
+     "ini": 30.16,
+     "fim": 30.56
+    },
+    {
+     "p": "só.",
+     "ini": 30.56,
+     "fim": 30.84
+    }
+   ]
+  },
+  {
+   "texto": "Sem painel complicado. Sem instalar nada.",
+   "ini": 31.18,
+   "fim": 33.8,
+   "palavras": [
+    {
+     "p": "Sem",
+     "ini": 31.18,
+     "fim": 31.44
+    },
+    {
+     "p": "painel",
+     "ini": 31.44,
+     "fim": 31.84
+    },
+    {
+     "p": "complicado.",
+     "ini": 31.84,
+     "fim": 32.22
+    },
+    {
+     "p": "Sem",
+     "ini": 32.7,
+     "fim": 32.98
+    },
+    {
+     "p": "instalar",
+     "ini": 32.98,
+     "fim": 33.44
+    },
+    {
+     "p": "nada.",
+     "ini": 33.44,
+     "fim": 33.8
+    }
+   ]
+  },
+  {
+   "texto": "Vetrex Networking. O seu recado onde o seu público já está.",
+   "ini": 33.8,
+   "fim": 38.14,
+   "palavras": [
+    {
+     "p": "Vetrex",
+     "ini": 33.8,
+     "fim": 34.76
+    },
+    {
+     "p": "Networking.",
+     "ini": 34.76,
+     "fim": 35.42
+    },
+    {
+     "p": "O",
+     "ini": 35.74,
+     "fim": 35.94
+    },
+    {
+     "p": "seu",
+     "ini": 35.94,
+     "fim": 36.1
+    },
+    {
+     "p": "recado",
+     "ini": 36.1,
+     "fim": 36.56
+    },
+    {
+     "p": "onde",
+     "ini": 36.56,
+     "fim": 36.96
+    },
+    {
+     "p": "o",
+     "ini": 36.96,
+     "fim": 37.08
+    },
+    {
+     "p": "seu",
+     "ini": 37.08,
+     "fim": 37.26
+    },
+    {
+     "p": "público",
+     "ini": 37.26,
+     "fim": 37.66
+    },
+    {
+     "p": "já",
+     "ini": 37.66,
+     "fim": 37.9
+    },
+    {
+     "p": "está.",
+     "ini": 37.9,
+     "fim": 38.14
+    }
+   ]
+  }
+ ],
+ "total": 38.348
+}
