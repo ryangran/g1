@@ -25,11 +25,11 @@ window.SERIE = {
   ],
 
   votacao: {
-    parte: 5,
-    titulo: "Conta ou finge?",
-    chamada: "O dono do bilhete tava na fila. Você decide.",
-    opcoes: ["CONTA", "FINGE"],
-    dica: "Tem um 3º jeito escondido no balcão da lotérica. Só vale se você disser qual é.",
+    parte: 6,
+    titulo: "Devolve ou segue?",
+    chamada: "O vídeo mostrou quem vendeu o velho. Você decide.",
+    opcoes: ["DEVOLVE", "SEGUE"],
+    dica: "Tem um 3º jeito escondido na janela da lotérica. Só vale se você disser qual é.",
   },
 
   partes: [
@@ -37,7 +37,8 @@ window.SERIE = {
     { n: 2, titulo: "Quem tem pressa", capa: "assets/capas/parte2.jpg", cena: "assets/capas/carro-preto.jpg", decisao: "Posto · 100%", link: "https://www.instagram.com/reel/DfLLnsmFCrZ/" },
     { n: 3, titulo: "Todo comprador tem pressa", capa: "assets/capas/parte3.jpg", cena: "assets/capas/posto.jpg", decisao: "Vende · 100%", link: "https://www.instagram.com/reel/DfN9lWiEZp6/" },
     { n: 4, titulo: "Todo dinheiro tem dono", capa: "assets/capas/parte4.jpg", cena: "assets/capas/posto.jpg", decisao: "Vai · 100%", link: "https://www.instagram.com/reel/DfQVEBoGHRF/" },
-    { n: 5, titulo: "Todo bilhete tem um nome", capa: "assets/capas/parte5.jpg", cena: "assets/capas/posto.jpg", decisao: null, link: "https://www.instagram.com/reel/DfTGqr0DhBF/" },
+    { n: 5, titulo: "Todo bilhete tem um nome", capa: "assets/capas/parte5.jpg", cena: "assets/capas/posto.jpg", decisao: "3º jeito · o vídeo", link: "https://www.instagram.com/reel/DfTGqr0DhBF/" },
+    { n: 6, titulo: "Quem vendeu o velho", capa: "assets/capas/parte6.jpg", cena: "assets/capas/posto.jpg", decisao: null, link: "__LINK6__" },
   ],
   // mural: 5 fotos em volta (troque por cenas de cada parte conforme forem saindo); o centro vem da última parte
   mural: [
@@ -47,7 +48,7 @@ window.SERIE = {
     { capa: "assets/capas/homem.jpg", legenda: "QUEM É ELE?" },
     { capa: "assets/capas/carro-preto.jpg", legenda: "O CARRO PRETO" },
   ],
-  notaMural: "O dono do bilhete tava na fila.",
+  notaMural: "O vídeo do posto não acabou onde devia.",
   etiquetas: ["RISCO 99%", "R$ 40.000.000 no banco de trás"],
 
   // a vaga paga dentro da história

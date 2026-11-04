@@ -1,0 +1,61 @@
+
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #0b111b; }
+      #root { position: relative; width: 100%; height: 100%; font-family: "Inter", sans-serif; overflow: hidden; }
+      .plano { position: absolute; inset: 0; overflow: hidden; }
+      .palco, .palco svg { width: 1080px; height: 1920px; display: block; }
+      .cartao { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 90px; overflow: hidden; }
+      .preto { background: #1c1a17; color: #fff; }
+      .creme { background: #efe9df; color: #1c1a17; }
+      .kick { font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 30px; letter-spacing: .18em; opacity: .7; margin-bottom: 40px; }
+      .grande { font-family: "Archivo Black", sans-serif; font-size: 118px; line-height: 1.02; }
+      .amarelo { color: #ffd23a; }
+      .scan { position: absolute; left: 0; right: 0; top: -40px; height: 40px; background: rgba(255,255,255,.08); }
+      /* placar */
+      .vb { width: 100%; margin: 26px 0; text-align: left; }
+      .vb-rot { display: flex; justify-content: space-between; font-family: "Archivo Black", sans-serif; font-size: 52px; }
+      .vb-rot b { font-weight: 400; color: #ffd23a; }
+      .vb-trilho { height: 34px; background: rgba(255,255,255,.12); border-radius: 17px; overflow: hidden; margin-top: 10px; }
+      .vb-trilho i { display: block; height: 100%; width: 0; background: #efe9df; border-radius: 17px; }
+      .vb.lider .vb-trilho i { background: #ffd23a; }
+      #votos-total { font-family: "JetBrains Mono", monospace; font-size: 28px; color: #a8b0ba; margin-top: 26px; }
+      #interroga { position: absolute; left: 0; right: 0; top: 600px; text-align: center; font-family: "Archivo Black", sans-serif; font-size: 240px; color: #ffd23a; -webkit-text-stroke: 8px #000; paint-order: stroke fill; }
+      #flash { position: absolute; inset: 0; background: #fff; opacity: 0; }
+      /* painel */
+      #hud { position: absolute; left: 36px; right: 36px; top: 180px; }
+      #hud-in { display: flex; gap: 12px; }
+      .caixa { background: rgba(8,10,14,.84); border: 3px solid rgba(255,255,255,.16); border-radius: 16px; padding: 10px 14px; color: #fff; position: relative; }
+      .caixa small { display: block; font-family: "JetBrains Mono", monospace; font-size: 28px; font-weight: 700; letter-spacing: .06em; color: #a8b0ba; }
+      .caixa b { display: block; font-family: "Archivo Black", sans-serif; font-size: 40px; line-height: 1.15; }
+      #cx-mala { flex: 1.7; } #cx-bolso { flex: 1; } #cx-risco { flex: 1.1; }
+      #cx-risco b { color: #ff4b3e; }
+      .barra { height: 8px; background: rgba(255,255,255,.14); border-radius: 4px; margin-top: 4px; overflow: hidden; }
+      #hud-risco-barra { height: 100%; width: 100%; background: linear-gradient(90deg, #ffd23a, #ff4b3e); transform-origin: left center; }
+      #hud-delta { position: absolute; right: 12px; top: 8px; font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 28px; color: #fff; background: #e23b2e; border-radius: 8px; padding: 0 8px; opacity: 0; }
+      .tag { position: absolute; left: 36px; top: 330px; }
+      .tag span { display: inline-block; font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 30px; letter-spacing: .12em; color: #111; background: #ffd23a; padding: 6px 16px; border-radius: 8px; }
+      .carimbo { position: absolute; left: 0; right: 0; text-align: center; }
+      .carimbo span { display: inline-block; font-family: "Archivo Black", sans-serif; font-size: 92px; color: #ff3b30; border: 10px solid #ff3b30; border-radius: 16px; padding: 4px 30px; background: rgba(255,255,255,.1); }
+      /* placa */
+      #placa-foto { background: #fff; padding: 24px 24px 60px; box-shadow: 0 20px 40px rgba(0,0,0,.35); }
+      #placa-foto .chapa { border: 10px solid #1c1a17; border-radius: 18px; padding: 10px 40px 20px; background: #f4f4f2; }
+      #placa-foto .chapa small { display: block; font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 30px; background: #2a5bd7; color: #fff; margin: 0 -40px 14px; padding: 6px; }
+      #placa-foto .chapa b { font-family: "Archivo Black", sans-serif; font-weight: 400; font-size: 130px; letter-spacing: .04em; }
+      #placa-foto p { font-family: "JetBrains Mono", monospace; font-size: 30px; margin-top: 22px; color: #555; }
+      .ficha-linha { font-family: "Archivo Black", sans-serif; font-size: 74px; line-height: 1.2; margin: 16px 0; }
+      .ficha-linha i { font-style: normal; font-family: "JetBrains Mono", monospace; font-size: 36px; display: block; opacity: .55; letter-spacing: .1em; }
+      #regra-riscada { font-family: "JetBrains Mono", monospace; font-size: 30px; color: #6d6a64; text-decoration: line-through; margin-bottom: 30px; }
+      #regra-2 { font-family: "Archivo Black", sans-serif; font-size: 90px; line-height: 1.08; }
+      #regra-3 { font-family: "Archivo Black", sans-serif; font-size: 96px; line-height: 1.08; color: #ffd23a; margin-top: 24px; }
+      .cap { position: absolute; left: 0; right: 0; top: 1300px; text-align: center; padding: 0 60px; }
+      .cap span { display: inline-block; font-family: "Archivo Black", sans-serif; font-size: 68px; line-height: 1.12; color: #fff; -webkit-text-stroke: 3px #000; paint-order: stroke fill; text-shadow: 0 6px 0 #000, 0 10px 24px rgba(0,0,0,.6); }
+      .dest { color: #ffd23a; }
+      .selo { position: absolute; left: 0; right: 0; top: 420px; text-align: center; }
+      .selo span { display: inline-block; font-family: "Archivo Black", sans-serif; font-size: 110px; padding: 14px 60px; border-radius: 24px; border: 7px solid #000; box-shadow: 0 12px 0 #000; color: #111; }
+      .fecho { position: absolute; left: 0; right: 0; text-align: center; color: #fff; }
+      #fecho-1 { top: 520px; font-size: 66px; font-weight: 800; }
+      #fecho-2 { top: 640px; display: flex; justify-content: center; gap: 26px; }
+      #fecho-2 .bt { font-family: "Archivo Black", sans-serif; font-size: 80px; padding: 12px 44px; border-radius: 20px; border: 6px solid #000; box-shadow: 0 10px 0 #000; color: #111; }
+      #fecho-3 { top: 830px; font-size: 42px; color: #cfd3d8; line-height: 1.3; }
+      #fecho-4 { top: 960px; font-family: "Archivo Black", sans-serif; font-size: 124px; line-height: 1; color: #ffd23a; }
+    

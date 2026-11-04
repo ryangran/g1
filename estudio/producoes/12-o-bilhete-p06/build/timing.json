@@ -1,0 +1,745 @@
+{
+ "voz": "gemini-tts:Orus",
+ "frases": [
+  {
+   "texto": "O Clóvis não contou. E não fingiu.",
+   "ini": 0.0,
+   "fim": 2.82,
+   "palavras": [
+    {
+     "p": "O",
+     "ini": 0.0,
+     "fim": 0.24
+    },
+    {
+     "p": "Clóvis",
+     "ini": 0.24,
+     "fim": 0.72
+    },
+    {
+     "p": "não",
+     "ini": 0.72,
+     "fim": 1.06
+    },
+    {
+     "p": "contou.",
+     "ini": 1.06,
+     "fim": 1.54
+    },
+    {
+     "p": "E",
+     "ini": 1.54,
+     "fim": 2.14
+    },
+    {
+     "p": "não",
+     "ini": 2.14,
+     "fim": 2.32
+    },
+    {
+     "p": "fingiu.",
+     "ini": 2.32,
+     "fim": 2.82
+    }
+   ]
+  },
+  {
+   "texto": "Ele levantou o celular… e mandou o vídeo rodar.",
+   "ini": 3.28,
+   "fim": 5.7,
+   "palavras": [
+    {
+     "p": "Ele",
+     "ini": 3.28,
+     "fim": 3.44
+    },
+    {
+     "p": "levantou",
+     "ini": 3.44,
+     "fim": 3.88
+    },
+    {
+     "p": "o",
+     "ini": 3.88,
+     "fim": 4.0
+    },
+    {
+     "p": "celular…",
+     "ini": 4.0,
+     "fim": 4.26
+    },
+    {
+     "p": "e",
+     "ini": 4.26,
+     "fim": 4.74
+    },
+    {
+     "p": "mandou",
+     "ini": 4.74,
+     "fim": 5.02
+    },
+    {
+     "p": "o",
+     "ini": 5.02,
+     "fim": 5.16
+    },
+    {
+     "p": "vídeo",
+     "ini": 5.16,
+     "fim": 5.32
+    },
+    {
+     "p": "rodar.",
+     "ini": 5.32,
+     "fim": 5.7
+    }
+   ]
+  },
+  {
+   "texto": "Um taxista achou um bilhete de quarenta milhões e vendeu pro homem errado.",
+   "ini": 6.34,
+   "fim": 9.84,
+   "palavras": [
+    {
+     "p": "Um",
+     "ini": 6.34,
+     "fim": 6.48
+    },
+    {
+     "p": "taxista",
+     "ini": 6.48,
+     "fim": 6.94
+    },
+    {
+     "p": "achou",
+     "ini": 6.94,
+     "fim": 7.18
+    },
+    {
+     "p": "um",
+     "ini": 7.18,
+     "fim": 7.24
+    },
+    {
+     "p": "bilhete",
+     "ini": 7.24,
+     "fim": 7.54
+    },
+    {
+     "p": "de",
+     "ini": 7.54,
+     "fim": 7.66
+    },
+    {
+     "p": "quarenta",
+     "ini": 7.66,
+     "fim": 8.0
+    },
+    {
+     "p": "milhões",
+     "ini": 8.0,
+     "fim": 8.3
+    },
+    {
+     "p": "e",
+     "ini": 8.3,
+     "fim": 8.76
+    },
+    {
+     "p": "vendeu",
+     "ini": 8.76,
+     "fim": 8.98
+    },
+    {
+     "p": "pro",
+     "ini": 8.98,
+     "fim": 9.2
+    },
+    {
+     "p": "homem",
+     "ini": 9.2,
+     "fim": 9.44
+    },
+    {
+     "p": "errado.",
+     "ini": 9.44,
+     "fim": 9.84
+    }
+   ]
+  },
+  {
+   "texto": "Vocês acharam o jeito escondido. A Beatriz achou primeiro, em cinco minutos.",
+   "ini": 10.48,
+   "fim": 14.7,
+   "palavras": [
+    {
+     "p": "Vocês",
+     "ini": 10.48,
+     "fim": 10.84
+    },
+    {
+     "p": "acharam",
+     "ini": 10.84,
+     "fim": 11.24
+    },
+    {
+     "p": "o",
+     "ini": 11.24,
+     "fim": 11.38
+    },
+    {
+     "p": "jeito",
+     "ini": 11.38,
+     "fim": 11.48
+    },
+    {
+     "p": "escondido.",
+     "ini": 11.48,
+     "fim": 12.02
+    },
+    {
+     "p": "A",
+     "ini": 12.5,
+     "fim": 12.64
+    },
+    {
+     "p": "Beatriz",
+     "ini": 12.64,
+     "fim": 12.98
+    },
+    {
+     "p": "achou",
+     "ini": 12.98,
+     "fim": 13.22
+    },
+    {
+     "p": "primeiro,",
+     "ini": 13.22,
+     "fim": 13.54
+    },
+    {
+     "p": "em",
+     "ini": 13.86,
+     "fim": 14.02
+    },
+    {
+     "p": "cinco",
+     "ini": 14.02,
+     "fim": 14.34
+    },
+    {
+     "p": "minutos.",
+     "ini": 14.34,
+     "fim": 14.7
+    }
+   ]
+  },
+  {
+   "texto": "No vídeo: o comprador oferecendo vinte milhões pelo bilhete… do Seu Antônio.",
+   "ini": 15.38,
+   "fim": 19.36,
+   "palavras": [
+    {
+     "p": "No",
+     "ini": 15.38,
+     "fim": 15.56
+    },
+    {
+     "p": "vídeo:",
+     "ini": 15.56,
+     "fim": 15.82
+    },
+    {
+     "p": "o",
+     "ini": 16.16,
+     "fim": 16.22
+    },
+    {
+     "p": "comprador",
+     "ini": 16.22,
+     "fim": 16.5
+    },
+    {
+     "p": "oferecendo",
+     "ini": 16.5,
+     "fim": 16.94
+    },
+    {
+     "p": "vinte",
+     "ini": 16.94,
+     "fim": 17.32
+    },
+    {
+     "p": "milhões",
+     "ini": 17.32,
+     "fim": 17.66
+    },
+    {
+     "p": "pelo",
+     "ini": 17.66,
+     "fim": 17.9
+    },
+    {
+     "p": "bilhete…",
+     "ini": 17.9,
+     "fim": 18.3
+    },
+    {
+     "p": "do",
+     "ini": 18.3,
+     "fim": 18.78
+    },
+    {
+     "p": "Seu",
+     "ini": 18.78,
+     "fim": 18.92
+    },
+    {
+     "p": "Antônio.",
+     "ini": 18.92,
+     "fim": 19.36
+    }
+   ]
+  },
+  {
+   "texto": "O velho assistiu tudo. E o comprador saiu andando de ré.",
+   "ini": 19.88,
+   "fim": 22.74,
+   "palavras": [
+    {
+     "p": "O",
+     "ini": 19.88,
+     "fim": 20.04
+    },
+    {
+     "p": "velho",
+     "ini": 20.04,
+     "fim": 20.24
+    },
+    {
+     "p": "assistiu",
+     "ini": 20.24,
+     "fim": 20.62
+    },
+    {
+     "p": "tudo.",
+     "ini": 20.62,
+     "fim": 20.86
+    },
+    {
+     "p": "E",
+     "ini": 20.86,
+     "fim": 21.38
+    },
+    {
+     "p": "o",
+     "ini": 21.38,
+     "fim": 21.46
+    },
+    {
+     "p": "comprador",
+     "ini": 21.46,
+     "fim": 21.78
+    },
+    {
+     "p": "saiu",
+     "ini": 21.78,
+     "fim": 22.08
+    },
+    {
+     "p": "andando",
+     "ini": 22.08,
+     "fim": 22.38
+    },
+    {
+     "p": "de",
+     "ini": 22.38,
+     "fim": 22.54
+    },
+    {
+     "p": "ré.",
+     "ini": 22.54,
+     "fim": 22.74
+    }
+   ]
+  },
+  {
+   "texto": "Só que o vídeo não acabou ali.",
+   "ini": 23.34,
+   "fim": 24.92,
+   "palavras": [
+    {
+     "p": "Só",
+     "ini": 23.34,
+     "fim": 23.68
+    },
+    {
+     "p": "que",
+     "ini": 23.68,
+     "fim": 23.8
+    },
+    {
+     "p": "o",
+     "ini": 23.8,
+     "fim": 23.9
+    },
+    {
+     "p": "vídeo",
+     "ini": 23.9,
+     "fim": 24.1
+    },
+    {
+     "p": "não",
+     "ini": 24.1,
+     "fim": 24.32
+    },
+    {
+     "p": "acabou",
+     "ini": 24.32,
+     "fim": 24.62
+    },
+    {
+     "p": "ali.",
+     "ini": 24.62,
+     "fim": 24.92
+    }
+   ]
+  },
+  {
+   "texto": "Na porta do posto, falando com o comprador: o Rodrigo. O sobrinho do Seu Antônio.",
+   "ini": 25.58,
+   "fim": 29.76,
+   "palavras": [
+    {
+     "p": "Na",
+     "ini": 25.58,
+     "fim": 25.72
+    },
+    {
+     "p": "porta",
+     "ini": 25.72,
+     "fim": 25.92
+    },
+    {
+     "p": "do",
+     "ini": 25.92,
+     "fim": 26.12
+    },
+    {
+     "p": "posto,",
+     "ini": 26.12,
+     "fim": 26.52
+    },
+    {
+     "p": "falando",
+     "ini": 26.58,
+     "fim": 26.82
+    },
+    {
+     "p": "com",
+     "ini": 26.82,
+     "fim": 27.04
+    },
+    {
+     "p": "o",
+     "ini": 27.04,
+     "fim": 27.1
+    },
+    {
+     "p": "comprador:",
+     "ini": 27.1,
+     "fim": 27.52
+    },
+    {
+     "p": "o",
+     "ini": 27.52,
+     "fim": 27.96
+    },
+    {
+     "p": "Rodrigo.",
+     "ini": 27.96,
+     "fim": 28.48
+    },
+    {
+     "p": "O",
+     "ini": 28.68,
+     "fim": 28.82
+    },
+    {
+     "p": "sobrinho",
+     "ini": 28.82,
+     "fim": 29.16
+    },
+    {
+     "p": "do",
+     "ini": 29.16,
+     "fim": 29.28
+    },
+    {
+     "p": "Seu",
+     "ini": 29.28,
+     "fim": 29.4
+    },
+    {
+     "p": "Antônio.",
+     "ini": 29.4,
+     "fim": 29.76
+    }
+   ]
+  },
+  {
+   "texto": "Opção A: devolver o bilhete agora. Comente DEVOLVE.",
+   "ini": 30.2,
+   "fim": 33.36,
+   "palavras": [
+    {
+     "p": "Opção",
+     "ini": 30.2,
+     "fim": 30.76
+    },
+    {
+     "p": "A:",
+     "ini": 30.76,
+     "fim": 30.96
+    },
+    {
+     "p": "devolver",
+     "ini": 31.24,
+     "fim": 31.62
+    },
+    {
+     "p": "o",
+     "ini": 31.62,
+     "fim": 31.72
+    },
+    {
+     "p": "bilhete",
+     "ini": 31.72,
+     "fim": 32.0
+    },
+    {
+     "p": "agora.",
+     "ini": 32.0,
+     "fim": 32.24
+    },
+    {
+     "p": "Comente",
+     "ini": 32.62,
+     "fim": 32.92
+    },
+    {
+     "p": "DEVOLVE.",
+     "ini": 32.92,
+     "fim": 33.36
+    }
+   ]
+  },
+  {
+   "texto": "Opção B: ir atrás do Rodrigo primeiro. Comente SEGUE.",
+   "ini": 33.74,
+   "fim": 36.92,
+   "palavras": [
+    {
+     "p": "Opção",
+     "ini": 33.74,
+     "fim": 34.18
+    },
+    {
+     "p": "B:",
+     "ini": 34.18,
+     "fim": 34.42
+    },
+    {
+     "p": "ir",
+     "ini": 34.76,
+     "fim": 34.88
+    },
+    {
+     "p": "atrás",
+     "ini": 34.88,
+     "fim": 35.12
+    },
+    {
+     "p": "do",
+     "ini": 35.12,
+     "fim": 35.26
+    },
+    {
+     "p": "Rodrigo",
+     "ini": 35.26,
+     "fim": 35.64
+    },
+    {
+     "p": "primeiro.",
+     "ini": 35.64,
+     "fim": 35.86
+    },
+    {
+     "p": "Comente",
+     "ini": 36.3,
+     "fim": 36.64
+    },
+    {
+     "p": "SEGUE.",
+     "ini": 36.64,
+     "fim": 36.92
+    }
+   ]
+  },
+  {
+   "texto": "Ou tem um terceiro jeito escondido nessa cena. Só vale se você disser qual é.",
+   "ini": 37.52,
+   "fim": 41.46,
+   "palavras": [
+    {
+     "p": "Ou",
+     "ini": 37.52,
+     "fim": 37.82
+    },
+    {
+     "p": "tem",
+     "ini": 37.82,
+     "fim": 37.98
+    },
+    {
+     "p": "um",
+     "ini": 37.98,
+     "fim": 38.06
+    },
+    {
+     "p": "terceiro",
+     "ini": 38.06,
+     "fim": 38.42
+    },
+    {
+     "p": "jeito",
+     "ini": 38.42,
+     "fim": 38.58
+    },
+    {
+     "p": "escondido",
+     "ini": 38.58,
+     "fim": 39.06
+    },
+    {
+     "p": "nessa",
+     "ini": 39.06,
+     "fim": 39.24
+    },
+    {
+     "p": "cena.",
+     "ini": 39.24,
+     "fim": 39.6
+    },
+    {
+     "p": "Só",
+     "ini": 40.0,
+     "fim": 40.22
+    },
+    {
+     "p": "vale",
+     "ini": 40.22,
+     "fim": 40.46
+    },
+    {
+     "p": "se",
+     "ini": 40.46,
+     "fim": 40.62
+    },
+    {
+     "p": "você",
+     "ini": 40.62,
+     "fim": 40.76
+    },
+    {
+     "p": "disser",
+     "ini": 40.76,
+     "fim": 41.12
+    },
+    {
+     "p": "qual",
+     "ini": 41.12,
+     "fim": 41.24
+    },
+    {
+     "p": "é.",
+     "ini": 41.24,
+     "fim": 41.46
+    }
+   ]
+  },
+  {
+   "texto": "Hoje só vale DEVOLVE ou SEGUE. A maioria escreve a parte sete amanhã.",
+   "ini": 42.08,
+   "fim": 45.54,
+   "palavras": [
+    {
+     "p": "Hoje",
+     "ini": 42.08,
+     "fim": 42.32
+    },
+    {
+     "p": "só",
+     "ini": 42.32,
+     "fim": 42.52
+    },
+    {
+     "p": "vale",
+     "ini": 42.52,
+     "fim": 42.76
+    },
+    {
+     "p": "DEVOLVE",
+     "ini": 42.76,
+     "fim": 43.18
+    },
+    {
+     "p": "ou",
+     "ini": 43.18,
+     "fim": 43.34
+    },
+    {
+     "p": "SEGUE.",
+     "ini": 43.34,
+     "fim": 43.62
+    },
+    {
+     "p": "A",
+     "ini": 44.1,
+     "fim": 44.18
+    },
+    {
+     "p": "maioria",
+     "ini": 44.18,
+     "fim": 44.4
+    },
+    {
+     "p": "escreve",
+     "ini": 44.4,
+     "fim": 44.92
+    },
+    {
+     "p": "a",
+     "ini": 44.92,
+     "fim": 44.98
+    },
+    {
+     "p": "parte",
+     "ini": 44.98,
+     "fim": 45.167
+    },
+    {
+     "p": "sete",
+     "ini": 45.167,
+     "fim": 45.353
+    },
+    {
+     "p": "amanhã.",
+     "ini": 45.353,
+     "fim": 45.54
+    }
+   ]
+  }
+ ],
+ "total": 46.106
+}

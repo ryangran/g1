@@ -1,0 +1,36 @@
+{
+ "total_votos": 0,
+ "placar": [
+  {
+   "opcao": "CONTA",
+   "votos": 0,
+   "pct": 0
+  },
+  {
+   "opcao": "FINGE",
+   "votos": 0,
+   "pct": 0
+  },
+  {
+   "opcao": "3º JEITO",
+   "votos": 1,
+   "pct": 100
+  }
+ ],
+ "vencedor": "3º JEITO",
+ "primeiro_3o_jeito": {
+  "username": "beatrizxw_ana",
+  "text": "Pega o vídeo do posto",
+  "timestamp": "2026-11-03T23:57:16+0000",
+  "minutos": 5
+ },
+ "outros_que_acharam": [],
+ "destaques": [
+  {
+   "username": "beatrizxw_ana",
+   "text": "Pega o vídeo do posto",
+   "like_count": 0
+  }
+ ],
+ "comentarios_lidos": 1
+}
