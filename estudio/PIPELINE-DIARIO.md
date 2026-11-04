@@ -18,7 +18,9 @@ Horários (Brasília): votação fecha **15h** · leitura às **15h05** · publi
    `python3 tools/narracao_google.py && python3 tools/montar.py && hyperframes check` (0 erros) → `hyperframes snapshot` e olhar → render **com Bash run_in_background** (render em subshell com & morre).
 5. **Capa** (capa/index.html, sem spoiler do 3º jeito), **legenda** e **comentário** em docs/.
 6. **Hospedar** mp4 + capa em /tmp/claude-0/vc/obilhete/assets/reel/ e `vercel deploy --prod --yes`; conferir 200.
-7. **Publicar às 19h00**: espera até 21:59 UTC e roda
+7. **Publicar às 19h00**: o Bash em background **morre no limite de 2 h**, então só inicie a espera
+   depois das 17h (BRT) e sempre deixe um `send_later` de checagem às 19h06 que publica se a espera falhar.
+   Espera até 21:59 UTC e roda
    `python3 estudio/tools/publicar_reel.py https://obilhete.vercel.app/assets/reel/parteN.mp4 --legenda … --capa … --comentario …`
 8. **Site**: site/serie.js (reelAtual, decisão da parte anterior, nova parte, votação), Vercel `VOTO_OPCOES` e `VOTO_FECHA` (amanhã 15h), tirar o mp4 do site, redeploy, conferir /api/votos.
 9. **Agendar** a leitura de amanhã 15h05 (send_later) com estas mesmas instruções, commit + push na branch.

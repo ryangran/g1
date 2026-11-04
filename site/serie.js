@@ -5,7 +5,7 @@ window.SERIE = {
   tituloPagina: "O Bilhete · Você decide o que o Clóvis faz com R$ 40 milhões",
   rodape: "História fictícia, personagens fictícios. Todo prêmio tem dono.",
   instagram: "https://www.instagram.com/clovis.obilhete/",
-  reelAtual: "https://www.instagram.com/reel/DfTGqr0DhBF/",  // Reel da votação aberta
+  reelAtual: "https://www.instagram.com/reel/DfVeo_NHA1x/",  // Reel da votação aberta
   tiktok: "", youtube: "",
   precoPasse: "R$ 9,90",
   vagasPorParte: 10,
@@ -38,7 +38,7 @@ window.SERIE = {
     { n: 3, titulo: "Todo comprador tem pressa", capa: "assets/capas/parte3.jpg", cena: "assets/capas/posto.jpg", decisao: "Vende · 100%", link: "https://www.instagram.com/reel/DfN9lWiEZp6/" },
     { n: 4, titulo: "Todo dinheiro tem dono", capa: "assets/capas/parte4.jpg", cena: "assets/capas/posto.jpg", decisao: "Vai · 100%", link: "https://www.instagram.com/reel/DfQVEBoGHRF/" },
     { n: 5, titulo: "Todo bilhete tem um nome", capa: "assets/capas/parte5.jpg", cena: "assets/capas/posto.jpg", decisao: "3º jeito · o vídeo", link: "https://www.instagram.com/reel/DfTGqr0DhBF/" },
-    { n: 6, titulo: "Quem vendeu o velho", capa: "assets/capas/parte6.jpg", cena: "assets/capas/posto.jpg", decisao: null, link: "__LINK6__" },
+    { n: 6, titulo: "Quem vendeu o velho", capa: "assets/capas/parte6.jpg", cena: "assets/capas/posto.jpg", decisao: null, link: "https://www.instagram.com/reel/DfVeo_NHA1x/" },
   ],
   // mural: 5 fotos em volta (troque por cenas de cada parte conforme forem saindo); o centro vem da última parte
   mural: [
