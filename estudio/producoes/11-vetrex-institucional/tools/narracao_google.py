@@ -9,7 +9,7 @@ import json, os, re, subprocess, sys
 
 FRASES = [
     "Você mandou sua divulgação. Pra três grupos. E parou por aí.",
-    "A Vetrex Networking existe pra isso não acontecer.",
+    "A Vetrex existe pra isso não acontecer.",
     "Sua mensagem sai todo dia, no automático, em grupos e no status do WhatsApp.",
     "Você escreve uma vez. O bot cuida do resto.",
     "Escolheu. Pagou. Disparou.",
@@ -17,7 +17,7 @@ FRASES = [
     "Precisa de público novo? Tem venda de link de grupo também.",
     "Tudo dentro do Telegram. Num bot só.",
     "Sem painel complicado. Sem instalar nada.",
-    "Vetrex Networking. O seu recado onde o seu público já está.",
+    "Vetrex. O seu recado onde o seu público já está.",
 ]
 VOZ = "Orus"  # voz fixa do estúdio: ver estudio/VOZ.md
 ESTILO = open(os.path.join(os.path.dirname(__file__), "estilo.txt")).read().strip()  # mesma voz Orus, tom de comercial

@@ -4,543 +4,533 @@
   {
    "texto": "Você mandou sua divulgação. Pra três grupos. E parou por aí.",
    "ini": 0.0,
-   "fim": 4.54,
+   "fim": 4.28,
    "palavras": [
     {
      "p": "Você",
      "ini": 0.0,
-     "fim": 0.68
+     "fim": 0.4
     },
     {
      "p": "mandou",
-     "ini": 0.68,
-     "fim": 1.04
+     "ini": 0.4,
+     "fim": 0.76
     },
     {
      "p": "sua",
-     "ini": 1.04,
-     "fim": 1.24
+     "ini": 0.76,
+     "fim": 0.94
     },
     {
      "p": "divulgação.",
-     "ini": 1.24,
-     "fim": 1.88
+     "ini": 0.94,
+     "fim": 1.6
     },
     {
      "p": "Pra",
-     "ini": 1.88,
-     "fim": 2.34
+     "ini": 1.6,
+     "fim": 2.08
     },
     {
      "p": "três",
-     "ini": 2.34,
-     "fim": 2.64
+     "ini": 2.08,
+     "fim": 2.4
     },
     {
      "p": "grupos.",
-     "ini": 2.64,
-     "fim": 3.02
+     "ini": 2.4,
+     "fim": 2.76
     },
     {
      "p": "E",
-     "ini": 3.02,
-     "fim": 3.68
+     "ini": 2.76,
+     "fim": 3.46
     },
     {
      "p": "parou",
-     "ini": 3.68,
-     "fim": 4.12
+     "ini": 3.46,
+     "fim": 3.86
     },
     {
      "p": "por",
-     "ini": 4.12,
-     "fim": 4.34
+     "ini": 3.86,
+     "fim": 4.06
     },
     {
      "p": "aí.",
-     "ini": 4.34,
-     "fim": 4.54
+     "ini": 4.06,
+     "fim": 4.28
     }
    ]
   },
   {
-   "texto": "A Vetrex Networking existe pra isso não acontecer.",
-   "ini": 4.86,
-   "fim": 8.04,
+   "texto": "A Vetrex existe pra isso não acontecer.",
+   "ini": 4.68,
+   "fim": 7.18,
    "palavras": [
     {
      "p": "A",
-     "ini": 4.86,
-     "fim": 5.04
+     "ini": 4.68,
+     "fim": 4.88
     },
     {
      "p": "Vetrex",
-     "ini": 5.04,
-     "fim": 5.46
-    },
-    {
-     "p": "Networking",
-     "ini": 5.46,
-     "fim": 6.2
+     "ini": 4.88,
+     "fim": 5.34
     },
     {
      "p": "existe",
-     "ini": 6.2,
-     "fim": 6.64
+     "ini": 5.34,
+     "fim": 5.78
     },
     {
      "p": "pra",
-     "ini": 6.64,
-     "fim": 6.98
+     "ini": 5.78,
+     "fim": 6.12
     },
     {
      "p": "isso",
-     "ini": 6.98,
-     "fim": 7.24
+     "ini": 6.12,
+     "fim": 6.38
     },
     {
      "p": "não",
-     "ini": 7.24,
-     "fim": 7.5
+     "ini": 6.38,
+     "fim": 6.66
     },
     {
      "p": "acontecer.",
-     "ini": 7.5,
-     "fim": 8.04
+     "ini": 6.66,
+     "fim": 7.18
     }
    ]
   },
   {
    "texto": "Sua mensagem sai todo dia, no automático, em grupos e no status do WhatsApp.",
-   "ini": 8.5,
-   "fim": 13.48,
+   "ini": 7.68,
+   "fim": 12.52,
    "palavras": [
     {
      "p": "Sua",
-     "ini": 8.5,
-     "fim": 8.78
+     "ini": 7.68,
+     "fim": 7.98
     },
     {
      "p": "mensagem",
-     "ini": 8.78,
-     "fim": 9.28
+     "ini": 7.98,
+     "fim": 8.42
     },
     {
      "p": "sai",
-     "ini": 9.28,
-     "fim": 9.58
+     "ini": 8.42,
+     "fim": 8.68
     },
     {
      "p": "todo",
-     "ini": 9.58,
-     "fim": 9.84
+     "ini": 8.68,
+     "fim": 8.94
     },
     {
      "p": "dia,",
-     "ini": 9.84,
-     "fim": 10.24
+     "ini": 8.94,
+     "fim": 9.34
     },
     {
      "p": "no",
-     "ini": 10.24,
-     "fim": 10.6
+     "ini": 9.56,
+     "fim": 9.76
     },
     {
      "p": "automático,",
-     "ini": 10.6,
-     "fim": 11.28
+     "ini": 9.76,
+     "fim": 10.4
     },
     {
      "p": "em",
-     "ini": 11.48,
-     "fim": 11.76
+     "ini": 10.66,
+     "fim": 10.9
     },
     {
      "p": "grupos",
-     "ini": 11.76,
-     "fim": 12.06
+     "ini": 10.9,
+     "fim": 11.16
     },
     {
      "p": "e",
-     "ini": 12.06,
-     "fim": 12.44
+     "ini": 11.16,
+     "fim": 11.52
     },
     {
      "p": "no",
-     "ini": 12.44,
-     "fim": 12.54
+     "ini": 11.52,
+     "fim": 11.64
     },
     {
      "p": "status",
-     "ini": 12.54,
-     "fim": 12.94
+     "ini": 11.64,
+     "fim": 12.04
     },
     {
      "p": "do",
-     "ini": 12.94,
-     "fim": 13.16
+     "ini": 12.04,
+     "fim": 12.24
     },
     {
      "p": "WhatsApp.",
-     "ini": 13.16,
-     "fim": 13.48
+     "ini": 12.24,
+     "fim": 12.52
     }
    ]
   },
   {
    "texto": "Você escreve uma vez. O bot cuida do resto.",
-   "ini": 13.98,
-   "fim": 16.9,
+   "ini": 13.12,
+   "fim": 15.78,
    "palavras": [
     {
      "p": "Você",
-     "ini": 13.98,
-     "fim": 14.32
+     "ini": 13.12,
+     "fim": 13.44
     },
     {
      "p": "escreve",
-     "ini": 14.32,
-     "fim": 14.74
+     "ini": 13.44,
+     "fim": 13.9
     },
     {
      "p": "uma",
-     "ini": 14.74,
-     "fim": 14.94
+     "ini": 13.9,
+     "fim": 14.04
     },
     {
      "p": "vez.",
-     "ini": 14.94,
-     "fim": 15.28
+     "ini": 14.04,
+     "fim": 14.36
     },
     {
      "p": "O",
-     "ini": 15.28,
-     "fim": 15.82
+     "ini": 14.36,
+     "fim": 14.78
     },
     {
      "p": "bot",
-     "ini": 15.82,
-     "fim": 16.14
+     "ini": 14.78,
+     "fim": 14.98
     },
     {
      "p": "cuida",
-     "ini": 16.14,
-     "fim": 16.52
+     "ini": 14.98,
+     "fim": 15.4
     },
     {
      "p": "do",
-     "ini": 16.52,
-     "fim": 16.66
+     "ini": 15.4,
+     "fim": 15.52
     },
     {
      "p": "resto.",
-     "ini": 16.66,
-     "fim": 16.9
+     "ini": 15.52,
+     "fim": 15.78
     }
    ]
   },
   {
    "texto": "Escolheu. Pagou. Disparou.",
-   "ini": 17.3,
-   "fim": 19.36,
+   "ini": 16.24,
+   "fim": 18.36,
    "palavras": [
     {
      "p": "Escolheu.",
-     "ini": 17.3,
-     "fim": 17.92
+     "ini": 16.24,
+     "fim": 16.84
     },
     {
      "p": "Pagou.",
-     "ini": 18.16,
-     "fim": 18.48
+     "ini": 17.12,
+     "fim": 17.5
     },
     {
      "p": "Disparou.",
-     "ini": 18.92,
-     "fim": 19.36
+     "ini": 17.88,
+     "fim": 18.36
     }
    ]
   },
   {
    "texto": "Dez reais o dia. E quanto mais dias você pega, menor fica o valor.",
-   "ini": 19.36,
-   "fim": 24.04,
+   "ini": 18.36,
+   "fim": 22.82,
    "palavras": [
     {
      "p": "Dez",
-     "ini": 19.36,
-     "fim": 19.73
+     "ini": 18.36,
+     "fim": 18.94
     },
     {
      "p": "reais",
-     "ini": 19.73,
-     "fim": 20.1
+     "ini": 18.94,
+     "fim": 19.22
     },
     {
      "p": "o",
-     "ini": 20.1,
-     "fim": 20.56
+     "ini": 19.22,
+     "fim": 19.44
     },
     {
      "p": "dia.",
-     "ini": 20.56,
-     "fim": 20.8
+     "ini": 19.44,
+     "fim": 19.7
     },
     {
      "p": "E",
-     "ini": 20.8,
-     "fim": 21.26
+     "ini": 20.08,
+     "fim": 20.14
     },
     {
      "p": "quanto",
-     "ini": 21.26,
-     "fim": 21.52
+     "ini": 20.14,
+     "fim": 20.34
     },
     {
      "p": "mais",
-     "ini": 21.52,
-     "fim": 21.8
+     "ini": 20.34,
+     "fim": 20.66
     },
     {
      "p": "dias",
-     "ini": 21.8,
-     "fim": 22.08
+     "ini": 20.66,
+     "fim": 20.98
     },
     {
      "p": "você",
-     "ini": 22.08,
-     "fim": 22.38
+     "ini": 20.98,
+     "fim": 21.26
     },
     {
      "p": "pega,",
-     "ini": 22.38,
-     "fim": 22.7
+     "ini": 21.26,
+     "fim": 21.58
     },
     {
      "p": "menor",
-     "ini": 23.08,
-     "fim": 23.36
+     "ini": 21.9,
+     "fim": 22.18
     },
     {
      "p": "fica",
-     "ini": 23.36,
-     "fim": 23.7
+     "ini": 22.18,
+     "fim": 22.46
     },
     {
      "p": "o",
-     "ini": 23.7,
-     "fim": 23.82
+     "ini": 22.46,
+     "fim": 22.56
     },
     {
      "p": "valor.",
-     "ini": 23.82,
-     "fim": 24.04
+     "ini": 22.56,
+     "fim": 22.82
     }
    ]
   },
   {
    "texto": "Precisa de público novo? Tem venda de link de grupo também.",
-   "ini": 24.52,
-   "fim": 27.88,
+   "ini": 23.18,
+   "fim": 26.36,
    "palavras": [
     {
      "p": "Precisa",
-     "ini": 24.52,
-     "fim": 24.98
+     "ini": 23.18,
+     "fim": 23.5
     },
     {
      "p": "de",
-     "ini": 24.98,
-     "fim": 25.16
+     "ini": 23.5,
+     "fim": 23.68
     },
     {
      "p": "público",
-     "ini": 25.16,
-     "fim": 25.44
+     "ini": 23.68,
+     "fim": 23.9
     },
     {
      "p": "novo?",
-     "ini": 25.44,
-     "fim": 25.84
+     "ini": 23.9,
+     "fim": 24.28
     },
     {
      "p": "Tem",
-     "ini": 26.22,
-     "fim": 26.4
+     "ini": 24.66,
+     "fim": 24.82
     },
     {
      "p": "venda",
-     "ini": 26.4,
-     "fim": 26.72
+     "ini": 24.82,
+     "fim": 25.16
     },
     {
      "p": "de",
-     "ini": 26.72,
-     "fim": 26.88
+     "ini": 25.16,
+     "fim": 25.32
     },
     {
      "p": "link",
-     "ini": 26.88,
-     "fim": 27.14
+     "ini": 25.32,
+     "fim": 25.56
     },
     {
      "p": "de",
-     "ini": 27.14,
-     "fim": 27.3
+     "ini": 25.56,
+     "fim": 25.72
     },
     {
      "p": "grupo",
-     "ini": 27.3,
-     "fim": 27.56
+     "ini": 25.72,
+     "fim": 25.96
     },
     {
      "p": "também.",
-     "ini": 27.56,
-     "fim": 27.88
+     "ini": 25.96,
+     "fim": 26.36
     }
    ]
   },
   {
    "texto": "Tudo dentro do Telegram. Num bot só.",
-   "ini": 28.46,
-   "fim": 30.84,
+   "ini": 26.78,
+   "fim": 28.98,
    "palavras": [
     {
      "p": "Tudo",
-     "ini": 28.46,
-     "fim": 28.7
+     "ini": 26.78,
+     "fim": 27.0
     },
     {
      "p": "dentro",
-     "ini": 28.7,
-     "fim": 29.08
+     "ini": 27.0,
+     "fim": 27.34
     },
     {
      "p": "do",
-     "ini": 29.08,
-     "fim": 29.3
+     "ini": 27.34,
+     "fim": 27.56
     },
     {
      "p": "Telegram.",
-     "ini": 29.3,
-     "fim": 29.68
+     "ini": 27.56,
+     "fim": 28.0
     },
     {
      "p": "Num",
-     "ini": 29.68,
-     "fim": 30.16
+     "ini": 28.26,
+     "fim": 28.36
     },
     {
      "p": "bot",
-     "ini": 30.16,
-     "fim": 30.56
+     "ini": 28.36,
+     "fim": 28.66
     },
     {
      "p": "só.",
-     "ini": 30.56,
-     "fim": 30.84
+     "ini": 28.66,
+     "fim": 28.98
     }
    ]
   },
   {
    "texto": "Sem painel complicado. Sem instalar nada.",
-   "ini": 31.18,
-   "fim": 33.8,
+   "ini": 28.98,
+   "fim": 31.7,
    "palavras": [
     {
      "p": "Sem",
-     "ini": 31.18,
-     "fim": 31.44
+     "ini": 28.98,
+     "fim": 29.6
     },
     {
      "p": "painel",
-     "ini": 31.44,
-     "fim": 31.84
+     "ini": 29.6,
+     "fim": 29.96
     },
     {
      "p": "complicado.",
-     "ini": 31.84,
-     "fim": 32.22
+     "ini": 29.96,
+     "fim": 30.4
     },
     {
      "p": "Sem",
-     "ini": 32.7,
-     "fim": 32.98
+     "ini": 30.76,
+     "fim": 31.0
     },
     {
      "p": "instalar",
-     "ini": 32.98,
-     "fim": 33.44
+     "ini": 31.0,
+     "fim": 31.4
     },
     {
      "p": "nada.",
-     "ini": 33.44,
-     "fim": 33.8
+     "ini": 31.4,
+     "fim": 31.7
     }
    ]
   },
   {
-   "texto": "Vetrex Networking. O seu recado onde o seu público já está.",
-   "ini": 33.8,
-   "fim": 38.14,
+   "texto": "Vetrex. O seu recado onde o seu público já está.",
+   "ini": 31.7,
+   "fim": 35.18,
    "palavras": [
     {
-     "p": "Vetrex",
-     "ini": 33.8,
-     "fim": 34.76
-    },
-    {
-     "p": "Networking.",
-     "ini": 34.76,
-     "fim": 35.42
+     "p": "Vetrex.",
+     "ini": 31.7,
+     "fim": 32.94
     },
     {
      "p": "O",
-     "ini": 35.74,
-     "fim": 35.94
+     "ini": 32.94,
+     "fim": 33.1
     },
     {
      "p": "seu",
-     "ini": 35.94,
-     "fim": 36.1
+     "ini": 33.1,
+     "fim": 33.22
     },
     {
      "p": "recado",
-     "ini": 36.1,
-     "fim": 36.56
+     "ini": 33.22,
+     "fim": 33.68
     },
     {
      "p": "onde",
-     "ini": 36.56,
-     "fim": 36.96
+     "ini": 33.68,
+     "fim": 34.02
     },
     {
      "p": "o",
-     "ini": 36.96,
-     "fim": 37.08
+     "ini": 34.02,
+     "fim": 34.14
     },
     {
      "p": "seu",
-     "ini": 37.08,
-     "fim": 37.26
+     "ini": 34.14,
+     "fim": 34.28
     },
     {
      "p": "público",
-     "ini": 37.26,
-     "fim": 37.66
+     "ini": 34.28,
+     "fim": 34.64
     },
     {
      "p": "já",
-     "ini": 37.66,
-     "fim": 37.9
+     "ini": 34.64,
+     "fim": 34.92
     },
     {
      "p": "está.",
-     "ini": 37.9,
-     "fim": 38.14
+     "ini": 34.92,
+     "fim": 35.18
     }
    ]
   }
  ],
- "total": 38.348
+ "total": 35.396
 }

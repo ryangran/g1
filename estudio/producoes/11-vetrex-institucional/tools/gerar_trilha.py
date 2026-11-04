@@ -11,7 +11,7 @@ import soundfile as sf
 SR = 44100
 T = json.load(open("build/timing.json"))
 F = T["frases"]
-DUR = round(T["total"] + 2.6, 2)
+DUR = round(T["total"] + 2.8, 2)
 N = int(DUR * SR)
 t = np.arange(N) / SR
 rng = np.random.default_rng(11)
