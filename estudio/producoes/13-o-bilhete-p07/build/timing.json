@@ -1,0 +1,710 @@
+{
+ "voz": "gemini-tts:Orus",
+ "frases": [
+  {
+   "texto": "Um taxista achou quarenta milhões no banco de trás do táxi.",
+   "ini": 0.0,
+   "fim": 4.32,
+   "palavras": [
+    {
+     "p": "Um",
+     "ini": 0.0,
+     "fim": 0.36
+    },
+    {
+     "p": "taxista",
+     "ini": 0.36,
+     "fim": 1.06
+    },
+    {
+     "p": "achou",
+     "ini": 1.06,
+     "fim": 1.68
+    },
+    {
+     "p": "quarenta",
+     "ini": 1.68,
+     "fim": 2.26
+    },
+    {
+     "p": "milhões",
+     "ini": 2.26,
+     "fim": 2.74
+    },
+    {
+     "p": "no",
+     "ini": 2.74,
+     "fim": 3.02
+    },
+    {
+     "p": "banco",
+     "ini": 3.02,
+     "fim": 3.34
+    },
+    {
+     "p": "de",
+     "ini": 3.34,
+     "fim": 3.54
+    },
+    {
+     "p": "trás",
+     "ini": 3.54,
+     "fim": 3.76
+    },
+    {
+     "p": "do",
+     "ini": 3.76,
+     "fim": 3.94
+    },
+    {
+     "p": "táxi.",
+     "ini": 3.94,
+     "fim": 4.32
+    }
+   ]
+  },
+  {
+   "texto": "Hoje ele descobriu de quem era o bilhete.",
+   "ini": 4.66,
+   "fim": 7.1,
+   "palavras": [
+    {
+     "p": "Hoje",
+     "ini": 4.66,
+     "fim": 5.04
+    },
+    {
+     "p": "ele",
+     "ini": 5.22,
+     "fim": 5.4
+    },
+    {
+     "p": "descobriu",
+     "ini": 5.4,
+     "fim": 5.94
+    },
+    {
+     "p": "de",
+     "ini": 5.94,
+     "fim": 6.06
+    },
+    {
+     "p": "quem",
+     "ini": 6.06,
+     "fim": 6.36
+    },
+    {
+     "p": "era",
+     "ini": 6.36,
+     "fim": 6.6
+    },
+    {
+     "p": "o",
+     "ini": 6.6,
+     "fim": 6.72
+    },
+    {
+     "p": "bilhete.",
+     "ini": 6.72,
+     "fim": 7.1
+    }
+   ]
+  },
+  {
+   "texto": "Seu Antônio, setenta e oito anos. Perdeu o bilhete numa corrida.",
+   "ini": 7.5,
+   "fim": 11.8,
+   "palavras": [
+    {
+     "p": "Seu",
+     "ini": 7.5,
+     "fim": 7.92
+    },
+    {
+     "p": "Antônio,",
+     "ini": 7.92,
+     "fim": 8.42
+    },
+    {
+     "p": "setenta",
+     "ini": 8.42,
+     "fim": 8.713
+    },
+    {
+     "p": "e",
+     "ini": 8.713,
+     "fim": 9.007
+    },
+    {
+     "p": "oito",
+     "ini": 9.007,
+     "fim": 9.3
+    },
+    {
+     "p": "anos.",
+     "ini": 9.3,
+     "fim": 9.86
+    },
+    {
+     "p": "Perdeu",
+     "ini": 10.3,
+     "fim": 10.72
+    },
+    {
+     "p": "o",
+     "ini": 10.72,
+     "fim": 10.8
+    },
+    {
+     "p": "bilhete",
+     "ini": 10.8,
+     "fim": 11.16
+    },
+    {
+     "p": "numa",
+     "ini": 11.16,
+     "fim": 11.36
+    },
+    {
+     "p": "corrida.",
+     "ini": 11.36,
+     "fim": 11.8
+    }
+   ]
+  },
+  {
+   "texto": "O sobrinho tirou o bilhete da carteira do velho e vendeu por dez milhões.",
+   "ini": 12.24,
+   "fim": 16.58,
+   "palavras": [
+    {
+     "p": "O",
+     "ini": 12.24,
+     "fim": 12.36
+    },
+    {
+     "p": "sobrinho",
+     "ini": 12.36,
+     "fim": 12.78
+    },
+    {
+     "p": "tirou",
+     "ini": 12.78,
+     "fim": 13.4
+    },
+    {
+     "p": "o",
+     "ini": 13.4,
+     "fim": 13.52
+    },
+    {
+     "p": "bilhete",
+     "ini": 13.52,
+     "fim": 13.88
+    },
+    {
+     "p": "da",
+     "ini": 13.88,
+     "fim": 14.04
+    },
+    {
+     "p": "carteira",
+     "ini": 14.04,
+     "fim": 14.46
+    },
+    {
+     "p": "do",
+     "ini": 14.46,
+     "fim": 14.6
+    },
+    {
+     "p": "velho",
+     "ini": 14.6,
+     "fim": 14.92
+    },
+    {
+     "p": "e",
+     "ini": 14.92,
+     "fim": 15.28
+    },
+    {
+     "p": "vendeu",
+     "ini": 15.28,
+     "fim": 15.62
+    },
+    {
+     "p": "por",
+     "ini": 15.62,
+     "fim": 15.88
+    },
+    {
+     "p": "dez",
+     "ini": 15.88,
+     "fim": 16.26
+    },
+    {
+     "p": "milhões.",
+     "ini": 16.26,
+     "fim": 16.58
+    }
+   ]
+  },
+  {
+   "texto": "O Clóvis podia ter ficado com tudo. Ninguém ia saber.",
+   "ini": 17.26,
+   "fim": 20.18,
+   "palavras": [
+    {
+     "p": "O",
+     "ini": 17.26,
+     "fim": 17.38
+    },
+    {
+     "p": "Clóvis",
+     "ini": 17.38,
+     "fim": 17.74
+    },
+    {
+     "p": "podia",
+     "ini": 17.74,
+     "fim": 17.98
+    },
+    {
+     "p": "ter",
+     "ini": 17.98,
+     "fim": 18.16
+    },
+    {
+     "p": "ficado",
+     "ini": 18.16,
+     "fim": 18.48
+    },
+    {
+     "p": "com",
+     "ini": 18.48,
+     "fim": 18.66
+    },
+    {
+     "p": "tudo.",
+     "ini": 18.66,
+     "fim": 18.94
+    },
+    {
+     "p": "Ninguém",
+     "ini": 19.26,
+     "fim": 19.6
+    },
+    {
+     "p": "ia",
+     "ini": 19.6,
+     "fim": 19.9
+    },
+    {
+     "p": "saber.",
+     "ini": 19.9,
+     "fim": 20.18
+    }
+   ]
+  },
+  {
+   "texto": "Ele colocou o bilhete na mão do Seu Antônio.",
+   "ini": 20.56,
+   "fim": 22.7,
+   "palavras": [
+    {
+     "p": "Ele",
+     "ini": 20.56,
+     "fim": 20.74
+    },
+    {
+     "p": "colocou",
+     "ini": 20.74,
+     "fim": 21.16
+    },
+    {
+     "p": "o",
+     "ini": 21.16,
+     "fim": 21.28
+    },
+    {
+     "p": "bilhete",
+     "ini": 21.28,
+     "fim": 21.6
+    },
+    {
+     "p": "na",
+     "ini": 21.6,
+     "fim": 21.78
+    },
+    {
+     "p": "mão",
+     "ini": 21.78,
+     "fim": 21.96
+    },
+    {
+     "p": "do",
+     "ini": 21.96,
+     "fim": 22.1
+    },
+    {
+     "p": "Seu",
+     "ini": 22.1,
+     "fim": 22.24
+    },
+    {
+     "p": "Antônio.",
+     "ini": 22.24,
+     "fim": 22.7
+    }
+   ]
+  },
+  {
+   "texto": "O velho olhou o bilhete. Olhou o Clóvis. E escreveu no verso.",
+   "ini": 23.04,
+   "fim": 26.96,
+   "palavras": [
+    {
+     "p": "O",
+     "ini": 23.04,
+     "fim": 23.2
+    },
+    {
+     "p": "velho",
+     "ini": 23.2,
+     "fim": 23.54
+    },
+    {
+     "p": "olhou",
+     "ini": 23.54,
+     "fim": 23.82
+    },
+    {
+     "p": "o",
+     "ini": 23.82,
+     "fim": 23.98
+    },
+    {
+     "p": "bilhete.",
+     "ini": 23.98,
+     "fim": 24.36
+    },
+    {
+     "p": "Olhou",
+     "ini": 24.8,
+     "fim": 25.06
+    },
+    {
+     "p": "o",
+     "ini": 25.06,
+     "fim": 25.26
+    },
+    {
+     "p": "Clóvis.",
+     "ini": 25.26,
+     "fim": 25.58
+    },
+    {
+     "p": "E",
+     "ini": 25.58,
+     "fim": 26.06
+    },
+    {
+     "p": "escreveu",
+     "ini": 26.06,
+     "fim": 26.54
+    },
+    {
+     "p": "no",
+     "ini": 26.54,
+     "fim": 26.64
+    },
+    {
+     "p": "verso.",
+     "ini": 26.64,
+     "fim": 26.96
+    }
+   ]
+  },
+  {
+   "texto": "Dois nomes. Metade pra cada um.",
+   "ini": 26.96,
+   "fim": 29.9,
+   "palavras": [
+    {
+     "p": "Dois",
+     "ini": 26.96,
+     "fim": 27.84
+    },
+    {
+     "p": "nomes.",
+     "ini": 27.84,
+     "fim": 28.26
+    },
+    {
+     "p": "Metade",
+     "ini": 28.52,
+     "fim": 29.16
+    },
+    {
+     "p": "pra",
+     "ini": 29.16,
+     "fim": 29.34
+    },
+    {
+     "p": "cada",
+     "ini": 29.34,
+     "fim": 29.62
+    },
+    {
+     "p": "um.",
+     "ini": 29.62,
+     "fim": 29.9
+    }
+   ]
+  },
+  {
+   "texto": "Vinte milhões pro taxista que podia ter sumido.",
+   "ini": 29.9,
+   "fim": 33.14,
+   "palavras": [
+    {
+     "p": "Vinte",
+     "ini": 29.9,
+     "fim": 30.68
+    },
+    {
+     "p": "milhões",
+     "ini": 30.68,
+     "fim": 31.1
+    },
+    {
+     "p": "pro",
+     "ini": 31.1,
+     "fim": 31.4
+    },
+    {
+     "p": "taxista",
+     "ini": 31.4,
+     "fim": 31.94
+    },
+    {
+     "p": "que",
+     "ini": 31.94,
+     "fim": 32.1
+    },
+    {
+     "p": "podia",
+     "ini": 32.1,
+     "fim": 32.52
+    },
+    {
+     "p": "ter",
+     "ini": 32.52,
+     "fim": 32.74
+    },
+    {
+     "p": "sumido.",
+     "ini": 32.74,
+     "fim": 33.14
+    }
+   ]
+  },
+  {
+   "texto": "Só que tem uma mala com vinte milhões em dinheiro no banco de trás do táxi.",
+   "ini": 33.58,
+   "fim": 37.94,
+   "palavras": [
+    {
+     "p": "Só",
+     "ini": 33.58,
+     "fim": 33.88
+    },
+    {
+     "p": "que",
+     "ini": 33.88,
+     "fim": 34.02
+    },
+    {
+     "p": "tem",
+     "ini": 34.02,
+     "fim": 34.2
+    },
+    {
+     "p": "uma",
+     "ini": 34.2,
+     "fim": 34.38
+    },
+    {
+     "p": "mala",
+     "ini": 34.38,
+     "fim": 34.76
+    },
+    {
+     "p": "com",
+     "ini": 34.76,
+     "fim": 34.98
+    },
+    {
+     "p": "vinte",
+     "ini": 34.98,
+     "fim": 35.36
+    },
+    {
+     "p": "milhões",
+     "ini": 35.36,
+     "fim": 35.8
+    },
+    {
+     "p": "em",
+     "ini": 35.8,
+     "fim": 36.04
+    },
+    {
+     "p": "dinheiro",
+     "ini": 36.04,
+     "fim": 36.44
+    },
+    {
+     "p": "no",
+     "ini": 36.44,
+     "fim": 36.6
+    },
+    {
+     "p": "banco",
+     "ini": 36.6,
+     "fim": 36.94
+    },
+    {
+     "p": "de",
+     "ini": 36.94,
+     "fim": 37.12
+    },
+    {
+     "p": "trás",
+     "ini": 37.12,
+     "fim": 37.36
+    },
+    {
+     "p": "do",
+     "ini": 37.36,
+     "fim": 37.54
+    },
+    {
+     "p": "táxi.",
+     "ini": 37.54,
+     "fim": 37.94
+    }
+   ]
+  },
+  {
+   "texto": "E essa mala não é de nenhum dos dois.",
+   "ini": 38.42,
+   "fim": 40.44,
+   "palavras": [
+    {
+     "p": "E",
+     "ini": 38.42,
+     "fim": 38.54
+    },
+    {
+     "p": "essa",
+     "ini": 38.54,
+     "fim": 38.76
+    },
+    {
+     "p": "mala",
+     "ini": 38.76,
+     "fim": 39.1
+    },
+    {
+     "p": "não",
+     "ini": 39.1,
+     "fim": 39.46
+    },
+    {
+     "p": "é",
+     "ini": 39.46,
+     "fim": 39.66
+    },
+    {
+     "p": "de",
+     "ini": 39.66,
+     "fim": 39.76
+    },
+    {
+     "p": "nenhum",
+     "ini": 39.76,
+     "fim": 40.06
+    },
+    {
+     "p": "dos",
+     "ini": 40.06,
+     "fim": 40.24
+    },
+    {
+     "p": "dois.",
+     "ini": 40.24,
+     "fim": 40.44
+    }
+   ]
+  },
+  {
+   "texto": "Você ficava com ela… ou devolvia? Comente FICA ou DEVOLVE.",
+   "ini": 40.92,
+   "fim": 45.16,
+   "palavras": [
+    {
+     "p": "Você",
+     "ini": 40.92,
+     "fim": 41.22
+    },
+    {
+     "p": "ficava",
+     "ini": 41.22,
+     "fim": 41.6
+    },
+    {
+     "p": "com",
+     "ini": 41.6,
+     "fim": 41.78
+    },
+    {
+     "p": "ela…",
+     "ini": 41.78,
+     "fim": 42.02
+    },
+    {
+     "p": "ou",
+     "ini": 42.02,
+     "fim": 42.52
+    },
+    {
+     "p": "devolvia?",
+     "ini": 42.52,
+     "fim": 43.02
+    },
+    {
+     "p": "Comente",
+     "ini": 43.48,
+     "fim": 43.86
+    },
+    {
+     "p": "FICA",
+     "ini": 43.86,
+     "fim": 44.28
+    },
+    {
+     "p": "ou",
+     "ini": 44.28,
+     "fim": 44.76
+    },
+    {
+     "p": "DEVOLVE.",
+     "ini": 44.76,
+     "fim": 45.16
+    }
+   ]
+  }
+ ],
+ "total": 45.401
+}

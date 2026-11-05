@@ -25,11 +25,11 @@ window.SERIE = {
   ],
 
   votacao: {
-    parte: 6,
-    titulo: "Devolve ou segue?",
-    chamada: "O vídeo mostrou quem vendeu o velho. Você decide.",
-    opcoes: ["DEVOLVE", "SEGUE"],
-    dica: "Tem um 3º jeito escondido na janela da lotérica. Só vale se você disser qual é.",
+    parte: 7,
+    titulo: "Fica ou devolve?",
+    chamada: "O bilhete voltou pro dono. A mala com R$ 20 milhões, não.",
+    opcoes: ["FICA", "DEVOLVE"],
+    dica: "",
   },
 
   partes: [
@@ -38,7 +38,8 @@ window.SERIE = {
     { n: 3, titulo: "Todo comprador tem pressa", capa: "assets/capas/parte3.jpg", cena: "assets/capas/posto.jpg", decisao: "Vende · 100%", link: "https://www.instagram.com/reel/DfN9lWiEZp6/" },
     { n: 4, titulo: "Todo dinheiro tem dono", capa: "assets/capas/parte4.jpg", cena: "assets/capas/posto.jpg", decisao: "Vai · 100%", link: "https://www.instagram.com/reel/DfQVEBoGHRF/" },
     { n: 5, titulo: "Todo bilhete tem um nome", capa: "assets/capas/parte5.jpg", cena: "assets/capas/posto.jpg", decisao: "3º jeito · o vídeo", link: "https://www.instagram.com/reel/DfTGqr0DhBF/" },
-    { n: 6, titulo: "Quem vendeu o velho", capa: "assets/capas/parte6.jpg", cena: "assets/capas/posto.jpg", decisao: null, link: "https://www.instagram.com/reel/DfVeo_NHA1x/" },
+    { n: 6, titulo: "Quem vendeu o velho", capa: "assets/capas/parte6.jpg", cena: "assets/capas/posto.jpg", decisao: "Sem votos · o estúdio escolheu", link: "https://www.instagram.com/reel/DfVeo_NHA1x/" },
+    { n: 7, titulo: "Metade de cada", capa: "assets/capas/parte7.jpg", cena: "assets/capas/posto.jpg", decisao: null, link: "__LINK7__" },
   ],
   // mural: 5 fotos em volta (troque por cenas de cada parte conforme forem saindo); o centro vem da última parte
   mural: [
@@ -48,7 +49,7 @@ window.SERIE = {
     { capa: "assets/capas/homem.jpg", legenda: "QUEM É ELE?" },
     { capa: "assets/capas/carro-preto.jpg", legenda: "O CARRO PRETO" },
   ],
-  notaMural: "O vídeo do posto não acabou onde devia.",
+  notaMural: "O bilhete voltou pro dono. A mala, não.",
   etiquetas: ["RISCO 99%", "R$ 40.000.000 no banco de trás"],
 
   // a vaga paga dentro da história

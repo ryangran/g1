@@ -1,0 +1,25 @@
+{
+ "total_votos": 0,
+ "placar": [
+  {
+   "opcao": "DEVOLVE",
+   "votos": 0,
+   "pct": 0
+  },
+  {
+   "opcao": "SEGUE",
+   "votos": 0,
+   "pct": 0
+  },
+  {
+   "opcao": "3º JEITO",
+   "votos": 0,
+   "pct": 0
+  }
+ ],
+ "vencedor": null,
+ "primeiro_3o_jeito": null,
+ "outros_que_acharam": [],
+ "destaques": [],
+ "comentarios_lidos": 0
+}
