@@ -1,0 +1,717 @@
+{
+ "voz": "gemini-tts:Orus",
+ "frases": [
+  {
+   "texto": "Grupo grande no WhatsApp dá trabalho.",
+   "ini": 0.0,
+   "fim": 2.26,
+   "palavras": [
+    {
+     "p": "Grupo",
+     "ini": 0.0,
+     "fim": 0.5
+    },
+    {
+     "p": "grande",
+     "ini": 0.5,
+     "fim": 0.84
+    },
+    {
+     "p": "no",
+     "ini": 0.84,
+     "fim": 1.04
+    },
+    {
+     "p": "WhatsApp",
+     "ini": 1.04,
+     "fim": 1.56
+    },
+    {
+     "p": "dá",
+     "ini": 1.56,
+     "fim": 1.72
+    },
+    {
+     "p": "trabalho.",
+     "ini": 1.72,
+     "fim": 2.26
+    }
+   ]
+  },
+  {
+   "texto": "Link de divulgação, golpe do PIX, spam, briga às duas da manhã.",
+   "ini": 2.5,
+   "fim": 7.52,
+   "palavras": [
+    {
+     "p": "Link",
+     "ini": 2.5,
+     "fim": 2.9
+    },
+    {
+     "p": "de",
+     "ini": 2.9,
+     "fim": 3.08
+    },
+    {
+     "p": "divulgação,",
+     "ini": 3.08,
+     "fim": 3.94
+    },
+    {
+     "p": "golpe",
+     "ini": 4.22,
+     "fim": 4.46
+    },
+    {
+     "p": "do",
+     "ini": 4.46,
+     "fim": 4.68
+    },
+    {
+     "p": "PIX,",
+     "ini": 4.68,
+     "fim": 5.14
+    },
+    {
+     "p": "spam,",
+     "ini": 5.42,
+     "fim": 5.88
+    },
+    {
+     "p": "briga",
+     "ini": 5.88,
+     "fim": 6.29
+    },
+    {
+     "p": "às",
+     "ini": 6.29,
+     "fim": 6.7
+    },
+    {
+     "p": "duas",
+     "ini": 6.7,
+     "fim": 6.94
+    },
+    {
+     "p": "da",
+     "ini": 6.94,
+     "fim": 7.14
+    },
+    {
+     "p": "manhã.",
+     "ini": 7.14,
+     "fim": 7.52
+    }
+   ]
+  },
+  {
+   "texto": "O painel da Vetrex cuida disso sozinho.",
+   "ini": 7.94,
+   "fim": 10.36,
+   "palavras": [
+    {
+     "p": "O",
+     "ini": 7.94,
+     "fim": 8.1
+    },
+    {
+     "p": "painel",
+     "ini": 8.1,
+     "fim": 8.5
+    },
+    {
+     "p": "da",
+     "ini": 8.5,
+     "fim": 8.62
+    },
+    {
+     "p": "Vetrex",
+     "ini": 8.62,
+     "fim": 9.1
+    },
+    {
+     "p": "cuida",
+     "ini": 9.1,
+     "fim": 9.54
+    },
+    {
+     "p": "disso",
+     "ini": 9.54,
+     "fim": 9.78
+    },
+    {
+     "p": "sozinho.",
+     "ini": 9.78,
+     "fim": 10.36
+    }
+   ]
+  },
+  {
+   "texto": "Antilink: o link some antes de alguém clicar.",
+   "ini": 10.36,
+   "fim": 13.66,
+   "palavras": [
+    {
+     "p": "Antilink:",
+     "ini": 10.36,
+     "fim": 11.66
+    },
+    {
+     "p": "o",
+     "ini": 11.66,
+     "fim": 11.82
+    },
+    {
+     "p": "link",
+     "ini": 11.82,
+     "fim": 12.04
+    },
+    {
+     "p": "some",
+     "ini": 12.04,
+     "fim": 12.46
+    },
+    {
+     "p": "antes",
+     "ini": 12.46,
+     "fim": 12.92
+    },
+    {
+     "p": "de",
+     "ini": 12.92,
+     "fim": 13.1
+    },
+    {
+     "p": "alguém",
+     "ini": 13.1,
+     "fim": 13.26
+    },
+    {
+     "p": "clicar.",
+     "ini": 13.26,
+     "fim": 13.66
+    }
+   ]
+  },
+  {
+   "texto": "Antipay: cobrança e chave PIX de estranho, barrado na hora.",
+   "ini": 13.66,
+   "fim": 17.74,
+   "palavras": [
+    {
+     "p": "Antipay:",
+     "ini": 13.66,
+     "fim": 14.96
+    },
+    {
+     "p": "cobrança",
+     "ini": 14.96,
+     "fim": 15.44
+    },
+    {
+     "p": "e",
+     "ini": 15.44,
+     "fim": 15.58
+    },
+    {
+     "p": "chave",
+     "ini": 15.58,
+     "fim": 15.84
+    },
+    {
+     "p": "PIX",
+     "ini": 15.84,
+     "fim": 16.24
+    },
+    {
+     "p": "de",
+     "ini": 16.24,
+     "fim": 16.34
+    },
+    {
+     "p": "estranho,",
+     "ini": 16.34,
+     "fim": 16.78
+    },
+    {
+     "p": "barrado",
+     "ini": 16.86,
+     "fim": 17.28
+    },
+    {
+     "p": "na",
+     "ini": 17.28,
+     "fim": 17.46
+    },
+    {
+     "p": "hora.",
+     "ini": 17.46,
+     "fim": 17.74
+    }
+   ]
+  },
+  {
+   "texto": "Antiflood: quem dispara vinte mensagens em dez segundos, para.",
+   "ini": 17.74,
+   "fim": 21.62,
+   "palavras": [
+    {
+     "p": "Antiflood:",
+     "ini": 17.74,
+     "fim": 19.08
+    },
+    {
+     "p": "quem",
+     "ini": 19.08,
+     "fim": 19.22
+    },
+    {
+     "p": "dispara",
+     "ini": 19.22,
+     "fim": 19.68
+    },
+    {
+     "p": "vinte",
+     "ini": 19.68,
+     "fim": 19.88
+    },
+    {
+     "p": "mensagens",
+     "ini": 19.88,
+     "fim": 20.44
+    },
+    {
+     "p": "em",
+     "ini": 20.44,
+     "fim": 20.66
+    },
+    {
+     "p": "dez",
+     "ini": 20.66,
+     "fim": 20.86
+    },
+    {
+     "p": "segundos,",
+     "ini": 20.86,
+     "fim": 21.2
+    },
+    {
+     "p": "para.",
+     "ini": 21.2,
+     "fim": 21.62
+    }
+   ]
+  },
+  {
+   "texto": "E o modo forte liga tudo de uma vez.",
+   "ini": 22.0,
+   "fim": 24.08,
+   "palavras": [
+    {
+     "p": "E",
+     "ini": 22.0,
+     "fim": 22.14
+    },
+    {
+     "p": "o",
+     "ini": 22.14,
+     "fim": 22.24
+    },
+    {
+     "p": "modo",
+     "ini": 22.24,
+     "fim": 22.42
+    },
+    {
+     "p": "forte",
+     "ini": 22.42,
+     "fim": 22.82
+    },
+    {
+     "p": "liga",
+     "ini": 22.82,
+     "fim": 23.16
+    },
+    {
+     "p": "tudo",
+     "ini": 23.16,
+     "fim": 23.44
+    },
+    {
+     "p": "de",
+     "ini": 23.44,
+     "fim": 23.66
+    },
+    {
+     "p": "uma",
+     "ini": 23.66,
+     "fim": 23.78
+    },
+    {
+     "p": "vez.",
+     "ini": 23.78,
+     "fim": 24.08
+    }
+   ]
+  },
+  {
+   "texto": "Quem passa do limite leva advertência. Três, e sai.",
+   "ini": 24.48,
+   "fim": 27.46,
+   "palavras": [
+    {
+     "p": "Quem",
+     "ini": 24.48,
+     "fim": 24.64
+    },
+    {
+     "p": "passa",
+     "ini": 24.64,
+     "fim": 24.92
+    },
+    {
+     "p": "do",
+     "ini": 24.92,
+     "fim": 25.08
+    },
+    {
+     "p": "limite",
+     "ini": 25.08,
+     "fim": 25.36
+    },
+    {
+     "p": "leva",
+     "ini": 25.36,
+     "fim": 25.68
+    },
+    {
+     "p": "advertência.",
+     "ini": 25.68,
+     "fim": 26.68
+    },
+    {
+     "p": "Três,",
+     "ini": 26.68,
+     "fim": 26.92
+    },
+    {
+     "p": "e",
+     "ini": 26.92,
+     "fim": 27.22
+    },
+    {
+     "p": "sai.",
+     "ini": 27.22,
+     "fim": 27.46
+    }
+   ]
+  },
+  {
+   "texto": "Banir, silenciar, promover, apagar mensagem: um comando cada.",
+   "ini": 27.82,
+   "fim": 32.04,
+   "palavras": [
+    {
+     "p": "Banir,",
+     "ini": 27.82,
+     "fim": 28.34
+    },
+    {
+     "p": "silenciar,",
+     "ini": 28.56,
+     "fim": 29.24
+    },
+    {
+     "p": "promover,",
+     "ini": 29.46,
+     "fim": 29.92
+    },
+    {
+     "p": "apagar",
+     "ini": 30.2,
+     "fim": 30.48
+    },
+    {
+     "p": "mensagem:",
+     "ini": 30.48,
+     "fim": 31.04
+    },
+    {
+     "p": "um",
+     "ini": 31.26,
+     "fim": 31.38
+    },
+    {
+     "p": "comando",
+     "ini": 31.38,
+     "fim": 31.78
+    },
+    {
+     "p": "cada.",
+     "ini": 31.78,
+     "fim": 32.04
+    }
+   ]
+  },
+  {
+   "texto": "Boas-vindas automática, com o nome da pessoa e do grupo.",
+   "ini": 32.04,
+   "fim": 35.58,
+   "palavras": [
+    {
+     "p": "Boas-vindas",
+     "ini": 32.04,
+     "fim": 33.16
+    },
+    {
+     "p": "automática,",
+     "ini": 33.16,
+     "fim": 33.78
+    },
+    {
+     "p": "com",
+     "ini": 34.0,
+     "fim": 34.14
+    },
+    {
+     "p": "o",
+     "ini": 34.14,
+     "fim": 34.26
+    },
+    {
+     "p": "nome",
+     "ini": 34.26,
+     "fim": 34.44
+    },
+    {
+     "p": "da",
+     "ini": 34.44,
+     "fim": 34.58
+    },
+    {
+     "p": "pessoa",
+     "ini": 34.58,
+     "fim": 34.92
+    },
+    {
+     "p": "e",
+     "ini": 34.92,
+     "fim": 35.18
+    },
+    {
+     "p": "do",
+     "ini": 35.18,
+     "fim": 35.3
+    },
+    {
+     "p": "grupo.",
+     "ini": 35.3,
+     "fim": 35.58
+    }
+   ]
+  },
+  {
+   "texto": "E quando o grupo chega ao fim, você limpa e arquiva o seu grupo num comando só, com confirmação.",
+   "ini": 36.02,
+   "fim": 41.1,
+   "palavras": [
+    {
+     "p": "E",
+     "ini": 36.02,
+     "fim": 36.14
+    },
+    {
+     "p": "quando",
+     "ini": 36.14,
+     "fim": 36.32
+    },
+    {
+     "p": "o",
+     "ini": 36.32,
+     "fim": 36.5
+    },
+    {
+     "p": "grupo",
+     "ini": 36.5,
+     "fim": 36.66
+    },
+    {
+     "p": "chega",
+     "ini": 36.66,
+     "fim": 36.88
+    },
+    {
+     "p": "ao",
+     "ini": 36.88,
+     "fim": 37.1
+    },
+    {
+     "p": "fim,",
+     "ini": 37.1,
+     "fim": 37.24
+    },
+    {
+     "p": "você",
+     "ini": 37.54,
+     "fim": 37.7
+    },
+    {
+     "p": "limpa",
+     "ini": 37.7,
+     "fim": 38.08
+    },
+    {
+     "p": "e",
+     "ini": 38.08,
+     "fim": 38.2
+    },
+    {
+     "p": "arquiva",
+     "ini": 38.2,
+     "fim": 38.39
+    },
+    {
+     "p": "o",
+     "ini": 38.39,
+     "fim": 38.58
+    },
+    {
+     "p": "seu",
+     "ini": 38.58,
+     "fim": 38.74
+    },
+    {
+     "p": "grupo",
+     "ini": 38.74,
+     "fim": 39.06
+    },
+    {
+     "p": "num",
+     "ini": 39.06,
+     "fim": 39.24
+    },
+    {
+     "p": "comando",
+     "ini": 39.24,
+     "fim": 39.74
+    },
+    {
+     "p": "só,",
+     "ini": 39.74,
+     "fim": 39.98
+    },
+    {
+     "p": "com",
+     "ini": 40.28,
+     "fim": 40.4
+    },
+    {
+     "p": "confirmação.",
+     "ini": 40.4,
+     "fim": 41.1
+    }
+   ]
+  },
+  {
+   "texto": "Tudo com ponto de exclamação. E o bot só obedece admin.",
+   "ini": 41.46,
+   "fim": 45.23,
+   "palavras": [
+    {
+     "p": "Tudo",
+     "ini": 41.46,
+     "fim": 41.62
+    },
+    {
+     "p": "com",
+     "ini": 41.62,
+     "fim": 41.86
+    },
+    {
+     "p": "ponto",
+     "ini": 41.86,
+     "fim": 42.18
+    },
+    {
+     "p": "de",
+     "ini": 42.18,
+     "fim": 42.36
+    },
+    {
+     "p": "exclamação.",
+     "ini": 42.36,
+     "fim": 42.94
+    },
+    {
+     "p": "E",
+     "ini": 43.32,
+     "fim": 43.4
+    },
+    {
+     "p": "o",
+     "ini": 43.4,
+     "fim": 43.48
+    },
+    {
+     "p": "bot",
+     "ini": 43.48,
+     "fim": 43.74
+    },
+    {
+     "p": "só",
+     "ini": 43.74,
+     "fim": 44.0
+    },
+    {
+     "p": "obedece",
+     "ini": 44.0,
+     "fim": 44.44
+    },
+    {
+     "p": "admin.",
+     "ini": 44.44,
+     "fim": 45.23
+    }
+   ]
+  },
+  {
+   "texto": "Vetrex. O seu grupo no automático.",
+   "ini": 45.23,
+   "fim": 47.42,
+   "palavras": [
+    {
+     "p": "Vetrex.",
+     "ini": 45.23,
+     "fim": 46.02
+    },
+    {
+     "p": "O",
+     "ini": 46.02,
+     "fim": 46.1
+    },
+    {
+     "p": "seu",
+     "ini": 46.1,
+     "fim": 46.28
+    },
+    {
+     "p": "grupo",
+     "ini": 46.28,
+     "fim": 46.64
+    },
+    {
+     "p": "no",
+     "ini": 46.64,
+     "fim": 46.78
+    },
+    {
+     "p": "automático.",
+     "ini": 46.78,
+     "fim": 47.42
+    }
+   ]
+  }
+ ],
+ "total": 47.621
+}
