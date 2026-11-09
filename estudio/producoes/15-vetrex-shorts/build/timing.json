@@ -1,0 +1,315 @@
+{
+ "voz": "gemini-tts:Orus",
+ "frases": [
+  {
+   "texto": "Grupo de WhatsApp às duas da manhã:",
+   "ini": 0.0,
+   "fim": 2.4,
+   "palavras": [
+    {
+     "p": "Grupo",
+     "ini": 0.0,
+     "fim": 0.58
+    },
+    {
+     "p": "de",
+     "ini": 0.58,
+     "fim": 0.72
+    },
+    {
+     "p": "WhatsApp",
+     "ini": 0.72,
+     "fim": 1.22
+    },
+    {
+     "p": "às",
+     "ini": 1.22,
+     "fim": 1.56
+    },
+    {
+     "p": "duas",
+     "ini": 1.56,
+     "fim": 1.82
+    },
+    {
+     "p": "da",
+     "ini": 1.82,
+     "fim": 2.04
+    },
+    {
+     "p": "manhã:",
+     "ini": 2.04,
+     "fim": 2.4
+    }
+   ]
+  },
+  {
+   "texto": "link de divulgação, chave PIX de estranho, briga e spam.",
+   "ini": 2.72,
+   "fim": 7.08,
+   "palavras": [
+    {
+     "p": "link",
+     "ini": 2.72,
+     "fim": 3.06
+    },
+    {
+     "p": "de",
+     "ini": 3.06,
+     "fim": 3.24
+    },
+    {
+     "p": "divulgação,",
+     "ini": 3.24,
+     "fim": 4.02
+    },
+    {
+     "p": "chave",
+     "ini": 4.4,
+     "fim": 4.68
+    },
+    {
+     "p": "PIX",
+     "ini": 4.68,
+     "fim": 5.06
+    },
+    {
+     "p": "de",
+     "ini": 5.06,
+     "fim": 5.22
+    },
+    {
+     "p": "estranho,",
+     "ini": 5.22,
+     "fim": 5.84
+    },
+    {
+     "p": "briga",
+     "ini": 6.06,
+     "fim": 6.46
+    },
+    {
+     "p": "e",
+     "ini": 6.46,
+     "fim": 6.74
+    },
+    {
+     "p": "spam.",
+     "ini": 6.74,
+     "fim": 7.08
+    }
+   ]
+  },
+  {
+   "texto": "O painel da Vetrex barra tudo sozinho.",
+   "ini": 7.6,
+   "fim": 10.1,
+   "palavras": [
+    {
+     "p": "O",
+     "ini": 7.6,
+     "fim": 7.74
+    },
+    {
+     "p": "painel",
+     "ini": 7.74,
+     "fim": 8.1
+    },
+    {
+     "p": "da",
+     "ini": 8.1,
+     "fim": 8.24
+    },
+    {
+     "p": "Vetrex",
+     "ini": 8.24,
+     "fim": 8.78
+    },
+    {
+     "p": "barra",
+     "ini": 8.78,
+     "fim": 9.24
+    },
+    {
+     "p": "tudo",
+     "ini": 9.24,
+     "fim": 9.52
+    },
+    {
+     "p": "sozinho.",
+     "ini": 9.52,
+     "fim": 10.1
+    }
+   ]
+  },
+  {
+   "texto": "Antilink. Antipay. Antiflood.",
+   "ini": 10.1,
+   "fim": 13.44,
+   "palavras": [
+    {
+     "p": "Antilink.",
+     "ini": 10.1,
+     "fim": 11.213
+    },
+    {
+     "p": "Antipay.",
+     "ini": 11.213,
+     "fim": 12.327
+    },
+    {
+     "p": "Antiflood.",
+     "ini": 12.327,
+     "fim": 13.44
+    }
+   ]
+  },
+  {
+   "texto": "Quem passa do limite leva advertência. Três, e sai.",
+   "ini": 13.44,
+   "fim": 16.9,
+   "palavras": [
+    {
+     "p": "Quem",
+     "ini": 13.44,
+     "fim": 13.6
+    },
+    {
+     "p": "passa",
+     "ini": 13.6,
+     "fim": 13.92
+    },
+    {
+     "p": "do",
+     "ini": 13.92,
+     "fim": 14.08
+    },
+    {
+     "p": "limite",
+     "ini": 14.08,
+     "fim": 14.36
+    },
+    {
+     "p": "leva",
+     "ini": 14.36,
+     "fim": 14.8
+    },
+    {
+     "p": "advertência.",
+     "ini": 15.02,
+     "fim": 15.68
+    },
+    {
+     "p": "Três,",
+     "ini": 16.0,
+     "fim": 16.26
+    },
+    {
+     "p": "e",
+     "ini": 16.26,
+     "fim": 16.62
+    },
+    {
+     "p": "sai.",
+     "ini": 16.62,
+     "fim": 16.9
+    }
+   ]
+  },
+  {
+   "texto": "E num comando você limpa e arquiva o seu grupo.",
+   "ini": 17.34,
+   "fim": 19.86,
+   "palavras": [
+    {
+     "p": "E",
+     "ini": 17.34,
+     "fim": 17.42
+    },
+    {
+     "p": "num",
+     "ini": 17.42,
+     "fim": 17.56
+    },
+    {
+     "p": "comando",
+     "ini": 17.56,
+     "fim": 18.06
+    },
+    {
+     "p": "você",
+     "ini": 18.16,
+     "fim": 18.34
+    },
+    {
+     "p": "limpa",
+     "ini": 18.34,
+     "fim": 18.82
+    },
+    {
+     "p": "e",
+     "ini": 18.82,
+     "fim": 18.94
+    },
+    {
+     "p": "arquiva",
+     "ini": 18.94,
+     "fim": 19.38
+    },
+    {
+     "p": "o",
+     "ini": 19.38,
+     "fim": 19.48
+    },
+    {
+     "p": "seu",
+     "ini": 19.48,
+     "fim": 19.58
+    },
+    {
+     "p": "grupo.",
+     "ini": 19.58,
+     "fim": 19.86
+    }
+   ]
+  },
+  {
+   "texto": "Vetrex. O seu grupo no automático.",
+   "ini": 19.86,
+   "fim": 22.6,
+   "palavras": [
+    {
+     "p": "Vetrex.",
+     "ini": 19.86,
+     "fim": 21.1
+    },
+    {
+     "p": "O",
+     "ini": 21.1,
+     "fim": 21.18
+    },
+    {
+     "p": "seu",
+     "ini": 21.18,
+     "fim": 21.36
+    },
+    {
+     "p": "grupo",
+     "ini": 21.36,
+     "fim": 21.74
+    },
+    {
+     "p": "no",
+     "ini": 21.74,
+     "fim": 21.9
+    },
+    {
+     "p": "automático.",
+     "ini": 21.9,
+     "fim": 22.6
+    }
+   ]
+  }
+ ],
+ "total": 22.779
+}

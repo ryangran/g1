@@ -1,0 +1,4 @@
+build/gvoz/
+build/trilha.wav
+build/*.log
+.hyperframes/
